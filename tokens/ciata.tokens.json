@@ -1,0 +1,16 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "color": {
+    "brand": {
+      "yellow": { "$value": "#FFD000", "$type": "color" },
+      "blue": { "$value": "#005C99", "$type": "color" },
+      "blueDark": { "$value": "#16365E", "$type": "color" },
+      "gray": { "$value": "#B3B3B3", "$type": "color" }
+    }
+  },
+  "font": {
+    "family": {
+      "primary": { "$value": "Segoe UI", "$type": "fontFamily" }
+    }
+  }
+}
