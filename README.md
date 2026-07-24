@@ -8,12 +8,23 @@ Centralizar, documentar e versionar os materiais oficiais do CIATA, garantindo c
 
 ## Princípios
 
+- Nenhum projeto do CIATA começa do zero.
 - Acessibilidade desde a concepção.
 - Consistência entre canais e projetos.
 - Documentação como parte do produto.
 - Reutilização antes da duplicação.
 - Versionamento e histórico preservados.
 - Nomenclatura clara e sustentável.
+- Automatizar o repetitivo e humanizar o importante.
+
+## Documentos essenciais
+
+- [Governança](GOVERNANCE.md)
+- [Roadmap](ROADMAP.md)
+- [Acessibilidade](ACCESSIBILITY.md)
+- [Como contribuir](CONTRIBUTING.md)
+- [Registro Mestre de Artefatos](catalogo/registro-mestre.md)
+- [Modelo de Passaporte de Artefato](templates/passaporte-de-artefato.asset.md)
 
 ## Estrutura inicial
 
@@ -27,6 +38,9 @@ Centralizar, documentar e versionar os materiais oficiais do CIATA, garantindo c
 - `videos/`: vídeos institucionais e materiais audiovisuais.
 - `modelos/`: modelos reutilizáveis de peças e materiais.
 - `recursos/`: outros ativos compartilhados.
+- `catalogo/`: inventário permanente dos artefatos.
+- `templates/`: modelos documentais e operacionais do Design System.
+- `specs/`, `adrs/` e `rfcs/`: especificações, decisões e propostas estruturais.
 
 ## Convenções de nomenclatura
 
@@ -39,6 +53,8 @@ Projetos de desenvolvimento seguem as convenções técnicas de cada plataforma 
 ## Acessibilidade
 
 Todo ativo deve considerar contraste, legibilidade, descrição textual, leitura por tecnologias assistivas, uso sem dependência exclusiva de cor e alternativas equivalentes quando o formato visual não for suficiente.
+
+A verificação automática é apoio. A publicação exige validação humana proporcional ao impacto do artefato.
 
 ## Uso
 
