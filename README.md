@@ -36,6 +36,13 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 - [Roadmap](ROADMAP.md): evolução planejada do sistema.
 - [Como contribuir](CONTRIBUTING.md): fluxo de colaboração.
 
+## Engineering System
+
+- [Visão geral](engineering/README.md)
+- [Blueprint para novos projetos](engineering/PROJECT-BLUEPRINT.md)
+- [Padrões de arquitetura](engineering/ARCHITECTURE.md)
+- [Padrões de documentação](engineering/DOCUMENTATION.md)
+
 ## Princípios
 
 - Pessoas primeiro.
@@ -61,6 +68,8 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 - `modelos/`: modelos reutilizáveis de peças e materiais.
 - `recursos/`: outros ativos compartilhados.
 - `catalogo/`: inventário permanente dos artefatos.
+- `engineering/`: padrões técnicos compartilhados e blueprint de projetos.
+- `knowledge/`: memória técnica, aprendizados e conteúdos reutilizáveis.
 - `templates/`: modelos documentais e operacionais.
 - `specs/`, `adrs/` e `rfcs/`: especificações, decisões e propostas estruturais.
 
