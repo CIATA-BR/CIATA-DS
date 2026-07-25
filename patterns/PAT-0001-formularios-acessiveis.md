@@ -4,14 +4,34 @@
 
 - **Tipo:** Padrão
 - **Código:** PAT-0001
-- **Versão:** 0.1.0
+- **Versão:** 0.2.0
 - **Status:** rascunho
 - **Responsável:** CIATA
 - **Última revisão:** 2026-07-25
 
 ## Resumo
 
-Formulários devem permitir compreensão, preenchimento, revisão, correção e envio sem depender de visão, ponteiro preciso ou memorização. Este padrão define estrutura, estados e critérios mínimos para formulários institucionais.
+Formulários devem permitir compreensão, preenchimento, revisão, correção e envio sem depender de visão, ponteiro preciso ou memorização. Este padrão define estrutura, estados e critérios mínimos para formulários institucionais e funciona como porta de entrada para receitas, checklists e diagnósticos relacionados.
+
+## Mapa da família
+
+### Receitas técnicas
+
+- [REC-0002 — Validação acessível de formulários](../recipes/REC-0002-validacao-formularios.md)
+- [REC-0003 — Upload de arquivos acessível e seguro](../recipes/REC-0003-upload-arquivos-acessivel-seguro.md)
+
+### Checklist
+
+- [CHECK-0102 — Validação de formulários acessíveis](../checklists/CHECK-0102-validacao-formularios-acessiveis.md)
+
+### Base de conhecimento
+
+- [KB-0001 — Diagnóstico de falhas de acessibilidade em formulários](../kb/KB-0001-diagnostico-falhas-acessibilidade-formularios.md)
+- [KB-0002 — Erros comuns em formulários e como diagnosticá-los](../kb/KB-0002-erros-comuns-formularios.md)
+
+### Blueprint relacionado
+
+- [BP-0001 — Projeto Laravel institucional](../blueprints/BP-0001-projeto-laravel-institucional.md)
 
 ## Quando usar
 
@@ -69,15 +89,19 @@ Não transformar ações simples em formulários desnecessários. Para uma únic
 - [ ] O envio informa sucesso, falha e próximos passos.
 - [ ] Foi executado teste manual com leitor de tela.
 - [ ] Foi verificado uso com ampliação e contraste elevado.
+- [ ] O CHECK-0102 foi concluído e as evidências foram registradas.
 
 ## Relações
 
 - **Especificações:** SPEC-0005 — Acessibilidade
 - **Decisões arquiteturais:** ADR-0003 — Acessibilidade desde a concepção
-- **Checklists:** CHECK-0001 — Revisão manual de acessibilidade; CHECK-0101 — QA funcional
+- **Checklists:** CHECK-0001 — Revisão manual de acessibilidade; CHECK-0101 — QA funcional; CHECK-0102 — Validação de formulários acessíveis
 - **Playbooks:** PB-0005 — Executar validação manual de acessibilidade
-- **Receitas técnicas:** a definir
+- **Receitas técnicas:** REC-0002 — Validação acessível de formulários; REC-0003 — Upload de arquivos acessível e seguro
+- **Base de conhecimento:** KB-0001 — Diagnóstico de falhas de acessibilidade em formulários; KB-0002 — Erros comuns em formulários e como diagnosticá-los
+- **Blueprints:** BP-0001 — Projeto Laravel institucional
 
 ## Histórico
 
 - 2026-07-25 — Criação inicial pelo CIATA.
+- 2026-07-25 — Transformação em hub da família de formulários e inclusão das relações da Sprint 9.
