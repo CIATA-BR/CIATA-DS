@@ -18,9 +18,9 @@ Princípios de interação, conteúdo, comportamento, estados, componentes, toke
 
 Arquitetura, qualidade, segurança, privacidade, documentação, internacionalização, testes, entrega, observabilidade e convenções reutilizáveis entre projetos.
 
-### Accessibility System
+### Accessibility Engineering System
 
-Requisitos, padrões, testes, checklists, tecnologias assistivas, plataformas, barreiras conhecidas e soluções validadas de acessibilidade.
+Princípios, normas, plataformas, tecnologias assistivas, padrões, receitas, testes, evidências e conhecimento aplicado para construir experiências digitais inclusivas desde a arquitetura.
 
 ### Knowledge System
 
@@ -42,6 +42,14 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 - [Blueprint para novos projetos](engineering/PROJECT-BLUEPRINT.md)
 - [Padrões de arquitetura](engineering/ARCHITECTURE.md)
 - [Padrões de documentação](engineering/DOCUMENTATION.md)
+
+## Accessibility Engineering System
+
+- [Visão geral](accessibility/README.md)
+- [Visão](accessibility/VISION.md)
+- [Princípios](accessibility/PRINCIPLES.md)
+- [Arquitetura](accessibility/ARCHITECTURE.md)
+- [Roadmap](accessibility/ROADMAP.md)
 
 ## Princípios
 
@@ -69,6 +77,7 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 - `recursos/`: outros ativos compartilhados.
 - `catalogo/`: inventário permanente dos artefatos.
 - `engineering/`: padrões técnicos compartilhados e blueprint de projetos.
+- `accessibility/`: arquitetura e conhecimento de engenharia de acessibilidade.
 - `knowledge/`: memória técnica, aprendizados e conteúdos reutilizáveis.
 - `templates/`: modelos documentais e operacionais.
 - `specs/`, `adrs/` e `rfcs/`: especificações, decisões e propostas estruturais.
