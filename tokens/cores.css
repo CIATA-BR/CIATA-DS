@@ -1,0 +1,46 @@
+:root {
+  /* Cores oficiais da marca CIATA */
+  --ciata-cor-amarelo: #ffd000;
+  --ciata-cor-cinza: #b3b3b3;
+  --ciata-cor-azul: #005c99;
+  --ciata-cor-azul-escuro: #16365e;
+
+  /* Cores neutras de apoio */
+  --ciata-cor-branco: #ffffff;
+  --ciata-cor-cinza-50: #f7f9fb;
+  --ciata-cor-cinza-100: #eef2f5;
+  --ciata-cor-cinza-300: #c8d0d8;
+  --ciata-cor-cinza-600: #536271;
+  --ciata-cor-cinza-800: #263746;
+  --ciata-cor-preto: #111820;
+
+  /* Tokens semanticos para superficies e texto */
+  --ciata-fundo-pagina: var(--ciata-cor-cinza-50);
+  --ciata-fundo-superficie: var(--ciata-cor-branco);
+  --ciata-fundo-superficie-elevada: var(--ciata-cor-branco);
+  --ciata-texto-primario: var(--ciata-cor-preto);
+  --ciata-texto-secundario: var(--ciata-cor-cinza-600);
+  --ciata-borda: var(--ciata-cor-cinza-300);
+
+  /* Tokens semanticos para interacao */
+  --ciata-link: #004f85;
+  --ciata-link-visitado: #503b85;
+  --ciata-acao-primaria-fundo: var(--ciata-cor-azul-escuro);
+  --ciata-acao-primaria-texto: var(--ciata-cor-branco);
+  --ciata-acao-secundaria-fundo: var(--ciata-cor-branco);
+  --ciata-acao-secundaria-texto: var(--ciata-cor-azul-escuro);
+  --ciata-acao-secundaria-borda: var(--ciata-cor-azul-escuro);
+  --ciata-foco: var(--ciata-cor-amarelo);
+  --ciata-foco-contraste: var(--ciata-cor-preto);
+
+  /* Tokens semanticos para estados */
+  --ciata-sucesso-fundo: #e7f5ec;
+  --ciata-sucesso-texto: #145c2e;
+  --ciata-aviso-fundo: #fff4cc;
+  --ciata-aviso-texto: #594500;
+  --ciata-erro-fundo: #fdebec;
+  --ciata-erro-texto: #8a1820;
+  --ciata-desabilitado-fundo: #e4e8ec;
+  --ciata-desabilitado-texto: #65727e;
+  --ciata-desabilitado-borda: #b7c0c8;
+}
