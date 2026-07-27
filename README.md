@@ -36,6 +36,15 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 - [Roadmap](ROADMAP.md): evolução planejada do sistema.
 - [Como contribuir](CONTRIBUTING.md): fluxo de colaboração.
 
+## Fundamentos oficiais da marca digital
+
+- [Marca CIATA](marca/README.md): composições aprovadas, cores, tipografia e regras invioláveis.
+- [Acessibilidade da marca](acessibilidade/marca.md): nomes acessíveis, textos alternativos e uso contextual.
+- [Implementação da marca](docs/implementacao-da-marca.md): exemplos de HTML, desempenho e critérios de aceite.
+- [`tokens/cores.css`](tokens/cores.css): cores oficiais e tokens semânticos para interfaces.
+- [`tokens/cores.json`](tokens/cores.json): tokens de cor em formato interoperável.
+- [`tokens/tipografia.css`](tokens/tipografia.css): Segoe UI e fallbacks de sistema.
+
 ## Princípios
 
 - Pessoas primeiro.
@@ -51,6 +60,9 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 ## Estrutura atual
 
 - `marca/`: logotipos, cores, tipografia, ícones e manual de marca.
+- `tokens/`: tokens oficiais e semânticos consumíveis pelos produtos.
+- `acessibilidade/`: padrões e orientações específicas de acessibilidade.
+- `docs/`: guias de implementação reutilizáveis.
 - `redes-sociais/`: ativos por plataforma e finalidade.
 - `imagens/`: fotografias, ilustrações e imagens institucionais.
 - `documentos/`: modelos e documentos oficiais.

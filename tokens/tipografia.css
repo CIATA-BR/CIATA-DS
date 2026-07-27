@@ -1,0 +1,14 @@
+:root {
+  --ciata-fonte-familia: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --ciata-fonte-peso-regular: 400;
+  --ciata-fonte-peso-semi-negrito: 600;
+  --ciata-fonte-peso-negrito: 700;
+  --ciata-altura-linha-texto: 1.6;
+  --ciata-altura-linha-titulo: 1.2;
+  --ciata-largura-leitura: 70ch;
+}
+
+html {
+  font-family: var(--ciata-fonte-familia);
+  line-height: var(--ciata-altura-linha-texto);
+}
