@@ -1,6 +1,6 @@
-# Pessoas
+# Projetos
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens relacionadas aos projetos e iniciativas do CIATA.
 
 ## Regras
 

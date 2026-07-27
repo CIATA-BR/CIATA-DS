@@ -1,6 +1,6 @@
-# Pessoas
+# Hero
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens de grande destaque para capas, páginas iniciais e aberturas de conteúdo.
 
 ## Regras
 

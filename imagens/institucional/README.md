@@ -1,6 +1,6 @@
-# Pessoas
+# Institucional
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens oficiais da organização, espaços, equipe e ações.
 
 ## Regras
 

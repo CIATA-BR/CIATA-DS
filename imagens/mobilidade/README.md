@@ -1,6 +1,6 @@
-# Pessoas
+# Mobilidade
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens de mobilidade, orientação e deslocamento.
 
 ## Regras
 

@@ -1,6 +1,6 @@
-# Pessoas
+# Voluntariado
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens de participação voluntária e colaboração comunitária.
 
 ## Regras
 

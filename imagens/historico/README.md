@@ -1,6 +1,6 @@
-# Pessoas
+# Historico
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens preservadas como memória institucional.
 
 ## Regras
 

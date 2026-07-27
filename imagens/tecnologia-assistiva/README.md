@@ -1,6 +1,6 @@
-# Pessoas
+# Tecnologia Assistiva
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens de dispositivos, softwares e soluções assistivas.
 
 ## Regras
 

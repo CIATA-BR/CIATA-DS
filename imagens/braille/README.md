@@ -1,6 +1,6 @@
-# Pessoas
+# Braille
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens de leitura, escrita, produção e tecnologias Braille.
 
 ## Regras
 

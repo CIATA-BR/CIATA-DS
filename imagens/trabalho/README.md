@@ -1,6 +1,6 @@
-# Pessoas
+# Trabalho
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens de atuação profissional, colaboração e ambientes de trabalho.
 
 ## Regras
 

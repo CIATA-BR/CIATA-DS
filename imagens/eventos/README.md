@@ -1,6 +1,6 @@
-# Pessoas
+# Eventos
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens de eventos, encontros, oficinas e seminários.
 
 ## Regras
 

@@ -1,6 +1,6 @@
-# Pessoas
+# Baixa Visao
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens de recursos, estratégias e tecnologias para baixa visão.
 
 ## Regras
 

@@ -1,6 +1,6 @@
-# Pessoas
+# Educacao
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens de aprendizagem, formação, pesquisa e ambientes educacionais.
 
 ## Regras
 

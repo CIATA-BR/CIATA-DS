@@ -1,6 +1,6 @@
-# Pessoas
+# Comunicacao
 
-Imagens centradas em pessoas, diversidade, autonomia e participação social.
+Imagens de comunicação acessível, comunicação alternativa, Libras e voz.
 
 ## Regras
 
