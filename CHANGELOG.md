@@ -12,6 +12,7 @@ O formato segue os princípios de Keep a Changelog e versionamento semântico qu
 - Documentação principal.
 - Convenções de nomenclatura.
 - Diretrizes de acessibilidade.
+- Padrão de cadastro e autenticação acessíveis e seguros baseado nas práticas validadas no Portal CIATA.
 
 ## [0.1.0] - 2026-07-24
 
