@@ -4,10 +4,10 @@
 
 - **Tipo:** Padrão
 - **Código:** PAT-0001
-- **Versão:** 0.2.0
+- **Versão:** 0.3.0
 - **Status:** rascunho
 - **Responsável:** CIATA
-- **Última revisão:** 2026-07-25
+- **Última revisão:** 2026-08-04
 
 ## Resumo
 
@@ -54,6 +54,19 @@ Não transformar ações simples em formulários desnecessários. Para uma únic
 9. Operações críticas oferecem revisão ou confirmação antes da conclusão.
 10. O resultado do envio é comunicado em texto e com gerenciamento adequado de foco.
 
+## Retorno após edição administrativa
+
+Após salvar a edição de um item ou usuário, a interface deve retornar à listagem do mesmo tipo de recurso e apresentar uma mensagem de sucesso. Permanecer no formulário sem uma nova ação explícita cria dúvida sobre a conclusão e exige navegação adicional.
+
+Quando o item não possuir listagem própria, como um subitem editado dentro de uma página, o retorno deve ocorrer para o contexto pai que apresenta a coleção desses subitens.
+
+A listagem de destino deve:
+
+- identificar claramente o recurso atualizado;
+- comunicar o sucesso em texto e por mecanismo compatível com tecnologias assistivas;
+- manter ordem de foco previsível, sem mover o foco para um controle arbitrário;
+- preservar filtros e paginação quando o estado de origem estiver disponível e continuar válido.
+
 ## Acessibilidade
 
 - Compatível com teclado, leitores de tela, linha Braille, ampliação e comandos por voz.
@@ -87,6 +100,7 @@ Não transformar ações simples em formulários desnecessários. Para uma únic
 - [ ] Erros são específicos, vinculados aos campos e anunciados corretamente.
 - [ ] O formulário preserva dados válidos após falha.
 - [ ] O envio informa sucesso, falha e próximos passos.
+- [ ] Após uma edição administrativa bem-sucedida, o fluxo retorna à listagem do recurso ou ao contexto pai que contém sua coleção.
 - [ ] Foi executado teste manual com leitor de tela.
 - [ ] Foi verificado uso com ampliação e contraste elevado.
 - [ ] O CHECK-0102 foi concluído e as evidências foram registradas.
@@ -105,3 +119,4 @@ Não transformar ações simples em formulários desnecessários. Para uma únic
 
 - 2026-07-25 — Criação inicial pelo CIATA.
 - 2026-07-25 — Transformação em hub da família de formulários e inclusão das relações da Sprint 9.
+- 2026-08-04 — Inclusão do retorno previsível à listagem após edição administrativa.
