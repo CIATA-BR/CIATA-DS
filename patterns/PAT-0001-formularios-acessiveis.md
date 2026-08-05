@@ -54,9 +54,9 @@ Não transformar ações simples em formulários desnecessários. Para uma únic
 9. Operações críticas oferecem revisão ou confirmação antes da conclusão.
 10. O resultado do envio é comunicado em texto e com gerenciamento adequado de foco.
 
-## Retorno após edição administrativa
+## Retorno após criação ou edição administrativa
 
-Após salvar a edição de um item ou usuário, a interface deve retornar à listagem do mesmo tipo de recurso e apresentar uma mensagem de sucesso. Permanecer no formulário sem uma nova ação explícita cria dúvida sobre a conclusão e exige navegação adicional.
+Após criar ou salvar a edição de um item ou usuário, a interface deve retornar à listagem do mesmo tipo de recurso e apresentar uma mensagem de sucesso. Permanecer no formulário sem uma nova ação explícita cria dúvida sobre a conclusão e exige navegação adicional.
 
 Quando o item não possuir listagem própria, como um subitem editado dentro de uma página, o retorno deve ocorrer para o contexto pai que apresenta a coleção desses subitens.
 
@@ -100,7 +100,7 @@ A listagem de destino deve:
 - [ ] Erros são específicos, vinculados aos campos e anunciados corretamente.
 - [ ] O formulário preserva dados válidos após falha.
 - [ ] O envio informa sucesso, falha e próximos passos.
-- [ ] Após uma edição administrativa bem-sucedida, o fluxo retorna à listagem do recurso ou ao contexto pai que contém sua coleção.
+- [ ] Após uma criação ou edição administrativa bem-sucedida, o fluxo retorna à listagem do recurso ou ao contexto pai que contém sua coleção.
 - [ ] Foi executado teste manual com leitor de tela.
 - [ ] Foi verificado uso com ampliação e contraste elevado.
 - [ ] O CHECK-0102 foi concluído e as evidências foram registradas.
@@ -120,3 +120,4 @@ A listagem de destino deve:
 - 2026-07-25 — Criação inicial pelo CIATA.
 - 2026-07-25 — Transformação em hub da família de formulários e inclusão das relações da Sprint 9.
 - 2026-08-04 — Inclusão do retorno previsível à listagem após edição administrativa.
+- 2026-08-05 — Ampliação do retorno previsível para criação administrativa.

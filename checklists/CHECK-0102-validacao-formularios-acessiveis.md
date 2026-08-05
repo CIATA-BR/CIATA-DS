@@ -30,7 +30,7 @@ Verificar se um formulário pode ser compreendido, preenchido, corrigido e envia
 - [ ] Falhas de validação não provocam saltos repetidos de foco.
 - [ ] O resumo de erros permite chegar ao campo correspondente.
 - [ ] O sucesso move o foco somente quando há mudança relevante de contexto.
-- [ ] Após editar um item ou usuário, o fluxo retorna à listagem correspondente ou ao contexto pai que apresenta seus subitens.
+- [ ] Após criar ou editar um item ou usuário, o fluxo retorna à listagem correspondente ou ao contexto pai que apresenta seus subitens.
 - [ ] A listagem de destino identifica o recurso atualizado e anuncia o resultado em texto.
 
 ## Erros e validação
@@ -83,3 +83,4 @@ Registrar ambiente, tecnologia assistiva, versão, cenários testados, resultado
 
 - 2026-07-25 — Criação inicial pelo CIATA.
 - 2026-08-04 — Inclusão da verificação de retorno após edição administrativa.
+- 2026-08-05 — Ampliação da verificação para criação administrativa.

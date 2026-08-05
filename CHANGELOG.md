@@ -13,7 +13,7 @@ O formato segue os princípios de Keep a Changelog e versionamento semântico qu
 - Convenções de nomenclatura.
 - Diretrizes de acessibilidade.
 - Padrão de cadastro e autenticação acessíveis e seguros baseado nas práticas validadas no Portal CIATA.
-- Regra de retorno à listagem após edição administrativa no padrão e no checklist de formulários acessíveis.
+- Regra de retorno à listagem após criação ou edição administrativa no padrão e no checklist de formulários acessíveis.
 
 ## [0.1.0] - 2026-07-24
 
