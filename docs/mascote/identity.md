@@ -57,7 +57,7 @@ Também não deverão ser criadas versões alternativas que descaracterizem o ma
 O arquivo
 
 ```
-imagens/projetos/Comunica-CIATA/logo-comunica.png
+imagens/projetos/Comunica-CIATA/Logo-Comunica.png
 ```
 
 é a referência oficial para todas as futuras derivações.

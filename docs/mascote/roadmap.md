@@ -129,7 +129,7 @@ Inclui, entre outros:
 Independentemente da evolução futura, permanece preservado como referência histórica e artística o arquivo:
 
 ```
-imagens/projetos/Comunica-CIATA/logo-comunica.png
+imagens/projetos/Comunica-CIATA/Logo-Comunica.png
 ```
 
 Todas as futuras representações deverão ser derivadas dessa identidade visual.
