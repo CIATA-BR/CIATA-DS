@@ -17,6 +17,8 @@ preservar a identidade definida em [`docs/mascote/`](../../docs/mascote/README.m
 ## Organização
 
 - `poses/`: poses isoladas e reutilizáveis do personagem;
+- `braille/`: atividades e tecnologias específicas de leitura e escrita Braille;
+- `tecnologias/`: composições com diferentes tecnologias relacionadas ao Braille;
 - `expressions/`: expressões faciais reutilizáveis;
 - `accessories/`: acessórios oficiais;
 - `scenes/`: composições completas para projetos e campanhas;
@@ -38,6 +40,14 @@ preservar a identidade definida em [`docs/mascote/`](../../docs/mascote/README.m
 - Blender, STL, STEP e OBJ para futuros ativos tridimensionais.
 
 ## Histórico
+
+### 2026-08-07
+
+- gerados dez ativos do mascote para narrativa, Braille e tecnologias;
+- todos os novos ativos permanecem com status `review` até validação humana;
+- `mascot-braille-display.png` requer revisão do enquadramento do notebook;
+- `mascot-perkins.png` requer revisão técnica da posição das mãos;
+- removido o ativo experimental `mascot-welcome-wave` do pacote em revisão.
 
 ### 2026-08-06
 
