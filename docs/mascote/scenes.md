@@ -33,7 +33,7 @@ O mascote poderá atuar como elemento de apoio em:
 O arquivo
 
 ```
-imagens/projetos/Comunica-CIATA/logo-comunica.png
+imagens/projetos/Comunica-CIATA/Logo-Comunica.png
 ```
 
 permanece preservado como referência histórica e artística da identidade oficial do personagem.

@@ -48,7 +48,7 @@ Sempre mantendo a mesma identidade visual.
 O arquivo:
 
 ```
-imagens/projetos/Comunica-CIATA/logo-comunica.png
+imagens/projetos/Comunica-CIATA/Logo-Comunica.png
 ```
 
 é considerado a **referência oficial do mascote CIATA**.
@@ -300,7 +300,7 @@ Exemplos de alterações não aceitáveis:
 O arquivo
 
 ```
-imagens/projetos/Comunica-CIATA/logo-comunica.png
+imagens/projetos/Comunica-CIATA/Logo-Comunica.png
 ```
 
 permanece preservado como referência histórica e artística da identidade oficial do Mascote CIATA.

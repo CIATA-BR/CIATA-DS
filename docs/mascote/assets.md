@@ -14,7 +14,7 @@ Este documento não define a criação de imagens, apenas sua futura organizaç�
 
 ```
 imagens/
-└── mascot/
+└── mascote/
     ├── README.md
     ├── poses/
     ├── expressions/
@@ -28,7 +28,7 @@ imagens/
 ## Diretório principal
 
 ```
-imagens/mascot/
+imagens/mascote/
 ```
 
 Concentrará todos os materiais oficiais do mascote.
@@ -40,7 +40,7 @@ Nenhum ativo experimental deverá permanecer neste diretório.
 ## Poses
 
 ```
-imagens/mascot/poses/
+imagens/mascote/poses/
 ```
 
 Contém as poses oficiais.
@@ -59,7 +59,7 @@ Exemplos:
 ## Expressões
 
 ```
-imagens/mascot/expressions/
+imagens/mascote/expressions/
 ```
 
 Destinado às expressões faciais oficiais.
@@ -78,7 +78,7 @@ Exemplos:
 ## Acessórios
 
 ```
-imagens/mascot/accessories/
+imagens/mascote/accessories/
 ```
 
 Armazena elementos reutilizáveis.
@@ -97,7 +97,7 @@ Exemplos:
 ## Cenários
 
 ```
-imagens/mascot/scenes/
+imagens/mascote/scenes/
 ```
 
 Destinado às composições completas utilizadas pelos projetos do CIATA.
@@ -109,7 +109,7 @@ Cada cena poderá reutilizar poses e acessórios existentes.
 ## Modelos tridimensionais
 
 ```
-imagens/mascot/3d/
+imagens/mascote/3d/
 ```
 
 Reservado para futuros modelos tridimensionais.
@@ -127,7 +127,7 @@ Este diretório poderá conter:
 
 ## README do diretório
 
-O diretório `imagens/mascot/` deverá conter um README próprio documentando:
+O diretório `imagens/mascote/` deverá conter um README próprio documentando:
 
 - organização;
 - convenções;
@@ -144,7 +144,7 @@ Todos os ativos deverão manter fidelidade ao documento [identity.md](identity.m
 O arquivo
 
 ```
-imagens/projetos/Comunica-CIATA/logo-comunica.png
+imagens/projetos/Comunica-CIATA/Logo-Comunica.png
 ```
 
 permanece preservado como referência histórica e artística para toda futura produção de assets.
