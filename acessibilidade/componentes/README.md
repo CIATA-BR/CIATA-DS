@@ -39,6 +39,14 @@ O exemplo conforme não substitui teste real. Um trecho de código semanticament
 - [Checkbox e radio](checkbox-e-radio.md)
 - [Switch](switch.md)
 
+## Componentes compostos
+
+- [Combobox e select](combobox-select.md)
+- [Tabs](tabs.md)
+- [Accordion](accordion.md)
+- [Modal e dialog](modal-e-dialog.md)
+- [Toast e alert](toast-e-alert.md)
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
@@ -51,4 +59,4 @@ Cada componente deve ser validado, quando aplicável, com:
 6. contraste e percepção sem depender apenas de cor;
 7. reteste após alterações de implementação.
 
-Componentes compostos como combobox, tabs, accordion, modal e toast são tratados em documentos próprios porque exigem contrato de foco e interação adicional.
+Componentes compostos exigem atenção adicional a foco, relação entre controles e conteúdo, anúncio de mudanças de estado e retorno ao contexto anterior.
