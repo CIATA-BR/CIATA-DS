@@ -22,6 +22,7 @@ A acessibilidade é requisito de origem, não etapa posterior de correção. Tod
 - [VPAT® e Accessibility Conformance Report (ACR)](vpat/README.md)
 - [Referenciais regulatórios e de conformidade](referenciais/README.md)
 - [Processo canônico de auditoria de acessibilidade](processo-de-auditoria.md)
+- [Receitas de acessibilidade multiplataforma](receitas/README.md)
 - [Classificação de severidade de bugs de acessibilidade](severidade-de-bugs.md)
 - [Padrão de evidências de auditoria e reteste](evidencias-de-auditoria.md)
 - [Política geral de acessibilidade](../ACCESSIBILITY.md)
