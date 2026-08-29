@@ -26,6 +26,34 @@ Preferir Switch/SwitchCompat ou equivalente do toolkit. Garantir que label e est
 
 Preferir UISwitch ou equivalente nativo. O VoiceOver deve anunciar o nome da configuração, a função do controle e seu estado sem duplicação desnecessária.
 
+## Exemplos práticos
+
+### Conforme
+
+Controle de preferência com estado exposto semanticamente:
+
+```html
+<button type="button" role="switch" aria-checked="false">
+  Receber notificações por e-mail
+</button>
+```
+
+**Comportamento esperado:** anúncio equivalente a `Receber notificações por e-mail, switch, desligado`. Ao ativar, o estado muda para `ligado` sem mover o foco para outro elemento.
+
+Em Android e iOS, o mesmo comportamento deve ser obtido preferencialmente com o componente nativo de switch da plataforma.
+
+### Não conforme
+
+```html
+<div class="switch desligado">Receber notificações por e-mail</div>
+```
+
+**Por que falha:** aparência visual de switch não cria função nem estado acessível. A tecnologia assistiva pode anunciar apenas texto estático e a pessoa não consegue saber se a configuração está ligada ou desligada, nem como alterá-la.
+
+Outro erro recorrente é usar no nome `Receber notificações desligado` e também expor estado `desligado`.
+
+**Por que falha:** o anúncio tende a duplicar informação e o nome muda junto com o estado, tornando a identificação do controle menos estável.
+
 ## Critérios de teste
 
 - nome, função e estado são anunciados corretamente;
