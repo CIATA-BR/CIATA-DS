@@ -22,6 +22,7 @@ A acessibilidade é requisito de origem, não etapa posterior de correção. Tod
 - [VPAT® e Accessibility Conformance Report (ACR)](vpat/README.md)
 - [Referenciais regulatórios e de conformidade](referenciais/README.md)
 - [Classificação de severidade de bugs de acessibilidade](severidade-de-bugs.md)
+- [Padrão de evidências de auditoria e reteste](evidencias-de-auditoria.md)
 - [Política geral de acessibilidade](../ACCESSIBILITY.md)
 - [Guia de validação multiplataforma](validacao-multiplataforma.md)
 - [SPEC-0005 — Acessibilidade](../specs/SPEC-0005-acessibilidade.md)
@@ -69,4 +70,4 @@ Antes da publicação, verificar:
 
 ## Registros de problemas
 
-Problemas de acessibilidade devem ser registrados pelo modelo específico disponível em `.github/ISSUE_TEMPLATE/problema-de-acessibilidade.md`, informando plataforma, tecnologia assistiva, passos, resultado atual, resultado esperado, impacto na jornada e severidade segundo o [padrão de classificação](severidade-de-bugs.md).
+Problemas de acessibilidade devem ser registrados pelo modelo específico disponível em `.github/ISSUE_TEMPLATE/problema-de-acessibilidade.md`, seguindo o [padrão de evidências de auditoria e reteste](evidencias-de-auditoria.md) e classificando o impacto conforme o [padrão de severidade](severidade-de-bugs.md).
