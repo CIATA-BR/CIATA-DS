@@ -32,6 +32,8 @@ A validação combina:
 
 Automação não substitui validação humana.
 
+Avaliações de produtos digitais devem considerar jornadas completas e uma amostra representativa de telas, estados e conteúdos. O escopo, a linha de base de suporte e as combinações de sistema, navegador, leitor de tela, teclado e Braille devem ser definidos antes da execução, conforme o [guia de validação multiplataforma](acessibilidade/validacao-multiplataforma.md).
+
 ## Artefatos visuais
 
 Peças visuais devem registrar:
@@ -52,6 +54,8 @@ Documentos devem usar títulos hierárquicos, listas reais, tabelas simples com 
 
 Componentes de interface devem nascer com semântica, foco, navegação por teclado, estados, mensagens de erro e rótulos localizáveis. Acessibilidade não deve ser adicionada como remendo após a lógica visual estar fechada.
 
+Interfaces devem preservar dados, etapa, contexto e foco lógico durante rotação, redimensionamento, tela dividida, alternância de janela e recriação de visualizações. Aplicativos mobile devem ser testados também com teclado físico. Controles de texto customizados devem emitir a semântica e os eventos recomendados pela plataforma, preferindo componentes nativos quando eles atenderem à necessidade.
+
 ## Registro de resultados
 
 Cada revisão deve informar:
@@ -59,7 +63,8 @@ Cada revisão deve informar:
 - tecnologia assistiva e versão;
 - sistema operacional e versão;
 - navegador ou aplicativo;
-- cenário testado;
+- dispositivo, teclado ou linha Braille quando aplicável;
+- cenário e jornada completa testados;
 - resultado;
 - barreiras encontradas;
 - responsável e data.
