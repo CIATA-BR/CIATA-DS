@@ -18,12 +18,19 @@ A acessibilidade é requisito de origem, não etapa posterior de correção. Tod
 
 ## Guias e referências internas
 
+- [Base canônica WCAG 2.2](wcag-2.2/README.md)
 - [Política geral de acessibilidade](../ACCESSIBILITY.md)
 - [Guia de validação multiplataforma](validacao-multiplataforma.md)
 - [SPEC-0005 — Acessibilidade](../specs/SPEC-0005-acessibilidade.md)
 - [CHECK-0001 — Revisão manual de acessibilidade](../checklists/acessibilidade/CHECK-0001-revisao-manual-de-acessibilidade.md)
 - [PB-0005 — Executar validação manual de acessibilidade](../playbooks/PB-0005-validar-acessibilidade.md)
 - [Acessibilidade da marca](marca.md)
+
+## Alvo de conformidade
+
+O alvo padrão para produtos digitais é WCAG 2.2 nos níveis A e AA, conforme a [base canônica do CIATA](wcag-2.2/README.md). O texto normativo do W3C prevalece sobre resumos, exemplos e orientações internas.
+
+O critério 4.1.1 permanece apenas como registro histórico para avaliações ou obrigações baseadas em WCAG 2.0 ou 2.1.
 
 ## Tecnologias e cenários de teste
 

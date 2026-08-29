@@ -24,6 +24,8 @@ Estabelecer acessibilidade como requisito de concepção, produção, revisão, 
 
 ## Avaliação de produtos digitais
 
+O alvo padrão é WCAG 2.2 nos níveis A e AA. Critérios, testes e fontes são mantidos na [base canônica WCAG 2.2](../acessibilidade/wcag-2.2/README.md). O critério 4.1.1 é histórico e não integra a contagem de conformidade WCAG 2.2.
+
 A avaliação deve:
 
 - definir escopo, versão, objetivo e linha de base de suporte;
@@ -32,6 +34,7 @@ A avaliação deve:
 - testar jornadas completas, inclusive erros, interrupções e retomadas;
 - registrar combinações de sistema, navegador, leitor de tela, teclado e Braille;
 - distinguir requisito normativo, orientação técnica e recurso experimental.
+- usar o texto oficial como autoridade e identificar claramente interpretações da CIATA.
 
 O processo segue o [guia de validação multiplataforma](../acessibilidade/validacao-multiplataforma.md), alinhado ao WCAG-EM 2.0.
 

@@ -32,3 +32,7 @@ RFC-0001-titulo-claro.md
 ```
 
 O código nunca deve aparecer sozinho como título ou texto de link.
+
+## Propostas registradas
+
+- [RFC-0001 — Base canônica WCAG 2.2 do CIATA](RFC-0001-base-canonica-wcag-2-2.md) — Em discussão.
