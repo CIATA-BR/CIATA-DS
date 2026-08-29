@@ -1,9 +1,9 @@
 # PB-0005 — Executar validação manual de acessibilidade
 
-- **Versão:** 1.1
+- **Versão:** 1.2
 - **Status:** Em revisão
 - **Responsável pelo processo:** QA de acessibilidade
-- **Relacionamentos:** SPEC-0005, CHECK-0001, ADR-0003, guia de validação multiplataforma
+- **Relacionamentos:** SPEC-0005, CHECK-0001, ADR-0003, guia de validação multiplataforma, processo de auditoria, evidências de auditoria, severidade de bugs
 
 ## Objetivo
 
@@ -50,17 +50,20 @@ Validar uma experiência com pessoas, tecnologias assistivas e cenários reais, 
 
 ## Classificação
 
-- **Bloqueadora:** impede jornada essencial ou acesso ao conteúdo.
-- **Alta:** causa perda relevante de informação, autonomia ou segurança.
-- **Média:** cria barreira contornável com esforço significativo.
-- **Baixa:** prejudica clareza ou eficiência sem impedir a tarefa.
+Use exclusivamente o [padrão canônico de severidade](../acessibilidade/severidade-de-bugs.md):
+
+- **Alto:** impede a conclusão da jornada, acesso a informação essencial ou operação necessária;
+- **Médio:** a jornada permanece possível, mas com dificuldade relevante, ambiguidade, risco de erro ou esforço adicional;
+- **Baixo:** reduz qualidade, clareza ou completude sem comprometer materialmente a conclusão da tarefa.
+
+Severidade representa impacto funcional e não deve ser confundida com prioridade de correção.
 
 ## Critérios de conclusão
 
 - jornadas críticas e estados de retomada executados;
 - ambiente, linha de base e tecnologias registrados;
-- falhas com passos de reprodução e evidências;
-- bloqueios resolvidos ou publicação formalmente impedida;
+- falhas com passos de reprodução e evidências segundo o [padrão de evidências](../acessibilidade/evidencias-de-auditoria.md);
+- barreiras de severidade Alto em jornadas essenciais corrigidas ou formalmente impeditivas da liberação;
 - resultado revisado por pessoa competente, preferencialmente incluindo pessoa com deficiência.
 
-Consulte o [guia de validação multiplataforma](../acessibilidade/validacao-multiplataforma.md) para requisitos de Android 17, entrada de texto, teclado e Braille.
+Consulte o [processo de auditoria](../acessibilidade/processo-de-auditoria.md) para o fluxo completo e o [guia de validação multiplataforma](../acessibilidade/validacao-multiplataforma.md) para requisitos de Android 17, entrada de texto, teclado e Braille.

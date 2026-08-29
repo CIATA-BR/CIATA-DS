@@ -1,8 +1,8 @@
 # CHECK-0001 — Revisão manual de acessibilidade
 
-- **Versão:** 1.2
+- **Versão:** 1.3
 - **Status:** Proposto
-- **Relacionamentos:** SPEC-0005, ADR-0003, ACCESSIBILITY.md, base canônica WCAG 2.2, guia de validação multiplataforma
+- **Relacionamentos:** SPEC-0005, ADR-0003, ACCESSIBILITY.md, base canônica WCAG 2.2, guia de validação multiplataforma, processo de auditoria, evidências de auditoria, severidade de bugs
 
 ## Identificação da execução
 
@@ -113,10 +113,12 @@
 - [ ] Aprovado com ressalvas
 - [ ] Reprovado
 
-### Falhas críticas
+### Barreiras de severidade Alto
 
 
 ### Evidências
 
 
 ### Observações e itens não aplicáveis
+
+Consulte o [processo canônico de auditoria](../../acessibilidade/processo-de-auditoria.md), o [padrão de evidências](../../acessibilidade/evidencias-de-auditoria.md) e o [padrão de severidade](../../acessibilidade/severidade-de-bugs.md) para critérios de conclusão e registro.
