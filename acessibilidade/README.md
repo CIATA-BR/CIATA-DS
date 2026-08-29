@@ -10,24 +10,36 @@ A acessibilidade é requisito de origem, não etapa posterior de correção. Tod
 - Preservar ordem de leitura e navegação coerentes.
 - Garantir uso completo por teclado e tecnologias de acionamento alternativo.
 - Manter foco visível e previsível, sem deslocamentos inesperados.
+- Preservar dados, etapa e foco lógico após rotação, redimensionamento ou recriação da interface.
 - Descrever imagens informativas e marcar imagens decorativas adequadamente.
 - Evitar texto incorporado em imagens quando houver alternativa semântica.
 - Não usar símbolos isolados quando o significado não for universal.
 - Respeitar preferências de redução de movimento, ampliação, contraste e tamanho do texto.
 
+## Guias e referências internas
+
+- [Política geral de acessibilidade](../ACCESSIBILITY.md)
+- [Guia de validação multiplataforma](validacao-multiplataforma.md)
+- [SPEC-0005 — Acessibilidade](../specs/SPEC-0005-acessibilidade.md)
+- [CHECK-0001 — Revisão manual de acessibilidade](../checklists/acessibilidade/CHECK-0001-revisao-manual-de-acessibilidade.md)
+- [PB-0005 — Executar validação manual de acessibilidade](../playbooks/PB-0005-validar-acessibilidade.md)
+- [Acessibilidade da marca](marca.md)
+
 ## Tecnologias e cenários de teste
 
 Os ativos e componentes devem considerar, conforme a plataforma:
 
-- TalkBack e outros leitores de tela Android, incluindo Jieshuo;
+- TalkBack e outros leitores de tela Android, incluindo Jieshuo como cobertura adicional;
 - VoiceOver no iOS e macOS;
 - NVDA e JAWS no Windows;
-- linhas Braille;
-- navegação somente por teclado;
+- Narrador e linhas Braille HID quando o recurso e o ambiente forem aplicáveis, sem tratar versão experimental como linha de base estável;
+- linhas Braille com modelo, conexão, tabela e leitor de tela registrados;
+- navegação somente por teclado, incluindo teclado físico no mobile;
 - Switch Access e controles por varredura;
 - ampliação de tela e zoom do navegador;
 - modos de alto contraste e cores forçadas;
 - orientação retrato e paisagem;
+- tela dividida, redimensionamento e retomada após alternância de aplicativo;
 - texto ampliado e espaçamento personalizado.
 
 ## Revisão de ativos visuais
