@@ -27,6 +27,39 @@ Preferir componentes de entrada nativos ou equivalentes do toolkit. Garantir que
 
 Preferir controles nativos de entrada. Garantir label, valor, hint quando necessário e traits/estado coerentes. A navegação por rotor e a edição com VoiceOver devem continuar previsíveis.
 
+## Exemplos práticos
+
+### Conforme
+
+```html
+<label for="email">E-mail</label>
+<input id="email" name="email" type="email" autocomplete="email">
+```
+
+**Comportamento esperado:** ao chegar ao campo, o leitor de tela anuncia algo equivalente a `E-mail, campo de edição`, seguido do valor quando houver. O rótulo continua disponível mesmo depois que o usuário digita.
+
+Exemplo com erro associado:
+
+```html
+<label for="cpf">CPF</label>
+<input id="cpf" aria-invalid="true" aria-describedby="erro-cpf">
+<p id="erro-cpf">Informe um CPF válido com 11 dígitos.</p>
+```
+
+**Comportamento esperado:** o campo é identificado como inválido e a mensagem de erro permanece relacionada a ele, sem depender apenas de cor ou de um aviso visual distante.
+
+### Não conforme
+
+```html
+<input type="text" placeholder="E-mail">
+```
+
+**Por que falha:** o placeholder pode desaparecer durante a digitação e não constitui rótulo persistente. A pessoa pode perder a referência sobre qual dado está editando.
+
+Outro erro recorrente é exibir `Campo obrigatório` apenas em vermelho ao lado do campo, sem associação programática.
+
+**Por que falha:** o erro pode não ser anunciado quando o campo recebe foco e a informação depende de percepção visual e proximidade espacial.
+
 ## Critérios de teste
 
 - rótulo é anunciado antes do valor;
