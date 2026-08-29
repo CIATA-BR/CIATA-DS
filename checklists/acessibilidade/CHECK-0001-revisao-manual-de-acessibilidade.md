@@ -1,18 +1,30 @@
 # CHECK-0001 — Revisão manual de acessibilidade
 
-- **Versão:** 1.0
+- **Versão:** 1.1
 - **Status:** Proposto
-- **Relacionamentos:** SPEC-0005, ADR-0003, ACCESSIBILITY.md
+- **Relacionamentos:** SPEC-0005, ADR-0003, ACCESSIBILITY.md, guia de validação multiplataforma
 
 ## Identificação da execução
 
 - Projeto ou artefato:
-- Versão:
-- Plataforma:
+- Versão ou build:
+- Plataforma e dispositivo:
 - Ambiente:
+- Jornada completa:
+- Linha de base de suporte:
 - Responsável:
 - Data:
-- Tecnologias assistivas:
+- Tecnologias assistivas e versões:
+- Navegador ou aplicativo:
+- Teclado ou linha Braille:
+
+## Escopo e amostra
+
+- [ ] O escopo inclui o produto, a versão, o objetivo e os limites da avaliação.
+- [ ] Funções essenciais, telas comuns, estados, conteúdos e tecnologias foram explorados.
+- [ ] A amostra é representativa e inclui processos completos, não apenas telas isoladas.
+- [ ] Combinações de sistema, navegador, leitor de tela, teclado e Braille foram justificadas.
+- [ ] Itens não aplicáveis e limitações estão registrados.
 
 ## Navegação e foco
 
@@ -20,8 +32,10 @@
 - [ ] A ordem de foco segue a ordem lógica do conteúdo.
 - [ ] O foco permanece visível e perceptível.
 - [ ] Atualizações de conteúdo não roubam o foco indevidamente.
-- [ ] Modais, menus e diálogos conduzem e devolvem o foco corretamente.
+- [ ] Modais, menus, folhas inferiores e diálogos conduzem e devolvem o foco corretamente.
 - [ ] Não existem armadilhas de teclado ou gestos sem saída.
+- [ ] Após retorno, atualização ou recriação da tela, o foco permanece no elemento lógico equivalente quando ele ainda existe.
+- [ ] Posição de leitura e rolagem são preservadas quando necessárias para continuar a tarefa.
 
 ## Estrutura e semântica
 
@@ -30,15 +44,37 @@
 - [ ] Campos possuem rótulos persistentes e instruções claras.
 - [ ] Grupos, listas, tabelas e regiões utilizam semântica adequada.
 - [ ] Estados como selecionado, expandido, inválido e desabilitado são anunciados.
+- [ ] Controles customizados oferecem semântica, eventos e operação equivalentes aos nativos.
+- [ ] Campos de texto customizados anunciam composição, alteração e confirmação sem duplicação ou silêncio indevido.
 
 ## Leitores de tela e Braille
 
 - [ ] O fluxo principal foi testado com leitor de tela da plataforma.
 - [ ] A leitura contínua apresenta conteúdo em ordem compreensível.
 - [ ] Rótulos são completos e úteis também em linha Braille.
+- [ ] Função, estado e valor essenciais estão disponíveis por fala e Braille.
 - [ ] Símbolos isolados não carregam informação essencial.
 - [ ] Ações personalizadas possuem nomes claros e contexto suficiente.
 - [ ] Mensagens dinâmicas importantes são anunciadas sem repetição excessiva.
+- [ ] Cursor e teclas de roteamento da linha Braille alcançam o controle correto.
+- [ ] Modelo, conexão, tabela Braille e leitor de tela estão registrados quando Braille foi testado.
+
+## Teclado e entrada alternativa
+
+- [ ] Tab e Shift+Tab seguem ordem lógica.
+- [ ] Enter, Espaço, Escape e setas respeitam as convenções do componente e da plataforma.
+- [ ] O fluxo mobile foi testado com teclado físico quando aplicável.
+- [ ] Nenhum gesto complexo é a única forma de concluir uma ação.
+- [ ] O foco visual, o foco de acessibilidade e a ação ativa permanecem coerentes.
+
+## Mobile, orientação e variação de janela
+
+- [ ] A jornada funciona em retrato e paisagem.
+- [ ] A jornada funciona após redimensionamento, tela dividida e alternância entre aplicativos.
+- [ ] Dados, seleções, etapa, gravação, upload, captura ou conversão sobrevivem à recriação da interface.
+- [ ] O produto não depende de bloqueios de orientação, proporção ou redimensionamento para permanecer utilizável.
+- [ ] Em Android direcionado à API 37, telas com menor dimensão igual ou superior a 600 dp foram testadas.
+- [ ] Elementos permanecem visíveis e presentes na árvore de acessibilidade em todos os tamanhos testados.
 
 ## Percepção visual
 
@@ -63,6 +99,7 @@
 - [ ] Mensagens de sucesso, espera e falha são anunciadas.
 - [ ] Limites de tempo possuem aviso e extensão quando aplicável.
 - [ ] Autenticação não exige exclusivamente tarefas cognitivas ou visuais inacessíveis.
+- [ ] Interrupção e retomada não repetem envio, pagamento ou outra ação irreversível.
 
 ## Resultado
 
