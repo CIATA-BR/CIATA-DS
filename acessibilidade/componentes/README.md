@@ -18,6 +18,19 @@ Todo componente interativo deve:
 - preferir componente nativo quando ele atende ao comportamento desejado;
 - evitar semântica customizada quando a semântica nativa equivalente já existe.
 
+## Padrão de exemplos práticos
+
+Cada componente deve incluir, sempre que possível:
+
+1. **Exemplo conforme:** implementação ou comportamento que preserva nome, função, estado, valor, foco e operação esperados.
+2. **Comportamento esperado:** o que teclado, leitor de tela e demais tecnologias assistivas devem perceber.
+3. **Exemplo não conforme:** erro de implementação recorrente e plausível.
+4. **Por que falha:** impacto funcional e semântico causado pela inconformidade.
+
+Os exemplos de código Web são ilustrativos. Em Android e iOS, o mesmo contrato deve ser preservado usando os componentes e APIs nativas ou equivalentes do toolkit adotado.
+
+O exemplo conforme não substitui teste real. Um trecho de código semanticamente correto ainda pode falhar por CSS, gerenciamento de foco, ordem de navegação, conteúdo dinâmico ou integração com o restante da interface.
+
 ## Componentes fundamentais
 
 - [Botão](botao.md)
