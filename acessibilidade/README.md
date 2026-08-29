@@ -19,6 +19,7 @@ A acessibilidade é requisito de origem, não etapa posterior de correção. Tod
 ## Guias e referências internas
 
 - [Base canônica WCAG 2.2](wcag-2.2/README.md)
+- [VPAT® e Accessibility Conformance Report (ACR)](vpat/README.md)
 - [Política geral de acessibilidade](../ACCESSIBILITY.md)
 - [Guia de validação multiplataforma](validacao-multiplataforma.md)
 - [SPEC-0005 — Acessibilidade](../specs/SPEC-0005-acessibilidade.md)
