@@ -15,7 +15,7 @@ Link representa navegação para outro destino, documento, rota ou recurso. Não
 
 ## Web
 
-Usar `<a href="...">` para navegação real. Evitar âncoras sem `href` usadas apenas como controles de JavaScript. O link deve permanecer alcançável e ativável por teclado.
+Usar `<a href="...">` para navegação real. Evitar âncoras sem `href` usadas apenas como controles de ação. O link deve permanecer alcançável e ativável por teclado.
 
 ## Android
 
@@ -24,6 +24,30 @@ Quando o elemento representa navegação, exponha semântica coerente de link qu
 ## iOS
 
 Expor trait de link quando o comportamento for navegação. Se um elemento visualmente parecido executar uma ação local, utilizar semântica de botão em vez de link.
+
+## Exemplos práticos
+
+### Conforme
+
+```html
+<a href="/acessibilidade/processo-de-auditoria">
+  Processo de auditoria de acessibilidade
+</a>
+```
+
+**Comportamento esperado:** anúncio equivalente a `Processo de auditoria de acessibilidade, link`. O destino é coerente com o nome e o link recebe foco normalmente.
+
+### Não conforme
+
+```html
+<a href="/acessibilidade/processo-de-auditoria">Clique aqui</a>
+```
+
+**Por que falha:** fora do contexto, `Clique aqui` não informa o destino ou a finalidade. Em uma lista de links, vários itens iguais tornam a navegação ambígua.
+
+Outro erro recorrente é apresentar visual e semanticamente um link para executar uma ação local como `Salvar`, sem navegação real.
+
+**Por que falha:** a tecnologia assistiva anuncia função de link, mas o comportamento esperado é de botão. A semântica e a expectativa de interação não correspondem à ação executada.
 
 ## Critérios de teste
 

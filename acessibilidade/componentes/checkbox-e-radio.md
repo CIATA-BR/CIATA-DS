@@ -26,6 +26,44 @@ Usar componentes nativos ou equivalentes do toolkit e garantir que seleção, no
 
 Usar controles e traits coerentes com seleção. Quando o padrão visual não tiver equivalente nativo direto, expor estado selecionado e relação entre opções de forma previsível ao VoiceOver.
 
+## Exemplos práticos
+
+### Conforme — checkbox
+
+```html
+<input id="comunicacoes" type="checkbox" name="comunicacoes">
+<label for="comunicacoes">Quero receber comunicações da CIATA</label>
+```
+
+**Comportamento esperado:** anúncio equivalente a `Quero receber comunicações da CIATA, caixa de seleção, desmarcada`. Ao alterar, o novo estado é comunicado automaticamente.
+
+### Conforme — grupo de radio
+
+```html
+<fieldset>
+  <legend>Forma de contato preferida</legend>
+  <input id="email" type="radio" name="contato" value="email">
+  <label for="email">E-mail</label>
+  <input id="telefone" type="radio" name="contato" value="telefone">
+  <label for="telefone">Telefone</label>
+</fieldset>
+```
+
+**Comportamento esperado:** a pessoa recebe o contexto `Forma de contato preferida`, identifica cada opção como radio e percebe qual está selecionada.
+
+### Não conforme
+
+```html
+<div class="checkbox-visual"></div>
+<span>Quero receber comunicações da CIATA</span>
+```
+
+**Por que falha:** aparência de checkbox não cria semântica. O elemento pode não receber foco, não comunicar estado e não ser operável por teclado ou tecnologia assistiva.
+
+Em radio, outro erro é apresentar opções visuais sem agrupamento ou permitir que duas opções mutuamente exclusivas permaneçam selecionadas ao mesmo tempo.
+
+**Por que falha:** a pessoa perde o contexto da pergunta e a relação lógica entre as escolhas.
+
 ## Critérios de teste
 
 - leitor de tela anuncia nome, função e estado;
