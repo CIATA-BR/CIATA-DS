@@ -47,6 +47,18 @@ O exemplo conforme não substitui teste real. Um trecho de código semanticament
 - [Modal e dialog](modal-e-dialog.md)
 - [Toast e alert](toast-e-alert.md)
 
+## Estados e padrões transversais
+
+- [Loading e progress](loading-e-progress.md)
+- [Disabled e read-only](disabled-e-readonly.md)
+- [Erro e sucesso](erro-e-sucesso.md)
+- [Tooltip](tooltip.md)
+- [Menu](menu.md)
+- [Paginação](paginacao.md)
+- [Tabelas](tabelas.md)
+
+Esses padrões atravessam diferentes componentes e devem ser aplicados em conjunto com o contrato específico de cada controle. Por exemplo, um botão em carregamento continua sendo um botão; um campo somente leitura continua expondo seu rótulo e valor; uma tabela com ordenação continua exigindo controles de ordenação semanticamente corretos.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
