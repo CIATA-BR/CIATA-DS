@@ -13,6 +13,8 @@ A referência atual é o **VPAT® 2.5Rev (abril de 2025)**, usando a edição ad
 
 Para produtos digitais da CIATA, o ponto de partida padrão é a **WCAG Edition**, com avaliação contra WCAG 2.2 níveis A e AA, salvo requisito contratual, regulatório ou de mercado mais amplo.
 
+Quando houver requisitos externos, consulte também os [referenciais regulatórios e de conformidade](../referenciais/README.md) e a [matriz de aplicação](../referenciais/matriz-de-aplicacao.md) antes de escolher a edição do VPAT®.
+
 ## VPAT e ACR não são a mesma coisa
 
 O VPAT® é o modelo publicado pela ITI. Quando o modelo é preenchido com os resultados de avaliação de um produto ou serviço, o documento resultante é um **Accessibility Conformance Report (ACR)**.

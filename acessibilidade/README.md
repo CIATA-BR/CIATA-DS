@@ -20,6 +20,7 @@ A acessibilidade é requisito de origem, não etapa posterior de correção. Tod
 
 - [Base canônica WCAG 2.2](wcag-2.2/README.md)
 - [VPAT® e Accessibility Conformance Report (ACR)](vpat/README.md)
+- [Referenciais regulatórios e de conformidade](referenciais/README.md)
 - [Política geral de acessibilidade](../ACCESSIBILITY.md)
 - [Guia de validação multiplataforma](validacao-multiplataforma.md)
 - [SPEC-0005 — Acessibilidade](../specs/SPEC-0005-acessibilidade.md)
@@ -30,6 +31,8 @@ A acessibilidade é requisito de origem, não etapa posterior de correção. Tod
 ## Alvo de conformidade
 
 O alvo padrão para produtos digitais é WCAG 2.2 nos níveis A e AA, conforme a [base canônica do CIATA](wcag-2.2/README.md). O texto normativo do W3C prevalece sobre resumos, exemplos e orientações internas.
+
+Quando houver obrigação legal, regulatória ou contratual adicional, ela deve ser avaliada separadamente conforme os [referenciais regulatórios e de conformidade](referenciais/README.md). Atender à WCAG 2.2 não autoriza declarar automaticamente conformidade com EN 301 549, Revised Section 508 ou outro padrão que contenha requisitos próprios.
 
 O critério 4.1.1 permanece apenas como registro histórico para avaliações ou obrigações baseadas em WCAG 2.0 ou 2.1.
 
