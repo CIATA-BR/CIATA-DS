@@ -1,8 +1,8 @@
 # CHECK-0001 — Revisão manual de acessibilidade
 
-- **Versão:** 1.1
+- **Versão:** 1.2
 - **Status:** Proposto
-- **Relacionamentos:** SPEC-0005, ADR-0003, ACCESSIBILITY.md, guia de validação multiplataforma
+- **Relacionamentos:** SPEC-0005, ADR-0003, ACCESSIBILITY.md, base canônica WCAG 2.2, guia de validação multiplataforma
 
 ## Identificação da execução
 
@@ -31,6 +31,7 @@
 - [ ] Todas as funções essenciais são operáveis por teclado, gestos acessíveis ou comandos equivalentes.
 - [ ] A ordem de foco segue a ordem lógica do conteúdo.
 - [ ] O foco permanece visível e perceptível.
+- [ ] O componente focado não fica totalmente oculto por cabeçalhos, rodapés, banners ou outras sobreposições.
 - [ ] Atualizações de conteúdo não roubam o foco indevidamente.
 - [ ] Modais, menus, folhas inferiores e diálogos conduzem e devolvem o foco corretamente.
 - [ ] Não existem armadilhas de teclado ou gestos sem saída.
@@ -65,6 +66,8 @@
 - [ ] Enter, Espaço, Escape e setas respeitam as convenções do componente e da plataforma.
 - [ ] O fluxo mobile foi testado com teclado físico quando aplicável.
 - [ ] Nenhum gesto complexo é a única forma de concluir uma ação.
+- [ ] Toda operação de arraste não essencial possui alternativa por acionamento simples.
+- [ ] Alvos de ponteiro atendem ao tamanho mínimo ou ao espaçamento exigido, considerando as exceções aplicáveis.
 - [ ] O foco visual, o foco de acessibilidade e a ação ativa permanecem coerentes.
 
 ## Mobile, orientação e variação de janela
@@ -99,6 +102,9 @@
 - [ ] Mensagens de sucesso, espera e falha são anunciadas.
 - [ ] Limites de tempo possuem aviso e extensão quando aplicável.
 - [ ] Autenticação não exige exclusivamente tarefas cognitivas ou visuais inacessíveis.
+- [ ] Colagem, gerenciador de senhas e preenchimento automático não são bloqueados sem alternativa acessível.
+- [ ] Dados já fornecidos no mesmo processo são reaproveitados ou ficam disponíveis para seleção, salvo exceção aplicável.
+- [ ] Mecanismos recorrentes de ajuda permanecem na mesma ordem relativa entre as páginas do processo.
 - [ ] Interrupção e retomada não repetem envio, pagamento ou outra ação irreversível.
 
 ## Resultado
@@ -114,4 +120,3 @@
 
 
 ### Observações e itens não aplicáveis
-

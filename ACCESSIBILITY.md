@@ -21,6 +21,8 @@ Todo conteúdo aplicável deve:
 
 ## Validação
 
+O alvo padrão dos produtos digitais é WCAG 2.2 nos níveis A e AA. A [base canônica WCAG 2.2](acessibilidade/wcag-2.2/README.md) organiza critérios, testes, falhas e interfaces sem substituir o texto normativo do W3C.
+
 A validação combina:
 
 1. revisão durante a concepção;
