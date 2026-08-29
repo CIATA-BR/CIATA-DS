@@ -27,6 +27,48 @@ Preferir componentes nativos ou equivalentes do toolkit utilizado, expondo conte
 
 Preferir controles nativos e traits coerentes com botão. Estados como selecionado ou desabilitado devem ser expostos pelo mecanismo de acessibilidade da plataforma, sem concatenar manualmente informações que o VoiceOver já fornece.
 
+## Exemplos práticos
+
+### Conforme
+
+Botão apenas com ícone, mas com nome e semântica corretos:
+
+```html
+<button type="button" aria-label="Enviar mensagem">
+  <svg aria-hidden="true" focusable="false">...</svg>
+</button>
+```
+
+**Comportamento esperado:** o leitor de tela anuncia algo equivalente a `Enviar mensagem, botão`. O controle recebe foco por teclado e é ativado por Enter ou Espaço. O ícone decorativo não gera uma parada adicional.
+
+Quando houver texto visível suficiente, o nome deve vir do próprio conteúdo:
+
+```html
+<button type="button">Continuar para pagamento</button>
+```
+
+**Comportamento esperado:** anúncio equivalente a `Continuar para pagamento, botão`, sem duplicar a palavra `botão` no nome.
+
+### Não conforme
+
+Elemento visualmente clicável sem nome nem função:
+
+```html
+<div onclick="enviarMensagem()">
+  <svg>...</svg>
+</div>
+```
+
+**Por que falha:** pode não receber foco por teclado, não expõe função de botão, o ícone pode ser anunciado sem contexto ou o controle pode ficar completamente sem nome. A pessoa usuária pode não descobrir que existe uma ação ali.
+
+Outro erro recorrente:
+
+```html
+<button aria-label="Botão enviar mensagem">...</button>
+```
+
+**Por que falha:** a semântica já informa que é um botão, portanto o anúncio tende a ficar redundante, como `Botão enviar mensagem, botão`.
+
 ## Critérios de teste
 
 - o leitor de tela anuncia nome e função corretos;
