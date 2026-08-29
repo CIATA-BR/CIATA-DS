@@ -33,6 +33,7 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 - [Ciclo de vida de projetos](LIFECYCLE.md): caminho entre necessidade, entrega, operação e aprendizado.
 - [Governança](GOVERNANCE.md): como mudanças são propostas, revisadas e aprovadas.
 - [Acessibilidade](ACCESSIBILITY.md): compromisso e requisitos gerais.
+- [Validação multiplataforma](acessibilidade/validacao-multiplataforma.md): jornadas completas, foco, teclado, Android e Braille.
 - [Roadmap](ROADMAP.md): evolução planejada do sistema.
 - [Como contribuir](CONTRIBUTING.md): fluxo de colaboração.
 
