@@ -12,12 +12,17 @@ As receitas não substituem o texto normativo da [WCAG 2.2 canônica](../wcag-2.
 4. valide com tecnologia assistiva real;
 5. registre qualquer exceção ou limitação no fluxo de auditoria.
 
-## Receitas iniciais
+## Receitas
 
 - [Nome, função, estado e valor](nome-funcao-estado-valor.md)
 - [Foco e mudanças de contexto](foco-e-contexto.md)
 - [Mensagens dinâmicas e feedback](mensagens-dinamicas.md)
 - [Modais, diálogos e bottom sheets](modais-e-bottom-sheets.md)
+- [Formulários, validação e erros](formularios-e-erros.md)
+- [Autenticação acessível](autenticacao-acessivel.md)
+- [Gestos, arraste e ações alternativas](gestos-e-drag-and-drop.md)
+- [Zoom, reflow e aumento de texto](zoom-reflow-e-texto.md)
+- [Mídia e conteúdo visual](midia-e-conteudo-visual.md)
 
 ## Princípios gerais
 
