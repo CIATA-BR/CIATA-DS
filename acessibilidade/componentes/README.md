@@ -87,6 +87,16 @@ Esses padrões definem como informação, orientação e feedback devem permanec
 
 Esses padrões garantem equivalência entre modalidades sensoriais, adaptação a preferências do sistema e alternativas para interações que exigem movimento, precisão ou acompanhamento visual contínuo.
 
+## Entrada de dados e manipulação avançada
+
+- [Autocomplete e sugestões](autocomplete-e-sugestoes.md)
+- [Upload de arquivos](upload-de-arquivos.md)
+- [Date e time picker](date-time-picker.md)
+- [Slider e stepper](slider-e-stepper.md)
+- [Drag and drop](drag-and-drop.md)
+
+Esses padrões cobrem controles que combinam edição, seleção, progresso ou manipulação espacial. Nenhum deles deve depender exclusivamente de gesto preciso, arraste, acompanhamento visual contínuo ou mudança inesperada de foco.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
