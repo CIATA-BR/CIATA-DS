@@ -77,6 +77,16 @@ Esses padrões organizam como componentes formam jornadas completas. A estrutura
 
 Esses padrões definem como informação, orientação e feedback devem permanecer compreensíveis sem depender de visão, memória, percepção contínua de mudanças ou conhecimento prévio da interface.
 
+## Mídia, movimento e interação sensorial
+
+- [Áudio e vídeo](audio-e-video.md)
+- [Legendas, transcrições e audiodescrição](legendas-transcricoes-e-audiodescricao.md)
+- [Animação e redução de movimento](animacao-e-reducao-de-movimento.md)
+- [Orientação e layout adaptável](orientacao-e-layout-adaptavel.md)
+- [Gestos complexos e movimento do dispositivo](gestos-complexos-e-movimento-do-dispositivo.md)
+
+Esses padrões garantem equivalência entre modalidades sensoriais, adaptação a preferências do sistema e alternativas para interações que exigem movimento, precisão ou acompanhamento visual contínuo.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
