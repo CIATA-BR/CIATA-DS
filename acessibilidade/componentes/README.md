@@ -59,6 +59,15 @@ O exemplo conforme não substitui teste real. Um trecho de código semanticament
 
 Esses padrões atravessam diferentes componentes e devem ser aplicados em conjunto com o contrato específico de cada controle. Por exemplo, um botão em carregamento continua sendo um botão; um campo somente leitura continua expondo seu rótulo e valor; uma tabela com ordenação continua exigindo controles de ordenação semanticamente corretos.
 
+## Navegação e estrutura de página
+
+- [Landmarks e cabeçalhos](landmarks-e-cabecalhos.md)
+- [Breadcrumbs e skip links](breadcrumbs-e-skip-links.md)
+- [Cards e listas](cards-e-listas.md)
+- [Busca e filtros](busca-e-filtros.md)
+
+Esses padrões organizam como componentes formam jornadas completas. A estrutura semântica, a ordem de leitura, os atalhos de navegação e o feedback de atualização devem continuar compreensíveis mesmo quando o layout visual muda.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
