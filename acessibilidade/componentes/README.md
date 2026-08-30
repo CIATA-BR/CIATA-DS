@@ -68,6 +68,15 @@ Esses padrões atravessam diferentes componentes e devem ser aplicados em conjun
 
 Esses padrões organizam como componentes formam jornadas completas. A estrutura semântica, a ordem de leitura, os atalhos de navegação e o feedback de atualização devem continuar compreensíveis mesmo quando o layout visual muda.
 
+## Conteúdo e comunicação
+
+- [Imagens e ícones](imagens-e-icones.md)
+- [Estados vazios e confirmações](estados-vazios-e-confirmacoes.md)
+- [Instruções e linguagem cognitiva](instrucoes-e-linguagem-cognitiva.md)
+- [Conteúdo sensível a tempo](conteudo-sensivel-a-tempo.md)
+
+Esses padrões definem como informação, orientação e feedback devem permanecer compreensíveis sem depender de visão, memória, percepção contínua de mudanças ou conhecimento prévio da interface.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
