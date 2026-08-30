@@ -97,6 +97,15 @@ Esses padrões garantem equivalência entre modalidades sensoriais, adaptação 
 
 Esses padrões cobrem controles que combinam edição, seleção, progresso ou manipulação espacial. Nenhum deles deve depender exclusivamente de gesto preciso, arraste, acompanhamento visual contínuo ou mudança inesperada de foco.
 
+## Autenticação, segurança e fluxos críticos
+
+- [Sessão expirada e tempo limite](sessao-expirada-e-tempo-limite.md)
+- [OTP e verificação](otp-e-verificacao.md)
+- [Recuperação de senha](recuperacao-de-senha.md)
+- [Confirmação destrutiva e prevenção de erro](confirmacao-destrutiva-e-prevencao-de-erro.md)
+
+Esses padrões tratam jornadas em que barreiras de acessibilidade podem impedir acesso à conta, causar perda de dados ou provocar ações irreversíveis. Segurança e acessibilidade devem ser projetadas em conjunto: mecanismos de proteção não devem depender desnecessariamente de memória, transcrição visual, precisão motora ou interação incompatível com tecnologia assistiva.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
