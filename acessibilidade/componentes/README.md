@@ -4,6 +4,8 @@ Esta área define o contrato mínimo de acessibilidade dos componentes do CIATA 
 
 Os documentos desta pasta complementam as [receitas de acessibilidade](../receitas/README.md), a [base canônica WCAG 2.2](../wcag-2.2/README.md) e o [processo de auditoria](../processo-de-auditoria.md).
 
+Consulte também os [critérios de aceite dos componentes](criterios-de-aceite.md) para transformar esses contratos em validações objetivas de entrega.
+
 ## Regras comuns
 
 Todo componente interativo deve:
@@ -173,3 +175,5 @@ Cada componente deve ser validado, quando aplicável, com:
 7. reteste após alterações de implementação.
 
 Componentes compostos exigem atenção adicional a foco, relação entre controles e conteúdo, anúncio de mudanças de estado e retorno ao contexto anterior.
+
+Para definição de pronto e aceite de implementação, use também os [critérios de aceite dos componentes](criterios-de-aceite.md).

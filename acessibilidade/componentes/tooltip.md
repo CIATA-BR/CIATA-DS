@@ -6,13 +6,15 @@ Tooltip fornece informação complementar curta sobre um controle ou termo. Não
 
 ## Regras
 
-- tooltip deve ser acionável por teclado e ponteiro quando existir interação equivalente;
-- conteúdo não pode desaparecer antes de ser lido ou explorado;
-- Escape deve permitir fechar quando a tooltip for persistente/interativa;
+- tooltip deve ser acionável tanto por hover quanto por foco de teclado quando essas modalidades existirem;
+- o conteúdo deve permanecer visível enquanto o ponteiro estiver sobre o acionador ou sobre a própria tooltip;
+- o conteúdo não pode desaparecer antes de ser lido ou explorado;
+- quando a tooltip puder cobrir conteúdo ou permanecer aberta, deve existir forma previsível de dispensá-la, normalmente por `Escape`;
 - não mover foco para tooltip meramente informativa;
 - conteúdo essencial deve existir de forma persistente fora da tooltip;
 - não usar tooltip como único nome acessível de controle;
-- evitar texto excessivamente longo ou ações complexas dentro de tooltip simples.
+- evitar texto excessivamente longo ou ações complexas dentro de tooltip simples;
+- conteúdo interativo que exige navegação própria deve ser tratado como popover, dialog ou outro componente apropriado, e não como tooltip.
 
 ## Web
 
@@ -33,7 +35,7 @@ Informação essencial deve estar disponível por label, hint ou conteúdo persi
 <div id="ajuda-senha" role="tooltip">Use pelo menos 12 caracteres.</div>
 ```
 
-A implementação controla a exibição por foco/hover, mantendo o texto associado ao botão.
+A implementação controla a exibição por foco/hover, permite que o ponteiro entre na própria tooltip sem fechá-la e mantém o texto associado ao botão.
 
 ## Comportamento esperado
 
@@ -56,6 +58,12 @@ A descoberta é inconsistente entre teclado, toque, leitores de tela e mobile. A
 - acionador possui nome próprio;
 - informação é acessível por teclado e leitor de tela;
 - tooltip não rouba foco;
-- conteúdo não desaparece prematuramente;
+- conteúdo permanece disponível em hover e foco enquanto necessário;
+- conteúdo pode ser dispensado sem mover foco quando aplicável;
 - informação essencial existe fora da tooltip quando necessário;
-- fechamento por Escape funciona quando aplicável.
+- conteúdo interativo complexo não foi indevidamente modelado como tooltip.
+
+## Veja também
+
+- [Ajuda contextual e documentação](ajuda-contextual-e-documentacao.md)
+- [Foco e contexto](../receitas/foco-e-contexto.md)

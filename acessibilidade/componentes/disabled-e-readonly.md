@@ -12,7 +12,9 @@
 - explicar o motivo da indisponibilidade quando ele não for óbvio e isso ajudar a pessoa a concluir a tarefa;
 - não remover informação necessária da ordem de leitura apenas porque ela não pode ser editada;
 - evitar controles permanentemente desabilitados sem contexto sobre o que os habilita;
-- estados devem ser consistentes entre aparência visual e semântica acessível.
+- estados devem ser consistentes entre aparência visual e semântica acessível;
+- não depender exclusivamente de `aria-describedby` em controles nativamente desabilitados para explicar o motivo, porque eles podem deixar de receber foco por teclado;
+- quando a razão da indisponibilidade for importante, apresentá-la também de forma persistente e perceptível no contexto da interface.
 
 ## Web
 
@@ -32,13 +34,13 @@ Preservar o valor e a função do conteúdo consultável mesmo quando a edição
 <label for="cpf">CPF</label>
 <input id="cpf" value="123.456.789-00" readonly>
 
-<button type="submit" disabled aria-describedby="motivo-salvar">Salvar</button>
 <p id="motivo-salvar">Revise os campos obrigatórios para habilitar o envio.</p>
+<button type="submit" disabled>Salvar</button>
 ```
 
 ## Comportamento esperado
 
-O campo CPF continua identificável e consultável, mas não editável. O botão `Salvar` é percebido como indisponível e existe contexto suficiente para entender o que falta para habilitá-lo.
+O campo CPF continua identificável e consultável, mas não editável. O botão `Salvar` é percebido como indisponível e o motivo para habilitá-lo existe de forma persistente no contexto, sem depender de foco no próprio botão.
 
 ## Exemplo não conforme
 
@@ -56,6 +58,11 @@ O CPF perde rótulo e pode se tornar menos acessível para consulta. O falso bot
 - read-only continua anunciando nome e valor;
 - disabled é anunciado como indisponível;
 - estado visual e semântico coincidem;
-- a razão da indisponibilidade é compreensível quando necessária;
+- a razão da indisponibilidade é compreensível sem depender do foco em um controle desabilitado;
 - conteúdo somente leitura pode ser revisado sem depender da visão;
 - foco não entra em falsos controles sem função.
+
+## Veja também
+
+- [Campo de texto](campo-de-texto.md)
+- [Formulários e erros](../receitas/formularios-e-erros.md)
