@@ -162,6 +162,15 @@ Esses padrões garantem que relações espaciais, tendências, indicadores e gra
 
 Esses padrões preservam autoria, contexto, estado e controle da pessoa durante atualizações ao vivo. Mudanças remotas devem ser percebidas sem transformar leitores de tela em um fluxo contínuo de interrupções nem deslocar foco automaticamente.
 
+## Componentes complexos remanescentes
+
+- [Stepper e progresso de etapas](stepper-e-progresso-de-etapas.md)
+- [Carrossel](carrossel.md)
+- [Treeview e árvore hierárquica](treeview-e-arvore-hierarquica.md)
+- [Popover e conteúdo flutuante](popover-e-conteudo-flutuante.md)
+
+Esses padrões fecham componentes cuja semântica e gerenciamento de foco costumam exigir implementação cuidadosa. Eles complementam, mas não substituem, padrões nativos da plataforma quando houver componente equivalente.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
