@@ -133,6 +133,15 @@ Esses padrões garantem que a pessoa consiga compreender a interface, pedir ajud
 
 Esses padrões tratam interrupções técnicas e estados concorrentes sem transformar falhas de rede, sincronização ou persistência em perda de contexto, trabalho ou autonomia para pessoas que usam tecnologia assistiva.
 
+## Internacionalização, localização e conteúdo adaptável
+
+- [Idioma e pronúncia](idioma-e-pronuncia.md)
+- [Datas, números, moedas e unidades](datas-numeros-moedas-e-unidades.md)
+- [RTL, direção e ordem de leitura](rtl-direcao-e-ordem-de-leitura.md)
+- [Expansão de conteúdo e localização](expansao-de-conteudo-e-localizacao.md)
+
+Esses padrões garantem que tradução, formatos regionais e direção de escrita não alterem indevidamente semântica, ordem de leitura, foco, pronúncia ou operabilidade. Localização deve ser validada também com tecnologia assistiva e não apenas por inspeção visual.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
