@@ -106,6 +106,15 @@ Esses padrões cobrem controles que combinam edição, seleção, progresso ou m
 
 Esses padrões tratam jornadas em que barreiras de acessibilidade podem impedir acesso à conta, causar perda de dados ou provocar ações irreversíveis. Segurança e acessibilidade devem ser projetadas em conjunto: mecanismos de proteção não devem depender desnecessariamente de memória, transcrição visual, precisão motora ou interação incompatível com tecnologia assistiva.
 
+## Privacidade, consentimento e permissões
+
+- [Permissões do dispositivo](permissoes-do-dispositivo.md)
+- [Consentimento e preferências](consentimento-e-preferencias.md)
+- [Privacidade e dados sensíveis](privacidade-e-dados-sensiveis.md)
+- [Exportação, exclusão e revogação](exportacao-exclusao-e-revogacao.md)
+
+Esses padrões cobrem escolhas que afetam privacidade, uso de dados e acesso a recursos do dispositivo. A interface deve explicar finalidade e consequência, preservar controle real da pessoa e evitar que mecanismos de proteção ou consentimento dependam de percepção visual, memória ou navegação desproporcionalmente complexa.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
