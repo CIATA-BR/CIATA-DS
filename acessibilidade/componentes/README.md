@@ -142,6 +142,15 @@ Esses padrões tratam interrupções técnicas e estados concorrentes sem transf
 
 Esses padrões garantem que tradução, formatos regionais e direção de escrita não alterem indevidamente semântica, ordem de leitura, foco, pronúncia ou operabilidade. Localização deve ser validada também com tecnologia assistiva e não apenas por inspeção visual.
 
+## Dados complexos e visualizações
+
+- [Gráficos e visualização de dados](graficos-e-visualizacao-de-dados.md)
+- [Data grid e tabelas interativas](data-grid-e-tabelas-interativas.md)
+- [Mapas e conteúdo espacial](mapas-e-conteudo-espacial.md)
+- [Dashboards e KPIs](dashboards-e-kpis.md)
+
+Esses padrões garantem que relações espaciais, tendências, indicadores e grandes conjuntos de dados tenham estrutura, contexto e alternativas equivalentes para pessoas que não acessam a representação visual diretamente.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
