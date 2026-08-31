@@ -13,11 +13,12 @@ Estados de carregamento e progresso devem informar que uma operação começou, 
 - preservar o contexto e o foco do usuário durante operações assíncronas;
 - não substituir conteúdo inteiro por spinner quando for possível manter o contexto visível e operável;
 - se uma ação não puder ser repetida durante o carregamento, comunicar esse estado sem apagar o nome do controle;
-- permitir cancelamento quando a tarefa for longa e tecnicamente cancelável.
+- permitir cancelamento quando a tarefa for longa e tecnicamente cancelável;
+- usar regiões de status para mensagens transitórias quando elas precisarem ser anunciadas, sem tornar o status uma dependência descritiva permanente do controle que iniciou a ação.
 
 ## Web
 
-Preferir elementos e estados semânticos apropriados ao contexto. Para progresso determinado, usar um mecanismo que exponha valor mínimo, máximo e atual. Para carregamento textual, usar região de status quando a mensagem precisar ser anunciada sem mover foco.
+Preferir elementos e estados semânticos apropriados ao contexto. Para progresso determinado, usar um mecanismo que exponha valor mínimo, máximo e atual. Para carregamento textual, usar região de status separada quando a mensagem precisar ser anunciada sem mover foco.
 
 ## Android
 
@@ -30,8 +31,8 @@ Usar indicadores de atividade/progresso nativos ou equivalentes, expondo valor q
 ## Exemplo conforme
 
 ```html
-<button type="submit" aria-describedby="status-envio">Enviar</button>
-<p id="status-envio" role="status">Enviando mensagem…</p>
+<button type="submit">Enviar</button>
+<p role="status" aria-live="polite">Enviando mensagem…</p>
 ```
 
 Para uma operação determinada, o componente de progresso deve expor, por exemplo, 60% concluído quando esse valor for real.
@@ -39,8 +40,9 @@ Para uma operação determinada, o componente de progresso deve expor, por exemp
 ## Comportamento esperado
 
 - a pessoa ativa `Enviar`;
-- recebe feedback equivalente a “Enviando mensagem”; 
+- recebe feedback equivalente a “Enviando mensagem”;
 - o foco não é deslocado para o texto de status;
+- o botão mantém seu nome e contexto enquanto a operação estiver ocupada;
 - ao concluir, recebe feedback equivalente a “Mensagem enviada” ou encontra o novo estado da interface de forma previsível.
 
 ## Exemplo não conforme
@@ -61,5 +63,11 @@ Uma pessoa que não vê a animação pode não saber se a ação foi aceita, se 
 - progresso determinado expõe valor coerente;
 - atualizações não geram fala excessiva;
 - foco não é roubado por mensagens de carregamento;
+- mensagens transitórias não são acopladas desnecessariamente à descrição permanente do controle;
 - não há dupla ativação acidental durante processamento;
 - cancelamento é acessível quando aplicável.
+
+## Veja também
+
+- [Mensagens dinâmicas](../receitas/mensagens-dinamicas.md)
+- [Foco e contexto](../receitas/foco-e-contexto.md)
