@@ -115,6 +115,15 @@ Esses padrões tratam jornadas em que barreiras de acessibilidade podem impedir 
 
 Esses padrões cobrem escolhas que afetam privacidade, uso de dados e acesso a recursos do dispositivo. A interface deve explicar finalidade e consequência, preservar controle real da pessoa e evitar que mecanismos de proteção ou consentimento dependam de percepção visual, memória ou navegação desproporcionalmente complexa.
 
+## Ajuda, suporte e recuperação de contexto
+
+- [Ajuda contextual e documentação](ajuda-contextual-e-documentacao.md)
+- [Suporte e contato](suporte-e-contato.md)
+- [Retomada de jornada e recuperação de contexto](retomada-de-jornada-e-recuperacao-de-contexto.md)
+- [Feedback do usuário e relato de problema](feedback-do-usuario-e-relato-de-problema.md)
+
+Esses padrões garantem que a pessoa consiga compreender a interface, pedir ajuda, relatar barreiras e retomar tarefas sem perder dados ou contexto desnecessariamente.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
