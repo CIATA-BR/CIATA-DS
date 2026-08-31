@@ -151,6 +151,15 @@ Esses padrões garantem que tradução, formatos regionais e direção de escrit
 
 Esses padrões garantem que relações espaciais, tendências, indicadores e grandes conjuntos de dados tenham estrutura, contexto e alternativas equivalentes para pessoas que não acessam a representação visual diretamente.
 
+## Colaboração e comunicação em tempo real
+
+- [Chat e mensagens em tempo real](chat-e-mensagens-em-tempo-real.md)
+- [Menções, presença e status](mencoes-presenca-e-status.md)
+- [Notificações e atividade ao vivo](notificacoes-e-atividade-ao-vivo.md)
+- [Comentários, reações e colaboração](comentarios-reacoes-e-colaboracao.md)
+
+Esses padrões preservam autoria, contexto, estado e controle da pessoa durante atualizações ao vivo. Mudanças remotas devem ser percebidas sem transformar leitores de tela em um fluxo contínuo de interrupções nem deslocar foco automaticamente.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
