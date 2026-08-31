@@ -124,6 +124,15 @@ Esses padrões cobrem escolhas que afetam privacidade, uso de dados e acesso a r
 
 Esses padrões garantem que a pessoa consiga compreender a interface, pedir ajuda, relatar barreiras e retomar tarefas sem perder dados ou contexto desnecessariamente.
 
+## Continuidade, robustez e tolerância a falhas
+
+- [Offline e conectividade](offline-e-conectividade.md)
+- [Retry e recuperação após erro](retry-e-recuperacao-apos-erro.md)
+- [Preservação de dados e rascunhos](preservacao-de-dados-e-rascunhos.md)
+- [Conflitos de estado e sincronização](conflitos-de-estado-e-sincronizacao.md)
+
+Esses padrões tratam interrupções técnicas e estados concorrentes sem transformar falhas de rede, sincronização ou persistência em perda de contexto, trabalho ou autonomia para pessoas que usam tecnologia assistiva.
+
 ## Validação mínima por componente
 
 Cada componente deve ser validado, quando aplicável, com:
