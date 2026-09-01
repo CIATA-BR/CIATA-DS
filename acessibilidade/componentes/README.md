@@ -4,7 +4,7 @@ Esta área define o contrato mínimo de acessibilidade dos componentes do CIATA 
 
 Os documentos desta pasta complementam as [receitas de acessibilidade](../receitas/README.md), a [base canônica WCAG 2.2](../wcag-2.2/README.md) e o [processo de auditoria](../processo-de-auditoria.md).
 
-Consulte também os [critérios de aceite dos componentes](criterios-de-aceite.md) para transformar esses contratos em validações objetivas de entrega.
+Consulte também os [critérios de aceite dos componentes](criterios-de-aceite.md) para transformar esses contratos em validações objetivas de entrega. Quando um documento possuir uma seção **Referências relacionadas**, use esses links para complementar o contrato do componente com receitas, padrões transversais e orientações de jornada, evitando interpretar cada arquivo de forma isolada.
 
 ## Regras comuns
 
@@ -106,7 +106,7 @@ Esses padrões garantem equivalência entre modalidades sensoriais, adaptação 
 - [Slider e stepper](slider-e-stepper.md)
 - [Drag and drop](drag-and-drop.md)
 
-Esses padrões cobrem controles que combinam edição, seleção, progresso ou manipulação espacial. Nenhum deles deve depender exclusivamente de gesto preciso, arraste, acompanhamento visual contínuo ou mudança inesperada de foco.
+Esses padrões cobrem controles que combinam edição, seleção, ajuste de valor ou manipulação espacial. Nenhum deles deve depender exclusivamente de gesto preciso, arraste, acompanhamento visual contínuo ou mudança inesperada de foco. O stepper desta seção é o controle incremental numérico; progresso entre etapas de uma jornada está em [Stepper e progresso de etapas](stepper-e-progresso-de-etapas.md).
 
 ## Autenticação, segurança e fluxos críticos
 
@@ -160,7 +160,7 @@ Esses padrões garantem que tradução, formatos regionais e direção de escrit
 - [Mapas e conteúdo espacial](mapas-e-conteudo-espacial.md)
 - [Dashboards e KPIs](dashboards-e-kpis.md)
 
-Esses padrões garantem que relações espaciais, tendências, indicadores e grandes conjuntos de dados tenham estrutura, contexto e alternativas equivalentes para pessoas que não acessam a representação visual diretamente.
+Esses padrões garantem que relações espaciais, tendências, indicadores e grandes conjuntos de dados tenham estrutura, contexto e alternativas equivalentes para pessoas que não acessam a representação visual diretamente. Para tabelas predominantemente de leitura, use primeiro o padrão [Tabelas](tabelas.md); adote data grid apenas quando a interação matricial realmente exigir esse comportamento.
 
 ## Colaboração e comunicação em tempo real
 
@@ -171,14 +171,14 @@ Esses padrões garantem que relações espaciais, tendências, indicadores e gra
 
 Esses padrões preservam autoria, contexto, estado e controle da pessoa durante atualizações ao vivo. Mudanças remotas devem ser percebidas sem transformar leitores de tela em um fluxo contínuo de interrupções nem deslocar foco automaticamente.
 
-## Componentes complexos remanescentes
+## Estruturas interativas complexas
 
 - [Stepper e progresso de etapas](stepper-e-progresso-de-etapas.md)
 - [Carrossel](carrossel.md)
 - [Treeview e árvore hierárquica](treeview-e-arvore-hierarquica.md)
 - [Popover e conteúdo flutuante](popover-e-conteudo-flutuante.md)
 
-Esses padrões fecham componentes cuja semântica e gerenciamento de foco costumam exigir implementação cuidadosa. Eles complementam, mas não substituem, padrões nativos da plataforma quando houver componente equivalente.
+Esses padrões cobrem estruturas cuja semântica e gerenciamento de foco costumam exigir implementação cuidadosa. Eles complementam, mas não substituem, padrões nativos da plataforma quando houver componente equivalente.
 
 ## Validação mínima por componente
 
