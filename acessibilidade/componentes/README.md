@@ -79,6 +79,15 @@ Esses padrões organizam como componentes formam jornadas completas. A estrutura
 
 Esses padrões definem como informação, orientação e feedback devem permanecer compreensíveis sem depender de visão, memória, percepção contínua de mudanças ou conhecimento prévio da interface.
 
+## Governança de conteúdo acessível
+
+- [Microcopy e rótulos de interface](microcopy-e-rotulos-de-interface.md)
+- [Mensagens de erro, sucesso e orientação](mensagens-de-erro-sucesso-e-orientacao.md)
+- [Linguagem simples, tom e instruções](linguagem-simples-tom-e-instrucoes.md)
+- [Revisão editorial e governança de conteúdo](revisao-editorial-e-governanca-de-conteudo.md)
+
+Esses padrões tratam texto como parte do comportamento da interface. Rótulos, instruções, mensagens e traduções podem alterar compreensão, nome acessível, contexto e previsibilidade da jornada; por isso devem participar da definição de pronto e do reteste quando houver impacto funcional.
+
 ## Mídia, movimento e interação sensorial
 
 - [Áudio e vídeo](audio-e-video.md)
