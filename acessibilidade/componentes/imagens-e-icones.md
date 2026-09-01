@@ -4,6 +4,13 @@
 
 Imagens e ícones devem comunicar informação equivalente independentemente da visão. Conteúdo decorativo deve ser removido da experiência assistiva; conteúdo informativo deve possuir alternativa textual adequada ao contexto e à finalidade.
 
+Para produção e governança de novos assets, consulte também:
+
+- [Assets visuais e mascotes](assets-visuais-e-mascotes.md)
+- [Ilustrações, mascotes e representação](ilustracoes-mascotes-e-representacao.md)
+- [Texto em imagem, contraste e adaptação](texto-em-imagem-contraste-e-adaptacao.md)
+- [Assets animados, estados e multiplataforma](assets-animados-estados-e-multiplataforma.md)
+
 ## Regras
 
 - definir primeiro se o elemento é decorativo, informativo, funcional ou complexo;
