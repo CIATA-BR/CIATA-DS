@@ -6,6 +6,8 @@ Os documentos desta pasta complementam as [receitas de acessibilidade](../receit
 
 Consulte também os [critérios de aceite dos componentes](criterios-de-aceite.md) para transformar esses contratos em validações objetivas de entrega. Quando um documento possuir uma seção **Referências relacionadas**, use esses links para complementar o contrato do componente com receitas, padrões transversais e orientações de jornada, evitando interpretar cada arquivo de forma isolada.
 
+Para uma visão transversal rápida, use também o [mapa de relações entre padrões](mapa-de-relacoes.md).
+
 ## Regras comuns
 
 Todo componente interativo deve:
