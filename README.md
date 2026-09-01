@@ -18,9 +18,9 @@ Princípios de interação, conteúdo, comportamento, estados, componentes, toke
 
 Arquitetura, qualidade, segurança, privacidade, documentação, internacionalização, testes, entrega, observabilidade e convenções reutilizáveis entre projetos.
 
-### Accessibility System
+### Accessibility Engineering System
 
-Requisitos, padrões, testes, checklists, tecnologias assistivas, plataformas, barreiras conhecidas e soluções validadas de acessibilidade.
+Princípios, normas, plataformas, tecnologias assistivas, padrões, receitas, testes, evidências e conhecimento aplicado para construir experiências digitais inclusivas desde a arquitetura.
 
 ### Knowledge System
 
@@ -38,6 +38,22 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 - [Roadmap](ROADMAP.md): evolução planejada do sistema.
 - [Como contribuir](CONTRIBUTING.md): fluxo de colaboração.
 
+
+## Engineering System
+
+- [Visão geral](engineering/README.md)
+- [Blueprint para novos projetos](engineering/PROJECT-BLUEPRINT.md)
+- [Padrões de arquitetura](engineering/ARCHITECTURE.md)
+- [Padrões de documentação](engineering/DOCUMENTATION.md)
+
+## Accessibility Engineering System
+
+- [Visão geral](accessibility/README.md)
+- [Visão](accessibility/VISION.md)
+- [Princípios](accessibility/PRINCIPLES.md)
+- [Arquitetura](accessibility/ARCHITECTURE.md)
+- [Roadmap](accessibility/ROADMAP.md)
+=======
 ## Fundamentos oficiais da marca digital
 
 - [Marca CIATA](marca/README.md): composições aprovadas, cores, tipografia e regras invioláveis.
@@ -46,6 +62,7 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 - [`tokens/cores.css`](tokens/cores.css): cores oficiais e tokens semânticos para interfaces.
 - [`tokens/cores.json`](tokens/cores.json): tokens de cor em formato interoperável.
 - [`tokens/tipografia.css`](tokens/tipografia.css): Segoe UI e fallbacks de sistema.
+
 
 ## Princípios
 
@@ -75,6 +92,9 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 - `modelos/`: modelos reutilizáveis de peças e materiais.
 - `recursos/`: outros ativos compartilhados.
 - `catalogo/`: inventário permanente dos artefatos.
+- `engineering/`: padrões técnicos compartilhados e blueprint de projetos.
+- `accessibility/`: arquitetura e conhecimento de engenharia de acessibilidade.
+- `knowledge/`: memória técnica, aprendizados e conteúdos reutilizáveis.
 - `templates/`: modelos documentais e operacionais.
 - `specs/`, `adrs/` e `rfcs/`: especificações, decisões e propostas estruturais.
 
