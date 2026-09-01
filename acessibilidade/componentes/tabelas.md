@@ -4,6 +4,8 @@
 
 Tabela organiza dados relacionais em linhas e colunas. Cabeçalhos, associações e contexto devem permitir que a pessoa compreenda cada célula sem depender da posição visual.
 
+Este documento cobre **tabelas de dados estáticas ou predominantemente de leitura**. Para grades com navegação interna, edição, seleção, virtualização ou interação matricial, consulte [Data grid e tabelas interativas](data-grid-e-tabelas-interativas.md).
+
 ## Regras
 
 - usar tabela apenas para dados tabulares, não para layout;
@@ -75,3 +77,9 @@ O leitor de tela pode apresentar apenas uma sequência de textos sem informar qu
 - ordenação e filtros comunicam função e estado;
 - layout responsivo mantém rótulo de cada dado;
 - nenhuma relação depende apenas de aparência visual.
+
+## Referências relacionadas
+
+- [Data grid e tabelas interativas](data-grid-e-tabelas-interativas.md), para interação matricial e edição;
+- [Zoom, reflow e texto](../receitas/zoom-reflow-e-texto.md), para adaptação responsiva sem perda de relação;
+- [Nome, função, estado e valor](../receitas/nome-funcao-estado-valor.md), para controles de ordenação e ações embutidas.

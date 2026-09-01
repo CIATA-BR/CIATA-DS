@@ -4,6 +4,8 @@
 
 Controles de ajuste contínuo ou incremental devem expor nome, valor atual, limites e unidade, permitindo alteração precisa sem depender de arraste.
 
+Neste documento, **stepper** significa controle incremental de valor, como aumentar ou diminuir quantidade. Para navegação por etapas de uma jornada, consulte [Stepper e progresso de etapas](stepper-e-progresso-de-etapas.md).
+
 ## Regras
 
 - valor atual e faixa permitida são comunicados;
@@ -36,3 +38,9 @@ A pessoa não sabe o valor atual e pode não conseguir alterar o controle sem ge
 - valor é atualizado corretamente;
 - anúncios não se acumulam durante mudanças rápidas;
 - limites são respeitados.
+
+## Referências relacionadas
+
+- [Stepper e progresso de etapas](stepper-e-progresso-de-etapas.md), para fluxos com etapas de jornada;
+- [Gestos e drag and drop](../receitas/gestos-e-drag-and-drop.md), quando o controle possui interação espacial;
+- [Nome, função, estado e valor](../receitas/nome-funcao-estado-valor.md), para o contrato semântico do controle.

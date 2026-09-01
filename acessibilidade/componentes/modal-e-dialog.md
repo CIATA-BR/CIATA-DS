@@ -48,3 +48,9 @@ A pessoa pode não perceber que o modal abriu, pode ativar controles escondidos 
 - fechamento é previsível;
 - foco retorna ao acionador ou equivalente lógico;
 - zoom e aumento de texto não ocultam ações essenciais.
+
+## Referências relacionadas
+
+- [Modais e bottom sheets](../receitas/modais-e-bottom-sheets.md), para aplicação do padrão em jornadas completas;
+- [Foco e contexto](../receitas/foco-e-contexto.md), para entrada, contenção e retorno de foco;
+- [Confirmação destrutiva e prevenção de erro](confirmacao-destrutiva-e-prevencao-de-erro.md), quando a camada antecede ação irreversível.
