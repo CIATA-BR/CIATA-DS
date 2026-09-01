@@ -53,3 +53,9 @@ O componente pode parecer um select visualmente, mas a tecnologia assistiva não
 - seleção é anunciada e persiste;
 - busca, quando houver, não quebra a navegação;
 - zoom e aumento de texto não ocultam opções essenciais.
+
+## Referências relacionadas
+
+- [Formulários e erros](../receitas/formularios-e-erros.md), para rótulos, validação e associação de mensagens;
+- [Foco e contexto](../receitas/foco-e-contexto.md), para abertura, navegação e fechamento da lista;
+- [Nome, função, estado e valor](../receitas/nome-funcao-estado-valor.md), para o contrato semântico do componente.
