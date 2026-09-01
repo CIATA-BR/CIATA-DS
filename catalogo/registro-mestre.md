@@ -33,6 +33,7 @@ Este é o inventário permanente dos artefatos oficiais do CIATA. Um identificad
 | `CIATA-BAN-0001` | Banner da organização no GitHub | Banner | `0.1.0` | Em revisão | A definir | — | 2026-07-24 |
 | `CIATA-TMP-0001` | Apresentação institucional | Template | `0.1.0` | Ideia | A definir | — | 2026-07-24 |
 | `CIATA-TMP-0002` | Documento institucional | Template | `0.1.0` | Ideia | A definir | — | 2026-07-24 |
+| `CIATA-DOC-0001` | Base canônica WCAG 2.2 CIATA | Documento | `0.1.0` | Em revisão | `acessibilidade/wcag-2.2/base-canonica-wcag-2.2-ciata.xlsx` | — | 2026-08-29 |
 
 ## Regras
 

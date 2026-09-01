@@ -19,10 +19,14 @@ Cada padrão deve conter:
 
 Não diga apenas “use o PAT-0003”. Diga “use o padrão de formulário acessível PAT-0003”. O código localiza; o nome comunica.
 
-## Catálogo inicial planejado
+## Catálogo disponível
 
-- formulário acessível;
-- autenticação e recuperação de acesso;
+- [PAT-0001 — Formulários acessíveis](PAT-0001-formularios-acessiveis.md);
+- [PAT-0002 — Cadastro e autenticação acessíveis e seguros](PAT-0002-cadastro-autenticacao-acessiveis-seguros.md).
+
+## Catálogo planejado
+
+- recuperação de acesso;
 - tabela de dados;
 - diálogo modal;
 - busca e filtros;

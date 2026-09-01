@@ -33,8 +33,11 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 - [Ciclo de vida de projetos](LIFECYCLE.md): caminho entre necessidade, entrega, operação e aprendizado.
 - [Governança](GOVERNANCE.md): como mudanças são propostas, revisadas e aprovadas.
 - [Acessibilidade](ACCESSIBILITY.md): compromisso e requisitos gerais.
+- [Base canônica WCAG 2.2](acessibilidade/wcag-2.2/README.md): critérios A e AA, testes, falhas e fontes oficiais.
+- [Validação multiplataforma](acessibilidade/validacao-multiplataforma.md): jornadas completas, foco, teclado, Android e Braille.
 - [Roadmap](ROADMAP.md): evolução planejada do sistema.
 - [Como contribuir](CONTRIBUTING.md): fluxo de colaboração.
+
 
 ## Engineering System
 
@@ -50,6 +53,16 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 - [Princípios](accessibility/PRINCIPLES.md)
 - [Arquitetura](accessibility/ARCHITECTURE.md)
 - [Roadmap](accessibility/ROADMAP.md)
+=======
+## Fundamentos oficiais da marca digital
+
+- [Marca CIATA](marca/README.md): composições aprovadas, cores, tipografia e regras invioláveis.
+- [Acessibilidade da marca](acessibilidade/marca.md): nomes acessíveis, textos alternativos e uso contextual.
+- [Implementação da marca](docs/implementacao-da-marca.md): exemplos de HTML, desempenho e critérios de aceite.
+- [`tokens/cores.css`](tokens/cores.css): cores oficiais e tokens semânticos para interfaces.
+- [`tokens/cores.json`](tokens/cores.json): tokens de cor em formato interoperável.
+- [`tokens/tipografia.css`](tokens/tipografia.css): Segoe UI e fallbacks de sistema.
+
 
 ## Princípios
 
@@ -66,6 +79,9 @@ ADRs, RFCs, especificações, pesquisas, receitas, casos reais, anti-padrões, p
 ## Estrutura atual
 
 - `marca/`: logotipos, cores, tipografia, ícones e manual de marca.
+- `tokens/`: tokens oficiais e semânticos consumíveis pelos produtos.
+- `acessibilidade/`: padrões e orientações específicas de acessibilidade.
+- `docs/`: guias de implementação reutilizáveis.
 - `redes-sociais/`: ativos por plataforma e finalidade.
 - `imagens/`: fotografias, ilustrações e imagens institucionais.
 - `documentos/`: modelos e documentos oficiais.

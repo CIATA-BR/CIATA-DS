@@ -1,0 +1,36 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "color": {
+    "brand": {
+      "yellow": { "$value": "#FFD000", "$type": "color" },
+      "gray": { "$value": "#B3B3B3", "$type": "color" },
+      "blue": { "$value": "#005C99", "$type": "color" },
+      "blueDark": { "$value": "#16365E", "$type": "color" }
+    },
+    "semantic": {
+      "pageBackground": { "$value": "#F7F9FB", "$type": "color" },
+      "surface": { "$value": "#FFFFFF", "$type": "color" },
+      "surfaceElevated": { "$value": "#FFFFFF", "$type": "color" },
+      "textPrimary": { "$value": "#111820", "$type": "color" },
+      "textSecondary": { "$value": "#536271", "$type": "color" },
+      "link": { "$value": "#004F85", "$type": "color" },
+      "linkVisited": { "$value": "#503B85", "$type": "color" },
+      "primaryActionBackground": { "$value": "#16365E", "$type": "color" },
+      "primaryActionText": { "$value": "#FFFFFF", "$type": "color" },
+      "secondaryActionBackground": { "$value": "#FFFFFF", "$type": "color" },
+      "secondaryActionText": { "$value": "#16365E", "$type": "color" },
+      "border": { "$value": "#C8D0D8", "$type": "color" },
+      "focus": { "$value": "#FFD000", "$type": "color" },
+      "focusContrast": { "$value": "#111820", "$type": "color" },
+      "successBackground": { "$value": "#E7F5EC", "$type": "color" },
+      "successText": { "$value": "#145C2E", "$type": "color" },
+      "warningBackground": { "$value": "#FFF4CC", "$type": "color" },
+      "warningText": { "$value": "#594500", "$type": "color" },
+      "errorBackground": { "$value": "#FDEBEC", "$type": "color" },
+      "errorText": { "$value": "#8A1820", "$type": "color" },
+      "disabledBackground": { "$value": "#E4E8EC", "$type": "color" },
+      "disabledText": { "$value": "#65727E", "$type": "color" },
+      "disabledBorder": { "$value": "#B7C0C8", "$type": "color" }
+    }
+  }
+}

@@ -1,0 +1,2229 @@
+{
+  "schemaVersion": "1.0.0",
+  "standard": "WCAG",
+  "version": "2.2",
+  "scope": [
+    "A",
+    "AA"
+  ],
+  "language": "pt-BR",
+  "lastVerified": "2026-08-29",
+  "normativeSource": "https://www.w3.org/TR/WCAG22/",
+  "criteria": [
+    {
+      "code": "1.1.1",
+      "title": "Conteúdo não textual",
+      "principle": "Perceptível",
+      "guideline": "Alternativas em texto",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Deve ser fornecida uma alternativa em texto para o conteúdo “não textual”.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille; controle por voz",
+      "components": [
+        "Imagem",
+        "ícone",
+        "botão iconográfico",
+        "gráfico",
+        "CAPTCHA"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Percorra imagens, ícones, gráficos e controles com JAWS/NVDA e depois com VoiceOver/TalkBack. Confirme o nome anunciado e verifique em display Braille. Elementos decorativos não devem entrar na árvore acessível.",
+        "expectedResult": "Deve ser fornecida uma alternativa em texto para o conteúdo “não textual”."
+      },
+      "failureExamples": "- Imagens relevantes ao conteúdo não possuem texto alternativo.\n- Imagens com links não possuem texto alternativo e recebem foco.\n- Imagens meramente decorativas são lidas pelo leitor de telas e também recebem foco.\n- Gráficos não possuem uma tabela informativa associada ou uma legenda explicativa.\n- Captchas não acessíveis não possuem um método alternativo para que o usuário possa acessar o conteúdo.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#non-text-content"
+    },
+    {
+      "code": "1.2.1",
+      "title": "Apenas áudio ou apenas vídeo (pré-gravado)",
+      "principle": "Perceptível",
+      "guideline": "Mídias baseadas em tempo",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Deve ser fornecida uma alternativa para o conteúdo apresentado: Apenas áudio: fornecer transcrição descritiva em texto; Apenas vídeo: fornecer áudio alternativo e/ou transcrição descritiva em texto.",
+      "affectedAssistiveBehavior": "Legendas; audiodescrição; leitor de tela",
+      "components": [
+        "Reprodutor de áudio ou vídeo",
+        "transmissão ao vivo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Biblioteca Virtual",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "reprodução de mídia"
+        ],
+        "procedure": "Execute uma jornada representativa com JAWS; NVDA; VoiceOver; TalkBack; reprodução de mídia. Verifique o critério 1.2.1: Deve ser fornecida uma alternativa para o conteúdo apresentado: Apenas áudio: fornecer transcrição descritiva em texto; Apenas vídeo: fornecer áudio alternativo e/ou transcrição descritiva em texto.",
+        "expectedResult": "Deve ser fornecida uma alternativa para o conteúdo apresentado: Apenas áudio: fornecer transcrição descritiva em texto; Apenas vídeo: fornecer áudio alternativo e/ou transcrição descritiva em texto."
+      },
+      "failureExamples": "- Todo conteúdo apresentado apenas com áudio não possui transcrições em texto. (exemplo: podcasts)\n- Todo conteúdo apresentado apenas com vídeo não possui uma alternativa em áudio ou uma transcrição em texto.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#audio-only-and-video-only-prerecorded"
+    },
+    {
+      "code": "1.2.2",
+      "title": "Legendas (pré-gravado)",
+      "principle": "Perceptível",
+      "guideline": "Mídias baseadas em tempo",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Devem ser fornecidas legendas para todo conteúdo que contenha áudio pré-gravado (apenas áudio ou vídeo com áudio).",
+      "affectedAssistiveBehavior": "Legendas; audiodescrição; leitor de tela",
+      "components": [
+        "Reprodutor de áudio ou vídeo",
+        "transmissão ao vivo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Biblioteca Virtual",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "reprodução de mídia"
+        ],
+        "procedure": "Execute uma jornada representativa com JAWS; NVDA; VoiceOver; TalkBack; reprodução de mídia. Verifique o critério 1.2.2: Devem ser fornecidas legendas para todo conteúdo que contenha áudio pré-gravado (apenas áudio ou vídeo com áudio).",
+        "expectedResult": "Devem ser fornecidas legendas para todo conteúdo que contenha áudio pré-gravado (apenas áudio ou vídeo com áudio)."
+      },
+      "failureExamples": "- Aúdios e vídeos com áudio não possuem legendas abertas ou ocultas.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#captions-prerecorded"
+    },
+    {
+      "code": "1.2.3",
+      "title": "Audiodescrição ou mídia alternativa (pré-gravado)",
+      "principle": "Perceptível",
+      "guideline": "Mídias baseadas em tempo",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Deve ser fornecida audiodescrição ou uma transcrição descritiva em texto para todo conteúdo em vídeo pré-gravado.",
+      "affectedAssistiveBehavior": "Legendas; audiodescrição; leitor de tela",
+      "components": [
+        "Reprodutor de áudio ou vídeo",
+        "transmissão ao vivo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Biblioteca Virtual",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "reprodução de mídia"
+        ],
+        "procedure": "Execute uma jornada representativa com JAWS; NVDA; VoiceOver; TalkBack; reprodução de mídia. Verifique o critério 1.2.3: Deve ser fornecida audiodescrição ou uma transcrição descritiva em texto para todo conteúdo em vídeo pré-gravado.",
+        "expectedResult": "Deve ser fornecida audiodescrição ou uma transcrição descritiva em texto para todo conteúdo em vídeo pré-gravado."
+      },
+      "failureExamples": "- Vídeos não possuem audiodescrição ou uma transcrição textual.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#audio-description-or-media-alternative-prerecorded"
+    },
+    {
+      "code": "1.2.4",
+      "title": "Legendas (ao vivo)",
+      "principle": "Perceptível",
+      "guideline": "Mídias baseadas em tempo",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Devem ser fornecidas legendas para todo conteúdo que contenha áudio ao vivo (apenas áudio ou vídeo com áudio).",
+      "affectedAssistiveBehavior": "Legendas; audiodescrição; leitor de tela",
+      "components": [
+        "Reprodutor de áudio ou vídeo",
+        "transmissão ao vivo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Biblioteca Virtual",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "reprodução de mídia"
+        ],
+        "procedure": "Execute uma jornada representativa com JAWS; NVDA; VoiceOver; TalkBack; reprodução de mídia. Verifique o critério 1.2.4: Devem ser fornecidas legendas para todo conteúdo que contenha áudio ao vivo (apenas áudio ou vídeo com áudio).",
+        "expectedResult": "Devem ser fornecidas legendas para todo conteúdo que contenha áudio ao vivo (apenas áudio ou vídeo com áudio)."
+      },
+      "failureExamples": "- Aúdios e vídeos com áudio que estão transmitidas ao vivo não possuem legendas abertas ou ocultas.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#captions-live"
+    },
+    {
+      "code": "1.2.5",
+      "title": "Audiodescrição (pré-gravado)",
+      "principle": "Perceptível",
+      "guideline": "Mídias baseadas em tempo",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Deve ser fornecida audiodescrição para o conteúdo de vídeo pré-gravado em mídia sincronizada, salvo quando o vídeo for uma alternativa textual claramente identificada.",
+      "affectedAssistiveBehavior": "Legendas; audiodescrição; leitor de tela",
+      "components": [
+        "Reprodutor de áudio ou vídeo",
+        "transmissão ao vivo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Biblioteca Virtual",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "reprodução de mídia"
+        ],
+        "procedure": "Execute uma jornada representativa com JAWS; NVDA; VoiceOver; TalkBack; reprodução de mídia. Verifique o critério 1.2.5: Deve ser fornecida audiodescrição para o conteúdo de vídeo pré-gravado em mídia sincronizada, salvo quando o vídeo for uma alternativa textual claramente identificada.",
+        "expectedResult": "Deve ser fornecida audiodescrição para o conteúdo de vídeo pré-gravado em mídia sincronizada, salvo quando o vídeo for uma alternativa textual claramente identificada."
+      },
+      "failureExamples": "- Vídeos não possuem audiodescrição.",
+      "ciataNotes": "Uma transcrição descritiva pode atender ao critério 1.2.3 em determinadas condições, mas não substitui a audiodescrição exigida pelo critério 1.2.5.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#audio-description-prerecorded"
+    },
+    {
+      "code": "1.3.1",
+      "title": "Informações e Relações",
+      "principle": "Perceptível",
+      "guideline": "Adaptável",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "A estrutura e as relações entre os componentes da tela devem fazer sentido tanto para a visão quanto para a audição.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille",
+      "components": [
+        "Cabeçalho",
+        "lista",
+        "tabela",
+        "formulário",
+        "agrupamento",
+        "região"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Navegue por títulos, regiões, listas, tabelas, grupos e campos usando comandos estruturais do leitor de tela. Confirme relações, níveis, cabeçalhos e associação entre rótulo, instrução, erro e campo.",
+        "expectedResult": "A estrutura e as relações entre os componentes da tela devem fazer sentido tanto para a visão quanto para a audição."
+      },
+      "failureExamples": "- Não é possível identificar claramente o significado dos elementos ao se navegar com teclado ou por toque enquanto a leitura dos itens é efetuada por um leitor de tela.\n- O leitor de tela não identifica os cabeçalhos e seus níveis.\n- Não é possível identificar a quantidade de colunas e linhas em tabelas.\n- Rótulos (labels) não estão corretamente associadas aos respectivos campos de formulários.\n- Não é possível diferenciar as sessões de um site (exemplo: header, navigation, footer, etc.).",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#info-and-relationships"
+    },
+    {
+      "code": "1.3.2",
+      "title": "Sequência com significado",
+      "principle": "Perceptível",
+      "guideline": "Adaptável",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "A ordem de leitura e a navegação pelos componentes em tela deve fazer sentido para o usuário.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille",
+      "components": [
+        "Layout",
+        "navegação",
+        "ordem de leitura",
+        "ordem de foco"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Compare a ordem visual com leitura contínua, swipe e Tab/Shift+Tab. Abra e feche componentes dinâmicos e confirme que o foco segue uma sequência lógica.",
+        "expectedResult": "A ordem de leitura e a navegação pelos componentes em tela deve fazer sentido para o usuário."
+      },
+      "failureExamples": "- A ordem de leitura ou de foco não corresponde à sequência lógica da interface.\n- O foco salta etapas, alcança elementos invisíveis ou retorna inesperadamente.\n- Conteúdo visualmente reposicionado permanece em ordem incorreta na árvore acessível.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#meaningful-sequence"
+    },
+    {
+      "code": "1.3.3",
+      "title": "Características sensoriais",
+      "principle": "Perceptível",
+      "guideline": "Adaptável",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Qualquer tipo de instrução não deve depender apenas de forma, tamanho, localização visual ou som.",
+      "affectedAssistiveBehavior": "Leitor de tela; teclado; percepção visual",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 1.3.3: Qualquer tipo de instrução não deve depender apenas de forma, tamanho, localização visual ou som.",
+        "expectedResult": "Qualquer tipo de instrução não deve depender apenas de forma, tamanho, localização visual ou som."
+      },
+      "failureExamples": "- Há uma instrução depende exclusivamente de informação visual ou espacial. (exemplo: instruções do tipo \"clique no botão verde\" ou \"clique no botão abaixo para continuar\")",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#sensory-characteristics"
+    },
+    {
+      "code": "1.3.4",
+      "title": "Orientação",
+      "principle": "Perceptível",
+      "guideline": "Adaptável",
+      "level": "AA",
+      "introducedIn": "WCAG 2.1",
+      "status": "active",
+      "ciataRule": "Funcionalidades não devem depender de uma determinada orientação de tela (exemplo: virar o celular na horizontal) a não ser que seja imprescindível para execução da função.",
+      "affectedAssistiveBehavior": "Leitor de tela; teclado; percepção visual",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 1.3.4: Funcionalidades não devem depender de uma determinada orientação de tela (exemplo: virar o celular na horizontal) a não ser que seja imprescindível para execução da função.",
+        "expectedResult": "Funcionalidades não devem depender de uma determinada orientação de tela (exemplo: virar o celular na horizontal) a não ser que seja imprescindível para execução da função."
+      },
+      "failureExamples": "- Há um componente que funciona apenas na orientação retrato ou paisagem.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#orientation"
+    },
+    {
+      "code": "1.3.5",
+      "title": "Identificar o objetivo de entrada",
+      "principle": "Perceptível",
+      "guideline": "Adaptável",
+      "level": "AA",
+      "introducedIn": "WCAG 2.1",
+      "status": "active",
+      "ciataRule": "O objetivo de entrada de um campo deve ser claramente definido (exemplo: para um campo de e-mail, deve-se aplicar corretamente o tipo de entrada de dados e-mail - input type=\"e-mail\") e sempre que possível, deve-se habilitar o atributo de auto-completar.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille",
+      "components": [
+        "Campo de formulário",
+        "autocomplete",
+        "teclado virtual"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Execute uma jornada representativa com JAWS; NVDA; VoiceOver; TalkBack; display Braille; teclado. Verifique o critério 1.3.5: O objetivo de entrada de um campo deve ser claramente definido (exemplo: para um campo de e-mail, deve-se aplicar corretamente o tipo de entrada de dados e-mail - input type=\"e-mail\") e sempre que possível, deve-se habilitar o atributo de auto-completar.",
+        "expectedResult": "O objetivo de entrada de um campo deve ser claramente definido (exemplo: para um campo de e-mail, deve-se aplicar corretamente o tipo de entrada de dados e-mail - input type=\"e-mail\") e sempre que possível, deve-se habilitar o atributo de auto-completar."
+      },
+      "failureExamples": "- Há um campo que não possui o atributo \"type\".\n- Há um campo que possui o atributo \"type\", mas está com o valor errado (exemplo: campo de e-mail com o type \"text\" ou \"tel\" quando deveria ser \"email\").",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#identify-input-purpose"
+    },
+    {
+      "code": "1.4.1",
+      "title": "Utilização de cores",
+      "principle": "Perceptível",
+      "guideline": "Discernível",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Cores não devem ser utilizadas como única maneira de transmitir conteúdo ou distinguir elementos visuais.",
+      "affectedAssistiveBehavior": "Baixa visão; ampliação; percepção visual",
+      "components": [
+        "Tipografia",
+        "cor",
+        "layout",
+        "conteúdo responsivo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Zoom do navegador",
+          "alto contraste",
+          "inspeção visual",
+          "teclado quando pertinente"
+        ],
+        "procedure": "Execute uma jornada representativa com Zoom do navegador; alto contraste; inspeção visual; teclado quando pertinente. Verifique o critério 1.4.1: Cores não devem ser utilizadas como única maneira de transmitir conteúdo ou distinguir elementos visuais.",
+        "expectedResult": "Cores não devem ser utilizadas como única maneira de transmitir conteúdo ou distinguir elementos visuais."
+      },
+      "failureExamples": "- Informações relevantes estão sendo transmitidas apenas por cor.\n- Links ou botões não possuem características visuais para se diferenciá-los.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#use-of-color"
+    },
+    {
+      "code": "1.4.2",
+      "title": "Controle de áudio",
+      "principle": "Perceptível",
+      "guideline": "Discernível",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Deve ser fornecido um mecanismo para pausar, deixar mudo ou ajustar o volume para qualquer áudio que toque automaticamente por mais de 3 segundos.",
+      "affectedAssistiveBehavior": "Baixa visão; ampliação; percepção visual",
+      "components": [
+        "Tipografia",
+        "cor",
+        "layout",
+        "conteúdo responsivo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Zoom do navegador",
+          "alto contraste",
+          "inspeção visual",
+          "teclado quando pertinente"
+        ],
+        "procedure": "Execute uma jornada representativa com Zoom do navegador; alto contraste; inspeção visual; teclado quando pertinente. Verifique o critério 1.4.2: Deve ser fornecido um mecanismo para pausar, deixar mudo ou ajustar o volume para qualquer áudio que toque automaticamente por mais de 3 segundos.",
+        "expectedResult": "Deve ser fornecido um mecanismo para pausar, deixar mudo ou ajustar o volume para qualquer áudio que toque automaticamente por mais de 3 segundos."
+      },
+      "failureExamples": "- Áudio com duração maior do que 3 segundos não possui um método de controle para o usuário pausar, parar, continuar e controlar o volume.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#audio-control"
+    },
+    {
+      "code": "1.4.3",
+      "title": "Contraste (mínimo)",
+      "principle": "Perceptível",
+      "guideline": "Discernível",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Textos devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 4.5:1. Textos em tamanhos de fontes maiores (a partir de 18pt ou 14pt bold) podem ter uma relação de contraste de 3:1.",
+      "affectedAssistiveBehavior": "Baixa visão; ampliação; percepção visual",
+      "components": [
+        "Tipografia",
+        "cor",
+        "layout",
+        "conteúdo responsivo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Zoom do navegador",
+          "alto contraste",
+          "inspeção visual",
+          "teclado quando pertinente"
+        ],
+        "procedure": "Execute uma jornada representativa com Zoom do navegador; alto contraste; inspeção visual; teclado quando pertinente. Verifique o critério 1.4.3: Textos devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 4.5:1. Textos em tamanhos de fontes maiores (a partir de 18pt ou 14pt bold) podem ter uma relação de contraste de 3:1.",
+        "expectedResult": "Textos devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 4.5:1. Textos em tamanhos de fontes maiores (a partir de 18pt ou 14pt bold) podem ter uma relação de contraste de 3:1."
+      },
+      "failureExamples": "- Contraste de texto com seu fundo não aderente.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#contrast-minimum"
+    },
+    {
+      "code": "1.4.4",
+      "title": "Redimensionar texto",
+      "principle": "Perceptível",
+      "guideline": "Discernível",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "O conteúdo em texto deve ser legível e funcional mesmo quando a tela for ampliada em até 200% do seu tamanho padrão.",
+      "affectedAssistiveBehavior": "Baixa visão; ampliação; percepção visual",
+      "components": [
+        "Tipografia",
+        "cor",
+        "layout",
+        "conteúdo responsivo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Zoom do navegador",
+          "alto contraste",
+          "inspeção visual",
+          "teclado quando pertinente"
+        ],
+        "procedure": "Execute uma jornada representativa com Zoom do navegador; alto contraste; inspeção visual; teclado quando pertinente. Verifique o critério 1.4.4: O conteúdo em texto deve ser legível e funcional mesmo quando a tela for ampliada em até 200% do seu tamanho padrão.",
+        "expectedResult": "O conteúdo em texto deve ser legível e funcional mesmo quando a tela for ampliada em até 200% do seu tamanho padrão."
+      },
+      "failureExamples": "É possível dar zoom (até 200%) no conteúdo e continuar entendendo-o normalmente sem quebra de leitura?\nExclusivo mobile: \"pinch to zoom\" deve estar habilitado, senão, outra forma de dar zoom precisa ser fornecida!\nExclusivo mobile: É possível redimensionar textos em aplicativos nativos após o usuário habilitar tais recursos nas configurações de seus aparelhos?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#resize-text"
+    },
+    {
+      "code": "1.4.5",
+      "title": "Imagens de texto",
+      "principle": "Perceptível",
+      "guideline": "Discernível",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Evitar o uso de textos em imagens a não ser que sejam essenciais (exemplo: marcas e logos) ou que possam ser personalizadas pelo usuário.",
+      "affectedAssistiveBehavior": "Baixa visão; ampliação; percepção visual",
+      "components": [
+        "Tipografia",
+        "cor",
+        "layout",
+        "conteúdo responsivo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Zoom do navegador",
+          "alto contraste",
+          "inspeção visual",
+          "teclado quando pertinente"
+        ],
+        "procedure": "Execute uma jornada representativa com Zoom do navegador; alto contraste; inspeção visual; teclado quando pertinente. Verifique o critério 1.4.5: Evitar o uso de textos em imagens a não ser que sejam essenciais (exemplo: marcas e logos) ou que possam ser personalizadas pelo usuário.",
+        "expectedResult": "Evitar o uso de textos em imagens a não ser que sejam essenciais (exemplo: marcas e logos) ou que possam ser personalizadas pelo usuário."
+      },
+      "failureExamples": "Não sendo possível evitar o uso de imagens de texto (exemplo: banner com texto diretamente na imagem) , certifique-se de providenciar um texto alternativo correto e relacionado a imagem.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#images-of-text"
+    },
+    {
+      "code": "1.4.10",
+      "title": "Refluxo",
+      "principle": "Perceptível",
+      "guideline": "Discernível",
+      "level": "AA",
+      "introducedIn": "WCAG 2.1",
+      "status": "active",
+      "ciataRule": "O conteúdo deve se reorganizar sem perda de informação ou funcionalidade e sem exigir rolagem em duas dimensões, considerando largura equivalente a 320 pixels CSS ou altura equivalente a 256 pixels CSS, salvo conteúdos que exigem apresentação bidimensional.",
+      "affectedAssistiveBehavior": "Baixa visão; ampliação; percepção visual",
+      "components": [
+        "Tipografia",
+        "cor",
+        "layout",
+        "conteúdo responsivo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Zoom do navegador",
+          "alto contraste",
+          "inspeção visual",
+          "teclado quando pertinente"
+        ],
+        "procedure": "Teste em 400% de zoom e em viewport equivalente a 320 pixels CSS. Confirme que não há perda e que a leitura normal não exige rolagem horizontal e vertical ao mesmo tempo.",
+        "expectedResult": "O conteúdo deve se reorganizar sem perda de informação ou funcionalidade e sem exigir rolagem em duas dimensões, considerando largura equivalente a 320 pixels CSS ou altura equivalente a 256 pixels CSS, salvo conteúdos que exigem apresentação bidimensional."
+      },
+      "failureExamples": "- Ao ampliar até 400%, o conteúdo não cabe na largura da tela e não ser cortado.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#reflow"
+    },
+    {
+      "code": "1.4.11",
+      "title": "Contraste não-textual",
+      "principle": "Perceptível",
+      "guideline": "Discernível",
+      "level": "AA",
+      "introducedIn": "WCAG 2.1",
+      "status": "active",
+      "ciataRule": "Componentes de interface (exemplo: botões) e imagens essenciais para o entendimento do conteúdo devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 3:1.",
+      "affectedAssistiveBehavior": "Baixa visão; ampliação; percepção visual",
+      "components": [
+        "Tipografia",
+        "cor",
+        "layout",
+        "conteúdo responsivo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Zoom do navegador",
+          "alto contraste",
+          "inspeção visual",
+          "teclado quando pertinente"
+        ],
+        "procedure": "Execute uma jornada representativa com Zoom do navegador; alto contraste; inspeção visual; teclado quando pertinente. Verifique o critério 1.4.11: Componentes de interface (exemplo: botões) e imagens essenciais para o entendimento do conteúdo devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 3:1.",
+        "expectedResult": "Componentes de interface (exemplo: botões) e imagens essenciais para o entendimento do conteúdo devem ter uma relação de contraste entre primeiro e segundo plano de ao menos 3:1."
+      },
+      "failureExamples": "- Há um gráfico ou ícone essencial para o uso do aplicativo com contraste não adequado.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#non-text-contrast"
+    },
+    {
+      "code": "1.4.12",
+      "title": "Espaçamento de texto",
+      "principle": "Perceptível",
+      "guideline": "Discernível",
+      "level": "AA",
+      "introducedIn": "WCAG 2.1",
+      "status": "active",
+      "ciataRule": "Não pode haver perda de conteúdo ou funcionalidade quando o usuário aplica: altura de linha de 1,5 vez o tamanho da fonte; espaço após parágrafos de 2 vezes; espaçamento entre letras de 0,12 vez; e entre palavras de 0,16 vez.",
+      "affectedAssistiveBehavior": "Baixa visão; ampliação; percepção visual",
+      "components": [
+        "Tipografia",
+        "conteúdo",
+        "formulário",
+        "cartão"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Zoom do navegador",
+          "alto contraste",
+          "inspeção visual",
+          "teclado quando pertinente"
+        ],
+        "procedure": "Aplique os quatro valores de espaçamento de texto do critério. Percorra toda a página e confirme que textos, campos, botões e mensagens continuam visíveis e operáveis.",
+        "expectedResult": "Não pode haver perda de conteúdo ou funcionalidade quando o usuário aplica: altura de linha de 1,5 vez o tamanho da fonte; espaço após parágrafos de 2 vezes; espaçamento entre letras de 0,12 vez; e entre palavras de 0,16 vez."
+      },
+      "failureExamples": "- Texto, botões ou mensagens ficam cortados após aplicar espaçamento personalizado.\n- Campos se sobrepõem ou deixam de funcionar.\n- A página impede que o usuário substitua os valores de espaçamento.",
+      "ciataNotes": "Este critério continua ativo na WCAG 2.2.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#text-spacing"
+    },
+    {
+      "code": "1.4.13",
+      "title": "Conteúdo em foco ou sob o ponteiro",
+      "principle": "Perceptível",
+      "guideline": "Discernível",
+      "level": "AA",
+      "introducedIn": "WCAG 2.1",
+      "status": "active",
+      "ciataRule": "Conteúdo adicional acionado por foco do teclado ou passagem do ponteiro deve ser dispensável, permitir que o ponteiro passe sobre ele e permanecer visível até que o acionador seja removido, o usuário o dispense ou a informação deixe de ser válida.",
+      "affectedAssistiveBehavior": "Baixa visão; ampliação; percepção visual",
+      "components": [
+        "Tooltip",
+        "popover",
+        "submenu"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Zoom do navegador",
+          "alto contraste",
+          "inspeção visual",
+          "teclado quando pertinente"
+        ],
+        "procedure": "Acione cada tooltip, popover e submenu por foco e por ponteiro. Tente dispensar sem mover o foco, mover o ponteiro sobre o conteúdo e mantê-lo aberto até concluir a leitura.",
+        "expectedResult": "Conteúdo adicional acionado por foco do teclado ou passagem do ponteiro deve ser dispensável, permitir que o ponteiro passe sobre ele e permanecer visível até que o acionador seja removido, o usuário o dispense ou a informação deixe de ser válida."
+      },
+      "failureExamples": "- Tooltip ou submenu não pode ser fechado sem mover o foco.\n- Conteúdo desaparece quando o ponteiro sai do acionador e tenta entrar no conteúdo aberto.\n- Conteúdo desaparece antes de o usuário terminar de lê-lo.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#content-on-hover-or-focus"
+    },
+    {
+      "code": "2.1.1",
+      "title": "Teclado",
+      "principle": "Operável",
+      "guideline": "Acessível por teclado",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Toda funcionalidade deve estar disponível para utilização com teclado, a menos que a funcionalidade não possibilite o controle apenas por teclado.",
+      "affectedAssistiveBehavior": "Teclado; leitor de tela; foco",
+      "components": [
+        "Todos os componentes interativos"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute a jornada completa somente com Tab, Shift+Tab, setas, Enter, Espaço e Escape. Em mobile, repita com teclado físico e os comandos pertinentes da plataforma.",
+        "expectedResult": "Toda funcionalidade deve estar disponível para utilização com teclado, a menos que a funcionalidade não possibilite o controle apenas por teclado."
+      },
+      "failureExamples": "É possível navegar por todos os controles e elementos em tela através de um teclado e seus respectivos atalhos?\nExclusivo iOS: navegue pelo aplicativo e ative todos os controles utilizando um teclado com o Voiceover habilitado!\nExclusivo Android: navegue pelo aplicativo e ative todos os controles utilizando um teclado com o Talkback desativado!\nOBS: Sim, esse critério também se aplica a Mobile (usuários com dificuldades motoras podem utilizar um celular com teclado bluetooth ligado, por exemplo).",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#keyboard"
+    },
+    {
+      "code": "2.1.2",
+      "title": "Sem bloqueio de teclado",
+      "principle": "Operável",
+      "guideline": "Acessível por teclado",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Deve ser possível navegar de e para todos os elementos sem qualquer tipo de bloqueio de teclado.",
+      "affectedAssistiveBehavior": "Teclado; leitor de tela; foco",
+      "components": [
+        "Diálogo",
+        "modal",
+        "menu",
+        "editor",
+        "WebView"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Entre e saia de menus, diálogos, editores e WebViews somente por teclado. Confirme que existe uma forma previsível de abandonar cada componente.",
+        "expectedResult": "Deve ser possível navegar de e para todos os elementos sem qualquer tipo de bloqueio de teclado."
+      },
+      "failureExamples": "É possível navegar por todos os elementos na tela através de um teclado sem que haja interrupções ou becos sem saídas?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#no-keyboard-trap"
+    },
+    {
+      "code": "2.1.4",
+      "title": "Atalhos de teclado por caractere",
+      "principle": "Operável",
+      "guideline": "Acessível por teclado",
+      "level": "AA",
+      "introducedIn": "WCAG 2.1",
+      "status": "active",
+      "ciataRule": "Se um atalho for ativado apenas por letra, número, pontuação ou símbolo, deve ser possível desativá-lo, remapeá-lo com modificadores ou mantê-lo ativo apenas enquanto o componente correspondente estiver em foco.",
+      "affectedAssistiveBehavior": "Teclado; leitor de tela; foco",
+      "components": [
+        "Atalho de teclado",
+        "editor",
+        "reprodutor"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Com leitor de tela ativo e durante digitação em campos, pressione as teclas de caractere usadas como atalho. Confirme que o atalho pode ser desativado, remapeado ou limitado ao foco do componente.",
+        "expectedResult": "Se um atalho for ativado apenas por letra, número, pontuação ou símbolo, deve ser possível desativá-lo, remapeá-lo com modificadores ou mantê-lo ativo apenas enquanto o componente correspondente estiver em foco."
+      },
+      "failureExamples": "- Um atalho de letra única é disparado durante digitação ou uso de comandos do leitor de tela.\n- Não existe opção para desativar ou remapear o atalho.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#character-key-shortcuts"
+    },
+    {
+      "code": "2.2.1",
+      "title": "Ajustável por limite de tempo",
+      "principle": "Operável",
+      "guideline": "Tempo suficiente",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Se uma aplicação possui um limite de tempo, o usuário deve ter opções para desligar ou ajustar o tempo. A não ser que seja uma situação onde o tempo seja essencial.",
+      "affectedAssistiveBehavior": "Leitor de tela; teclado; percepção visual",
+      "components": [
+        "Sessão",
+        "temporizador",
+        "carrossel",
+        "atualização automática"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 2.2.1: Se uma aplicação possui um limite de tempo, o usuário deve ter opções para desligar ou ajustar o tempo. A não ser que seja uma situação onde o tempo seja essencial.",
+        "expectedResult": "Se uma aplicação possui um limite de tempo, o usuário deve ter opções para desligar ou ajustar o tempo. A não ser que seja uma situação onde o tempo seja essencial."
+      },
+      "failureExamples": "Sempre que houver tempo limite da sessão o usuário é informado que ocorrerá a desconexão do sistema?\nCaso haja tempo limite, é possível que o usuário aumente esse tempo da sessão sempre que for perguntado sobre o seu encerramento? (deve ser possível prolongar o tempo da sessão em até 10 vezes o tempo padrão estipulado pela aplicação.)\nHavendo uma situação de tempo real (exemplo: câmbio online ou leilão virtual) a regra de tempo descrita nesse critério não se aplica, pois trata-se de uma exceção a regra.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#timing-adjustable"
+    },
+    {
+      "code": "2.2.2",
+      "title": "Colocar em pausa, parar ou ocultar",
+      "principle": "Operável",
+      "guideline": "Tempo suficiente",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Qualquer componente com movimento automático que dure mais do que 5 segundos e seja apresentado em conjunto com outro conteúdo, pode ser pausado, parado ou ocultado pelo usuário.",
+      "affectedAssistiveBehavior": "Leitor de tela; teclado; percepção visual",
+      "components": [
+        "Sessão",
+        "temporizador",
+        "carrossel",
+        "atualização automática"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 2.2.2: Qualquer componente com movimento automático que dure mais do que 5 segundos e seja apresentado em conjunto com outro conteúdo, pode ser pausado, parado ou ocultado pelo usuário.",
+        "expectedResult": "Qualquer componente com movimento automático que dure mais do que 5 segundos e seja apresentado em conjunto com outro conteúdo, pode ser pausado, parado ou ocultado pelo usuário."
+      },
+      "failureExamples": "Todo conteúdo que tenha movimento intermitente, rolagem ou que seja atualizado automaticamente, possui um método de controle para o usuário pausar, parar, continuar ou ocultar?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#pause-stop-hide"
+    },
+    {
+      "code": "2.3.1",
+      "title": "Três flashes ou abaixo do limite",
+      "principle": "Operável",
+      "guideline": "Convulsões e reações físicas",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Nenhum conteúdo da página deve piscar mais do que 3 vezes por segundo, a não ser que os flashes estejam em baixo contraste ou possuam pouco vermelho.",
+      "affectedAssistiveBehavior": "Leitor de tela; teclado; percepção visual",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Zoom do navegador",
+          "alto contraste",
+          "inspeção visual",
+          "teclado quando pertinente"
+        ],
+        "procedure": "Execute uma jornada representativa com Zoom do navegador; alto contraste; inspeção visual; teclado quando pertinente. Verifique o critério 2.3.1: Nenhum conteúdo da página deve piscar mais do que 3 vezes por segundo, a não ser que os flashes estejam em baixo contraste ou possuam pouco vermelho.",
+        "expectedResult": "Nenhum conteúdo da página deve piscar mais do que 3 vezes por segundo, a não ser que os flashes estejam em baixo contraste ou possuam pouco vermelho."
+      },
+      "failureExamples": "Existe qualquer animação ou efeito que pisque mais do que 3 vezes por segundo na tela? Se sim, precisa ser removida ou não deve ser iniciada sem que o usuário tome a ação para que ela se inicie.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#three-flashes-or-below-threshold"
+    },
+    {
+      "code": "2.4.1",
+      "title": "Ignorar blocos",
+      "principle": "Operável",
+      "guideline": "Navegável",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Um mecanismo deve ser fornecido para ignorar blocos de conteúdo que são repetidos em diferentes telas e fluxos.",
+      "affectedAssistiveBehavior": "Teclado; leitor de tela; foco",
+      "components": [
+        "Link de salto",
+        "região principal",
+        "navegação"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 2.4.1: Um mecanismo deve ser fornecido para ignorar blocos de conteúdo que são repetidos em diferentes telas e fluxos.",
+        "expectedResult": "Um mecanismo deve ser fornecido para ignorar blocos de conteúdo que são repetidos em diferentes telas e fluxos."
+      },
+      "failureExamples": "Há algum mecanismo para ignorar blocos de conteúdo que são repetidos em diferentes telas e fluxos? Exemplo: um link \"pular para conteúdo\" que faz com que o usuário salte menus e obtenha foco diretamente no conteúdo principal da página.\nOBS: Essa técnica pode ser ignorada no Mobile, desde que a estrutura semântica de elementos esteja bem construída, fazendo com que o usuário navegue por atalhos e gestos.",
+      "ciataNotes": "Em produtos não web, aplicar a orientação técnica adequada sem presumir dispensa automática. Estrutura semântica e atalhos de navegação precisam oferecer resultado equivalente.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#bypass-blocks"
+    },
+    {
+      "code": "2.4.2",
+      "title": "Página com título",
+      "principle": "Operável",
+      "guideline": "Navegável",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Páginas ou telas devem possuir um título que descreva claramente a sua finalidade.",
+      "affectedAssistiveBehavior": "Teclado; leitor de tela; foco",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 2.4.2: Páginas ou telas devem possuir um título que descreva claramente a sua finalidade.",
+        "expectedResult": "Páginas ou telas devem possuir um título que descreva claramente a sua finalidade."
+      },
+      "failureExamples": "Todas as páginas ou telas possuem títulos bem definidos que facilitam a identificação de onde o usuário está?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#page-titled"
+    },
+    {
+      "code": "2.4.3",
+      "title": "Ordem do foco",
+      "principle": "Operável",
+      "guideline": "Navegável",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Quando a sequência de foco afeta o significado ou a operação, os componentes focáveis devem receber foco em uma ordem que preserve significado e operabilidade.",
+      "affectedAssistiveBehavior": "Teclado; leitor de tela; foco",
+      "components": [
+        "Formulário",
+        "diálogo",
+        "menu",
+        "conteúdo dinâmico"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Percorra a tela com Tab/Shift+Tab e swipe. Abra e feche modal, menu e mensagens; confirme ordem lógica, foco inicial adequado e retorno ao acionador.",
+        "expectedResult": "Quando a sequência de foco afeta o significado ou a operação, os componentes focáveis devem receber foco em uma ordem que preserve significado e operabilidade."
+      },
+      "failureExamples": "- O foco salta campos, segue ordem diferente da leitura ou alcança conteúdo oculto.\n- Após fechar diálogo, o foco não retorna ao acionador.\n- Inserções dinâmicas deslocam o foco sem necessidade.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#focus-order"
+    },
+    {
+      "code": "2.4.4",
+      "title": "Finalidade do link (em contexto)",
+      "principle": "Operável",
+      "guideline": "Navegável",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "A finalidade de cada link deve ser determinada a partir do texto do próprio link ou a partir do contexto no entorno.",
+      "affectedAssistiveBehavior": "Teclado; leitor de tela; foco",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 2.4.4: A finalidade de cada link deve ser determinada a partir do texto do próprio link ou a partir do contexto no entorno.",
+        "expectedResult": "A finalidade de cada link deve ser determinada a partir do texto do próprio link ou a partir do contexto no entorno."
+      },
+      "failureExamples": "Ao focar em links ou botões, o que está sendo lido pelo leitor de telas está fazendo sentido de acordo com o contexto da tela?\nA finalidade de cada link ou botão pode ser determinada com base apenas no texto que está sendo lido pelo leitor ao se focar nesses elementos em conjunto com o contexto a sua volta?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#link-purpose-in-context"
+    },
+    {
+      "code": "2.4.5",
+      "title": "Várias formas",
+      "principle": "Operável",
+      "guideline": "Navegável",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "O usuário sempre deve ter opções e formas diferentes para acessar ou localizar um determinado conteúdo.",
+      "affectedAssistiveBehavior": "Teclado; leitor de tela; foco",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 2.4.5: O usuário sempre deve ter opções e formas diferentes para acessar ou localizar um determinado conteúdo.",
+        "expectedResult": "O usuário sempre deve ter opções e formas diferentes para acessar ou localizar um determinado conteúdo."
+      },
+      "failureExamples": "Há várias possibilidades de acessar um mesmo conteúdo? Menu, Busca, Mapa do Site, etc... É preciso ao menos duas formas diferentes de se acessar um mesmo conteúdo.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#multiple-ways"
+    },
+    {
+      "code": "2.4.6",
+      "title": "Cabeçalhos e rótulos",
+      "principle": "Operável",
+      "guideline": "Navegável",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Títulos e subtítulos de conteúdos e rótulos (labels) de formulários devem descrever claramente a finalidade dos elementos ou agrupamentos sem que haja ambiguidade em seu entendimento.",
+      "affectedAssistiveBehavior": "Teclado; leitor de tela; foco",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 2.4.6: Títulos e subtítulos de conteúdos e rótulos (labels) de formulários devem descrever claramente a finalidade dos elementos ou agrupamentos sem que haja ambiguidade em seu entendimento.",
+        "expectedResult": "Títulos e subtítulos de conteúdos e rótulos (labels) de formulários devem descrever claramente a finalidade dos elementos ou agrupamentos sem que haja ambiguidade em seu entendimento."
+      },
+      "failureExamples": "Os títulos de conteúdos (nível 2, nível 3, etc) e rótulos (labels) de formulários descrevem adequadamente seus respectivos conteúdos ou propósitos?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#headings-and-labels"
+    },
+    {
+      "code": "2.4.7",
+      "title": "Foco visível",
+      "principle": "Operável",
+      "guideline": "Navegável",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Todo componente operável por teclado deve apresentar um indicador de foco visível quando recebe foco pelo teclado.",
+      "affectedAssistiveBehavior": "Teclado; leitor de tela; foco",
+      "components": [
+        "Indicador de foco",
+        "todos os controles"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Percorra todos os controles somente por teclado e confirme visualmente que o indicador acompanha o foco e possui contraste perceptível.",
+        "expectedResult": "Todo componente operável por teclado deve apresentar um indicador de foco visível quando recebe foco pelo teclado."
+      },
+      "failureExamples": "O elemento atualmente focado, está visível em tela?\nAo se navegar com teclado, o foco está sempre visível?\nOBS: Sim, esse critério também se aplica a Mobile (usuários com dificuldades motoras podem utilizar um celular com teclado bluetooth ligado, por exemplo).",
+      "ciataNotes": "O requisito normativo trata do foco do teclado. Indicação de foco em exploração por toque deve ser tratada como orientação complementar de plataforma.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#focus-visible"
+    },
+    {
+      "code": "2.4.11",
+      "title": "Foco não obscurecido (mínimo)",
+      "principle": "Operável",
+      "guideline": "Navegável",
+      "level": "AA",
+      "introducedIn": "WCAG 2.2",
+      "status": "active",
+      "ciataRule": "Quando um componente recebe foco pelo teclado, ele não pode ficar totalmente oculto por conteúdo criado pelo autor.",
+      "affectedAssistiveBehavior": "Teclado; leitor de tela; foco",
+      "components": [
+        "Cabeçalho fixo",
+        "rodapé",
+        "modal",
+        "toast",
+        "banner"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Percorra todos os controles por teclado com cabeçalhos fixos, banners, zoom, modais e conteúdo sobreposto ativos. Nenhum componente focado pode ficar totalmente oculto.",
+        "expectedResult": "Quando um componente recebe foco pelo teclado, ele não pode ficar totalmente oculto por conteúdo criado pelo autor."
+      },
+      "failureExamples": "- O foco fica completamente encoberto por cabeçalho fixo, rodapé, aviso de cookies, modal não modal ou outro conteúdo sobreposto.\n- A rolagem automática posiciona o elemento focado atrás de uma camada fixa.",
+      "ciataNotes": "Avaliar durante toda a sequência de foco, inclusive após abrir menus, diálogos, mensagens e teclados virtuais.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum"
+    },
+    {
+      "code": "2.5.1",
+      "title": "Gestos de ponteiro",
+      "principle": "Operável",
+      "guideline": "Modalidades de entrada",
+      "level": "A",
+      "introducedIn": "WCAG 2.1",
+      "status": "active",
+      "ciataRule": "Funcionalidades baseadas em gestos multiponto ou dependentes de trajetória devem poder ser operadas com um ponteiro único sem trajetória específica, salvo quando o gesto for essencial.",
+      "affectedAssistiveBehavior": "Toque; ponteiro; controle por voz; mobilidade reduzida",
+      "components": [
+        "Carrossel",
+        "mapa",
+        "área gestual",
+        "visualizador"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "TalkBack",
+          "VoiceOver",
+          "toque",
+          "mouse",
+          "controle por voz",
+          "teclado físico"
+        ],
+        "procedure": "Realize cada função gestual com um único ponteiro e sem trajetória específica. Confirme alternativa simples para gestos multiponto ou direcionais não essenciais.",
+        "expectedResult": "Funcionalidades baseadas em gestos multiponto ou dependentes de trajetória devem poder ser operadas com um ponteiro único sem trajetória específica, salvo quando o gesto for essencial."
+      },
+      "failureExamples": "- Uma função depende apenas de gesto com vários dedos ou de desenho de trajetória.\n- Não há botão ou gesto simples equivalente.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#pointer-gestures"
+    },
+    {
+      "code": "2.5.2",
+      "title": "Cancelamento de ponteiro",
+      "principle": "Operável",
+      "guideline": "Modalidades de entrada",
+      "level": "A",
+      "introducedIn": "WCAG 2.1",
+      "status": "active",
+      "ciataRule": "Em ações com ponteiro único, a ativação não deve ocorrer no evento de pressionar; deve existir possibilidade de abortar, desfazer ou confirmar a ação, salvo quando a ativação ao pressionar for essencial.",
+      "affectedAssistiveBehavior": "Toque; ponteiro; controle por voz; mobilidade reduzida",
+      "components": [
+        "Botão",
+        "link",
+        "controle de toque"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "TalkBack",
+          "VoiceOver",
+          "toque",
+          "mouse",
+          "controle por voz",
+          "teclado físico"
+        ],
+        "procedure": "Pressione um alvo, mova o ponteiro ou dedo para fora e solte. A ação deve ser cancelada, reversível ou confirmada quando não for essencial ativar no pressionamento.",
+        "expectedResult": "Em ações com ponteiro único, a ativação não deve ocorrer no evento de pressionar; deve existir possibilidade de abortar, desfazer ou confirmar a ação, salvo quando a ativação ao pressionar for essencial."
+      },
+      "failureExamples": "- A ação é executada assim que o usuário toca ou pressiona, sem possibilidade de cancelar.\n- Soltar fora do alvo não aborta a ação e não existe desfazer ou confirmação.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#pointer-cancellation"
+    },
+    {
+      "code": "2.5.3",
+      "title": "Rótulo no nome acessível",
+      "principle": "Operável",
+      "guideline": "Modalidades de entrada",
+      "level": "A",
+      "introducedIn": "WCAG 2.1",
+      "status": "active",
+      "ciataRule": "Para controles com rótulo visível, o nome acessível deve conter as mesmas palavras apresentadas visualmente, preferencialmente no início e na mesma ordem.",
+      "affectedAssistiveBehavior": "Toque; ponteiro; controle por voz; mobilidade reduzida",
+      "components": [
+        "Botão",
+        "link",
+        "campo",
+        "menu",
+        "controle iconográfico"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "TalkBack",
+          "VoiceOver",
+          "toque",
+          "mouse",
+          "controle por voz",
+          "teclado físico"
+        ],
+        "procedure": "Compare o texto visível com o nome anunciado por JAWS, NVDA, VoiceOver e TalkBack. Teste também comando por voz usando exatamente o rótulo visível.",
+        "expectedResult": "Para controles com rótulo visível, o nome acessível deve conter as mesmas palavras apresentadas visualmente, preferencialmente no início e na mesma ordem."
+      },
+      "failureExamples": "- O texto visível do controle não faz parte do nome anunciado.\n- Comando por voz baseado no rótulo visível não localiza o controle.\n- Informação adicional é colocada antes do rótulo visível no nome acessível.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#label-in-name"
+    },
+    {
+      "code": "2.5.4",
+      "title": "Atuação em movimento",
+      "principle": "Operável",
+      "guideline": "Modalidades de entrada",
+      "level": "A",
+      "introducedIn": "WCAG 2.1",
+      "status": "active",
+      "ciataRule": "Qualquer funcionalidade que exija a movimentação do aparelho (exemplo: “agitar para desfazer”) deve oferecer um mecanismo para ser desativada e caso seja uma função essencial, a interface deve oferecer uma alternativa de acionamento.",
+      "affectedAssistiveBehavior": "Toque; ponteiro; controle por voz; mobilidade reduzida",
+      "components": [
+        "Controle por movimento",
+        "câmera",
+        "jogos e atividades"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "TalkBack",
+          "VoiceOver",
+          "toque",
+          "mouse",
+          "controle por voz",
+          "teclado físico"
+        ],
+        "procedure": "Tente executar as funções sem movimentar o aparelho. Desative a atuação por movimento e confirme que existe controle equivalente na interface.",
+        "expectedResult": "Qualquer funcionalidade que exija a movimentação do aparelho (exemplo: “agitar para desfazer”) deve oferecer um mecanismo para ser desativada e caso seja uma função essencial, a interface deve oferecer uma alternativa de acionamento."
+      },
+      "failureExamples": "- Uma ação depende de agitar, inclinar ou movimentar o dispositivo.\n- Não há controle equivalente na interface nem opção para desativar a atuação por movimento.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#motion-actuation"
+    },
+    {
+      "code": "2.5.7",
+      "title": "Movimentos de arrastar",
+      "principle": "Operável",
+      "guideline": "Modalidades de entrada",
+      "level": "AA",
+      "introducedIn": "WCAG 2.2",
+      "status": "active",
+      "ciataRule": "Toda funcionalidade que utiliza arrastar deve poder ser realizada por uma alternativa de ponteiro único sem arrastar, salvo quando o arraste for essencial ou determinado pelo agente de usuário.",
+      "affectedAssistiveBehavior": "Toque; ponteiro; controle por voz; mobilidade reduzida",
+      "components": [
+        "Ordenação",
+        "slider",
+        "mapa",
+        "upload",
+        "lista"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "TalkBack",
+          "VoiceOver",
+          "toque",
+          "mouse",
+          "controle por voz",
+          "teclado físico"
+        ],
+        "procedure": "Execute reordenação, sliders, mapas e demais operações de arraste usando apenas cliques ou toques simples. Confirme resultado equivalente.",
+        "expectedResult": "Toda funcionalidade que utiliza arrastar deve poder ser realizada por uma alternativa de ponteiro único sem arrastar, salvo quando o arraste for essencial ou determinado pelo agente de usuário."
+      },
+      "failureExamples": "- Um item só pode ser reordenado por arraste.\n- Um controle deslizante personalizado não oferece botões, campo numérico ou outro acionamento simples equivalente.\n- Um mapa exige arraste para alcançar uma função sem alternativa.",
+      "ciataNotes": "A alternativa pode ser composta por botões, seleção seguida de destino ou outro fluxo de acionamento simples.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#dragging-movements"
+    },
+    {
+      "code": "2.5.8",
+      "title": "Tamanho do alvo (mínimo)",
+      "principle": "Operável",
+      "guideline": "Modalidades de entrada",
+      "level": "AA",
+      "introducedIn": "WCAG 2.2",
+      "status": "active",
+      "ciataRule": "Alvos acionáveis por ponteiro devem ter pelo menos 24 por 24 pixels CSS, ou possuir espaçamento suficiente, respeitadas as exceções do critério.",
+      "affectedAssistiveBehavior": "Toque; ponteiro; controle por voz; mobilidade reduzida",
+      "components": [
+        "Botão",
+        "ícone",
+        "link",
+        "checkbox",
+        "radio",
+        "controle compacto"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Zoom do navegador",
+          "alto contraste",
+          "inspeção visual",
+          "teclado quando pertinente"
+        ],
+        "procedure": "Meça alvos compactos e seus espaçamentos em pixels CSS. Teste toque em áreas adjacentes para identificar acionamentos acidentais e valide as exceções aplicáveis.",
+        "expectedResult": "Alvos acionáveis por ponteiro devem ter pelo menos 24 por 24 pixels CSS, ou possuir espaçamento suficiente, respeitadas as exceções do critério."
+      },
+      "failureExamples": "- Ícones pequenos e adjacentes não possuem área mínima nem espaçamento suficiente.\n- Controles dentro de listas densas causam acionamentos acidentais.\n- Apenas o desenho visível recebe o toque, embora a área disponível permita ampliar o alvo.",
+      "ciataNotes": "Não confundir a área visual do ícone com a área efetivamente acionável. Verificar as exceções de espaçamento, equivalência, controle do agente de usuário, apresentação essencial e texto em linha.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#target-size-minimum"
+    },
+    {
+      "code": "3.1.1",
+      "title": "Idioma da página",
+      "principle": "Compreensível",
+      "guideline": "Legível",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "O idioma do conteúdo deve ser definido em cada uma das páginas ou telas da aplicação.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Execute uma jornada representativa com JAWS; NVDA; VoiceOver; TalkBack; display Braille; teclado. Verifique o critério 3.1.1: O idioma do conteúdo deve ser definido em cada uma das páginas ou telas da aplicação.",
+        "expectedResult": "O idioma do conteúdo deve ser definido em cada uma das páginas ou telas da aplicação."
+      },
+      "failureExamples": "Foi especificado e codificado o idioma padrão para o site/aplicativo? (na maioria dos casos, será sempre PT-BR)\nO leitor de telas sintetiza a voz no idioma adequado e configurado para o conteúdo da página ou tela?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#language-of-page"
+    },
+    {
+      "code": "3.1.2",
+      "title": "Idioma das partes",
+      "principle": "Compreensível",
+      "guideline": "Legível",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "O idioma de um determinado trecho ou frase contendo idioma diferente do original da página ou tela atual, deve ser definido e corretamente identificado.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Execute uma jornada representativa com JAWS; NVDA; VoiceOver; TalkBack; display Braille; teclado. Verifique o critério 3.1.2: O idioma de um determinado trecho ou frase contendo idioma diferente do original da página ou tela atual, deve ser definido e corretamente identificado.",
+        "expectedResult": "O idioma de um determinado trecho ou frase contendo idioma diferente do original da página ou tela atual, deve ser definido e corretamente identificado."
+      },
+      "failureExamples": "Foi especificado e codificado o idioma para partes de conteúdo apresentadas em idioma diferente do padrão para o site/aplicativo?\nAo se focar o conteúdo apresentado em idioma diferente do padrão da tela o leitor de telas sintetiza a voz de acordo com o idioma correto? (exemplo: um determinado trecho da tela está em espanhol e o idioma definido para este trecho foi \"es\". Nesse caso o leitor de telas assumirá adequadamente a entonação em espanhol ao invés de português ou inglês.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#language-of-parts"
+    },
+    {
+      "code": "3.2.1",
+      "title": "Em foco",
+      "principle": "Compreensível",
+      "guideline": "Previsível",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Quando um componente recebe foco, nenhum tipo de mudança contextual que possa confundir o usuário, deve ser efetuada.",
+      "affectedAssistiveBehavior": "Leitor de tela; teclado; acessibilidade cognitiva",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 3.2.1: Quando um componente recebe foco, nenhum tipo de mudança contextual que possa confundir o usuário, deve ser efetuada.",
+        "expectedResult": "Quando um componente recebe foco, nenhum tipo de mudança contextual que possa confundir o usuário, deve ser efetuada."
+      },
+      "failureExamples": "Ao se focar qualquer item da página ou tela, não há mudança de contexto ou informações contextualizadas com a seleção (sem que o usuário seja informado dessa mudança)?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#on-focus"
+    },
+    {
+      "code": "3.2.2",
+      "title": "Em entrada",
+      "principle": "Compreensível",
+      "guideline": "Previsível",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Quando houver uma interação com um campo de entrada de dados (formulário) ou um tipo de controle (exemplo: switch), nenhuma mudança contextual na tela deverá acontecer a não ser que o usuário tenha sido informado que essa mudança ocorreria.",
+      "affectedAssistiveBehavior": "Leitor de tela; teclado; acessibilidade cognitiva",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 3.2.2: Quando houver uma interação com um campo de entrada de dados (formulário) ou um tipo de controle (exemplo: switch), nenhuma mudança contextual na tela deverá acontecer a não ser que o usuário tenha sido informado que essa mudança ocorreria.",
+        "expectedResult": "Quando houver uma interação com um campo de entrada de dados (formulário) ou um tipo de controle (exemplo: switch), nenhuma mudança contextual na tela deverá acontecer a não ser que o usuário tenha sido informado que essa mudança ocorreria."
+      },
+      "failureExamples": "Ao se clicar/tocar/utilizar qualquer item da página ou tela, não há mudança de contexto ou informações contextualizadas com a seleção (sem que o usuário seja informado dessa mudança)?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#on-input"
+    },
+    {
+      "code": "3.2.3",
+      "title": "Navegação consistente",
+      "principle": "Compreensível",
+      "guideline": "Previsível",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Componentes de navegação de um mesmo site ou aplicação que são exibidos em telas diferentes, devem ser apresentados sempre na mesma posição em relação aos demais componentes (exemplo: tab bar em um aplicativo).",
+      "affectedAssistiveBehavior": "Leitor de tela; teclado; acessibilidade cognitiva",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 3.2.3: Componentes de navegação de um mesmo site ou aplicação que são exibidos em telas diferentes, devem ser apresentados sempre na mesma posição em relação aos demais componentes (exemplo: tab bar em um aplicativo).",
+        "expectedResult": "Componentes de navegação de um mesmo site ou aplicação que são exibidos em telas diferentes, devem ser apresentados sempre na mesma posição em relação aos demais componentes (exemplo: tab bar em um aplicativo)."
+      },
+      "failureExamples": "A navegação entre diferentes telas de um mesmo site ou aplicativo ocorre de maneira consistente?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#consistent-navigation"
+    },
+    {
+      "code": "3.2.4",
+      "title": "Identificação consistente",
+      "principle": "Compreensível",
+      "guideline": "Previsível",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Componentes de navegação de um mesmo site ou aplicação que são exibidos em telas diferentes, mas possuem a mesma funcionalidade, devem ser identificados sempre da mesma forma (exemplo: um campo de busca).",
+      "affectedAssistiveBehavior": "Leitor de tela; teclado; acessibilidade cognitiva",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 3.2.4: Componentes de navegação de um mesmo site ou aplicação que são exibidos em telas diferentes, mas possuem a mesma funcionalidade, devem ser identificados sempre da mesma forma (exemplo: um campo de busca).",
+        "expectedResult": "Componentes de navegação de um mesmo site ou aplicação que são exibidos em telas diferentes, mas possuem a mesma funcionalidade, devem ser identificados sempre da mesma forma (exemplo: um campo de busca)."
+      },
+      "failureExamples": "Todos os componentes utilizados no site ou aplicativo e apresentados em telas ou páginas diferentes são identificados de forma consistente?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#consistent-identification"
+    },
+    {
+      "code": "3.2.6",
+      "title": "Ajuda consistente",
+      "principle": "Compreensível",
+      "guideline": "Previsível",
+      "level": "A",
+      "introducedIn": "WCAG 2.2",
+      "status": "active",
+      "ciataRule": "Quando mecanismos de ajuda se repetem em várias páginas, eles devem permanecer na mesma ordem relativa, salvo quando a mudança for iniciada pelo usuário.",
+      "affectedAssistiveBehavior": "Leitor de tela; teclado; acessibilidade cognitiva",
+      "components": [
+        "Ajuda",
+        "contato",
+        "chatbot",
+        "FAQ"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Compare a ordem de mecanismos de ajuda nas páginas do mesmo conjunto. Navegue por teclado e leitor de tela e confirme posição relativa consistente.",
+        "expectedResult": "Quando mecanismos de ajuda se repetem em várias páginas, eles devem permanecer na mesma ordem relativa, salvo quando a mudança for iniciada pelo usuário."
+      },
+      "failureExamples": "- O link de contato, atendimento humano ou ajuda muda de posição entre etapas do mesmo processo.\n- Um chatbot recorrente aparece em ordens diferentes na navegação por teclado ou leitor de tela.",
+      "ciataNotes": "Aplica-se a contato humano, contato automatizado, opções de autoajuda e mecanismos totalmente automatizados, quando oferecidos.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#consistent-help"
+    },
+    {
+      "code": "3.3.1",
+      "title": "Identificação do erro",
+      "principle": "Compreensível",
+      "guideline": "Assistência de entrada",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Erros durante e após o preenchimento de dados em formulários, devem ser identificados de forma específica e clara para o usuário. O acesso aos campos com erros também deve ser simplificado.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille; acessibilidade cognitiva",
+      "components": [
+        "Formulário",
+        "validação",
+        "resumo de erros"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Execute uma jornada representativa com JAWS; NVDA; VoiceOver; TalkBack; display Braille; teclado. Verifique o critério 3.3.1: Erros durante e após o preenchimento de dados em formulários, devem ser identificados de forma específica e clara para o usuário. O acesso aos campos com erros também deve ser simplificado.",
+        "expectedResult": "Erros durante e após o preenchimento de dados em formulários, devem ser identificados de forma específica e clara para o usuário. O acesso aos campos com erros também deve ser simplificado."
+      },
+      "failureExamples": "Ao se enviar formulários em branco ou preenchidos incorretamente, todos os erros são identificados e informados ao usuário pelo leitor de telas?\nAo se focar nas mensagens de erros, elas são lidas pelos leitores de telas?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#error-identification"
+    },
+    {
+      "code": "3.3.2",
+      "title": "Rótulos e instruções",
+      "principle": "Compreensível",
+      "guideline": "Assistência de entrada",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Rótulos (labels) devem identificar os respectivos campos de formulários de forma clara e correta. Forneça instruções de tela ou dicas de preenchimento dos campos sempre que possível.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille; acessibilidade cognitiva",
+      "components": [
+        "Campo",
+        "label",
+        "instrução",
+        "máscara"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Execute uma jornada representativa com JAWS; NVDA; VoiceOver; TalkBack; display Braille; teclado. Verifique o critério 3.3.2: Rótulos (labels) devem identificar os respectivos campos de formulários de forma clara e correta. Forneça instruções de tela ou dicas de preenchimento dos campos sempre que possível.",
+        "expectedResult": "Rótulos (labels) devem identificar os respectivos campos de formulários de forma clara e correta. Forneça instruções de tela ou dicas de preenchimento dos campos sempre que possível."
+      },
+      "failureExamples": "Ao se definir o foco para cada item de formulário são fornecidas instruções adequadas para preenchimento do campo?\nCampos com máscaras informam corretamente para o usuário o formato correto de preenchimento de dados? exemplo: um campo de CPF onde o usuário não precisa digitar pontos e traços deve informar para ele \"digitar apenas números\".\nTodos os rótulos e instruções estão visíveis ou com informações suficientes para usuários com visão, identificar suas funcionalidades?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#labels-or-instructions"
+    },
+    {
+      "code": "3.3.3",
+      "title": "Sugestão de erro",
+      "principle": "Compreensível",
+      "guideline": "Assistência de entrada",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Forneça sugestões simples para que o usuário consiga corrigir facilmente os erros de preenchimento.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille; acessibilidade cognitiva",
+      "components": [
+        "Mensagem de erro",
+        "validação"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Execute uma jornada representativa com JAWS; NVDA; VoiceOver; TalkBack; display Braille; teclado. Verifique o critério 3.3.3: Forneça sugestões simples para que o usuário consiga corrigir facilmente os erros de preenchimento.",
+        "expectedResult": "Forneça sugestões simples para que o usuário consiga corrigir facilmente os erros de preenchimento."
+      },
+      "failureExamples": "É dada ao usuário sugestão fácil e compreensível de preenchimento dos campos com erros?\nA sugestão fornecida é disponibilizada de forma visual e audível pelo leitor de telas?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#error-suggestion"
+    },
+    {
+      "code": "3.3.4",
+      "title": "Prevenção de erro (legal, financeiro, dados)",
+      "principle": "Compreensível",
+      "guideline": "Assistência de entrada",
+      "level": "AA",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Sempre que o usuário puder acrescentar qualquer informação que envolva responsabilidade jurídica ou transação financeira via formulário, bem como alterações em dados já existentes, deve-se também possibilitar o cancelamento do envio ou a verificação e confirmação dos dados.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille; acessibilidade cognitiva",
+      "components": [
+        "Confirmação",
+        "revisão",
+        "transação"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 3.3.4: Sempre que o usuário puder acrescentar qualquer informação que envolva responsabilidade jurídica ou transação financeira via formulário, bem como alterações em dados já existentes, deve-se também possibilitar o cancelamento do envio ou a verificação e confirmação dos dados.",
+        "expectedResult": "Sempre que o usuário puder acrescentar qualquer informação que envolva responsabilidade jurídica ou transação financeira via formulário, bem como alterações em dados já existentes, deve-se também possibilitar o cancelamento do envio ou a verificação e confirmação dos dados."
+      },
+      "failureExamples": "É possível cancelar o envio ou é fornecido um mecanismo para confirmar os dados inseridos antes de submeter formulários que envolvam responsabilidade jurídica ou transação financeira, bem como alteração de dados já existentes? exemplo: um formulário de alteração de dados existentes, precisa fornecer uma confirmação das alterações antes que elas sejam efetuadas de fato.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#error-prevention-legal-financial-data"
+    },
+    {
+      "code": "3.3.7",
+      "title": "Entrada redundante",
+      "principle": "Compreensível",
+      "guideline": "Assistência de entrada",
+      "level": "A",
+      "introducedIn": "WCAG 2.2",
+      "status": "active",
+      "ciataRule": "Informações já fornecidas pelo usuário no mesmo processo devem ser preenchidas automaticamente ou ficar disponíveis para seleção, salvo quando a repetição for essencial, necessária à segurança ou a informação anterior deixar de ser válida.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille; acessibilidade cognitiva",
+      "components": [
+        "Formulário em etapas",
+        "cadastro",
+        "checkout"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "media",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Execute o processo completo com dados repetidos. Confirme preenchimento automático ou possibilidade de selecionar dados já fornecidos, respeitando as exceções.",
+        "expectedResult": "Informações já fornecidas pelo usuário no mesmo processo devem ser preenchidas automaticamente ou ficar disponíveis para seleção, salvo quando a repetição for essencial, necessária à segurança ou a informação anterior deixar de ser válida."
+      },
+      "failureExamples": "- O usuário precisa redigitar endereço, CPF, e-mail ou dados profissionais já informados em etapa anterior.\n- Um processo não permite selecionar ou reaproveitar dados cadastrados anteriormente.",
+      "ciataNotes": "Avaliar processos completos, não apenas páginas isoladas. Confirmar as exceções antes de registrar uma falha.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#redundant-entry"
+    },
+    {
+      "code": "3.3.8",
+      "title": "Autenticação acessível (mínimo)",
+      "principle": "Compreensível",
+      "guideline": "Assistência de entrada",
+      "level": "AA",
+      "introducedIn": "WCAG 2.2",
+      "status": "active",
+      "ciataRule": "A autenticação não deve exigir teste de função cognitiva, salvo quando houver método alternativo, mecanismo de auxílio ou quando o teste se limitar ao reconhecimento de objetos ou conteúdo pessoal não textual.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille; acessibilidade cognitiva",
+      "components": [
+        "Login",
+        "CAPTCHA",
+        "MFA",
+        "recuperação de conta"
+      ],
+      "priorityInterfaces": [
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Faça login, MFA e recuperação com gerenciador de senhas, colagem, preenchimento automático, leitor de tela e teclado. Confirme alternativa a desafios cognitivos.",
+        "expectedResult": "A autenticação não deve exigir teste de função cognitiva, salvo quando houver método alternativo, mecanismo de auxílio ou quando o teste se limitar ao reconhecimento de objetos ou conteúdo pessoal não textual."
+      },
+      "failureExamples": "- O login bloqueia colagem ou uso de gerenciador de senhas.\n- Um CAPTCHA cognitivo não oferece alternativa acessível.\n- O código de uso único precisa ser memorizado e digitado sem possibilidade de copiar, colar ou preenchimento automático.",
+      "ciataNotes": "Gerenciadores de senha, preenchimento automático, copiar e colar e autenticação biométrica são mecanismos relevantes de auxílio.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#accessible-authentication-minimum"
+    },
+    {
+      "code": "4.1.1",
+      "title": "Análise sintática",
+      "principle": "Robusto",
+      "guideline": "Compatível",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "historical-removed",
+      "ciataRule": "Critério removido da WCAG 2.2. Mantido apenas para avaliações, contratos ou políticas que ainda exijam conformidade com WCAG 2.0 ou 2.1.",
+      "affectedAssistiveBehavior": "Leitor de tela; teclado; percepção visual",
+      "components": [
+        "Padrão global de interface e conteúdo"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "historica",
+        "technologies": [
+          "Teclado",
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack"
+        ],
+        "procedure": "Execute uma jornada representativa com Teclado; JAWS; NVDA; VoiceOver; TalkBack. Verifique o critério 4.1.1: Critério removido da WCAG 2.2. Mantido apenas para avaliações, contratos ou políticas que ainda exijam conformidade com WCAG 2.0 ou 2.1.",
+        "expectedResult": "Critério removido da WCAG 2.2. Mantido apenas para avaliações, contratos ou políticas que ainda exijam conformidade com WCAG 2.0 ou 2.1."
+      },
+      "failureExamples": "Critério histórico. Não registrar falha de WCAG 2.2 apenas por erros genéricos de validação de marcação; avaliar os efeitos concretos nos demais critérios, especialmente 1.3.1 e 4.1.2.",
+      "ciataNotes": "Status: obsoleto e removido na WCAG 2.2. Pode continuar necessário em relatórios baseados em versões anteriores.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#parsing"
+    },
+    {
+      "code": "4.1.2",
+      "title": "Nome, função, valor",
+      "principle": "Robusto",
+      "guideline": "Compatível",
+      "level": "A",
+      "introducedIn": "WCAG 2.0",
+      "status": "active",
+      "ciataRule": "Nomes, funções, valores e estados dos componentes devem ser identificados corretamente por tecnologias assistivas.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille",
+      "components": [
+        "Todos os componentes interativos",
+        "componente customizado"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Percorra controles nativos e customizados com leitor de tela e display Braille. Confirme nome, função, estado, valor, disponibilidade e mudanças programáticas.",
+        "expectedResult": "Nomes, funções, valores e estados dos componentes devem ser identificados corretamente por tecnologias assistivas."
+      },
+      "failureExamples": "Ao se definir o foco para cada elemento da interface (incluindo elementos de formulários, links e widgets javascript) o leitor de telas lê claramente as funções, estados e valores dos elementos?\nA função de cada elemento que está sendo lida pelo leitor de telas corresponde exatamente a funcionalidade do elemento?\nO estado de cada elemento que está sendo lido pelo leitor de telas corresponde exatamente ao que está sendo apresentado em tela?\nO valor de cada elemento ajustável (exemplo: slider) é lido corretamente pelo leitor de telas ao se ajustar os seus valores?",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#name-role-value"
+    },
+    {
+      "code": "4.1.3",
+      "title": "Mensagens de status",
+      "principle": "Robusto",
+      "guideline": "Compatível",
+      "level": "A",
+      "introducedIn": "WCAG 2.1",
+      "status": "active",
+      "ciataRule": "Mensagens de status devem ser determinadas programaticamente e anunciadas por tecnologias assistivas sem exigir que recebam foco.",
+      "affectedAssistiveBehavior": "Leitor de tela; Braille",
+      "components": [
+        "Status",
+        "alerta",
+        "progresso",
+        "confirmação",
+        "erro"
+      ],
+      "priorityInterfaces": [
+        "Portal institucional Drupal",
+        "Emprega CIATA",
+        "Biblioteca Virtual",
+        "Jieshuo",
+        "Conversor Braille",
+        "Braillando",
+        "Comunica-CIATA Android e iOS"
+      ],
+      "manualTest": {
+        "priority": "alta",
+        "technologies": [
+          "JAWS",
+          "NVDA",
+          "VoiceOver",
+          "TalkBack",
+          "display Braille",
+          "teclado"
+        ],
+        "procedure": "Acione carregamento, busca, envio, erro e confirmação. Confirme o anúncio uma única vez, no momento correto, sem deslocar o foco apenas para leitura da mensagem.",
+        "expectedResult": "Mensagens de status devem ser determinadas programaticamente e anunciadas por tecnologias assistivas sem exigir que recebam foco."
+      },
+      "failureExamples": "- Resultado, progresso, confirmação ou erro é apresentado visualmente, mas não anunciado.\n- O foco é movido apenas para fazer a mensagem ser lida.\n- Região viva repete mensagens ou interrompe conteúdo indevidamente.",
+      "ciataNotes": "Consultar o documento Understanding e as técnicas oficiais antes de concluir a avaliação.",
+      "officialSource": "https://www.w3.org/TR/WCAG22/#status-messages"
+    }
+  ]
+}

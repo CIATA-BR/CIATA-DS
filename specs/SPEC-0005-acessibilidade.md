@@ -17,7 +17,26 @@ Estabelecer acessibilidade como requisito de concepção, produção, revisão, 
 - interações digitais devem funcionar por teclado e tecnologias assistivas;
 - foco, ordem de leitura e feedback devem ser previsíveis;
 - imagens informativas exigem alternativa textual equivalente;
-- animações e mídia devem respeitar preferências do usuário e oferecer controles acessíveis.
+- animações e mídia devem respeitar preferências do usuário e oferecer controles acessíveis;
+- mudanças de orientação, tamanho, janela ou processo não podem apagar dados, romper a jornada ou deslocar o foco sem necessidade;
+- interfaces mobile devem ser operáveis por gestos acessíveis e teclado físico quando a plataforma permitir;
+- controles customizados devem expor nome, função, estado, valor e eventos equivalentes aos controles nativos.
+
+## Avaliação de produtos digitais
+
+O alvo padrão é WCAG 2.2 nos níveis A e AA. Critérios, testes e fontes são mantidos na [base canônica WCAG 2.2](../acessibilidade/wcag-2.2/README.md). O critério 4.1.1 é histórico e não integra a contagem de conformidade WCAG 2.2.
+
+A avaliação deve:
+
+- definir escopo, versão, objetivo e linha de base de suporte;
+- explorar telas, estados, tecnologias e funções essenciais;
+- selecionar amostra representativa;
+- testar jornadas completas, inclusive erros, interrupções e retomadas;
+- registrar combinações de sistema, navegador, leitor de tela, teclado e Braille;
+- distinguir requisito normativo, orientação técnica e recurso experimental.
+- usar o texto oficial como autoridade e identificar claramente interpretações da CIATA.
+
+O processo segue o [guia de validação multiplataforma](../acessibilidade/validacao-multiplataforma.md), alinhado ao WCAG-EM 2.0.
 
 ## Validação
 
@@ -29,6 +48,8 @@ A aprovação deve registrar:
 
 - escopo e versão testados;
 - tecnologia assistiva e ambiente utilizados;
+- dispositivo, teclado e linha Braille quando aplicáveis;
+- jornadas e mudanças de contexto executadas;
 - pessoa responsável;
 - problemas encontrados;
 - correções ou exceções aceitas.

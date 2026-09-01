@@ -81,13 +81,14 @@ Aplicações web institucionais, portais, bibliotecas digitais, sistemas adminis
 - [ ] Idioma e fuso estão configurados corretamente.
 - [ ] Autenticação, autorização e auditoria possuem testes.
 - [ ] Formulários seguem PAT-0001.
+- [ ] Cadastro e autenticação seguem PAT-0002 quando aplicável.
 - [ ] E-mails seguem REC-0001 quando Microsoft Graph for adotado.
 - [ ] A navegação principal funciona por teclado e leitor de tela.
 - [ ] Existe procedimento de backup, restauração e publicação.
 
 ## Relações
 
-- **Padrões:** PAT-0001 — Formulários acessíveis
+- **Padrões:** PAT-0001 — Formulários acessíveis; PAT-0002 — Cadastro e autenticação acessíveis e seguros
 - **Receitas técnicas:** REC-0001 — Envio de e-mail com Microsoft Graph
 - **Especificações:** SPEC-0002 — Estrutura; SPEC-0005 — Acessibilidade
 - **Checklists:** CHECK-0001; CHECK-0101; CHECK-0401
