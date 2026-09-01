@@ -46,3 +46,9 @@ Quem não percebe o toast visual pode continuar acreditando que a ação foi con
 - erro acionável permanece disponível no contexto;
 - anúncios não são duplicados;
 - conteúdo não depende apenas de cor, posição ou tempo curto de exibição.
+
+## Referências relacionadas
+
+- [Mensagens dinâmicas](../receitas/mensagens-dinamicas.md), para estratégia de anúncios e regiões vivas;
+- [Mensagens de erro, sucesso e orientação](mensagens-de-erro-sucesso-e-orientacao.md), para qualidade editorial do feedback;
+- [Erro e sucesso](erro-e-sucesso.md), para estados persistentes ligados ao contexto da tarefa.
