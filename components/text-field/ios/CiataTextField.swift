@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct CiataTextField: View {
     @Binding var text: String
@@ -32,61 +33,72 @@ struct CiataTextField: View {
                 .font(.body)
 
             field
-                .textContentType(textContentType)
-                .keyboardType(keyboardType)
-                .submitLabel(submitLabel)
-                .disabled(disabled)
-                .accessibilityLabel(Text(effectiveLabel))
-                .accessibilityHint(accessibilityHint)
-                .accessibilityValue(accessibilityValue)
 
             if let supportingText, !supportingText.isEmpty {
                 Text(supportingText)
                     .font(.footnote)
                     .foregroundStyle(errorText?.isEmpty == false ? .red : .secondary)
-                    .accessibilityLabel(Text(supportingText))
             }
         }
     }
 
     @ViewBuilder
     private var field: some View {
-        if multiline {
-            TextEditor(text: readOnlyBinding)
+        if readOnly {
+            Text(text.isEmpty ? "Sem valor" : text)
+                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                .padding(.horizontal, 12)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(errorText?.isEmpty == false ? Color.red : Color.secondary)
+                }
+                .accessibilityLabel(Text(effectiveLabel))
+                .accessibilityValue(Text(text.isEmpty ? "Sem valor, somente leitura" : "\(text), somente leitura"))
+                .accessibilityHint(accessibilityHint)
+        } else if multiline {
+            TextEditor(text: $text)
                 .frame(minHeight: 88)
                 .overlay {
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(errorText?.isEmpty == false ? Color.red : Color.secondary)
                 }
+                .disabled(disabled)
+                .accessibilityLabel(Text(effectiveLabel))
+                .accessibilityHint(accessibilityHint)
+                .accessibilityValue(disabled ? Text("Indisponível") : Text(""))
         } else if password {
             HStack(spacing: 8) {
                 Group {
                     if passwordVisible {
-                        TextField("", text: readOnlyBinding)
+                        TextField("", text: $text)
                     } else {
-                        SecureField("", text: readOnlyBinding)
+                        SecureField("", text: $text)
                     }
                 }
+                .textContentType(textContentType)
+                .keyboardType(keyboardType)
+                .submitLabel(submitLabel)
+                .disabled(disabled)
+                .accessibilityLabel(Text(effectiveLabel))
+                .accessibilityHint(accessibilityHint)
+                .accessibilityValue(disabled ? Text("Indisponível") : Text(""))
 
                 Button(passwordVisible ? "Ocultar" : "Mostrar") {
                     passwordVisible.toggle()
                 }
-                .disabled(disabled || readOnly)
+                .disabled(disabled)
                 .accessibilityLabel(Text(passwordVisible ? "Ocultar senha" : "Mostrar senha"))
             }
         } else {
-            TextField("", text: readOnlyBinding)
+            TextField("", text: $text)
+                .textContentType(textContentType)
+                .keyboardType(keyboardType)
+                .submitLabel(submitLabel)
+                .disabled(disabled)
+                .accessibilityLabel(Text(effectiveLabel))
+                .accessibilityHint(accessibilityHint)
+                .accessibilityValue(disabled ? Text("Indisponível") : Text(""))
         }
-    }
-
-    private var readOnlyBinding: Binding<String> {
-        Binding(
-            get: { text },
-            set: { newValue in
-                guard !readOnly && !disabled else { return }
-                text = newValue
-            }
-        )
     }
 
     private var accessibilityHint: Text {
@@ -95,19 +107,6 @@ struct CiataTextField: View {
         }
         if let helpText, !helpText.isEmpty {
             return Text(helpText)
-        }
-        if readOnly {
-            return Text("Somente leitura")
-        }
-        return Text("")
-    }
-
-    private var accessibilityValue: Text {
-        if disabled {
-            return Text("Indisponível")
-        }
-        if readOnly {
-            return Text("Somente leitura")
         }
         return Text("")
     }
