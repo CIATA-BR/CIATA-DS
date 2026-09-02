@@ -16,10 +16,6 @@
   box-shadow: 0 0 0 2px var(--ciata-foco-contraste);
 }
 
-.ciata-link:visited {
-  color: var(--ciata-link-visitado, currentColor);
-}
-
 .ciata-link[aria-disabled="true"] {
   color: var(--ciata-desabilitado-texto);
   text-decoration-style: dashed;
