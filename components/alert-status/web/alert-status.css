@@ -16,16 +16,6 @@
   margin: 0;
 }
 
-.ciata-alert-status__dismiss {
-  min-block-size: 2.75rem;
-  justify-self: start;
-}
-
-.ciata-alert-status__dismiss:focus-visible {
-  outline: 3px solid var(--ciata-foco);
-  outline-offset: 2px;
-}
-
 .ciata-alert-status[data-variant="error"] {
   border-color: var(--ciata-erro-texto);
 }
@@ -37,9 +27,5 @@
 @media (forced-colors: active) {
   .ciata-alert-status {
     border-color: CanvasText;
-  }
-
-  .ciata-alert-status__dismiss:focus-visible {
-    outline-color: Highlight;
   }
 }
