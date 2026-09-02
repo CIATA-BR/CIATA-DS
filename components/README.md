@@ -20,6 +20,7 @@ O CIATA-DS padroniza comportamento, acessibilidade, intenção visual e critéri
 | CMP-0001 | Button / Botão | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 | CMP-0002 | TextField / Campo de texto | experimental | Web, Laravel, Android, iOS, Flutter, Python |
 | CMP-0003 | Checkbox / Caixa de seleção | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0004 | Radio / Botão de opção | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 
 ## Estrutura por componente
 
