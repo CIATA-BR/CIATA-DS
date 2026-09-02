@@ -29,6 +29,14 @@ struct CiataButton: View {
     }
 
     var body: some View {
+        styledButton
+            .disabled(isDisabled)
+            .accessibilityLabel(Text(label))
+            .accessibilityValue(isLoading ? Text("Operação em andamento") : Text(""))
+            .accessibilityHint(isLoading ? Text("Aguarde a conclusão da operação") : Text(""))
+    }
+
+    private var baseButton: some View {
         Button(action: {
             guard !isLoading && !isDisabled else { return }
             action()
@@ -44,26 +52,25 @@ struct CiataButton: View {
                     .multilineTextAlignment(.center)
             }
             .frame(minHeight: 44)
-            .frame(maxWidth: .infinity)
         }
-        .buttonStyle(style)
-        .disabled(isDisabled)
-        .accessibilityLabel(Text(label))
-        .accessibilityValue(isLoading ? Text("Operação em andamento") : Text(""))
-        .accessibilityHint(isLoading ? Text("Aguarde a conclusão da operação") : Text(""))
     }
 
     @ViewBuilder
-    private var style: some PrimitiveButtonStyle {
+    private var styledButton: some View {
         switch variant {
         case .primary:
-            BorderedProminentButtonStyle()
+            baseButton
+                .buttonStyle(.borderedProminent)
         case .secondary:
-            BorderedButtonStyle()
+            baseButton
+                .buttonStyle(.bordered)
         case .danger:
-            BorderedProminentButtonStyle()
+            baseButton
+                .buttonStyle(.borderedProminent)
+                .tint(.red)
         case .ghost:
-            PlainButtonStyle()
+            baseButton
+                .buttonStyle(.plain)
         }
     }
 }
