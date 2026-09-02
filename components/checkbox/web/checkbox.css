@@ -1,0 +1,62 @@
+.ciata-checkbox {
+  display: grid;
+  gap: 0.375rem;
+}
+
+.ciata-checkbox__control-row {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.625rem;
+  align-items: start;
+  min-block-size: 2.75rem;
+}
+
+.ciata-checkbox__control {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  margin: 0.1875rem 0 0;
+  accent-color: var(--ciata-acao-primaria-fundo);
+}
+
+.ciata-checkbox__label {
+  color: var(--ciata-texto-primario);
+  line-height: 1.5;
+}
+
+.ciata-checkbox__control:focus-visible {
+  outline: 3px solid var(--ciata-foco);
+  outline-offset: 3px;
+}
+
+.ciata-checkbox__help {
+  color: var(--ciata-texto-secundario);
+  font-size: 0.875em;
+  margin-inline-start: 1.875rem;
+}
+
+.ciata-checkbox__error {
+  color: var(--ciata-erro-texto);
+  font-weight: 600;
+  margin-inline-start: 1.875rem;
+}
+
+.ciata-checkbox__control:disabled + .ciata-checkbox__label {
+  color: var(--ciata-desabilitado-texto);
+  cursor: not-allowed;
+}
+
+.ciata-checkbox__control[aria-invalid="true"] + .ciata-checkbox__label {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 0.08em;
+}
+
+@media (forced-colors: active) {
+  .ciata-checkbox__control {
+    accent-color: ButtonText;
+  }
+
+  .ciata-checkbox__control:focus-visible {
+    outline: 3px solid Highlight;
+  }
+}
