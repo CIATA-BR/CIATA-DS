@@ -2,8 +2,6 @@
     'title' => null,
     'variant' => 'info',
     'priority' => 'status',
-    'dismissible' => false,
-    'dismissLabel' => 'Fechar aviso',
 ])
 
 @php
@@ -24,10 +22,4 @@
     @endif
 
     <p class="ciata-alert-status__message">{{ $slot }}</p>
-
-    @if($dismissible)
-        <button type="button" class="ciata-alert-status__dismiss" aria-label="{{ $dismissLabel }}">
-            {{ $dismissLabel }}
-        </button>
-    @endif
 </div>
