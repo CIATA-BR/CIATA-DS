@@ -1,0 +1,104 @@
+.ciata-visually-hidden {
+  position: absolute !important;
+  inline-size: 1px !important;
+  block-size: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.ciata-button {
+  --ciata-button-bg: var(--ciata-acao-primaria-fundo);
+  --ciata-button-texto: var(--ciata-acao-primaria-texto);
+  --ciata-button-borda: var(--ciata-acao-primaria-fundo);
+
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-block-size: 2.75rem;
+  min-inline-size: 2.75rem;
+  padding: 0.625rem 1rem;
+  border: 2px solid var(--ciata-button-borda);
+  border-radius: 0.625rem;
+  background: var(--ciata-button-bg);
+  color: var(--ciata-button-texto);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ciata-button:hover:not(:disabled):not([aria-disabled="true"]) {
+  filter: brightness(0.95);
+}
+
+.ciata-button:active:not(:disabled):not([aria-disabled="true"]) {
+  transform: translateY(1px);
+}
+
+.ciata-button:focus-visible {
+  outline: 3px solid var(--ciata-foco);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--ciata-foco-contraste);
+}
+
+.ciata-button--secondary {
+  --ciata-button-bg: var(--ciata-acao-secundaria-fundo);
+  --ciata-button-texto: var(--ciata-acao-secundaria-texto);
+  --ciata-button-borda: var(--ciata-acao-secundaria-borda);
+}
+
+.ciata-button--danger {
+  --ciata-button-bg: var(--ciata-erro-texto);
+  --ciata-button-texto: var(--ciata-cor-branco);
+  --ciata-button-borda: var(--ciata-erro-texto);
+}
+
+.ciata-button--ghost {
+  --ciata-button-bg: transparent;
+  --ciata-button-texto: var(--ciata-link);
+  --ciata-button-borda: transparent;
+}
+
+.ciata-button:disabled,
+.ciata-button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.ciata-button[aria-busy="true"] {
+  cursor: progress;
+}
+
+.ciata-button__icon[aria-hidden="true"] {
+  flex: 0 0 auto;
+}
+
+@media (forced-colors: active) {
+  .ciata-button {
+    border-color: ButtonText;
+    forced-color-adjust: auto;
+  }
+
+  .ciata-button:focus-visible {
+    outline: 3px solid Highlight;
+    box-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ciata-button {
+    transition: none;
+  }
+
+  .ciata-button:active:not(:disabled):not([aria-disabled="true"]) {
+    transform: none;
+  }
+}
