@@ -50,13 +50,20 @@ class CiataRadioGroup<T> extends StatelessWidget {
             visibleLegend,
             style: Theme.of(context).textTheme.titleMedium,
           ),
-          ...options.map(
-            (option) => RadioListTile<T>(
-              value: option.value,
-              groupValue: value,
-              onChanged: enabled && option.enabled ? onChanged : null,
-              title: Text(option.label),
-              contentPadding: EdgeInsets.zero,
+          RadioGroup<T>(
+            groupValue: value,
+            onChanged: enabled ? onChanged : null,
+            child: Column(
+              children: options
+                  .map(
+                    (option) => RadioListTile<T>(
+                      value: option.value,
+                      enabled: enabled && option.enabled,
+                      title: Text(option.label),
+                      contentPadding: EdgeInsets.zero,
+                    ),
+                  )
+                  .toList(),
             ),
           ),
           if (helpText case final text? when text.isNotEmpty)
