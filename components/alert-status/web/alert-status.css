@@ -1,0 +1,31 @@
+.ciata-alert-status {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 2px solid var(--ciata-borda);
+  border-radius: 0.75rem;
+  background: var(--ciata-superficie);
+  color: var(--ciata-texto-primario);
+}
+
+.ciata-alert-status__title {
+  font-weight: 700;
+}
+
+.ciata-alert-status__message {
+  margin: 0;
+}
+
+.ciata-alert-status[data-variant="error"] {
+  border-color: var(--ciata-erro-texto);
+}
+
+.ciata-alert-status[data-variant="warning"] {
+  border-style: double;
+}
+
+@media (forced-colors: active) {
+  .ciata-alert-status {
+    border-color: CanvasText;
+  }
+}
