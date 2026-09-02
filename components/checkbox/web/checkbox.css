@@ -15,7 +15,7 @@
   inline-size: 1.25rem;
   block-size: 1.25rem;
   margin: 0.1875rem 0 0;
-  accent-color: var(--ciata-acao-primaria);
+  accent-color: var(--ciata-acao-primaria-fundo);
 }
 
 .ciata-checkbox__label {
