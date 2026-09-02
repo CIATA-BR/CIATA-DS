@@ -1,0 +1,55 @@
+package org.ciata.ds.checkbox
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.error
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.dp
+
+/** Implementação experimental do CMP-0003 Checkbox para Jetpack Compose. */
+@Composable
+fun CiataCheckbox(
+    label: String,
+    checked: Boolean,
+    onCheckedChange: ((Boolean) -> Unit)?,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true,
+    required: Boolean = false,
+    helpText: String? = null,
+    errorText: String? = null,
+) {
+    require(label.isNotBlank()) { "label não pode ser vazio." }
+
+    val visibleLabel = if (required) "$label (obrigatório)" else label
+    val semanticsModifier = if (!errorText.isNullOrBlank()) {
+        modifier.semantics { error(errorText) }
+    } else {
+        modifier
+    }
+
+    Column(modifier = semanticsModifier) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Checkbox(
+                checked = checked,
+                onCheckedChange = onCheckedChange,
+                enabled = enabled,
+            )
+            Spacer(Modifier.width(8.dp))
+            Text(visibleLabel)
+        }
+
+        if (!helpText.isNullOrBlank()) {
+            Text(helpText)
+        }
+        if (!errorText.isNullOrBlank()) {
+            Text(errorText)
+        }
+    }
+}
