@@ -23,6 +23,7 @@ O CIATA-DS padroniza comportamento, acessibilidade, intenção visual e critéri
 | CMP-0004 | Radio / Botão de opção | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 | CMP-0005 | Select / Combobox | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 | CMP-0006 | Link / Link de navegação | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0007 | Alert / Status | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 
 ## Estrutura por componente
 
