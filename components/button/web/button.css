@@ -1,3 +1,15 @@
+.ciata-visually-hidden {
+  position: absolute !important;
+  inline-size: 1px !important;
+  block-size: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 .ciata-button {
   --ciata-button-bg: var(--ciata-acao-primaria-fundo);
   --ciata-button-texto: var(--ciata-acao-primaria-texto);
@@ -9,6 +21,7 @@
   justify-content: center;
   gap: 0.5rem;
   min-block-size: 2.75rem;
+  min-inline-size: 2.75rem;
   padding: 0.625rem 1rem;
   border: 2px solid var(--ciata-button-borda);
   border-radius: 0.625rem;
