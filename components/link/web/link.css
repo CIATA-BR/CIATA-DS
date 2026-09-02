@@ -1,0 +1,42 @@
+.ciata-link {
+  color: var(--ciata-acao-primaria-texto, currentColor);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+  border-radius: 0.125rem;
+}
+
+.ciata-link:hover {
+  text-decoration-thickness: 0.12em;
+}
+
+.ciata-link:focus-visible {
+  outline: 3px solid var(--ciata-foco);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--ciata-foco-contraste);
+}
+
+.ciata-link[aria-disabled="true"] {
+  color: var(--ciata-desabilitado-texto);
+  text-decoration-style: dashed;
+  cursor: default;
+}
+
+.ciata-link__context {
+  font-size: 0.875em;
+}
+
+@media (forced-colors: active) {
+  .ciata-link {
+    color: LinkText;
+  }
+
+  .ciata-link:visited {
+    color: VisitedText;
+  }
+
+  .ciata-link:focus-visible {
+    outline: 3px solid Highlight;
+    box-shadow: none;
+  }
+}
