@@ -1,0 +1,41 @@
+.ciata-progress {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.ciata-progress__track {
+  inline-size: 100%;
+  block-size: 0.75rem;
+  border: 1px solid var(--ciata-borda);
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--ciata-superficie);
+}
+
+.ciata-progress__value {
+  block-size: 100%;
+  inline-size: var(--ciata-progress-value, 0%);
+  background: var(--ciata-acao-primaria-texto, currentColor);
+}
+
+.ciata-progress[data-mode="indeterminate"] .ciata-progress__value {
+  inline-size: 35%;
+  animation: ciata-progress-indeterminate 1.2s linear infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ciata-progress[data-mode="indeterminate"] .ciata-progress__value {
+    animation: none;
+    inline-size: 50%;
+  }
+}
+
+@media (forced-colors: active) {
+  .ciata-progress__track { border-color: CanvasText; }
+  .ciata-progress__value { background: Highlight; }
+}
+
+@keyframes ciata-progress-indeterminate {
+  from { transform: translateX(-10%); }
+  to { transform: translateX(180%); }
+}
