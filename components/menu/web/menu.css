@@ -1,0 +1,13 @@
+.ciata-menu { position: relative; display: inline-block; }
+.ciata-menu__trigger,
+.ciata-menu__item { min-block-size: 2.75rem; font: inherit; }
+.ciata-menu__popup { position: absolute; z-index: 10; min-inline-size: 12rem; padding: 0.25rem; border: 1px solid var(--ciata-borda); background: var(--ciata-superficie); color: var(--ciata-texto-primario); }
+.ciata-menu__item { inline-size: 100%; padding-inline: 0.75rem; border: 0; background: transparent; color: inherit; text-align: start; }
+.ciata-menu__item:focus-visible,
+.ciata-menu__trigger:focus-visible { outline: 3px solid var(--ciata-foco); outline-offset: 2px; }
+.ciata-menu__item:disabled { opacity: 0.65; }
+@media (forced-colors: active) {
+  .ciata-menu__popup { border-color: CanvasText; }
+  .ciata-menu__item:focus-visible,
+  .ciata-menu__trigger:focus-visible { outline-color: Highlight; }
+}
