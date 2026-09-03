@@ -1,0 +1,10 @@
+.ciata-tabs__list { display: flex; flex-wrap: wrap; gap: 0.25rem; border-block-end: 2px solid var(--ciata-borda); }
+.ciata-tabs__tab { min-block-size: 2.75rem; padding-inline: 1rem; border: 0; background: transparent; color: var(--ciata-texto-primario); font: inherit; }
+.ciata-tabs__tab[aria-selected="true"] { font-weight: 700; border-block-end: 3px solid currentColor; }
+.ciata-tabs__tab:focus-visible { outline: 3px solid var(--ciata-foco); outline-offset: 2px; }
+.ciata-tabs__panel { padding-block: 1rem; }
+@media (forced-colors: active) {
+  .ciata-tabs__list { border-color: CanvasText; }
+  .ciata-tabs__tab[aria-selected="true"] { border-color: Highlight; }
+  .ciata-tabs__tab:focus-visible { outline-color: Highlight; }
+}
