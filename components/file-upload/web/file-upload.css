@@ -1,0 +1,7 @@
+.ciata-file-upload { display: grid; gap: 0.5rem; color: var(--ciata-texto-primario); }
+.ciata-file-upload input[type="file"] { min-block-size: 2.75rem; font: inherit; color: inherit; }
+.ciata-file-upload input[type="file"]:focus-visible { outline: 3px solid var(--ciata-foco); outline-offset: 2px; }
+.ciata-file-upload input[aria-invalid="true"] { border: 2px solid var(--ciata-borda); }
+@media (forced-colors: active) {
+  .ciata-file-upload input[type="file"]:focus-visible { outline-color: Highlight; }
+}
