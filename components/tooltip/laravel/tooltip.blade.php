@@ -4,7 +4,7 @@
 ])
 
 <span class="ciata-tooltip" data-ciata-tooltip>
-    <span class="ciata-tooltip__trigger" aria-describedby="{{ $id }}">
+    <span class="ciata-tooltip__trigger">
         {{ $trigger }}
     </span>
     <span id="{{ $id }}" class="ciata-tooltip__bubble" role="tooltip" hidden>
