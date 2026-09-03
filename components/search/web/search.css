@@ -1,0 +1,11 @@
+.ciata-search { display: grid; gap: 0.5rem; color: var(--ciata-texto-primario); }
+.ciata-search__controls { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.ciata-search input[type="search"],
+.ciata-search button { min-block-size: 2.75rem; font: inherit; }
+.ciata-search input[type="search"] { flex: 1 1 16rem; border: 1px solid var(--ciata-borda); background: var(--ciata-superficie); color: inherit; }
+.ciata-search input[type="search"]:focus-visible,
+.ciata-search button:focus-visible { outline: 3px solid var(--ciata-foco); outline-offset: 2px; }
+@media (forced-colors: active) {
+  .ciata-search input[type="search"]:focus-visible,
+  .ciata-search button:focus-visible { outline-color: Highlight; }
+}
