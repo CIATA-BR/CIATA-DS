@@ -2,36 +2,35 @@
 
 from __future__ import annotations
 
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 
 import wx
 
 
 class CiataAccordion(wx.Panel):
-    def __init__(self, parent: wx.Window, items: Sequence[tuple[str, wx.Window]]) -> None:
+    def __init__(
+        self,
+        parent: wx.Window,
+        items: Sequence[tuple[str, Callable[[wx.Window], None]]],
+    ) -> None:
         super().__init__(parent)
         if not items:
             raise ValueError("items não pode ser vazio.")
 
         sizer = wx.BoxSizer(wx.VERTICAL)
-        self._items: list[tuple[wx.Button, wx.Window]] = []
 
-        for label, panel in items:
-            if not label.strip():
+        for label, build_content in items:
+            label = label.strip()
+            if not label:
                 raise ValueError("rótulo do item não pode ser vazio.")
-            button = wx.Button(self, label=label.strip())
-            button.SetName(f"{label.strip()}, recolhido")
-            panel.Reparent(self)
-            panel.Hide()
-            button.Bind(wx.EVT_BUTTON, lambda _event, b=button, p=panel: self._toggle(b, p))
-            sizer.Add(button, 0, wx.EXPAND | wx.TOP, 4)
-            sizer.Add(panel, 0, wx.EXPAND | wx.ALL, 8)
-            self._items.append((button, panel))
+
+            pane = wx.CollapsiblePane(self, label=label)
+            build_content(pane.GetPane())
+            pane.Bind(wx.EVT_COLLAPSIBLEPANE_CHANGED, self._on_changed)
+            sizer.Add(pane, 0, wx.EXPAND | wx.TOP, 4)
 
         self.SetSizer(sizer)
 
-    def _toggle(self, button: wx.Button, panel: wx.Window) -> None:
-        expanded = panel.IsShown()
-        panel.Show(not expanded)
-        button.SetName(f"{button.GetLabel()}, {'recolhido' if expanded else 'expandido'}")
+    def _on_changed(self, event: wx.CollapsiblePaneEvent) -> None:
         self.Layout()
+        event.Skip()
