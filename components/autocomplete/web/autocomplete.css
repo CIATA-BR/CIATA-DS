@@ -1,0 +1,10 @@
+.ciata-autocomplete { display: grid; gap: 0.5rem; color: var(--ciata-texto-primario); }
+.ciata-autocomplete input { min-block-size: 2.75rem; font: inherit; border: 1px solid var(--ciata-borda); background: var(--ciata-superficie); color: inherit; }
+.ciata-autocomplete input:focus-visible { outline: 3px solid var(--ciata-foco); outline-offset: 2px; }
+.ciata-autocomplete__list { margin: 0; padding: 0.25rem; list-style: none; border: 1px solid var(--ciata-borda); background: var(--ciata-superficie); }
+.ciata-autocomplete__list [role="option"] { min-block-size: 2.75rem; display: flex; align-items: center; padding-inline: 0.75rem; }
+.ciata-autocomplete__list [role="option"][aria-selected="true"] { outline: 2px solid var(--ciata-foco); outline-offset: -2px; }
+@media (forced-colors: active) {
+  .ciata-autocomplete input:focus-visible,
+  .ciata-autocomplete__list [role="option"][aria-selected="true"] { outline-color: Highlight; }
+}
