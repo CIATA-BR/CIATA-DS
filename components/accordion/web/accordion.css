@@ -1,0 +1,14 @@
+.ciata-accordion__item { border-block-end: 1px solid var(--ciata-borda); }
+.ciata-accordion__heading { margin: 0; }
+.ciata-accordion__button { inline-size: 100%; min-block-size: 2.75rem; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.75rem 1rem; border: 0; background: var(--ciata-superficie); color: var(--ciata-texto-primario); font: inherit; text-align: start; }
+.ciata-accordion__button::after { content: "+"; font-weight: 700; }
+.ciata-accordion__button[aria-expanded="true"]::after { content: "−"; }
+.ciata-accordion__button:focus-visible { outline: 3px solid var(--ciata-foco); outline-offset: 2px; }
+.ciata-accordion__panel { padding: 1rem; }
+@media (forced-colors: active) {
+  .ciata-accordion__item { border-color: CanvasText; }
+  .ciata-accordion__button:focus-visible { outline-color: Highlight; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ciata-accordion__button::after { transition: none; }
+}
