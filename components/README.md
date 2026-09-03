@@ -27,6 +27,7 @@ O CIATA-DS padroniza comportamento, acessibilidade, intenção visual e critéri
 | CMP-0008 | Modal / Dialog | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 | CMP-0009 | Loading / Progress | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 | CMP-0010 | Card interativo | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0011 | Pagination / Paginação | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 
 ## Estrutura por componente
 
