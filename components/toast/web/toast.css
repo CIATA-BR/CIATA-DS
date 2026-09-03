@@ -1,0 +1,31 @@
+.ciata-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  max-inline-size: 36rem;
+  padding: 1rem;
+  border: 2px solid var(--ciata-borda);
+  border-radius: 0.75rem;
+  background: var(--ciata-superficie);
+  color: var(--ciata-texto-primario);
+}
+
+.ciata-toast__message { flex: 1; }
+.ciata-toast__action,
+.ciata-toast__dismiss { flex: none; }
+
+.ciata-toast a:focus-visible,
+.ciata-toast button:focus-visible {
+  outline: 3px solid var(--ciata-foco);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ciata-toast { scroll-behavior: auto; }
+}
+
+@media (forced-colors: active) {
+  .ciata-toast { border-color: CanvasText; }
+  .ciata-toast a:focus-visible,
+  .ciata-toast button:focus-visible { outline-color: Highlight; }
+}
