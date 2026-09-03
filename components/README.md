@@ -31,6 +31,7 @@ O CIATA-DS padroniza comportamento, acessibilidade, intenção visual e critéri
 | CMP-0012 | Toast | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 | CMP-0013 | Tabs / Abas | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 | CMP-0014 | Accordion / Acordeão | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0015 | Menu | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 
 ## Estrutura por componente
 
