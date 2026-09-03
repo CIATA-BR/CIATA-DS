@@ -13,7 +13,7 @@ Permitir seleção e envio de arquivos com nome claro, restrições compreensív
 - Arquivos rejeitados precisam de motivo específico e acionável.
 - Nome, tamanho e estado de cada arquivo selecionado devem ser perceptíveis por tecnologia assistiva.
 - Remover/substituir arquivo deve ser uma ação explícita e não depender de gesto complexo.
-- Não iniciar upload irreversível apenas pela seleção quando o fluxo exigir revisão/confirmacão.
+- Não iniciar upload irreversível apenas pela seleção quando o fluxo exigir revisão/confirmação.
 
 ## Propriedades conceituais
 - `label` — nome do campo/controle;
