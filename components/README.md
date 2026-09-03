@@ -35,6 +35,7 @@ O CIATA-DS padroniza comportamento, acessibilidade, intenção visual e critéri
 | CMP-0016 | Breadcrumb / Trilha de navegação | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 | CMP-0017 | Tooltip | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 | CMP-0018 | Bottom Sheet | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0019 | Date Picker / Seletor de data | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 
 ## Estrutura por componente
 
