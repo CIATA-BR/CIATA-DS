@@ -1,0 +1,7 @@
+.ciata-date-picker { display: grid; gap: 0.5rem; color: var(--ciata-texto-primario); }
+.ciata-date-picker input { min-block-size: 2.75rem; font: inherit; border: 1px solid var(--ciata-borda); background: var(--ciata-superficie); color: inherit; }
+.ciata-date-picker input:focus-visible { outline: 3px solid var(--ciata-foco); outline-offset: 2px; }
+.ciata-date-picker input[aria-invalid="true"] { border-width: 2px; }
+@media (forced-colors: active) {
+  .ciata-date-picker input:focus-visible { outline-color: Highlight; }
+}
