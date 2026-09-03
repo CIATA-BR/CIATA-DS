@@ -11,7 +11,7 @@ class CiataFileUpload extends StatelessWidget {
     required this.label,
     required this.onPressed,
     this.enabled = true,
-  }) : assert(label != '', 'label não pode ser vazio');
+  }) : assert(label.trim() != '', 'label não pode ser vazio');
 
   final String label;
   final VoidCallback onPressed;
