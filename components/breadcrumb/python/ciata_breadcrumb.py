@@ -23,7 +23,7 @@ class CiataBreadcrumb(wx.Panel):
             if not label:
                 raise ValueError("rótulo não pode ser vazio.")
             if index:
-                sizer.Add(wx.StaticText(self, label="/"), 0, wx.ALIGN_CENTER_VERTICAL | wx.LEFT | wx.RIGHT, 6)
+                sizer.AddSpacer(12)
             if action is None:
                 sizer.Add(wx.StaticText(self, label=label), 0, wx.ALIGN_CENTER_VERTICAL)
             else:
