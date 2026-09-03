@@ -32,9 +32,9 @@ class CiataCard extends StatelessWidget {
     return Card(
       child: onTap == null
           ? content
-          : InkWell(
-              onTap: onTap,
-              child: Semantics(button: true, label: title, child: content),
+          : Semantics(
+              button: true,
+              child: InkWell(onTap: onTap, child: content),
             ),
     );
   }
