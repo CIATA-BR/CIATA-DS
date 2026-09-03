@@ -1,0 +1,39 @@
+.ciata-card {
+  display: block;
+  padding: 1rem;
+  border: 2px solid var(--ciata-borda);
+  border-radius: 0.75rem;
+  background: var(--ciata-superficie);
+  color: var(--ciata-texto-primario);
+}
+
+.ciata-card--action,
+.ciata-card--link {
+  inline-size: 100%;
+  text-align: start;
+  text-decoration: none;
+}
+
+.ciata-card--action {
+  font: inherit;
+  cursor: pointer;
+}
+
+.ciata-card--action:focus-visible,
+.ciata-card--link:focus-visible,
+.ciata-card__action:focus-visible {
+  outline: 3px solid var(--ciata-foco);
+  outline-offset: 2px;
+}
+
+.ciata-card__title { font-weight: 700; }
+.ciata-card__description { margin-block: 0.5rem 0; }
+.ciata-card__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-block-start: 1rem; }
+.ciata-card__action { min-block-size: 2.75rem; }
+
+@media (forced-colors: active) {
+  .ciata-card { border-color: CanvasText; }
+  .ciata-card--action:focus-visible,
+  .ciata-card--link:focus-visible,
+  .ciata-card__action:focus-visible { outline-color: Highlight; }
+}
