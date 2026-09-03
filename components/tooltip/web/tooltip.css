@@ -1,0 +1,8 @@
+.ciata-tooltip { position: relative; display: inline-flex; }
+.ciata-tooltip__bubble { position: absolute; z-index: 20; max-inline-size: min(20rem, calc(100vw - 2rem)); inset-block-end: calc(100% + 0.5rem); inset-inline-start: 50%; transform: translateX(-50%); padding: 0.5rem 0.75rem; border: 1px solid var(--ciata-borda); background: var(--ciata-superficie); color: var(--ciata-texto-primario); font: inherit; }
+@media (forced-colors: active) {
+  .ciata-tooltip__bubble { border-color: CanvasText; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ciata-tooltip__bubble { transition: none; }
+}
