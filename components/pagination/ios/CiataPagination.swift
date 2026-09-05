@@ -25,6 +25,9 @@ public struct CiataPagination: View {
         precondition(totalPages > 0, "totalPages deve ser maior que zero")
         precondition((1...totalPages).contains(currentPage), "currentPage fora do intervalo válido")
         precondition(!previous.isEmpty && !next.isEmpty && !current.isEmpty, "rótulos não podem ser vazios")
+        precondition((1...totalPages).allSatisfy {
+            !pageLabel($0).trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }, "pageLabel deve retornar texto não vazio")
         self.currentPage = currentPage
         self.totalPages = totalPages
         self.previousLabel = previous
@@ -40,7 +43,7 @@ public struct CiataPagination: View {
                 .disabled(currentPage == 1)
             ForEach(1...totalPages, id: \.self) { page in
                 let label = pageLabel(page).trimmingCharacters(in: .whitespacesAndNewlines)
-                Button(label.isEmpty ? String(page) : label) { onPageChange(page) }
+                Button(label) { onPageChange(page) }
                     .disabled(page == currentPage)
                     .accessibilityValue(page == currentPage ? currentValue : "")
             }
