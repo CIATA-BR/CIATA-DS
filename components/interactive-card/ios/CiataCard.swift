@@ -11,9 +11,12 @@ public struct CiataCard: View {
         description: String? = nil,
         action: (() -> Void)? = nil
     ) {
-        precondition(!title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "title não pode ser vazio")
-        self.title = title
-        self.description = description
+        let normalizedTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalizedDescription = description?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        precondition(!normalizedTitle.isEmpty, "title não pode ser vazio")
+        self.title = normalizedTitle
+        self.description = normalizedDescription?.isEmpty == false ? normalizedDescription : nil
         self.action = action
     }
 
@@ -31,7 +34,7 @@ public struct CiataCard: View {
     private var content: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(title).fontWeight(.semibold)
-            if let description, !description.isEmpty {
+            if let description {
                 Text(description)
             }
         }

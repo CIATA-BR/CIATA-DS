@@ -15,16 +15,21 @@ fun CiataCard(
     description: String? = null,
     onClick: (() -> Unit)? = null,
 ) {
-    require(title.isNotBlank()) { "title não pode ser vazio." }
+    val normalizedTitle = title.trim()
+    val normalizedDescription = description?.trim()?.takeIf { it.isNotEmpty() }
 
-    val cardModifier = if (onClick != null) modifier.clickable(onClick = onClick) else modifier
+    require(normalizedTitle.isNotEmpty()) { "title não pode ser vazio." }
+
+    val cardModifier = if (onClick != null) {
+        modifier.clickable(onClick = onClick)
+    } else {
+        modifier
+    }
 
     Card(modifier = cardModifier) {
         Column {
-            Text(title)
-            if (!description.isNullOrBlank()) {
-                Text(description)
-            }
+            Text(normalizedTitle)
+            normalizedDescription?.let { Text(it) }
         }
     }
 }
