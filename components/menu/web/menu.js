@@ -19,12 +19,22 @@ export function initCiataMenu(root) {
 
   trigger.addEventListener('click', () => popup.hidden ? open() : close());
 
+  popup.addEventListener('click', (event) => {
+    const item = event.target.closest('[role="menuitem"]');
+    if (!item || item.disabled) return;
+    close();
+  });
+
   popup.addEventListener('keydown', (event) => {
     const enabled = items();
     const current = enabled.indexOf(document.activeElement);
     if (event.key === 'Escape') {
       event.preventDefault();
       close();
+      return;
+    }
+    if (event.key === 'Tab') {
+      close(false);
       return;
     }
     if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key) || !enabled.length) return;
