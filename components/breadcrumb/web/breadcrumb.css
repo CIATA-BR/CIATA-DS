@@ -2,7 +2,7 @@
 .ciata-breadcrumb__list { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem; margin: 0; padding: 0; list-style: none; }
 .ciata-breadcrumb__item { display: inline-flex; align-items: center; min-block-size: 2.75rem; }
 .ciata-breadcrumb__item + .ciata-breadcrumb__item::before { content: "/"; margin-inline: 0.5rem; }
-.ciata-breadcrumb__link { color: inherit; text-decoration: underline; text-underline-offset: 0.15em; }
+.ciata-breadcrumb__link { display: inline-flex; align-items: center; justify-content: center; min-block-size: 2.75rem; min-inline-size: 2.75rem; color: inherit; text-decoration: underline; text-underline-offset: 0.15em; }
 .ciata-breadcrumb__link:focus-visible { outline: 3px solid var(--ciata-foco); outline-offset: 2px; }
 .ciata-breadcrumb__current { font-weight: 700; }
 @media (forced-colors: active) {
