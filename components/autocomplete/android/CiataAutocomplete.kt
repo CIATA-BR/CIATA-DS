@@ -17,23 +17,27 @@ fun CiataAutocomplete(
     onExpandedChange: (Boolean) -> Unit,
     onSelect: (String) -> Unit,
 ) {
-    require(label.isNotBlank()) { "label não pode ser vazio." }
-    require(options.none { it.isBlank() }) { "options não pode conter rótulos vazios." }
+    val normalizedLabel = label.trim()
+    val normalizedOptions = options.map(String::trim)
+    require(normalizedLabel.isNotEmpty()) { "label não pode ser vazio." }
+    require(normalizedOptions.none { it.isEmpty() }) { "options não pode conter rótulos vazios." }
+
+    val effectiveExpanded = expanded && value.isNotBlank() && normalizedOptions.isNotEmpty()
 
     OutlinedTextField(
         value = value,
         onValueChange = {
             onValueChange(it)
-            onExpandedChange(it.isNotBlank() && options.isNotEmpty())
+            onExpandedChange(it.isNotBlank() && normalizedOptions.isNotEmpty())
         },
         singleLine = true,
-        label = { Text(label) },
+        label = { Text(normalizedLabel) },
     )
     DropdownMenu(
-        expanded = expanded,
+        expanded = effectiveExpanded,
         onDismissRequest = { onExpandedChange(false) },
     ) {
-        options.forEach { option ->
+        normalizedOptions.forEach { option ->
             DropdownMenuItem(
                 text = { Text(option) },
                 onClick = {

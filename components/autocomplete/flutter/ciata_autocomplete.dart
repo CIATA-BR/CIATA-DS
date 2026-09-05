@@ -2,17 +2,25 @@ import 'package:flutter/material.dart';
 
 /// Implementação experimental do CMP-0022 Autocomplete para Flutter.
 class CiataAutocomplete extends StatelessWidget {
-  const CiataAutocomplete({
+  CiataAutocomplete({
     super.key,
-    required this.label,
+    required String label,
     required this.controller,
-    required this.options,
+    required Iterable<String> options,
     required this.onSelected,
-  }) : assert(label.trim() != '', 'label não pode ser vazio');
+  })  : label = label.trim(),
+        options = options.map((option) => option.trim()).toList(growable: false) {
+    if (this.label.isEmpty) {
+      throw ArgumentError.value(label, 'label', 'não pode ser vazio');
+    }
+    if (this.options.any((option) => option.isEmpty)) {
+      throw ArgumentError.value(options, 'options', 'não pode conter rótulos vazios');
+    }
+  }
 
   final String label;
   final TextEditingController controller;
-  final Iterable<String> options;
+  final List<String> options;
   final ValueChanged<String> onSelected;
 
   @override

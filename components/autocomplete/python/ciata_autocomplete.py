@@ -25,6 +25,7 @@ class CiataAutocomplete(wx.Panel):
 
         text = wx.StaticText(self, label=label)
         self.control = wx.ComboBox(self, choices=cleaned, style=wx.CB_DROPDOWN | wx.TE_PROCESS_ENTER)
+        self.control.SetName(label)
         self._on_select = on_select
         self.control.Bind(wx.EVT_COMBOBOX, self._selected)
         self.control.Bind(wx.EVT_TEXT_ENTER, self._submitted)

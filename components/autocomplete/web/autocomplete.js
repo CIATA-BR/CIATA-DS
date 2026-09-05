@@ -11,14 +11,19 @@ export function initCiataAutocomplete(root) {
       option.setAttribute('aria-selected', current === index ? 'true' : 'false');
     });
     activeIndex = index;
-    if (index >= 0) input.setAttribute('aria-activedescendant', options[index].id);
-    else input.removeAttribute('aria-activedescendant');
+    if (index >= 0) {
+      input.setAttribute('aria-activedescendant', options[index].id);
+      options[index].scrollIntoView({ block: 'nearest' });
+    } else {
+      input.removeAttribute('aria-activedescendant');
+    }
   };
 
   const open = () => {
-    if (!options.length) return;
+    if (input.disabled || input.readOnly || !options.length) return false;
     listbox.hidden = false;
     input.setAttribute('aria-expanded', 'true');
+    return true;
   };
 
   const close = () => {
@@ -28,6 +33,7 @@ export function initCiataAutocomplete(root) {
   };
 
   const choose = (option) => {
+    if (input.disabled || input.readOnly) return;
     input.value = option.dataset.value ?? option.textContent.trim();
     input.dispatchEvent(new Event('change', { bubbles: true }));
     close();
@@ -40,13 +46,14 @@ export function initCiataAutocomplete(root) {
   });
 
   input.addEventListener('keydown', (event) => {
+    if (input.disabled || input.readOnly) return;
     if (event.key === 'ArrowDown') {
+      if (!open()) return;
       event.preventDefault();
-      open();
       setActive((activeIndex + 1 + options.length) % options.length);
     } else if (event.key === 'ArrowUp') {
+      if (!open()) return;
       event.preventDefault();
-      open();
       setActive((activeIndex - 1 + options.length) % options.length);
     } else if (event.key === 'Enter' && activeIndex >= 0) {
       event.preventDefault();
@@ -58,7 +65,7 @@ export function initCiataAutocomplete(root) {
   });
 
   options.forEach((option) => {
-    option.addEventListener('mousedown', (event) => event.preventDefault());
+    option.addEventListener('pointerdown', (event) => event.preventDefault());
     option.addEventListener('click', () => choose(option));
   });
 
