@@ -8,12 +8,20 @@ Future<DateTime?> showCiataDatePicker({
   required DateTime firstDate,
   required DateTime lastDate,
 }) {
-  assert(helpText.trim().isNotEmpty, 'helpText não pode ser vazio');
-  assert(!firstDate.isAfter(lastDate), 'firstDate deve ser anterior ou igual a lastDate');
+  final trimmedHelpText = helpText.trim();
+  if (trimmedHelpText.isEmpty) {
+    throw ArgumentError.value(helpText, 'helpText', 'não pode ser vazio');
+  }
+  if (firstDate.isAfter(lastDate)) {
+    throw ArgumentError('firstDate deve ser anterior ou igual a lastDate');
+  }
+  if (initialDate.isBefore(firstDate) || initialDate.isAfter(lastDate)) {
+    throw ArgumentError('initialDate deve estar entre firstDate e lastDate');
+  }
 
   return showDatePicker(
     context: context,
-    helpText: helpText,
+    helpText: trimmedHelpText,
     initialDate: initialDate,
     firstDate: firstDate,
     lastDate: lastDate,
