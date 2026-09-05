@@ -1,7 +1,7 @@
 @props([
     'items',
+    'menuId',
     'label' => 'Mais ações',
-    'menuId' => 'ciata-menu',
 ])
 
 <div class="ciata-menu" data-ciata-menu>
