@@ -16,19 +16,27 @@ fun CiataAlertStatus(
     title: String? = null,
     priority: String = "status",
 ) {
-    require(message.isNotBlank()) { "message não pode ser vazio." }
-    require(priority == "status" || priority == "alert") { "priority deve ser status ou alert." }
+    val normalizedMessage = message.trim()
+    val normalizedTitle = title?.trim()?.takeIf { it.isNotEmpty() }
+    val normalizedPriority = priority.trim()
 
-    val region = if (priority == "alert") LiveRegionMode.Assertive else LiveRegionMode.Polite
+    require(normalizedMessage.isNotEmpty()) { "message não pode ser vazio." }
+    require(normalizedPriority == "status" || normalizedPriority == "alert") {
+        "priority deve ser status ou alert."
+    }
+
+    val region = if (normalizedPriority == "alert") {
+        LiveRegionMode.Assertive
+    } else {
+        LiveRegionMode.Polite
+    }
 
     Column(
         modifier = modifier.semantics {
             liveRegion = region
         },
     ) {
-        if (!title.isNullOrBlank()) {
-            Text(title)
-        }
-        Text(message)
+        normalizedTitle?.let { Text(it) }
+        Text(normalizedMessage)
     }
 }
