@@ -15,13 +15,23 @@ fun CiataLink(
     url: String,
     modifier: Modifier = Modifier,
     opensNewContext: Boolean = false,
+    newContextLabel: String = "abre em novo contexto",
 ) {
-    require(label.isNotBlank()) { "label não pode ser vazio." }
-    require(url.isNotBlank()) { "url não pode ser vazia." }
+    val normalizedLabel = label.trim()
+    val normalizedUrl = url.trim()
+    val normalizedNewContextLabel = newContextLabel.trim()
 
-    val visibleLabel = if (opensNewContext) "$label (abre em novo contexto)" else label
+    require(normalizedLabel.isNotEmpty()) { "label não pode ser vazio." }
+    require(normalizedUrl.isNotEmpty()) { "url não pode ser vazia." }
+    require(!opensNewContext || normalizedNewContextLabel.isNotEmpty()) {
+        "newContextLabel não pode ser vazio quando opensNewContext estiver ativo."
+    }
+
+    val visibleLabel = if (opensNewContext) {
+        "$normalizedLabel ($normalizedNewContextLabel)"
+    } else normalizedLabel
     val text = buildAnnotatedString {
-        withLink(LinkAnnotation.Url(url)) {
+        withLink(LinkAnnotation.Url(normalizedUrl)) {
             append(visibleLabel)
         }
     }
