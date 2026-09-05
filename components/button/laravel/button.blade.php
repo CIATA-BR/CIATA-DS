@@ -7,12 +7,25 @@
 ])
 
 @php
+    $types = ['button', 'submit', 'reset'];
     $variants = ['primary', 'secondary', 'danger', 'ghost'];
-    $safeVariant = in_array($variant, $variants, true) ? $variant : 'primary';
+    $type = trim((string) $type);
+    $variant = trim((string) $variant);
+    $loadingLabel = trim((string) $loadingLabel);
+
+    if (! in_array($type, $types, true)) {
+        throw new InvalidArgumentException("type deve ser 'button', 'submit' ou 'reset'.");
+    }
+    if (! in_array($variant, $variants, true)) {
+        throw new InvalidArgumentException("variant deve ser 'primary', 'secondary', 'danger' ou 'ghost'.");
+    }
+    if ($loadingLabel === '') {
+        throw new InvalidArgumentException('loadingLabel não pode ser vazio.');
+    }
 
     $classes = collect([
         'ciata-button',
-        $safeVariant !== 'primary' ? "ciata-button--{$safeVariant}" : null,
+        $variant !== 'primary' ? "ciata-button--{$variant}" : null,
     ])->filter()->implode(' ');
 @endphp
 

@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -40,6 +41,13 @@ fun CiataButton(
     loadingStateDescription: String = "Processando",
     leadingContent: (@Composable RowScope.() -> Unit)? = null,
 ) {
+    val normalizedLabel = label.trim()
+    val normalizedLoadingStateDescription = loadingStateDescription.trim()
+    require(normalizedLabel.isNotEmpty()) { "label não pode ser vazio." }
+    require(normalizedLoadingStateDescription.isNotEmpty()) {
+        "loadingStateDescription não pode ser vazio."
+    }
+
     val effectiveOnClick: () -> Unit = {
         if (!loading) onClick()
     }
@@ -48,20 +56,22 @@ fun CiataButton(
         .defaultMinSize(minWidth = 48.dp, minHeight = 48.dp)
         .semantics {
             if (loading) {
-                stateDescription = loadingStateDescription
+                stateDescription = normalizedLoadingStateDescription
             }
         }
 
     val content: @Composable RowScope.() -> Unit = {
         if (loading) {
             CircularProgressIndicator(
-                modifier = Modifier.defaultMinSize(minWidth = 18.dp, minHeight = 18.dp),
+                modifier = Modifier
+                    .defaultMinSize(minWidth = 18.dp, minHeight = 18.dp)
+                    .clearAndSetSemantics {},
                 strokeWidth = 2.dp,
             )
         } else {
             leadingContent?.invoke(this)
         }
-        Text(label)
+        Text(normalizedLabel)
     }
 
     when (variant) {

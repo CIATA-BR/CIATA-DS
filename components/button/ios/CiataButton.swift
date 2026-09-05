@@ -12,6 +12,8 @@ struct CiataButton: View {
     let variant: CiataButtonVariant
     let isLoading: Bool
     let isDisabled: Bool
+    let loadingValue: String
+    let loadingHint: String
     let action: () -> Void
 
     init(
@@ -19,12 +21,23 @@ struct CiataButton: View {
         variant: CiataButtonVariant = .primary,
         isLoading: Bool = false,
         isDisabled: Bool = false,
+        loadingValue: String = "Operação em andamento",
+        loadingHint: String = "Aguarde a conclusão da operação",
         action: @escaping () -> Void
     ) {
-        self.label = label
+        let normalizedLabel = label.trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalizedLoadingValue = loadingValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalizedLoadingHint = loadingHint.trimmingCharacters(in: .whitespacesAndNewlines)
+        precondition(!normalizedLabel.isEmpty, "label não pode ser vazio")
+        precondition(!normalizedLoadingValue.isEmpty, "loadingValue não pode ser vazio")
+        precondition(!normalizedLoadingHint.isEmpty, "loadingHint não pode ser vazio")
+
+        self.label = normalizedLabel
         self.variant = variant
         self.isLoading = isLoading
         self.isDisabled = isDisabled
+        self.loadingValue = normalizedLoadingValue
+        self.loadingHint = normalizedLoadingHint
         self.action = action
     }
 
@@ -32,8 +45,8 @@ struct CiataButton: View {
         styledButton
             .disabled(isDisabled)
             .accessibilityLabel(Text(label))
-            .accessibilityValue(isLoading ? Text("Operação em andamento") : Text(""))
-            .accessibilityHint(isLoading ? Text("Aguarde a conclusão da operação") : Text(""))
+            .accessibilityValue(isLoading ? Text(loadingValue) : Text(""))
+            .accessibilityHint(isLoading ? Text(loadingHint) : Text(""))
     }
 
     private var baseButton: some View {

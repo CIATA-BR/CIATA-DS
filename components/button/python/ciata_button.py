@@ -33,12 +33,18 @@ class CiataButton(wx.Button):
         loading_label: str = "Processando",
         **kwargs,
     ) -> None:
-        super().__init__(parent, label=label, **kwargs)
-
+        label = label.strip()
+        loading_label = loading_label.strip()
+        if not label:
+            raise ValueError("label não pode ser vazio.")
+        if not loading_label:
+            raise ValueError("loading_label não pode ser vazio.")
         if variant not in {"primary", "secondary", "danger", "ghost"}:
             raise ValueError(
                 "variant deve ser 'primary', 'secondary', 'danger' ou 'ghost'."
             )
+
+        super().__init__(parent, label=label, **kwargs)
 
         self.variant = variant
         self._original_label = label
@@ -55,14 +61,11 @@ class CiataButton(wx.Button):
         return self._loading
 
     def set_loading(self, loading: bool, *, announce: bool = True) -> None:
-        """Atualiza o estado de processamento sem confundi-lo com disabled.
+        """Atualiza processamento sem confundir loading com disabled.
 
-        ``wx.Button.Disable()`` não é usado para loading porque desabilitar um
-        controle pode retirá-lo do fluxo de foco e ocultar a diferença entre
-        "indisponível" e "operação em andamento" para tecnologia assistiva.
-
-        Quando ``on_status`` é fornecido, a aplicação decide como expor o anúncio
-        pelo mecanismo acessível mais apropriado para a janela/plataforma.
+        O rótulo visível permanece estável durante a operação. Quando ``on_status``
+        é fornecido, a aplicação decide como anunciar início/conclusão pelo
+        mecanismo acessível mais apropriado para a janela/plataforma.
         """
 
         loading = bool(loading)
@@ -70,11 +73,11 @@ class CiataButton(wx.Button):
             return
 
         self._loading = loading
-        self.SetLabel(self._loading_label if loading else self._original_label)
+        self.SetLabel(self._original_label)
 
         if announce and self._on_status is not None:
             message = (
-                f"{self._original_label}: operação em andamento"
+                f"{self._original_label}: {self._loading_label}"
                 if loading
                 else f"{self._original_label}: operação concluída"
             )
@@ -91,7 +94,8 @@ class CiataButton(wx.Button):
         Em botões com texto visível, prefira que o próprio label seja suficiente.
         """
 
-        if not name.strip():
+        name = name.strip()
+        if not name:
             raise ValueError("O nome acessível não pode ser vazio.")
         self.SetName(name)
 
