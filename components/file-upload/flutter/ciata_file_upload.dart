@@ -6,12 +6,16 @@ import 'package:flutter/material.dart';
 /// dependência de plugin. O host deve conectar `onPressed` ao seletor nativo
 /// de documentos suportado pela aplicação.
 class CiataFileUpload extends StatelessWidget {
-  const CiataFileUpload({
+  CiataFileUpload({
     super.key,
-    required this.label,
+    required String label,
     required this.onPressed,
     this.enabled = true,
-  }) : assert(label.trim() != '', 'label não pode ser vazio');
+  }) : label = label.trim() {
+    if (this.label.isEmpty) {
+      throw ArgumentError.value(label, 'label', 'não pode ser vazio');
+    }
+  }
 
   final String label;
   final VoidCallback onPressed;

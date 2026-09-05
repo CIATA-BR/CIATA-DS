@@ -14,6 +14,8 @@ Permitir seleção e envio de arquivos com nome claro, restrições compreensív
 - Nome, tamanho e estado de cada arquivo selecionado devem ser perceptíveis por tecnologia assistiva.
 - Remover/substituir arquivo deve ser uma ação explícita e não depender de gesto complexo.
 - Não iniciar upload irreversível apenas pela seleção quando o fluxo exigir revisão/confirmação.
+- Seleção de arquivo e envio são etapas distintas: o componente não deve tratar sucesso do seletor como sucesso do upload.
+- Cancelar o seletor nativo não é erro e não deve gerar anúncio intrusivo.
 
 ## Propriedades conceituais
 - `label` — nome do campo/controle;
@@ -50,10 +52,19 @@ O controle não deve ser removido da árvore de acessibilidade apenas para criar
 - Ao remover um arquivo, mover foco apenas quando o elemento focado deixar de existir, preferindo o próximo item lógico ou o controle de seleção.
 - Não criar drop zones focáveis sem função real de teclado.
 
-## Validação
+## Validação e segurança
 - Validar quantidade, tamanho, tipo e demais restrições tanto no cliente quanto no servidor quando aplicável.
 - Mensagens devem citar o arquivo e a restrição violada, por exemplo `relatorio.exe não é permitido. Envie PDF ou DOCX`.
-- Não confiar apenas na extensão do nome do arquivo para segurança.
+- Não confiar apenas na extensão do nome do arquivo para segurança; validar tipo real quando possível.
+- No servidor, armazenar uploads fora de caminhos executáveis, gerar nomes seguros quando necessário e nunca usar o nome original como caminho confiável.
+- Limites de aplicação, servidor e runtime devem ser coerentes com `maxFileSize` e `maxFiles`; rejeições por limite devem produzir mensagem compreensível.
+- Em Web/Laravel, o formulário consumidor deve usar `multipart/form-data` e validação server-side equivalente às restrições anunciadas no componente.
+
+## Integração por plataforma
+- Android: distinguir seleção única de múltipla quando esse contrato for exposto; não usar um seletor múltiplo como equivalente silencioso de seleção única.
+- iOS: falhas do `fileImporter` devem chegar ao host para feedback apropriado; acesso security-scoped, cópia e persistência de URLs são responsabilidade explícita da integração.
+- Flutter: enquanto o DS não impuser plugin de arquivos, o componente representa apenas a ação acessível; a integração concreta do seletor e seus erros deve ser validada no host.
+- wxPython: o botão e o diálogo devem possuir nomes claros e localizáveis; cancelamento retorna ao contexto sem erro.
 
 ## Tema, contraste e escala
 Respeitar claro, escuro, sistema, forced/high contrast, zoom e text scaling. Estados de erro, sucesso, envio e seleção não podem depender apenas de cor, ícone ou animação.
@@ -66,7 +77,9 @@ Ações interativas seguem alvo interno de 44 × 44 unidades lógicas quando apl
 - seleção múltipla lista cada arquivo com ação `Remover <nome>`;
 - progresso é apresentado visualmente e programaticamente sem spam de anúncios;
 - arquivo acima do limite permanece identificado com mensagem específica e pode ser removido/substituído;
-- drop zone possui também botão `Selecionar arquivos` acionável por teclado e leitor de tela.
+- drop zone possui também botão `Selecionar arquivos` acionável por teclado e leitor de tela;
+- cancelar o seletor apenas devolve o usuário ao contexto sem anunciar falha;
+- servidor rejeita arquivo incompatível mesmo que o cliente tenha aceitado sua extensão.
 
 ## Exemplos não conformes
 - área `Arraste aqui` sem alternativa por teclado;
@@ -76,10 +89,12 @@ Ações interativas seguem alvo interno de 44 × 44 unidades lógicas quando apl
 - botão de remover anunciado apenas como `botão`;
 - foco some após remover um arquivo;
 - sucesso indicado apenas por check verde;
-- percentuais anunciados a cada alteração mínima, interrompendo continuamente a leitura.
+- percentuais anunciados a cada alteração mínima, interrompendo continuamente a leitura;
+- tratar cancelamento do seletor como erro;
+- confiar somente na extensão ou no MIME informado pelo cliente.
 
 ## Matriz mínima
-Verificar nome, restrições, seletor nativo, múltiplos arquivos, lista, remover/substituir, drag equivalente, teclado, foco, tipos/tamanho/quantidade, progresso, erro, sucesso, cancelamento, alvo, contraste, escala e tecnologias assistivas.
+Verificar nome, restrições, seletor nativo, seleção única/múltipla, lista, remover/substituir, drag equivalente, teclado, foco, tipos/tamanho/quantidade, progresso, erro, sucesso, cancelamento, segurança server-side, limites de runtime, alvo, contraste, escala e tecnologias assistivas.
 
 ## Validação manual
 Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.

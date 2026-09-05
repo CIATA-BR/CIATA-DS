@@ -7,13 +7,15 @@ public struct CiataFileUpload: View {
     private let allowedContentTypes: [UTType]
     private let allowsMultipleSelection: Bool
     private let onSelected: ([URL]) -> Void
+    private let onError: ((Error) -> Void)?
     @State private var isImporting = false
 
     public init(
         label: String,
         allowedContentTypes: [UTType] = [.item],
         allowsMultipleSelection: Bool = false,
-        onSelected: @escaping ([URL]) -> Void
+        onSelected: @escaping ([URL]) -> Void,
+        onError: ((Error) -> Void)? = nil
     ) {
         let trimmed = label.trimmingCharacters(in: .whitespacesAndNewlines)
         precondition(!trimmed.isEmpty, "label não pode ser vazio")
@@ -22,6 +24,7 @@ public struct CiataFileUpload: View {
         self.allowedContentTypes = allowedContentTypes
         self.allowsMultipleSelection = allowsMultipleSelection
         self.onSelected = onSelected
+        self.onError = onError
     }
 
     public var body: some View {
@@ -31,8 +34,11 @@ public struct CiataFileUpload: View {
                 allowedContentTypes: allowedContentTypes,
                 allowsMultipleSelection: allowsMultipleSelection
             ) { result in
-                if case let .success(urls) = result {
+                switch result {
+                case let .success(urls):
                     onSelected(urls)
+                case let .failure(error):
+                    onError?(error)
                 }
             }
     }

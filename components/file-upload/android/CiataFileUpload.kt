@@ -14,15 +14,18 @@ fun CiataFileUpload(
     mimeTypes: Array<String> = arrayOf("*/*"),
     onSelected: (List<Uri>) -> Unit,
 ) {
-    require(label.isNotBlank()) { "label não pode ser vazio." }
-    require(mimeTypes.isNotEmpty()) { "mimeTypes não pode ser vazio." }
+    val normalizedLabel = label.trim()
+    val normalizedMimeTypes = mimeTypes.map(String::trim).filter(String::isNotEmpty).toTypedArray()
+
+    require(normalizedLabel.isNotEmpty()) { "label não pode ser vazio." }
+    require(normalizedMimeTypes.isNotEmpty()) { "mimeTypes não pode ser vazio." }
 
     val launcher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.OpenMultipleDocuments(),
         onResult = onSelected,
     )
 
-    TextButton(onClick = { launcher.launch(mimeTypes) }) {
-        Text(label)
+    TextButton(onClick = { launcher.launch(normalizedMimeTypes) }) {
+        Text(normalizedLabel)
     }
 }
