@@ -6,8 +6,10 @@ public struct CiataProgress: View {
     private let value: Double?
 
     public init(label: String, value: Double? = nil) {
-        precondition(!label.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "label não pode ser vazio")
-        self.label = label
+        let normalizedLabel = label.trimmingCharacters(in: .whitespacesAndNewlines)
+        precondition(!normalizedLabel.isEmpty, "label não pode ser vazio")
+        precondition(value == nil || value!.isFinite, "value deve ser finito quando informado")
+        self.label = normalizedLabel
         self.value = value
     }
 
@@ -17,7 +19,7 @@ public struct CiataProgress: View {
             ProgressView(value: safe) {
                 Text(label)
             } currentValueLabel: {
-                Text("\(Int(safe * 100))%")
+                Text("\(Int((safe * 100).rounded()))%")
             }
         } else {
             ProgressView(label)
