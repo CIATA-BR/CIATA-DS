@@ -8,9 +8,34 @@
 ])
 
 @php
+    $label = trim((string) $label);
+    $mode = trim((string) $mode);
+
+    if ($label === '') {
+        throw new InvalidArgumentException('label não pode ser vazio.');
+    }
+    if (! in_array($mode, ['indeterminate', 'determinate'], true)) {
+        throw new InvalidArgumentException('mode deve ser indeterminate ou determinate.');
+    }
+    if (! is_numeric($min) || ! is_numeric($max)) {
+        throw new InvalidArgumentException('min e max devem ser numéricos.');
+    }
+
+    $min = (float) $min;
+    $max = (float) $max;
     $determinate = $mode === 'determinate';
-    $safeValue = $determinate ? max($min, min($max, $value ?? $min)) : null;
-    $percent = $determinate && $max > $min
+
+    if ($determinate && $max <= $min) {
+        throw new InvalidArgumentException('max deve ser maior que min no modo determinate.');
+    }
+    if ($determinate && $value !== null && ! is_numeric($value)) {
+        throw new InvalidArgumentException('value deve ser numérico quando informado.');
+    }
+
+    $safeValue = $determinate
+        ? max($min, min($max, $value === null ? $min : (float) $value))
+        : null;
+    $percent = $determinate
         ? (($safeValue - $min) / ($max - $min)) * 100
         : null;
 @endphp
