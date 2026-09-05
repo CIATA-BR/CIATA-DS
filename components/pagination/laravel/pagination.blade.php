@@ -7,7 +7,24 @@
 ])
 
 @php
+    $label = trim((string) $label);
+    $currentPage = (int) $currentPage;
+    $totalPages = (int) $totalPages;
     $window = max(0, (int) $window);
+
+    if ($label === '') {
+        throw new InvalidArgumentException('label não pode ser vazio.');
+    }
+    if ($totalPages < 1) {
+        throw new InvalidArgumentException('totalPages deve ser maior que zero.');
+    }
+    if ($currentPage < 1 || $currentPage > $totalPages) {
+        throw new InvalidArgumentException('currentPage deve estar dentro do intervalo válido.');
+    }
+    if (! is_callable($hrefForPage)) {
+        throw new InvalidArgumentException('hrefForPage deve ser chamável.');
+    }
+
     $pages = collect([1, $totalPages])
         ->merge(range(max(1, $currentPage - $window), min($totalPages, $currentPage + $window)))
         ->filter(fn ($page) => $page >= 1 && $page <= $totalPages)
