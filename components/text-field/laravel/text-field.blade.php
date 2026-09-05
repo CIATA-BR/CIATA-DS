@@ -19,6 +19,26 @@
 ])
 
 @php
+    $id = trim((string) $id);
+    $name = trim((string) $name);
+    $label = trim((string) $label);
+    $type = trim((string) $type);
+    $rows = (int) $rows;
+    $allowedTypes = ['text', 'email', 'password', 'search', 'tel', 'url'];
+
+    if ($id === '' || $name === '' || $label === '') {
+        throw new InvalidArgumentException('id, name e label não podem ser vazios.');
+    }
+    if (! $multiline && ! in_array($type, $allowedTypes, true)) {
+        throw new InvalidArgumentException('type não suportado pelo TextField.');
+    }
+    if ($rows < 1) {
+        throw new InvalidArgumentException('rows deve ser maior que zero.');
+    }
+    if ($maxlength !== null && (int) $maxlength < 1) {
+        throw new InvalidArgumentException('maxlength deve ser maior que zero.');
+    }
+
     $helpId = $help ? "{$id}-help" : null;
     $errorId = $error ? "{$id}-error" : null;
     $describedBy = collect([$helpId, $errorId])->filter()->implode(' ');
