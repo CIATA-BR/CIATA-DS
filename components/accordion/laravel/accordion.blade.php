@@ -1,4 +1,5 @@
 @props([
+    'id',
     'items',
     'expanded' => [],
     'labelLevel' => 3,
@@ -11,16 +12,16 @@
             <h{{ $labelLevel }} class="ciata-accordion__heading">
                 <button
                     type="button"
-                    id="accordion-trigger-{{ $index }}"
+                    id="{{ $id }}-trigger-{{ $index }}"
                     class="ciata-accordion__button"
                     aria-expanded="{{ $isExpanded ? 'true' : 'false' }}"
-                    aria-controls="accordion-panel-{{ $index }}"
+                    aria-controls="{{ $id }}-panel-{{ $index }}"
                 >{{ $item['label'] }}</button>
             </h{{ $labelLevel }}>
             <div
-                id="accordion-panel-{{ $index }}"
+                id="{{ $id }}-panel-{{ $index }}"
                 class="ciata-accordion__panel"
-                aria-labelledby="accordion-trigger-{{ $index }}"
+                aria-labelledby="{{ $id }}-trigger-{{ $index }}"
                 @unless($isExpanded) hidden @endunless
             >{{ $item['content'] }}</div>
         </section>
