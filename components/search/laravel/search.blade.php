@@ -8,9 +8,31 @@
     'readonly' => false,
     'statusText' => null,
     'errorText' => null,
+    'submitLabel' => 'Buscar',
+    'landmarkLabel' => null,
 ])
 
-<form role="search" class="ciata-search" method="get">
+@php
+    $id = trim((string) $id);
+    $label = trim((string) $label);
+    $name = trim((string) $name);
+    $submitLabel = trim((string) $submitLabel);
+    $landmarkLabel = $landmarkLabel !== null ? trim((string) $landmarkLabel) : null;
+
+    if ($id === '' || $label === '' || $name === '' || $submitLabel === '') {
+        throw new InvalidArgumentException('id, label, name e submitLabel não podem ser vazios.');
+    }
+    if ($landmarkLabel === '') {
+        $landmarkLabel = null;
+    }
+@endphp
+
+<form
+    role="search"
+    class="ciata-search"
+    method="get"
+    @if($landmarkLabel) aria-label="{{ $landmarkLabel }}" @endif
+>
     <label for="{{ $id }}">{{ $label }}</label>
     <div class="ciata-search__controls">
         <input
@@ -23,7 +45,7 @@
             @readonly($readonly)
             @if($errorText) aria-invalid="true" aria-describedby="{{ $id }}-error" @endif
         >
-        <button type="submit">Buscar</button>
+        <button type="submit" @disabled($disabled || $readonly)>{{ $submitLabel }}</button>
     </div>
     @if($errorText)
         <div id="{{ $id }}-error">{{ $errorText }}</div>
