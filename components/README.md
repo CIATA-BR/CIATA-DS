@@ -19,26 +19,26 @@ O CIATA-DS padroniza comportamento, acessibilidade, intenção visual e critéri
 | --- | --- | --- | --- |
 | CMP-0001 | Button / Botão | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
 | CMP-0002 | TextField / Campo de texto | experimental | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0003 | Checkbox / Caixa de seleção | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0004 | Radio / Botão de opção | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0005 | Select / Combobox | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0006 | Link / Link de navegação | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0007 | Alert / Status | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0008 | Modal / Dialog | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0009 | Loading / Progress | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0010 | Card interativo | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0011 | Pagination / Paginação | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0012 | Toast | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0013 | Tabs / Abas | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0014 | Accordion / Acordeão | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0015 | Menu | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0016 | Breadcrumb / Trilha de navegação | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0017 | Tooltip | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0018 | Bottom Sheet | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0019 | Date Picker / Seletor de data | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0020 | File Upload / Envio de arquivo | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0021 | Search / Busca | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
-| CMP-0022 | Autocomplete | rascunho | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0003 | Checkbox / Caixa de seleção | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0004 | Radio / Botão de opção | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0005 | Select / Combobox | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0006 | Link / Link de navegação | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0007 | Alert / Status | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0008 | Modal / Dialog | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0009 | Loading / Progress | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0010 | Card interativo | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0011 | Pagination / Paginação | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0012 | Toast | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0013 | Tabs / Abas | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0014 | Accordion / Acordeão | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0015 | Menu | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0016 | Breadcrumb / Trilha de navegação | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0017 | Tooltip | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0018 | Bottom Sheet | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0019 | Date Picker / Seletor de data | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0020 | File Upload / Envio de arquivo | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0021 | Search / Busca | experimental | Web, Laravel, Android, iOS, Flutter, Python |
+| CMP-0022 | Autocomplete | experimental | Web, Laravel, Android, iOS, Flutter, Python |
 
 ## Estrutura por componente
 
