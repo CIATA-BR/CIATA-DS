@@ -2,7 +2,7 @@
 .ciata-bottom-sheet__close { min-block-size: 2.75rem; font: inherit; }
 .ciata-bottom-sheet__dialog { inline-size: min(100%, 48rem); max-inline-size: none; margin: auto 0 0; padding: 0; border: 0; background: transparent; color: inherit; }
 .ciata-bottom-sheet__dialog::backdrop { background: rgb(0 0 0 / 0.45); }
-.ciata-bottom-sheet__surface { max-block-size: min(90vh, 48rem); overflow: auto; border: 1px solid var(--ciata-borda); border-radius: 1rem 1rem 0 0; background: var(--ciata-superficie); color: var(--ciata-texto-primario); }
+.ciata-bottom-sheet__surface { max-block-size: min(90vh, 48rem); max-block-size: min(90dvh, 48rem); overflow: auto; border: 1px solid var(--ciata-borda); border-radius: 1rem 1rem 0 0; background: var(--ciata-superficie); color: var(--ciata-texto-primario); }
 .ciata-bottom-sheet__header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem; }
 .ciata-bottom-sheet__content { padding: 0 1rem 1rem; }
 .ciata-bottom-sheet__trigger:focus-visible,
