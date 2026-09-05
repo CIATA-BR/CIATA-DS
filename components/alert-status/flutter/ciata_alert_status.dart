@@ -2,13 +2,25 @@ import 'package:flutter/material.dart';
 
 /// Implementação experimental do CMP-0007 Alert/Status para Flutter.
 class CiataAlertStatus extends StatelessWidget {
-  const CiataAlertStatus({
+  CiataAlertStatus({
     super.key,
-    required this.message,
-    this.title,
-    this.priority = 'status',
-  })  : assert(message != '', 'message não pode ser vazio'),
-        assert(priority == 'status' || priority == 'alert', 'priority deve ser status ou alert');
+    required String message,
+    String? title,
+    String priority = 'status',
+  })  : message = message.trim(),
+        title = title?.trim(),
+        priority = priority.trim() {
+    if (this.message.isEmpty) {
+      throw ArgumentError.value(message, 'message', 'não pode ser vazio');
+    }
+    if (this.priority != 'status' && this.priority != 'alert') {
+      throw ArgumentError.value(
+        priority,
+        'priority',
+        'deve ser status ou alert',
+      );
+    }
+  }
 
   final String message;
   final String? title;
@@ -16,21 +28,27 @@ class CiataAlertStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final normalizedTitle = title?.isNotEmpty == true ? title : null;
     final text = [
-      if (title != null && title!.isNotEmpty) title!,
+      if (normalizedTitle != null) normalizedTitle,
       message,
     ].join('. ');
 
     return Semantics(
       liveRegion: true,
       label: text,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (title != null && title!.isNotEmpty)
-            Text(title!, style: Theme.of(context).textTheme.titleMedium),
-          Text(message),
-        ],
+      child: ExcludeSemantics(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            if (normalizedTitle != null)
+              Text(
+                normalizedTitle,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            Text(message),
+          ],
+        ),
       ),
     );
   }

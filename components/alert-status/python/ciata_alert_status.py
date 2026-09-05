@@ -19,33 +19,43 @@ class CiataAlertStatus(wx.Panel):
         on_announce: Optional[Callable[[str, str], None]] = None,
     ) -> None:
         super().__init__(parent)
-        if not message.strip():
+
+        normalized_message = message.strip()
+        normalized_title = title.strip()
+        normalized_variant = variant.strip()
+        normalized_priority = priority.strip()
+
+        if not normalized_message:
             raise ValueError("message não pode ser vazio.")
-        if priority not in {"status", "alert"}:
+        if normalized_variant not in {"info", "success", "warning", "error"}:
+            raise ValueError("variant deve ser info, success, warning ou error.")
+        if normalized_priority not in {"status", "alert"}:
             raise ValueError("priority deve ser status ou alert.")
 
-        self._priority = priority
+        self._priority = normalized_priority
         self._on_announce = on_announce
-        self.SetName(title.strip() or "Mensagem de status")
+        if normalized_title:
+            self.SetName(normalized_title)
 
         sizer = wx.BoxSizer(wx.VERTICAL)
-        if title.strip():
-            self.title = wx.StaticText(self, label=title.strip())
+        if normalized_title:
+            self.title = wx.StaticText(self, label=normalized_title)
             sizer.Add(self.title, 0, wx.BOTTOM, 4)
-        self.message = wx.StaticText(self, label=message.strip())
+        self.message = wx.StaticText(self, label=normalized_message)
         self.message.Wrap(560)
         sizer.Add(self.message, 0, wx.EXPAND)
         self.SetSizer(sizer)
-        self.SetHelpText(f"{variant}: {message.strip()}")
+        self.SetHelpText(normalized_message)
 
         if on_announce is not None:
-            on_announce(message.strip(), priority)
+            on_announce(normalized_message, normalized_priority)
 
     def update_message(self, message: str, *, announce: bool = True) -> None:
         value = message.strip()
         if not value:
             raise ValueError("message não pode ser vazio.")
         self.message.SetLabel(value)
+        self.SetHelpText(value)
         self.Layout()
         if announce and self._on_announce is not None:
             self._on_announce(value, self._priority)
