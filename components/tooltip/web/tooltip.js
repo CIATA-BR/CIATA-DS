@@ -10,22 +10,38 @@ export function initCiataTooltip(root) {
   const shouldDescribe = root.dataset.ciataTooltipDescribe === 'true';
   if (focusable && shouldDescribe) focusable.setAttribute('aria-describedby', tooltip.id);
 
-  const show = () => { tooltip.hidden = false; };
+  let dismissed = false;
+
+  const show = () => {
+    if (dismissed) return;
+    tooltip.hidden = false;
+  };
   const hide = () => { tooltip.hidden = true; };
+  const resetDismissed = () => { dismissed = false; };
 
   triggerHost.addEventListener('mouseenter', show);
   triggerHost.addEventListener('mouseleave', (event) => {
-    if (!tooltip.contains(event.relatedTarget)) hide();
+    if (!tooltip.contains(event.relatedTarget)) {
+      hide();
+      resetDismissed();
+    }
   });
   tooltip.addEventListener('mouseenter', show);
-  tooltip.addEventListener('mouseleave', hide);
+  tooltip.addEventListener('mouseleave', () => {
+    hide();
+    resetDismissed();
+  });
   triggerHost.addEventListener('focusin', show);
   triggerHost.addEventListener('focusout', (event) => {
-    if (!triggerHost.contains(event.relatedTarget)) hide();
+    if (!triggerHost.contains(event.relatedTarget)) {
+      hide();
+      resetDismissed();
+    }
   });
   triggerHost.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !tooltip.hidden) {
       event.preventDefault();
+      dismissed = true;
       hide();
     }
   });
