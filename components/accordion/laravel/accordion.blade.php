@@ -5,6 +5,8 @@
     'labelLevel' => 3,
 ])
 
+@php($labelLevel = max(1, min(6, (int) $labelLevel)))
+
 <div class="ciata-accordion" data-ciata-accordion>
     @foreach($items as $index => $item)
         @php($isExpanded = in_array($index, $expanded, true))
