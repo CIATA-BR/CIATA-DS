@@ -25,23 +25,29 @@ Registrar plataforma, versão, tecnologia assistiva, navegador/dispositivo, cen�
 | DTP-14 | Tema | Conteúdo e foco permanecem perceptíveis em claro/escuro/sistema. |
 | DTP-15 | Alto contraste | Campo, seleção, foco e estados permanecem distinguíveis. |
 | DTP-16 | Escala | Zoom/text scaling não corta datas, instruções ou ações essenciais. |
+| DTP-17 | Valor inicial | Data inicial fora do intervalo é rejeitada antes da interação. |
+| DTP-18 | Data civil/timezone | Selecionar uma data sem horário não muda o dia por conversão de fuso. |
+| DTP-19 | Intervalo longo | Usuário alcança anos distantes sem navegação mês a mês excessiva quando a plataforma oferece alternativa. |
+| DTP-20 | Localização de ações | Confirmar, cancelar e ações equivalentes usam texto localizável e não vazio quando o componente os fornece. |
+| DTP-21 | Data extrema | Primeiro/último dia permitido continua selecionável e anunciado corretamente. |
+| DTP-22 | Calendário/ano bissexto | 29 de fevereiro e transições de mês/ano respeitam calendário e limites. |
 
 ## Web e Laravel/PHP
-Executar com JAWS e NVDA, teclado, zoom 200%/400% e forced colors. Verificar `label`, `input type="date"`, valor ISO, min/max, required/disabled/readonly, descrição/erro e foco visível.
+Executar com JAWS e NVDA, teclado, zoom 200%/400% e forced colors. Verificar `label`, `input type="date"`, valor ISO, min/max, required/disabled/readonly, descrição/erro, foco visível e preservação do dia selecionado entre frontend/backend.
 
 ## Python / wxPython
-Executar no Windows com leitor de tela suportado. Verificar `wx.adv.DatePickerCtrl`, nome do campo, valor, navegação nativa, locale e comportamento do seletor.
+Executar no Windows com leitor de tela suportado. Verificar `wx.adv.DatePickerCtrl`, nome programático do campo, valor, navegação nativa, locale, datas inválidas e comportamento do seletor.
 
 ## Android / Jetpack Compose
-Executar com TalkBack. Verificar `DatePickerDialog`/`DatePicker`, confirmação/cancelamento, ordem de leitura, seleção, limites quando implementados, escala de fonte/display e retorno de contexto.
+Executar com TalkBack. Verificar `DatePickerDialog`/`DatePicker`, heading/título, confirmação/cancelamento localizáveis, ordem de leitura, seleção, limites quando implementados, escala de fonte/display e retorno de contexto.
 
 ## iOS / SwiftUI
-Executar com VoiceOver. Verificar `DatePicker`, nome, valor, intervalo, ordem de leitura, Dynamic Type e comportamento nativo de seleção.
+Executar com VoiceOver. Verificar `DatePicker`, nome, valor, intervalo, valor inicial dentro do intervalo, ordem de leitura, Dynamic Type e comportamento nativo de seleção.
 
 ## Flutter
-Executar em Android + TalkBack e iOS + VoiceOver. Verificar `showDatePicker`, help text, datas inicial/mínima/máxima, navegação, text scaling e ausência de semântica duplicada.
+Executar em Android + TalkBack e iOS + VoiceOver. Verificar `showDatePicker`, help text, datas inicial/mínima/máxima, validação em runtime, navegação, text scaling e ausência de semântica duplicada.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/valor/foco/teclado/validação e validação manual com tecnologia assistiva relevante tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `estável` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/valor/foco/teclado/validação e validação manual com tecnologia assistiva relevante tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.
