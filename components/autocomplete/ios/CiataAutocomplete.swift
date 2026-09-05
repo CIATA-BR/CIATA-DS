@@ -17,7 +17,7 @@ public struct CiataAutocomplete: View {
         let trimmed = label.trimmingCharacters(in: .whitespacesAndNewlines)
         let normalizedOptions = options.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
         precondition(!trimmed.isEmpty, "label não pode ser vazio")
-        precondition(!normalizedOptions.contains(where: \.isEmpty), "options não pode conter rótulos vazios")
+        precondition(!normalizedOptions.contains { $0.isEmpty }, "options não pode conter rótulos vazios")
         self.label = trimmed
         self._value = value
         self.options = normalizedOptions
