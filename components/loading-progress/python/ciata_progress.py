@@ -6,19 +6,28 @@ import wx
 
 
 class CiataProgress(wx.Panel):
-    def __init__(self, parent: wx.Window, label: str, *, maximum: int = 100, value: int | None = None) -> None:
+    def __init__(
+        self,
+        parent: wx.Window,
+        label: str,
+        *,
+        maximum: int = 100,
+        value: int | None = None,
+    ) -> None:
         super().__init__(parent)
-        if not label.strip():
+
+        self._label = label.strip()
+        if not self._label:
             raise ValueError("label não pode ser vazio.")
         if maximum <= 0:
             raise ValueError("maximum deve ser maior que zero.")
 
-        self._label = label.strip()
         self.label = wx.StaticText(self, label=self._label)
         self.gauge = wx.Gauge(self, range=maximum, style=wx.GA_HORIZONTAL)
         self.gauge.SetName(self._label)
 
         if value is None:
+            self.gauge.SetHelpText(self._label)
             self.gauge.Pulse()
         else:
             self.set_value(value)
@@ -29,6 +38,8 @@ class CiataProgress(wx.Panel):
         self.SetSizer(sizer)
 
     def set_value(self, value: int) -> None:
-        safe = max(0, min(self.gauge.GetRange(), value))
+        if isinstance(value, bool):
+            raise ValueError("value deve ser um inteiro.")
+        safe = max(0, min(self.gauge.GetRange(), int(value)))
         self.gauge.SetValue(safe)
         self.gauge.SetHelpText(f"{self._label}: {safe} de {self.gauge.GetRange()}")

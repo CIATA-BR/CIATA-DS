@@ -6,6 +6,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.ProgressBarRangeInfo
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.progressBarRangeInfo
 import androidx.compose.ui.semantics.semantics
 
@@ -16,21 +17,27 @@ fun CiataProgress(
     modifier: Modifier = Modifier,
     value: Float? = null,
 ) {
-    require(label.isNotBlank()) { "label não pode ser vazio." }
+    val normalizedLabel = label.trim()
+    require(normalizedLabel.isNotEmpty()) { "label não pode ser vazio." }
+    require(value == null || value.isFinite()) { "value deve ser finito quando informado." }
 
     if (value == null) {
-        CircularProgressIndicator(modifier = modifier.semantics {
-            progressBarRangeInfo = ProgressBarRangeInfo.Indeterminate
-        })
-        Text(label)
+        CircularProgressIndicator(
+            modifier = modifier.semantics {
+                contentDescription = normalizedLabel
+                progressBarRangeInfo = ProgressBarRangeInfo.Indeterminate
+            },
+        )
+        Text(normalizedLabel)
     } else {
         val safe = value.coerceIn(0f, 1f)
         LinearProgressIndicator(
             progress = { safe },
             modifier = modifier.semantics {
+                contentDescription = normalizedLabel
                 progressBarRangeInfo = ProgressBarRangeInfo(safe, 0f..1f)
             },
         )
-        Text("$label: ${(safe * 100).toInt()}%")
+        Text("$normalizedLabel: ${(safe * 100).toInt()}%")
     }
 }
