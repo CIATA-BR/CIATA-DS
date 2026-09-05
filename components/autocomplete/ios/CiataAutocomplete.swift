@@ -15,11 +15,12 @@ public struct CiataAutocomplete: View {
         onSelect: @escaping (String) -> Void
     ) {
         let trimmed = label.trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalizedOptions = options.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
         precondition(!trimmed.isEmpty, "label não pode ser vazio")
-        precondition(!options.contains { $0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }, "options não pode conter rótulos vazios")
+        precondition(!normalizedOptions.contains(where: \.isEmpty), "options não pode conter rótulos vazios")
         self.label = trimmed
         self._value = value
-        self.options = options
+        self.options = normalizedOptions
         self.onSelect = onSelect
     }
 
@@ -30,7 +31,7 @@ public struct CiataAutocomplete: View {
                     isExpanded = !newValue.isEmpty && !options.isEmpty
                 }
             if isExpanded {
-                ForEach(options, id: \.self) { option in
+                ForEach(Array(options.enumerated()), id: \.offset) { _, option in
                     Button(option) {
                         value = option
                         onSelect(option)
