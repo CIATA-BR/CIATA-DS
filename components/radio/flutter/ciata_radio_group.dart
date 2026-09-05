@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CiataRadioOption<T> {
-  const CiataRadioOption({
+  CiataRadioOption({
     required this.value,
-    required this.label,
+    required String label,
     this.enabled = true,
-  });
+  }) : label = label.trim() {
+    if (this.label.isEmpty) {
+      throw ArgumentError.value(label, 'label', 'não pode ser vazio');
+    }
+  }
 
   final T value;
   final String label;
@@ -14,18 +18,33 @@ class CiataRadioOption<T> {
 
 /// Implementação experimental do CMP-0004 Radio para Flutter.
 class CiataRadioGroup<T> extends StatelessWidget {
-  const CiataRadioGroup({
+  CiataRadioGroup({
     super.key,
-    required this.legend,
+    required String legend,
     required this.options,
     required this.value,
     required this.onChanged,
     this.requiredField = false,
     this.enabled = true,
-    this.helpText,
-    this.errorText,
-  })  : assert(legend != '', 'legend não pode ser vazio'),
-        assert(options.length >= 2, 'Radio Group deve possuir ao menos duas opções');
+    String? helpText,
+    String? errorText,
+  })  : legend = legend.trim(),
+        helpText = helpText?.trim(),
+        errorText = errorText?.trim() {
+    if (this.legend.isEmpty) {
+      throw ArgumentError.value(legend, 'legend', 'não pode ser vazio');
+    }
+    if (options.length < 2) {
+      throw ArgumentError('Radio Group deve possuir ao menos duas opções');
+    }
+    final values = options.map((option) => option.value).toList(growable: false);
+    if (values.toSet().length != values.length) {
+      throw ArgumentError('Valores das opções devem ser únicos');
+    }
+    if (value != null && !values.contains(value)) {
+      throw ArgumentError.value(value, 'value', 'não pertence às opções do grupo');
+    }
+  }
 
   final String legend;
   final List<CiataRadioOption<T>> options;
