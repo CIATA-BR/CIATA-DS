@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CiataTextField extends StatefulWidget {
-  const CiataTextField({
+  CiataTextField({
     super.key,
     required this.controller,
-    required this.label,
+    required String label,
     this.helpText,
     this.errorText,
     this.requiredField = false,
@@ -18,7 +18,24 @@ class CiataTextField extends StatefulWidget {
     this.maxLines = 1,
     this.onChanged,
     this.onSubmitted,
-  });
+    String showPasswordLabel = 'Mostrar',
+    String hidePasswordLabel = 'Ocultar',
+  })  : label = label.trim(),
+        showPasswordLabel = showPasswordLabel.trim(),
+        hidePasswordLabel = hidePasswordLabel.trim() {
+    if (this.label.isEmpty) {
+      throw ArgumentError.value(label, 'label', 'não pode ser vazio');
+    }
+    if (minLines < 1 || (maxLines != null && maxLines! < minLines)) {
+      throw ArgumentError('minLines/maxLines formam um intervalo inválido');
+    }
+    if (password && (minLines != 1 || maxLines != 1)) {
+      throw ArgumentError('password exige campo de linha única');
+    }
+    if (this.showPasswordLabel.isEmpty || this.hidePasswordLabel.isEmpty) {
+      throw ArgumentError('rótulos de mostrar/ocultar senha não podem ser vazios');
+    }
+  }
 
   final TextEditingController controller;
   final String label;
@@ -35,6 +52,8 @@ class CiataTextField extends StatefulWidget {
   final int? maxLines;
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onSubmitted;
+  final String showPasswordLabel;
+  final String hidePasswordLabel;
 
   @override
   State<CiataTextField> createState() => _CiataTextFieldState();
@@ -76,7 +95,11 @@ class _CiataTextFieldState extends State<CiataTextField> {
                         });
                       }
                     : null,
-                child: Text(_passwordVisible ? 'Ocultar' : 'Mostrar'),
+                child: Text(
+                  _passwordVisible
+                      ? widget.hidePasswordLabel
+                      : widget.showPasswordLabel,
+                ),
               )
             : null,
       ),
