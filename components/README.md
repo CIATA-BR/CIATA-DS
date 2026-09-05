@@ -13,6 +13,8 @@ O CIATA-DS padroniza comportamento, acessibilidade, intenção visual e critéri
 - `estável` — contrato e implementações suportadas validadas;
 - `depreciado` — não recomendado para novos usos e com plano de migração documentado.
 
+A ordem operacional para validação manual e promoção está em [`validation-promotion-queue.md`](./validation-promotion-queue.md).
+
 ## Catálogo inicial
 
 | Código | Componente | Status | Plataformas iniciais |
