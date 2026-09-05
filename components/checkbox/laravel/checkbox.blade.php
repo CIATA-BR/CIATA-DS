@@ -11,6 +11,14 @@
 ])
 
 @php
+    $id = trim((string) $id);
+    $name = trim((string) $name);
+    $label = trim((string) $label);
+
+    if ($id === '' || $name === '' || $label === '') {
+        throw new InvalidArgumentException('id, name e label não podem ser vazios.');
+    }
+
     $helpId = $help ? "{$id}-help" : null;
     $errorId = $error ? "{$id}-error" : null;
     $describedBy = collect([$helpId, $errorId])->filter()->implode(' ');
