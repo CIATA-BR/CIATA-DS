@@ -28,6 +28,19 @@ export function setCiataFieldError(input, message, options = {}) {
 
   input.removeAttribute('aria-invalid');
   input.removeAttribute('aria-errormessage');
+
+  if (errorElement.id) {
+    const ids = (input.getAttribute('aria-describedby') || '')
+      .split(/\s+/)
+      .filter((id) => id && id !== errorElement.id);
+
+    if (ids.length) {
+      input.setAttribute('aria-describedby', ids.join(' '));
+    } else {
+      input.removeAttribute('aria-describedby');
+    }
+  }
+
   errorElement.textContent = '';
   errorElement.removeAttribute('role');
 }
