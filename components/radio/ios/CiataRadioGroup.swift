@@ -6,8 +6,10 @@ public struct CiataRadioOption: Identifiable, Hashable {
     public let enabled: Bool
 
     public init(value: String, label: String, enabled: Bool = true) {
+        let normalizedLabel = label.trimmingCharacters(in: .whitespacesAndNewlines)
+        precondition(!normalizedLabel.isEmpty, "label não pode ser vazio")
         self.id = value
-        self.label = label
+        self.label = normalizedLabel
         self.enabled = enabled
     }
 }
@@ -31,18 +33,22 @@ public struct CiataRadioGroup: View {
         helpText: String? = nil,
         errorText: String? = nil
     ) {
-        precondition(!legend.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "legend não pode ser vazio")
-        precondition(options.count >= 2, "Radio Group deve possuir ao menos duas opções")
-        precondition(options.allSatisfy { !$0.label.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }, "Rótulos não podem ser vazios")
-        precondition(Set(options.map(\.id)).count == options.count, "Valores devem ser únicos")
+        let normalizedLegend = legend.trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalizedHelpText = helpText?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalizedErrorText = errorText?.trimmingCharacters(in: .whitespacesAndNewlines)
 
-        self.legend = legend
+        precondition(!normalizedLegend.isEmpty, "legend não pode ser vazio")
+        precondition(options.count >= 2, "Radio Group deve possuir ao menos duas opções")
+        precondition(Set(options.map(\.id)).count == options.count, "Valores devem ser únicos")
+        precondition(selectedValue.wrappedValue == nil || options.contains { $0.id == selectedValue.wrappedValue }, "selectedValue não pertence às opções do grupo")
+
+        self.legend = normalizedLegend
         self.options = options
         self._selectedValue = selectedValue
         self.required = required
         self.disabled = disabled
-        self.helpText = helpText
-        self.errorText = errorText
+        self.helpText = normalizedHelpText
+        self.errorText = normalizedErrorText
     }
 
     public var body: some View {

@@ -32,16 +32,19 @@ class CiataRadioGroup(wx.Panel):
         if not self._legend:
             raise ValueError("legend não pode ser vazio.")
 
-        self._options = list(options)
-        if len(self._options) < 2:
+        raw_options = list(options)
+        if len(raw_options) < 2:
             raise ValueError("Radio Group deve possuir ao menos duas opções.")
 
+        self._options = [(value, label.strip()) for value, label in raw_options]
         values = [value for value, _ in self._options]
-        labels = [label.strip() for _, label in self._options]
+        labels = [label for _, label in self._options]
         if any(not label for label in labels):
             raise ValueError("Rótulos das opções não podem ser vazios.")
         if len(values) != len(set(values)):
             raise ValueError("Valores das opções devem ser únicos.")
+        if selected_value is not None and selected_value not in set(values):
+            raise ValueError("selected_value não pertence às opções do grupo.")
 
         self._help_text = help_text.strip()
         self._on_change = on_change
