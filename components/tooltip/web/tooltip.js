@@ -7,7 +7,8 @@ export function initCiataTooltip(root) {
     ? triggerHost
     : triggerHost.querySelector('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
 
-  if (focusable) focusable.setAttribute('aria-describedby', tooltip.id);
+  const shouldDescribe = root.dataset.ciataTooltipDescribe === 'true';
+  if (focusable && shouldDescribe) focusable.setAttribute('aria-describedby', tooltip.id);
 
   const show = () => { tooltip.hidden = false; };
   const hide = () => { tooltip.hidden = true; };
