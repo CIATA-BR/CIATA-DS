@@ -17,13 +17,14 @@ public struct CiataCheckbox: View {
         helpText: String? = nil,
         errorText: String? = nil
     ) {
-        precondition(!label.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "label não pode ser vazio")
-        self.label = label
+        let normalizedLabel = label.trimmingCharacters(in: .whitespacesAndNewlines)
+        precondition(!normalizedLabel.isEmpty, "label não pode ser vazio")
+        self.label = normalizedLabel
         self._isChecked = isChecked
         self.required = required
         self.disabled = disabled
-        self.helpText = helpText
-        self.errorText = errorText
+        self.helpText = helpText?.trimmingCharacters(in: .whitespacesAndNewlines)
+        self.errorText = errorText?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     public var body: some View {

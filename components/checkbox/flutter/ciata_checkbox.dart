@@ -2,17 +2,26 @@ import 'package:flutter/material.dart';
 
 /// Implementação experimental do CMP-0003 Checkbox para Flutter.
 class CiataCheckbox extends StatelessWidget {
-  const CiataCheckbox({
+  CiataCheckbox({
     super.key,
-    required this.label,
+    required String label,
     required this.value,
     required this.onChanged,
     this.requiredField = false,
     this.enabled = true,
-    this.helpText,
-    this.errorText,
+    String? helpText,
+    String? errorText,
     this.tristate = false,
-  }) : assert(label != '', 'label não pode ser vazio');
+  })  : label = label.trim(),
+        helpText = helpText?.trim(),
+        errorText = errorText?.trim() {
+    if (this.label.isEmpty) {
+      throw ArgumentError.value(label, 'label', 'não pode ser vazio');
+    }
+    if (!tristate && value == null) {
+      throw ArgumentError.value(value, 'value', 'não pode ser null quando tristate=false');
+    }
+  }
 
   final String label;
   final bool? value;
