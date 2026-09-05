@@ -1,9 +1,14 @@
 @props([
+    'id',
     'text',
-    'id' => 'ciata-tooltip',
+    'describe' => false,
 ])
 
-<span class="ciata-tooltip" data-ciata-tooltip>
+<span
+    class="ciata-tooltip"
+    data-ciata-tooltip
+    data-ciata-tooltip-describe="{{ $describe ? 'true' : 'false' }}"
+>
     <span class="ciata-tooltip__trigger">
         {{ $trigger }}
     </span>
