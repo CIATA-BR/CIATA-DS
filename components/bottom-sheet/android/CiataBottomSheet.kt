@@ -14,16 +14,18 @@ fun CiataBottomSheet(
     open: Boolean,
     title: String,
     onDismissRequest: () -> Unit,
+    closeLabel: String = "Fechar",
     content: @Composable () -> Unit,
 ) {
     require(title.isNotBlank()) { "title não pode ser vazio." }
+    require(closeLabel.isNotBlank()) { "closeLabel não pode ser vazio." }
     if (!open) return
 
     ModalBottomSheet(onDismissRequest = onDismissRequest) {
         Text(title, modifier = Modifier.semantics { heading() })
         content()
         TextButton(onClick = onDismissRequest) {
-            Text("Fechar")
+            Text(closeLabel)
         }
     }
 }
