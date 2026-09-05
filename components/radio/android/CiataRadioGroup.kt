@@ -35,23 +35,33 @@ fun CiataRadioGroup(
     helpText: String? = null,
     errorText: String? = null,
 ) {
-    require(legend.isNotBlank()) { "legend não pode ser vazio." }
-    require(options.size >= 2) { "Radio Group deve possuir ao menos duas opções." }
-    require(options.all { it.label.isNotBlank() }) { "Rótulos não podem ser vazios." }
-    require(options.map { it.value }.distinct().size == options.size) { "Valores devem ser únicos." }
+    val normalizedLegend = legend.trim()
+    val normalizedOptions = options.map { option ->
+        option.copy(label = option.label.trim())
+    }
+    val normalizedHelpText = helpText?.trim()
+    val normalizedErrorText = errorText?.trim()
 
-    val groupModifier = if (!errorText.isNullOrBlank()) {
+    require(normalizedLegend.isNotEmpty()) { "legend não pode ser vazio." }
+    require(normalizedOptions.size >= 2) { "Radio Group deve possuir ao menos duas opções." }
+    require(normalizedOptions.all { it.label.isNotEmpty() }) { "Rótulos não podem ser vazios." }
+    require(normalizedOptions.map { it.value }.distinct().size == normalizedOptions.size) { "Valores devem ser únicos." }
+    require(selectedValue == null || normalizedOptions.any { it.value == selectedValue }) {
+        "selectedValue não pertence às opções do grupo."
+    }
+
+    val groupModifier = if (!normalizedErrorText.isNullOrEmpty()) {
         modifier
             .selectableGroup()
-            .semantics { error(errorText) }
+            .semantics { error(normalizedErrorText) }
     } else {
         modifier.selectableGroup()
     }
 
     Column(modifier = groupModifier) {
-        Text(if (required) "$legend (obrigatório)" else legend)
+        Text(if (required) "$normalizedLegend (obrigatório)" else normalizedLegend)
 
-        options.forEach { option ->
+        normalizedOptions.forEach { option ->
             val optionEnabled = enabled && option.enabled
             Row(
                 modifier = Modifier.selectable(
@@ -72,11 +82,11 @@ fun CiataRadioGroup(
             }
         }
 
-        if (!helpText.isNullOrBlank()) {
-            Text(helpText)
+        if (!normalizedHelpText.isNullOrEmpty()) {
+            Text(normalizedHelpText)
         }
-        if (!errorText.isNullOrBlank()) {
-            Text(errorText)
+        if (!normalizedErrorText.isNullOrEmpty()) {
+            Text(normalizedErrorText)
         }
     }
 }
