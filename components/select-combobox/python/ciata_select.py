@@ -27,9 +27,20 @@ class CiataSelect(wx.Panel):
         self._label = label.strip()
         if not self._label:
             raise ValueError("label não pode ser vazio.")
-        if not options:
+
+        raw_options = list(options)
+        if not raw_options:
             raise ValueError("options não pode ser vazio.")
-        self._options = list(options)
+
+        self._options = [(value, text.strip()) for value, text in raw_options]
+        values = [value for value, _ in self._options]
+        if any(not text for _, text in self._options):
+            raise ValueError("Rótulos das opções não podem ser vazios.")
+        if len(values) != len(set(values)):
+            raise ValueError("Valores das opções devem ser únicos.")
+        if selected_value is not None and selected_value not in set(values):
+            raise ValueError("selected_value não pertence às opções do Select.")
+
         self._help_text = help_text.strip()
         self._on_change = on_change
         self._on_status = on_status
