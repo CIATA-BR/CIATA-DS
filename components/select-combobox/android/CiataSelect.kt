@@ -34,14 +34,23 @@ fun CiataSelect(
     helpText: String? = null,
     errorText: String? = null,
 ) {
-    require(label.isNotBlank()) { "label não pode ser vazio." }
-    require(options.isNotEmpty()) { "options não pode ser vazio." }
-    require(options.map { it.value }.distinct().size == options.size) { "Valores devem ser únicos." }
+    val normalizedLabel = label.trim()
+    val normalizedOptions = options.map { option -> option.copy(label = option.label.trim()) }
+    val normalizedHelpText = helpText?.trim()
+    val normalizedErrorText = errorText?.trim()
+
+    require(normalizedLabel.isNotEmpty()) { "label não pode ser vazio." }
+    require(normalizedOptions.isNotEmpty()) { "options não pode ser vazio." }
+    require(normalizedOptions.all { it.label.isNotEmpty() }) { "Rótulos das opções não podem ser vazios." }
+    require(normalizedOptions.map { it.value }.distinct().size == normalizedOptions.size) { "Valores devem ser únicos." }
+    require(selectedValue == null || normalizedOptions.any { it.value == selectedValue }) {
+        "selectedValue não pertence às opções do Select."
+    }
 
     var expanded by remember { mutableStateOf(false) }
-    val selectedLabel = options.firstOrNull { it.value == selectedValue }?.label.orEmpty()
-    val semanticModifier = if (!errorText.isNullOrBlank()) {
-        modifier.semantics { error(errorText) }
+    val selectedLabel = normalizedOptions.firstOrNull { it.value == selectedValue }?.label.orEmpty()
+    val semanticModifier = if (!normalizedErrorText.isNullOrEmpty()) {
+        modifier.semantics { error(normalizedErrorText) }
     } else modifier
 
     Column(modifier = semanticModifier) {
@@ -54,17 +63,17 @@ fun CiataSelect(
                 onValueChange = {},
                 readOnly = true,
                 enabled = enabled,
-                label = { Text(if (required) "$label (obrigatório)" else label) },
+                label = { Text(if (required) "$normalizedLabel (obrigatório)" else normalizedLabel) },
                 trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded) },
                 modifier = Modifier.menuAnchor(),
-                isError = !errorText.isNullOrBlank(),
+                isError = !normalizedErrorText.isNullOrEmpty(),
             )
 
             ExposedDropdownMenu(
                 expanded = expanded,
                 onDismissRequest = { expanded = false },
             ) {
-                options.forEach { option ->
+                normalizedOptions.forEach { option ->
                     DropdownMenuItem(
                         text = { Text(option.label) },
                         enabled = enabled && option.enabled,
@@ -77,7 +86,7 @@ fun CiataSelect(
             }
         }
 
-        if (!helpText.isNullOrBlank()) Text(helpText)
-        if (!errorText.isNullOrBlank()) Text(errorText)
+        if (!normalizedHelpText.isNullOrEmpty()) Text(normalizedHelpText)
+        if (!normalizedErrorText.isNullOrEmpty()) Text(normalizedErrorText)
     }
 }

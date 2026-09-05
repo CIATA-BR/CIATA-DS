@@ -6,8 +6,10 @@ public struct CiataSelectOption: Identifiable, Hashable {
     public let enabled: Bool
 
     public init(value: String, label: String, enabled: Bool = true) {
+        let normalizedLabel = label.trimmingCharacters(in: .whitespacesAndNewlines)
+        precondition(!normalizedLabel.isEmpty, "label não pode ser vazio")
         self.id = value
-        self.label = label
+        self.label = normalizedLabel
         self.enabled = enabled
     }
 }
@@ -21,6 +23,7 @@ public struct CiataSelect: View {
     private let disabled: Bool
     private let helpText: String?
     private let errorText: String?
+    private let emptySelectionLabel: String
 
     public init(
         label: String,
@@ -29,24 +32,34 @@ public struct CiataSelect: View {
         required: Bool = false,
         disabled: Bool = false,
         helpText: String? = nil,
-        errorText: String? = nil
+        errorText: String? = nil,
+        emptySelectionLabel: String = "Selecione uma opção"
     ) {
-        precondition(!label.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "label não pode ser vazio")
+        let normalizedLabel = label.trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalizedHelpText = helpText?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalizedErrorText = errorText?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalizedEmptySelectionLabel = emptySelectionLabel.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        precondition(!normalizedLabel.isEmpty, "label não pode ser vazio")
         precondition(!options.isEmpty, "options não pode ser vazio")
         precondition(Set(options.map(\.id)).count == options.count, "Valores devem ser únicos")
-        self.label = label
+        precondition(selectedValue.wrappedValue == nil || options.contains { $0.id == selectedValue.wrappedValue }, "selectedValue não pertence às opções do Select")
+        precondition(!normalizedEmptySelectionLabel.isEmpty, "emptySelectionLabel não pode ser vazio")
+
+        self.label = normalizedLabel
         self.options = options
         self._selectedValue = selectedValue
         self.required = required
         self.disabled = disabled
-        self.helpText = helpText
-        self.errorText = errorText
+        self.helpText = normalizedHelpText
+        self.errorText = normalizedErrorText
+        self.emptySelectionLabel = normalizedEmptySelectionLabel
     }
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Picker(required ? "\(label) (obrigatório)" : label, selection: $selectedValue) {
-                Text("Selecione uma opção").tag(Optional<String>.none)
+                Text(emptySelectionLabel).tag(Optional<String>.none)
                 ForEach(options) { option in
                     Text(option.label)
                         .tag(Optional(option.id))
