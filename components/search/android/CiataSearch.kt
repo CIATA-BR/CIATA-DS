@@ -13,11 +13,13 @@ fun CiataSearch(
     label: String,
     value: String,
     onValueChange: (String) -> Unit,
-    onSubmit: () -> Unit,
+    onSubmit: (String) -> Unit,
     enabled: Boolean = true,
     readOnly: Boolean = false,
+    placeholder: String? = null,
 ) {
-    require(label.isNotBlank()) { "label não pode ser vazio." }
+    val normalizedLabel = label.trim()
+    require(normalizedLabel.isNotEmpty()) { "label não pode ser vazio." }
 
     OutlinedTextField(
         value = value,
@@ -25,8 +27,13 @@ fun CiataSearch(
         enabled = enabled,
         readOnly = readOnly,
         singleLine = true,
-        label = { Text(label) },
+        label = { Text(normalizedLabel) },
+        placeholder = placeholder?.let { { Text(it) } },
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
-        keyboardActions = KeyboardActions(onSearch = { onSubmit() }),
+        keyboardActions = KeyboardActions(
+            onSearch = {
+                if (enabled && !readOnly) onSubmit(value)
+            },
+        ),
     )
 }
