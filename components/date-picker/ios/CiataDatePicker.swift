@@ -13,6 +13,9 @@ public struct CiataDatePicker: View {
     ) {
         let trimmed = label.trimmingCharacters(in: .whitespacesAndNewlines)
         precondition(!trimmed.isEmpty, "label não pode ser vazio")
+        if let range {
+            precondition(range.contains(selection.wrappedValue), "selection deve estar dentro de range")
+        }
         self.label = trimmed
         self._selection = selection
         self.range = range
