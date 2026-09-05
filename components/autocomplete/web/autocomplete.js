@@ -20,7 +20,7 @@ export function initCiataAutocomplete(root) {
   };
 
   const open = () => {
-    if (!options.length) return false;
+    if (input.disabled || input.readOnly || !options.length) return false;
     listbox.hidden = false;
     input.setAttribute('aria-expanded', 'true');
     return true;
@@ -33,6 +33,7 @@ export function initCiataAutocomplete(root) {
   };
 
   const choose = (option) => {
+    if (input.disabled || input.readOnly) return;
     input.value = option.dataset.value ?? option.textContent.trim();
     input.dispatchEvent(new Event('change', { bubbles: true }));
     close();
@@ -45,6 +46,7 @@ export function initCiataAutocomplete(root) {
   });
 
   input.addEventListener('keydown', (event) => {
+    if (input.disabled || input.readOnly) return;
     if (event.key === 'ArrowDown') {
       if (!open()) return;
       event.preventDefault();
