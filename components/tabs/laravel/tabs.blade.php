@@ -1,4 +1,5 @@
 @props([
+    'id',
     'tabs',
     'selectedIndex' => 0,
     'label' => 'Seções',
@@ -9,11 +10,11 @@
         @foreach($tabs as $index => $tab)
             <button
                 type="button"
-                id="tab-{{ $index }}"
+                id="{{ $id }}-tab-{{ $index }}"
                 class="ciata-tabs__tab"
                 role="tab"
                 aria-selected="{{ $index === $selectedIndex ? 'true' : 'false' }}"
-                aria-controls="panel-{{ $index }}"
+                aria-controls="{{ $id }}-panel-{{ $index }}"
                 tabindex="{{ $index === $selectedIndex ? '0' : '-1' }}"
             >{{ $tab['label'] }}</button>
         @endforeach
@@ -21,10 +22,10 @@
 
     @foreach($tabs as $index => $tab)
         <div
-            id="panel-{{ $index }}"
+            id="{{ $id }}-panel-{{ $index }}"
             class="ciata-tabs__panel"
             role="tabpanel"
-            aria-labelledby="tab-{{ $index }}"
+            aria-labelledby="{{ $id }}-tab-{{ $index }}"
             @if($index !== $selectedIndex) hidden @endif
         >{{ $tab['content'] }}</div>
     @endforeach
