@@ -4,17 +4,22 @@ import SwiftUI
 public struct CiataBottomSheet<Content: View>: ViewModifier {
     @Binding private var isPresented: Bool
     private let title: String
+    private let closeLabel: String
     private let content: () -> Content
 
     public init(
         isPresented: Binding<Bool>,
         title: String,
+        closeLabel: String = "Fechar",
         @ViewBuilder content: @escaping () -> Content
     ) {
         let trimmed = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        let trimmedCloseLabel = closeLabel.trimmingCharacters(in: .whitespacesAndNewlines)
         precondition(!trimmed.isEmpty, "title não pode ser vazio")
+        precondition(!trimmedCloseLabel.isEmpty, "closeLabel não pode ser vazio")
         self._isPresented = isPresented
         self.title = trimmed
+        self.closeLabel = trimmedCloseLabel
         self.content = content
     }
 
@@ -25,7 +30,7 @@ public struct CiataBottomSheet<Content: View>: ViewModifier {
                     .font(.headline)
                     .accessibilityAddTraits(.isHeader)
                 self.content()
-                Button("Fechar") { isPresented = false }
+                Button(closeLabel) { isPresented = false }
             }
             .padding()
         }
