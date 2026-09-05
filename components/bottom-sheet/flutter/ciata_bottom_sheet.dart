@@ -5,8 +5,16 @@ Future<T?> showCiataBottomSheet<T>({
   required BuildContext context,
   required String title,
   required Widget child,
+  String closeLabel = 'Fechar',
 }) {
-  assert(title.trim().isNotEmpty, 'title não pode ser vazio');
+  final trimmedTitle = title.trim();
+  final trimmedCloseLabel = closeLabel.trim();
+  if (trimmedTitle.isEmpty) {
+    throw ArgumentError.value(title, 'title', 'não pode ser vazio');
+  }
+  if (trimmedCloseLabel.isEmpty) {
+    throw ArgumentError.value(closeLabel, 'closeLabel', 'não pode ser vazio');
+  }
 
   return showModalBottomSheet<T>(
     context: context,
@@ -18,13 +26,13 @@ Future<T?> showCiataBottomSheet<T>({
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Semantics(header: true, child: Text(title)),
+            Semantics(header: true, child: Text(trimmedTitle)),
             const SizedBox(height: 16),
             Flexible(child: SingleChildScrollView(child: child)),
             const SizedBox(height: 16),
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Fechar'),
+              child: Text(trimmedCloseLabel),
             ),
           ],
         ),
