@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CiataSelectOption<T> {
-  const CiataSelectOption({
+  CiataSelectOption({
     required this.value,
-    required this.label,
+    required String label,
     this.enabled = true,
-  });
+  }) : label = label.trim() {
+    if (this.label.isEmpty) {
+      throw ArgumentError.value(label, 'label', 'não pode ser vazio');
+    }
+  }
 
   final T value;
   final String label;
@@ -14,18 +18,33 @@ class CiataSelectOption<T> {
 
 /// Implementação experimental do CMP-0005 Select para Flutter.
 class CiataSelect<T> extends StatelessWidget {
-  const CiataSelect({
+  CiataSelect({
     super.key,
-    required this.label,
+    required String label,
     required this.options,
     required this.value,
     required this.onChanged,
     this.requiredField = false,
     this.enabled = true,
-    this.helpText,
-    this.errorText,
-  })  : assert(label != '', 'label não pode ser vazio'),
-        assert(options.length > 0, 'options não pode ser vazio');
+    String? helpText,
+    String? errorText,
+  })  : label = label.trim(),
+        helpText = helpText?.trim(),
+        errorText = errorText?.trim() {
+    if (this.label.isEmpty) {
+      throw ArgumentError.value(label, 'label', 'não pode ser vazio');
+    }
+    if (options.isEmpty) {
+      throw ArgumentError('options não pode ser vazio');
+    }
+    final values = options.map((option) => option.value).toList(growable: false);
+    if (values.toSet().length != values.length) {
+      throw ArgumentError('Valores das opções devem ser únicos');
+    }
+    if (value != null && !values.contains(value)) {
+      throw ArgumentError.value(value, 'value', 'não pertence às opções do Select');
+    }
+  }
 
   final String label;
   final List<CiataSelectOption<T>> options;
@@ -45,8 +64,8 @@ class CiataSelect<T> extends StatelessWidget {
       onChanged: enabled ? onChanged : null,
       decoration: InputDecoration(
         labelText: visibleLabel,
-        helperText: helpText,
-        errorText: errorText,
+        helperText: errorText?.isNotEmpty == true ? null : helpText,
+        errorText: errorText?.isNotEmpty == true ? errorText : null,
       ),
       items: options
           .map(
