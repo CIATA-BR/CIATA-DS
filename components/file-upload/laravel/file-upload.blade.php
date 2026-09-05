@@ -10,6 +10,20 @@
     'errorText' => null,
 ])
 
+@php
+    $id = trim((string) $id);
+    $label = trim((string) $label);
+    $name = trim((string) $name);
+    $accept = $accept !== null ? trim((string) $accept) : null;
+
+    if ($id === '' || $label === '' || $name === '') {
+        throw new InvalidArgumentException('id, label e name não podem ser vazios.');
+    }
+    if ($accept === '') {
+        $accept = null;
+    }
+@endphp
+
 <div class="ciata-file-upload">
     <label for="{{ $id }}">{{ $label }}</label>
     <input
