@@ -33,10 +33,15 @@ class CiataTextField(wx.Panel):
     ) -> None:
         super().__init__(parent)
 
-        if not label.strip():
+        label = label.strip()
+        if not label:
             raise ValueError("label não pode ser vazio.")
+        if password and multiline:
+            raise ValueError("password e multiline não podem ser combinados.")
+        if max_length is not None and max_length <= 0:
+            raise ValueError("max_length deve ser maior que zero.")
 
-        self._base_label = label.strip()
+        self._base_label = label
         self._required = bool(required)
         self._help_text = help_text.strip()
         self._on_status = on_status
@@ -58,8 +63,6 @@ class CiataTextField(wx.Panel):
         self.text.SetName(self._accessible_name())
 
         if max_length is not None:
-            if max_length <= 0:
-                raise ValueError("max_length deve ser maior que zero.")
             self.text.SetMaxLength(max_length)
 
         self.text.Enable(not disabled)

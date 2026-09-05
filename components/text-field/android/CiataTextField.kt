@@ -30,7 +30,18 @@ fun CiataTextField(
     maxLines: Int = if (singleLine) 1 else Int.MAX_VALUE,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     password: Boolean = false,
+    showPasswordLabel: String = "Mostrar",
+    hidePasswordLabel: String = "Ocultar",
 ) {
+    val normalizedLabel = label.trim()
+    val normalizedShowPasswordLabel = showPasswordLabel.trim()
+    val normalizedHidePasswordLabel = hidePasswordLabel.trim()
+    require(normalizedLabel.isNotEmpty()) { "label não pode ser vazio." }
+    require(maxLines > 0) { "maxLines deve ser maior que zero." }
+    require(!password || singleLine) { "password exige singleLine=true." }
+    require(normalizedShowPasswordLabel.isNotEmpty()) { "showPasswordLabel não pode ser vazio." }
+    require(normalizedHidePasswordLabel.isNotEmpty()) { "hidePasswordLabel não pode ser vazio." }
+
     var passwordVisible by remember { mutableStateOf(false) }
     val hasError = !errorText.isNullOrBlank()
     val supporting = errorText ?: helpText
@@ -43,7 +54,7 @@ fun CiataTextField(
             enabled = enabled,
             readOnly = readOnly,
             label = {
-                Text(if (required) "$label (obrigatório)" else label)
+                Text(if (required) "$normalizedLabel (obrigatório)" else normalizedLabel)
             },
             supportingText = supporting?.let { text ->
                 { Text(text) }
@@ -59,8 +70,11 @@ fun CiataTextField(
             },
             trailingIcon = if (password) {
                 {
-                    TextButton(onClick = { passwordVisible = !passwordVisible }) {
-                        Text(if (passwordVisible) "Ocultar" else "Mostrar")
+                    TextButton(
+                        enabled = enabled && !readOnly,
+                        onClick = { passwordVisible = !passwordVisible },
+                    ) {
+                        Text(if (passwordVisible) normalizedHidePasswordLabel else normalizedShowPasswordLabel)
                     }
                 }
             } else {
