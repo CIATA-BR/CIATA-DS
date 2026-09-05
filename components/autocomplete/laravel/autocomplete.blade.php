@@ -6,7 +6,23 @@
     'options' => [],
     'disabled' => false,
     'readonly' => false,
+    'browserAutocomplete' => 'off',
 ])
+
+@php
+    $id = trim((string) $id);
+    $label = trim((string) $label);
+    $name = trim((string) $name);
+    $browserAutocomplete = trim((string) $browserAutocomplete);
+    $options = collect($options)->map(fn ($option) => trim((string) $option))->all();
+
+    if ($id === '' || $label === '' || $name === '' || $browserAutocomplete === '') {
+        throw new InvalidArgumentException('id, label, name e browserAutocomplete não podem ser vazios.');
+    }
+    if (collect($options)->contains(fn ($option) => $option === '')) {
+        throw new InvalidArgumentException('options não pode conter rótulos vazios.');
+    }
+@endphp
 
 <div class="ciata-autocomplete" data-ciata-autocomplete>
     <label for="{{ $id }}">{{ $label }}</label>
@@ -18,7 +34,7 @@
         aria-autocomplete="list"
         aria-expanded="false"
         aria-controls="{{ $id }}-listbox"
-        autocomplete="off"
+        autocomplete="{{ $browserAutocomplete }}"
         value="{{ $value }}"
         @disabled($disabled)
         @readonly($readonly)
