@@ -15,6 +15,7 @@ class CiataDatePicker(wx.Panel):
 
         text = wx.StaticText(self, label=label)
         self.control = wx.adv.DatePickerCtrl(self, style=wx.adv.DP_DROPDOWN | wx.adv.DP_SHOWCENTURY)
+        self.control.SetName(label)
 
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.Add(text, 0, wx.BOTTOM, 4)
@@ -25,4 +26,6 @@ class CiataDatePicker(wx.Panel):
         return self.control.GetValue()
 
     def set_value(self, value: wx.DateTime) -> None:
+        if not value.IsValid():
+            raise ValueError("value deve ser uma data válida.")
         self.control.SetValue(value)

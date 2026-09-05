@@ -12,6 +12,22 @@
     'errorText' => null,
 ])
 
+@php
+    $id = trim((string) $id);
+    $label = trim((string) $label);
+    $name = trim((string) $name);
+
+    if ($id === '' || $label === '' || $name === '') {
+        throw new InvalidArgumentException('id, label e name não podem ser vazios.');
+    }
+    if ($min && $max && $min > $max) {
+        throw new InvalidArgumentException('min deve ser anterior ou igual a max.');
+    }
+    if ($value && (($min && $value < $min) || ($max && $value > $max))) {
+        throw new InvalidArgumentException('value deve estar dentro do intervalo permitido.');
+    }
+@endphp
+
 <div class="ciata-date-picker">
     <label for="{{ $id }}">{{ $label }}</label>
     <input

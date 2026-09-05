@@ -13,6 +13,7 @@ Permitir seleção de uma data de forma previsível, acessível e consistente en
 - Datas indisponíveis precisam ser semanticamente desabilitadas, não apenas acinzentadas.
 - Erros de data devem ser associados ao campo e anunciados sem depender de cor.
 - Não usar placeholder como único rótulo ou única instrução de formato.
+- Tratar o componente como seleção de **data civil** quando o produto não solicitar horário; conversões de timezone não podem deslocar silenciosamente o dia escolhido.
 
 ## Propriedades conceituais
 - `label` — nome do campo;
@@ -37,11 +38,14 @@ Na Web, preferir `input type="date"` quando o comportamento nativo for compatív
 - Exibir formato conforme locale/plataforma.
 - Quando entrada textual for aceita, informar o formato esperado em texto persistente ou programaticamente associado.
 - O valor submetido deve permanecer não ambíguo e validável.
+- Para data sem horário, serializar preferencialmente como `YYYY-MM-DD` ou equivalente date-only da plataforma; não converter uma data civil para UTC e depois reconstruí-la de forma que possa mudar o dia local.
 
 ## Validação
 - Datas fora de `minDate`/`maxDate` ou em `disabledDates` não podem ser selecionadas.
+- O valor inicial deve respeitar os mesmos limites aplicados às alterações posteriores.
 - Mensagens devem explicar o problema e, quando útil, o intervalo permitido.
 - Não limpar silenciosamente uma data inválida sem feedback.
+- Intervalos muito longos devem continuar navegáveis sem exigir dezenas de mudanças de mês para alcançar anos distantes; usar recursos nativos de troca de mês/ano quando disponíveis.
 
 ## Tema, contraste e escala
 Respeitar claro, escuro, sistema, forced/high contrast, zoom, text scaling e Dynamic Type. Ícones de calendário não podem ser a única indicação de propósito.
@@ -53,7 +57,8 @@ Controles interativos seguem alvo interno de 44 × 44 unidades lógicas quando a
 - campo rotulado `Data de nascimento`, com formato compreensível e seletor nativo;
 - data fora do intervalo é indisponível e anunciada como tal;
 - erro `Informe uma data entre 01/01/2020 e 31/12/2026` associado ao campo;
-- usuário consegue digitar a data sem depender do calendário visual quando a plataforma permitir.
+- usuário consegue digitar a data sem depender do calendário visual quando a plataforma permitir;
+- `2026-09-05` permanece 5 de setembro para o usuário mesmo quando backend e cliente usam fusos horários diferentes.
 
 ## Exemplos não conformes
 - placeholder `DD/MM/AAAA` como único rótulo;
@@ -61,10 +66,11 @@ Controles interativos seguem alvo interno de 44 × 44 unidades lógicas quando a
 - calendário customizado navegável apenas por mouse;
 - foco desaparece ao fechar o calendário;
 - valor `03/04/05` sem contexto de locale;
-- erro mostrado só por borda vermelha.
+- erro mostrado só por borda vermelha;
+- selecionar 05/09 e receber 04/09 após uma conversão UTC indevida.
 
 ## Matriz mínima
-Verificar nome, valor, locale/formato, entrada textual, abertura/fechamento, foco, teclado, limites, datas indisponíveis, required/disabled/readonly, erros, alvo, contraste, escala e tecnologias assistivas.
+Verificar nome, valor, locale/formato, entrada textual, abertura/fechamento, foco, teclado, limites, datas indisponíveis, valor inicial, intervalos longos, data civil/timezone, required/disabled/readonly, erros, alvo, contraste, escala e tecnologias assistivas.
 
 ## Validação manual
 Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
