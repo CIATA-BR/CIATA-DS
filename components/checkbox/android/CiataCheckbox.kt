@@ -27,11 +27,12 @@ fun CiataCheckbox(
     helpText: String? = null,
     errorText: String? = null,
 ) {
-    require(label.isNotBlank()) { "label não pode ser vazio." }
+    val normalizedLabel = label.trim()
+    require(normalizedLabel.isNotEmpty()) { "label não pode ser vazio." }
 
-    val visibleLabel = if (required) "$label (obrigatório)" else label
+    val visibleLabel = if (required) "$normalizedLabel (obrigatório)" else normalizedLabel
     val semanticsModifier = if (!errorText.isNullOrBlank()) {
-        modifier.semantics { error(errorText) }
+        modifier.semantics { error(errorText.trim()) }
     } else {
         modifier
     }
@@ -56,10 +57,10 @@ fun CiataCheckbox(
         }
 
         if (!helpText.isNullOrBlank()) {
-            Text(helpText)
+            Text(helpText.trim())
         }
         if (!errorText.isNullOrBlank()) {
-            Text(errorText)
+            Text(errorText.trim())
         }
     }
 }
