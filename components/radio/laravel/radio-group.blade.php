@@ -10,11 +10,46 @@
 ])
 
 @php
-    $groupId = $attributes->get('id', "{$name}-group");
+    $name = trim((string) $name);
+    $legend = trim((string) $legend);
+    $groupId = trim((string) $attributes->get('id', "{$name}-group"));
+
+    if ($name === '' || $legend === '' || $groupId === '') {
+        throw new InvalidArgumentException('name, legend e id do grupo não podem ser vazios.');
+    }
+
+    $normalizedOptions = collect($options)->map(function ($option) {
+        $value = is_array($option) ? ($option['value'] ?? null) : ($option->value ?? null);
+        $label = is_array($option) ? ($option['label'] ?? null) : ($option->label ?? null);
+        $optionDisabled = is_array($option)
+            ? ($option['disabled'] ?? false)
+            : ($option->disabled ?? false);
+
+        return [
+            'value' => $value,
+            'label' => trim((string) $label),
+            'disabled' => (bool) $optionDisabled,
+        ];
+    });
+
+    if ($normalizedOptions->count() < 2) {
+        throw new InvalidArgumentException('Radio Group deve possuir ao menos duas opções.');
+    }
+    if ($normalizedOptions->contains(fn ($option) => $option['label'] === '')) {
+        throw new InvalidArgumentException('Rótulos das opções não podem ser vazios.');
+    }
+    if ($normalizedOptions->pluck('value')->map(fn ($value) => (string) $value)->duplicates()->isNotEmpty()) {
+        throw new InvalidArgumentException('Valores das opções devem ser únicos.');
+    }
+
     $helpId = $help ? "{$groupId}-help" : null;
     $errorId = $error ? "{$groupId}-error" : null;
     $describedBy = collect([$helpId, $errorId])->filter()->implode(' ');
     $current = old($name, $selected);
+
+    if ($current !== null && ! $normalizedOptions->contains(fn ($option) => (string) $option['value'] === (string) $current)) {
+        throw new InvalidArgumentException('selected não pertence às opções do grupo.');
+    }
 @endphp
 
 <fieldset
@@ -30,13 +65,11 @@
         @endif
     </legend>
 
-    @foreach($options as $option)
+    @foreach($normalizedOptions as $option)
         @php
-            $value = is_array($option) ? $option['value'] : $option->value;
-            $label = is_array($option) ? $option['label'] : $option->label;
-            $optionDisabled = is_array($option)
-                ? ($option['disabled'] ?? false)
-                : ($option->disabled ?? false);
+            $value = $option['value'];
+            $label = $option['label'];
+            $optionDisabled = $option['disabled'];
             $id = "{$groupId}-" . $loop->index;
         @endphp
 
