@@ -15,8 +15,12 @@ fun CiataDatePicker(
     selectedDateMillis: Long?,
     onDismissRequest: () -> Unit,
     onConfirm: (Long?) -> Unit,
+    confirmLabel: String = "Confirmar",
+    cancelLabel: String = "Cancelar",
 ) {
     require(title.isNotBlank()) { "title não pode ser vazio." }
+    require(confirmLabel.isNotBlank()) { "confirmLabel não pode ser vazio." }
+    require(cancelLabel.isNotBlank()) { "cancelLabel não pode ser vazio." }
     if (!open) return
 
     val state = rememberDatePickerState(initialSelectedDateMillis = selectedDateMillis)
@@ -25,12 +29,12 @@ fun CiataDatePicker(
         onDismissRequest = onDismissRequest,
         confirmButton = {
             TextButton(onClick = { onConfirm(state.selectedDateMillis) }) {
-                Text("Confirmar")
+                Text(confirmLabel)
             }
         },
         dismissButton = {
             TextButton(onClick = onDismissRequest) {
-                Text("Cancelar")
+                Text(cancelLabel)
             }
         },
     ) {
