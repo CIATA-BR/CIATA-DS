@@ -2,19 +2,24 @@ import 'package:flutter/material.dart';
 
 /// Implementação experimental do CMP-0017 Tooltip para Flutter.
 class CiataTooltip extends StatelessWidget {
-  const CiataTooltip({
+  CiataTooltip({
     super.key,
-    required this.message,
+    required String message,
     required this.child,
-  }) : assert(message != '', 'message não pode ser vazio');
+    this.excludeFromSemantics = false,
+  }) : message = message.trim() {
+    assert(this.message.isNotEmpty, 'message não pode ser vazio');
+  }
 
   final String message;
   final Widget child;
+  final bool excludeFromSemantics;
 
   @override
   Widget build(BuildContext context) {
     return Tooltip(
       message: message,
+      excludeFromSemantics: excludeFromSemantics,
       child: child,
     );
   }
