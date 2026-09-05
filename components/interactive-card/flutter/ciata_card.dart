@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 
 /// Implementação experimental do CMP-0010 Card interativo para Flutter.
 class CiataCard extends StatelessWidget {
-  const CiataCard({
+  CiataCard({
     super.key,
-    required this.title,
-    this.description,
+    required String title,
+    String? description,
     this.onTap,
-  }) : assert(title != '', 'title não pode ser vazio');
+  })  : title = title.trim(),
+        description = description?.trim() {
+    if (this.title.isEmpty) {
+      throw ArgumentError.value(title, 'title', 'não pode ser vazio');
+    }
+  }
 
   final String title;
   final String? description;
@@ -15,15 +20,18 @@ class CiataCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final normalizedDescription =
+        description?.isNotEmpty == true ? description : null;
+
     final content = Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title, style: Theme.of(context).textTheme.titleMedium),
-          if (description != null && description!.isNotEmpty) ...[
+          if (normalizedDescription != null) ...[
             const SizedBox(height: 6),
-            Text(description!),
+            Text(normalizedDescription),
           ],
         ],
       ),
