@@ -3,15 +3,27 @@ import 'package:flutter/material.dart';
 enum CiataButtonVariant { primary, secondary, danger, ghost }
 
 class CiataButton extends StatelessWidget {
-  const CiataButton({
+  CiataButton({
     super.key,
-    required this.label,
+    required String label,
     required this.onPressed,
     this.variant = CiataButtonVariant.primary,
     this.loading = false,
     this.disabled = false,
-    this.loadingLabel = 'Operação em andamento',
-  });
+    String loadingLabel = 'Operação em andamento',
+  })  : label = label.trim(),
+        loadingLabel = loadingLabel.trim() {
+    if (this.label.isEmpty) {
+      throw ArgumentError.value(label, 'label', 'não pode ser vazio');
+    }
+    if (this.loadingLabel.isEmpty) {
+      throw ArgumentError.value(
+        loadingLabel,
+        'loadingLabel',
+        'não pode ser vazio',
+      );
+    }
+  }
 
   final String label;
   final VoidCallback? onPressed;
