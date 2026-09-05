@@ -4,10 +4,20 @@
     'newWindow' => false,
     'download' => false,
     'downloadMeta' => null,
+    'newContextLabel' => 'abre em novo contexto',
 ])
 
 @php
-    $opensNewContext = $external || $newWindow;
+    $href = trim((string) $href);
+    $downloadMeta = $downloadMeta === null ? null : trim((string) $downloadMeta);
+    $newContextLabel = trim((string) $newContextLabel);
+
+    if ($href === '') {
+        throw new InvalidArgumentException('href não pode ser vazio.');
+    }
+    if ($newWindow && $newContextLabel === '') {
+        throw new InvalidArgumentException('newContextLabel não pode ser vazio quando newWindow estiver ativo.');
+    }
 @endphp
 
 <a
@@ -22,7 +32,7 @@
     @if($downloadMeta)
         <span class="ciata-link__context">, {{ $downloadMeta }}</span>
     @endif
-    @if($opensNewContext)
-        <span class="ciata-link__context"> (abre em novo contexto)</span>
+    @if($newWindow)
+        <span class="ciata-link__context"> ({{ $newContextLabel }})</span>
     @endif
 </a>
