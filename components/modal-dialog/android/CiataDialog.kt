@@ -15,17 +15,22 @@ fun CiataDialog(
     onConfirm: () -> Unit,
     dismissLabel: String? = null,
 ) {
-    require(title.isNotBlank()) { "title não pode ser vazio." }
-    require(confirmLabel.isNotBlank()) { "confirmLabel não pode ser vazio." }
+    val normalizedTitle = title.trim()
+    val normalizedDescription = description.trim()
+    val normalizedConfirmLabel = confirmLabel.trim()
+    val normalizedDismissLabel = dismissLabel?.trim()?.takeIf { it.isNotEmpty() }
+
+    require(normalizedTitle.isNotEmpty()) { "title não pode ser vazio." }
+    require(normalizedConfirmLabel.isNotEmpty()) { "confirmLabel não pode ser vazio." }
 
     AlertDialog(
         onDismissRequest = onDismissRequest,
-        title = { Text(title) },
-        text = { if (description.isNotBlank()) Text(description) },
+        title = { Text(normalizedTitle) },
+        text = { if (normalizedDescription.isNotEmpty()) Text(normalizedDescription) },
         confirmButton = {
-            TextButton(onClick = onConfirm) { Text(confirmLabel) }
+            TextButton(onClick = onConfirm) { Text(normalizedConfirmLabel) }
         },
-        dismissButton = dismissLabel?.takeIf { it.isNotBlank() }?.let { label ->
+        dismissButton = normalizedDismissLabel?.let { label ->
             { TextButton(onClick = onDismissRequest) { Text(label) } }
         },
     )
