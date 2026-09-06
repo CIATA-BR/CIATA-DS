@@ -153,7 +153,7 @@ Mover o foco diretamente para o primeiro campo inválido pode ser adequado em fl
 
 ## Máscaras
 
-Máscaras de CPF, telefone, CEP, datas e similares devem melhorar a compreensão sem prejudicar edição, colagem, ditado, seleção de texto ou leitura por tecnologia assistiva.
+Máscaras de CPF, telefone, CEP, datas e similares devem melhorar a compreensão sem prejudicar edição, colagem, ditado, seleção de texto ou leitura por recurso de tecnologia assistiva.
 
 Regras:
 
@@ -225,7 +225,7 @@ O indicador de foco deve:
 - permanecer identificável em temas claro e escuro;
 - não ser removido por razões estéticas.
 
-O foco não deve saltar automaticamente entre campos durante digitação, inclusive em máscaras ou códigos segmentados, salvo padrão especializado validado com tecnologia assistiva.
+O foco não deve saltar automaticamente entre campos durante digitação, inclusive em máscaras ou códigos segmentados, salvo padrão especializado validado com recurso de tecnologia assistiva.
 
 ## Teclado
 
@@ -247,7 +247,7 @@ Ações como limpar texto, mostrar senha ou abrir seletor devem ter alvo e nome 
 
 ## Conteúdo prefixado/sufixado
 
-Prefixos e sufixos visuais, como `R$`, `kg` ou domínio de e-mail, devem ser expostos de forma que o significado completo do valor permaneça disponível para tecnologias assistivas.
+Prefixos e sufixos visuais, como `R$`, `kg` ou domínio de e-mail, devem ser expostos de forma que o significado completo do valor permaneça disponível para recursos de tecnologia assistiva.
 
 Não inserir texto decorativo no valor editável se isso prejudicar edição ou serialização.
 
@@ -390,7 +390,7 @@ Cada implementação deve verificar, quando aplicável:
 
 ## Validação manual
 
-Antes de ser considerado estável, o componente deve ser validado com tecnologias assistivas relevantes para cada plataforma suportada. A evidência deve registrar plataforma, versão, tecnologia assistiva, cenário, resultado e limitações.
+Antes de ser considerado estável, o componente deve ser validado com recursos de tecnologia assistiva relevantes para cada plataforma suportada. A evidência deve registrar plataforma, versão, recurso de tecnologia assistiva, cenário, resultado e limitações.
 
 Casos com máscara, senha, erro dinâmico, readonly e autocomplete exigem validação manual específica; testes automatizados isolados não são suficientes.
 
@@ -399,24 +399,19 @@ Casos com máscara, senha, erro dinâmico, readonly e autocomplete exigem valida
 - [ ] propósito e limites de uso acordados;
 - [ ] tipos funcionais iniciais aprovados;
 - [ ] label persistente definido como padrão;
-- [ ] placeholder não substitui label;
-- [ ] required/optional definidos;
-- [ ] help text e erro associados programaticamente;
-- [ ] momento de validação acordado;
-- [ ] regras de máscara aprovadas;
-- [ ] password/autocomplete/colagem aprovados;
-- [ ] readonly e disabled diferenciados;
-- [ ] foco, teclado e touch definidos;
-- [ ] escalabilidade definida;
-- [ ] tokens e temas definidos;
+- [ ] required, erro, help text, readonly e disabled definidos;
+- [ ] regras para password e autocomplete aprovadas;
+- [ ] regras para máscaras definidas;
+- [ ] foco, teclado, touch e área de interação definidos;
+- [ ] escalabilidade e contraste definidos;
 - [ ] matriz mínima de testes aprovada;
-- [ ] implementação especializada de autocomplete/combobox permanece fora deste componente.
+- [ ] implementações de plataforma permanecem experimentais até validação própria.
 
 ## Implementações planejadas
 
 - Web;
 - Laravel/PHP;
 - Python desktop;
-- Android/Kotlin;
-- iOS/Swift;
+- Android/Jetpack Compose;
+- iOS/SwiftUI;
 - Flutter.
