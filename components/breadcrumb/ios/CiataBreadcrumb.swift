@@ -8,8 +8,9 @@ public struct CiataBreadcrumb: View {
         public let action: (() -> Void)?
 
         public init(label: String, action: (() -> Void)? = nil) {
-            precondition(!label.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "label não pode ser vazio")
-            self.label = label
+            let normalizedLabel = label.trimmingCharacters(in: .whitespacesAndNewlines)
+            precondition(!normalizedLabel.isEmpty, "label não pode ser vazio")
+            self.label = normalizedLabel
             self.action = action
         }
     }
@@ -18,6 +19,8 @@ public struct CiataBreadcrumb: View {
 
     public init(items: [Item]) {
         precondition(!items.isEmpty, "items não pode ser vazio")
+        precondition(items.last?.action == nil, "o item atual deve ser não interativo")
+        precondition(items.dropLast().allSatisfy { $0.action != nil }, "itens anteriores ao atual devem ser interativos")
         self.items = items
     }
 
