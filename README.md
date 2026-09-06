@@ -20,7 +20,7 @@ Arquitetura, qualidade, segurança, privacidade, documentação, internacionaliz
 
 ### Accessibility Engineering System
 
-Princípios, normas, plataformas, tecnologias assistivas, padrões, receitas, testes, evidências e conhecimento aplicado para construir experiências digitais inclusivas desde a arquitetura.
+Princípios, normas, plataformas, recursos de tecnologia assistiva, padrões, receitas, testes, evidências e conhecimento aplicado para construir experiências digitais inclusivas desde a arquitetura.
 
 ### Knowledge System
 
@@ -115,7 +115,7 @@ Projetos de desenvolvimento seguem as convenções técnicas de cada plataforma 
 
 ## Acessibilidade
 
-Todo ativo, componente, padrão ou documento deve considerar estrutura semântica, contraste, legibilidade, descrição textual, tecnologias assistivas, navegação por teclado, foco previsível, compatibilidade com Braille e ausência de dependência exclusiva de características sensoriais.
+Todo ativo, componente, padrão ou documento deve considerar estrutura semântica, contraste, legibilidade, descrição textual, recursos de tecnologia assistiva, navegação por teclado, foco previsível, compatibilidade com Braille e ausência de dependência exclusiva de características sensoriais.
 
 Verificações automáticas apoiam o processo. A publicação exige validação humana proporcional ao impacto.
 
