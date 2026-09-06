@@ -15,7 +15,11 @@ fun CiataFileUpload(
     onSelected: (List<Uri>) -> Unit,
 ) {
     val normalizedLabel = label.trim()
-    val normalizedMimeTypes = mimeTypes.map(String::trim).filter(String::isNotEmpty).toTypedArray()
+    val normalizedMimeTypes = mimeTypes
+        .map(String::trim)
+        .filter(String::isNotEmpty)
+        .distinct()
+        .toTypedArray()
 
     require(normalizedLabel.isNotEmpty()) { "label não pode ser vazio." }
     require(normalizedMimeTypes.isNotEmpty()) { "mimeTypes não pode ser vazio." }

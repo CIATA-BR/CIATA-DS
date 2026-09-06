@@ -15,12 +15,23 @@
     $label = trim((string) $label);
     $name = trim((string) $name);
     $accept = $accept !== null ? trim((string) $accept) : null;
+    $helperText = $helperText !== null ? trim((string) $helperText) : null;
+    $errorText = $errorText !== null ? trim((string) $errorText) : null;
+    $multiple = (bool) $multiple;
+    $required = (bool) $required;
+    $disabled = (bool) $disabled;
 
     if ($id === '' || $label === '' || $name === '') {
         throw new InvalidArgumentException('id, label e name não podem ser vazios.');
     }
     if ($accept === '') {
         $accept = null;
+    }
+    if ($helperText === '') {
+        $helperText = null;
+    }
+    if ($errorText === '') {
+        $errorText = null;
     }
 @endphp
 
