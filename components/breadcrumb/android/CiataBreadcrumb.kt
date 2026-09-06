@@ -13,13 +13,19 @@ fun CiataBreadcrumb(
     items: List<Pair<String, (() -> Unit)?>>,
 ) {
     require(items.isNotEmpty()) { "items não pode ser vazio." }
-    require(items.all { it.first.isNotBlank() }) { "rótulos não podem ser vazios." }
+
+    val normalizedItems = items.map { (label, action) -> label.trim() to action }
+    require(normalizedItems.all { it.first.isNotEmpty() }) { "rótulos não podem ser vazios." }
+    require(normalizedItems.last().second == null) { "o item atual deve ser não interativo." }
+    require(normalizedItems.dropLast(1).all { it.second != null }) {
+        "itens anteriores ao atual devem ser interativos."
+    }
 
     FlowRow(
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
-        items.forEach { (label, action) ->
+        normalizedItems.forEach { (label, action) ->
             if (action == null) {
                 Text(label)
             } else {
