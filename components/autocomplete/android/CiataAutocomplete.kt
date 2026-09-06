@@ -19,8 +19,10 @@ fun CiataAutocomplete(
 ) {
     val normalizedLabel = label.trim()
     val normalizedOptions = options.map(String::trim)
+
     require(normalizedLabel.isNotEmpty()) { "label não pode ser vazio." }
     require(normalizedOptions.none { it.isEmpty() }) { "options não pode conter rótulos vazios." }
+    require(normalizedOptions.distinct().size == normalizedOptions.size) { "options não pode conter rótulos duplicados." }
 
     val effectiveExpanded = expanded && value.isNotBlank() && normalizedOptions.isNotEmpty()
 
