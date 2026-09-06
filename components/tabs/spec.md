@@ -32,7 +32,7 @@ Na Web, usar `role="tablist"`, `role="tab"` e `role="tabpanel"` apenas quando n�
 - Trocar de aba não deve enviar foco arbitrariamente ao início do painel.
 
 ## Painel e persistência
-Conteúdo do painel ativo deve permanecer compreensível e disponível às tecnologias assistivas. Painéis inativos não podem continuar expostos como conteúdo duplicado quando estiverem visualmente ocultos.
+Conteúdo do painel ativo deve permanecer compreensível e disponível aos recursos de tecnologia assistiva. Painéis inativos não podem continuar expostos como conteúdo duplicado quando estiverem visualmente ocultos.
 
 ## Overflow
 Quando muitas abas excederem o espaço, permitir reflow, rolagem horizontal acessível ou outra estratégia equivalente sem ocultar a aba ativa nem tornar as últimas abas inalcançáveis por teclado/touch.
@@ -58,10 +58,10 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom e text scaling. Foc
 - foco movido para o início do painel a cada seleção sem necessidade.
 
 ## Matriz mínima
-Verificar tablist/tab/tabpanel, nome, seleção, relação aba-painel, roving focus, setas, Home/End, ativação automática/manual, painéis ocultos, overflow, teclado/touch, alvo, tema, contraste, zoom/text scaling e tecnologias assistivas.
+Verificar tablist/tab/tabpanel, nome, seleção, relação aba-painel, roving focus, setas, Home/End, ativação automática/manual, painéis ocultos, overflow, teclado/touch, alvo, tema, contraste, zoom/text scaling e recursos de tecnologia assistiva.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recurso de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.
