@@ -1,5 +1,9 @@
 export function initCiataTabs(root) {
-  const tabs = Array.from(root.querySelectorAll('[role="tab"]'));
+  if (!root?.matches?.('[data-ciata-tabs]')) return;
+
+  const tabs = Array.from(root.querySelectorAll('[role="tab"]')).filter(
+    (tab) => tab.closest('[data-ciata-tabs]') === root,
+  );
   if (!tabs.length) return;
 
   const activate = (tab) => {
@@ -7,8 +11,12 @@ export function initCiataTabs(root) {
       const selected = item === tab;
       item.setAttribute('aria-selected', selected ? 'true' : 'false');
       item.tabIndex = selected ? 0 : -1;
-      const panel = root.querySelector(`#${item.getAttribute('aria-controls')}`);
-      if (panel) panel.hidden = !selected;
+
+      const panelId = item.getAttribute('aria-controls');
+      const panel = panelId ? document.getElementById(panelId) : null;
+      if (panel && panel.closest('[data-ciata-tabs]') === root) {
+        panel.hidden = !selected;
+      }
     });
   };
 
@@ -21,6 +29,7 @@ export function initCiataTabs(root) {
       else if (event.key === 'Home') next = 0;
       else if (event.key === 'End') next = tabs.length - 1;
       else return;
+
       event.preventDefault();
       tabs[next].focus();
       activate(tabs[next]);
