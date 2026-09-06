@@ -4,7 +4,7 @@
 Definir evidência mínima para validar Menu sem confundir menus de aplicação com listas comuns de navegação.
 
 ## Evidência por execução
-Registrar plataforma, versão, tecnologia assistiva, navegador/dispositivo, cenário, resultado esperado/observado, falhas e limitações.
+Registrar plataforma, versão, recurso de tecnologia assistiva, navegador/dispositivo, cenário, resultado esperado/observado, falhas e limitações.
 
 ## Cenários comuns
 | ID | Cenário | Critério de aceite |
@@ -41,6 +41,6 @@ Executar com VoiceOver. Verificar `Menu`/`Button`, nomes, ordem, ativação, fec
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `PopupMenuButton`/`PopupMenuItem`, nome do acionador, foco, ordem, text scaling e ausência de semântica duplicada.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/papel/foco/ativação/fechamento e validação manual com tecnologia assistiva relevante tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/papel/foco/ativação/fechamento e validação manual com recurso de tecnologia assistiva relevante tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.
