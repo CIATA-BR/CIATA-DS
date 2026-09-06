@@ -62,7 +62,7 @@ Cada opção deve possuir rótulo claro e específico, por exemplo:
 
 Evitar nomes vagos como `Opção 1`, `Primeiro` ou rótulos que dependam somente da posição visual.
 
-Não acrescentar palavras como `botão de opção` ao nome acessível quando a tecnologia assistiva já anuncia o papel.
+Não acrescentar palavras como `botão de opção` ao nome acessível quando o recurso de tecnologia assistiva já anuncia o papel.
 
 ## Seleção
 
@@ -210,11 +210,11 @@ Cada implementação deve verificar, quando aplicável:
 - tema claro/escuro;
 - alto contraste;
 - zoom/escalabilidade de texto;
-- tecnologias assistivas relevantes.
+- recursos de tecnologia assistiva relevantes.
 
 ## Validação manual
 
-Antes de ser considerado estável, cada implementação deve possuir evidência real de teste com tecnologias assistivas relevantes, registrando plataforma, versão, tecnologia assistiva, cenário, resultado e limitações.
+Antes de ser considerado estável, cada implementação deve possuir evidência real de teste com recursos de tecnologia assistiva relevantes, registrando plataforma, versão, recurso de tecnologia assistiva, cenário, resultado e limitações.
 
 ## Critérios de aceite para a especificação
 
