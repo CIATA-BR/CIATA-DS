@@ -126,7 +126,7 @@ A participação de controles disabled na ordem de foco deve seguir o comportame
 
 ## Ícones
 
-Um ícone acompanhado de texto normalmente é decorativo para tecnologias assistivas quando o texto já comunica integralmente a ação.
+Um ícone acompanhado de texto normalmente é decorativo para recursos de tecnologia assistiva quando o texto já comunica integralmente a ação.
 
 Botões somente com ícone exigem nome acessível claro e devem ser usados com parcimônia, pois símbolos podem aumentar carga cognitiva e ser ambíguos.
 
@@ -199,7 +199,7 @@ Cada implementação deve verificar, quando aplicável:
 
 ## Validação manual
 
-Antes de ser considerado estável, o componente deve ser validado com tecnologias assistivas relevantes para cada plataforma suportada. A evidência deve registrar ao menos plataforma, versão, tecnologia assistiva, cenário testado, resultado e limitações encontradas.
+Antes de ser considerado estável, o componente deve ser validado com recursos de tecnologia assistiva relevantes para cada plataforma suportada. A evidência deve registrar ao menos plataforma, versão, recurso de tecnologia assistiva, cenário testado, resultado e limitações encontradas.
 
 ## Critérios de aceite para a especificação
 
