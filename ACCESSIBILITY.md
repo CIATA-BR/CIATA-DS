@@ -4,6 +4,12 @@
 
 A acessibilidade é requisito de projeto, critério de aceite e responsabilidade compartilhada. Nenhum artefato ou componente deve ser considerado concluído apenas porque parece correto visualmente ou passa em uma ferramenta automática.
 
+## Terminologia
+
+Ao se referir ao que uma pessoa utiliza para acessar, operar ou validar uma interface, usar **recurso de tecnologia assistiva** ou **recursos de tecnologia assistiva**. Exemplos: leitor de tela, linha Braille, ampliador, controle por voz e acesso por acionadores.
+
+Evitar usar **tecnologia assistiva** isoladamente como sinônimo do recurso utilizado. A expressão continua adequada quando nomear a área, o campo conceitual, uma definição normativa ou um nome institucional, como em **Centro de Inclusão Através da Tecnologia Assistiva**.
+
 ## Requisitos gerais
 
 Todo conteúdo aplicável deve:
@@ -29,7 +35,7 @@ A validação combina:
 2. verificação automática como apoio;
 3. inspeção técnica;
 4. teste manual por teclado;
-5. teste com tecnologias assistivas;
+5. teste com recursos de tecnologia assistiva;
 6. revisão por pessoas com deficiência sempre que possível.
 
 Automação não substitui validação humana.
@@ -62,7 +68,7 @@ Interfaces devem preservar dados, etapa, contexto e foco lógico durante rotaç�
 
 Cada revisão deve informar:
 
-- tecnologia assistiva e versão;
+- recurso de tecnologia assistiva e versão;
 - sistema operacional e versão;
 - navegador ou aplicativo;
 - dispositivo, teclado ou linha Braille quando aplicável;
