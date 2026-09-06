@@ -41,9 +41,9 @@ Registra contexto legal por jurisdição, aplicabilidade, relações com normas 
 
 Documenta APIs, semântica, comportamento nativo, limitações e estratégias por sistema operacional, framework ou ambiente.
 
-### Assistive technologies
+### Recursos de tecnologia assistiva
 
-Documenta operação, modelos de navegação, configurações relevantes, diferenças de versão, interoperabilidade e problemas conhecidos.
+Documenta operação, modelos de navegação, configurações relevantes, diferenças de versão, interoperabilidade e problemas conhecidos dos recursos utilizados pelas pessoas.
 
 ### Patterns
 
@@ -99,7 +99,7 @@ Conteúdos técnicos versionáveis devem informar, quando aplicável:
 
 - data da última verificação;
 - plataforma e versão;
-- tecnologia assistiva e versão;
+- recurso de tecnologia assistiva e versão;
 - navegador, framework ou dispositivo;
 - procedimento de reprodução;
 - resultado esperado e observado;
