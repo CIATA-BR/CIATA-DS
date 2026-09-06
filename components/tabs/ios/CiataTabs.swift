@@ -11,10 +11,12 @@ public struct CiataTabs<Content: View>: View {
         selectedIndex: Binding<Int>,
         @ViewBuilder content: @escaping (Int) -> Content
     ) {
-        precondition(!labels.isEmpty, "labels não pode ser vazio")
-        precondition(labels.allSatisfy { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }, "rótulos não podem ser vazios")
-        precondition(labels.indices.contains(selectedIndex.wrappedValue), "selectedIndex fora do intervalo válido")
-        self.labels = labels
+        let normalizedLabels = labels.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+
+        precondition(!normalizedLabels.isEmpty, "labels não pode ser vazio")
+        precondition(normalizedLabels.allSatisfy { !$0.isEmpty }, "rótulos não podem ser vazios")
+        precondition(normalizedLabels.indices.contains(selectedIndex.wrappedValue), "selectedIndex fora do intervalo válido")
+        self.labels = normalizedLabels
         self._selectedIndex = selectedIndex
         self.content = content
     }

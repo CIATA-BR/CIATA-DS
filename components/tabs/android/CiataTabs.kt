@@ -14,13 +14,15 @@ fun CiataTabs(
     onSelectionChange: (Int) -> Unit,
     content: @Composable (Int) -> Unit,
 ) {
-    require(labels.isNotEmpty()) { "labels não pode ser vazio." }
-    require(selectedIndex in labels.indices) { "selectedIndex fora do intervalo válido." }
-    require(labels.all { it.isNotBlank() }) { "rótulos de abas não podem ser vazios." }
+    val normalizedLabels = labels.map(String::trim)
+
+    require(normalizedLabels.isNotEmpty()) { "labels não pode ser vazio." }
+    require(selectedIndex in normalizedLabels.indices) { "selectedIndex fora do intervalo válido." }
+    require(normalizedLabels.all { it.isNotEmpty() }) { "rótulos de abas não podem ser vazios." }
 
     Column {
         TabRow(selectedTabIndex = selectedIndex) {
-            labels.forEachIndexed { index, label ->
+            normalizedLabels.forEachIndexed { index, label ->
                 Tab(
                     selected = index == selectedIndex,
                     onClick = { onSelectionChange(index) },
