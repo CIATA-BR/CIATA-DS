@@ -9,7 +9,7 @@ Seu objetivo não é apenas apoiar conformidade normativa. O sistema transforma 
 Este sistema existe para:
 
 - incorporar acessibilidade desde requisitos, arquitetura e conteúdo;
-- conectar normas, leis, plataformas e tecnologias assistivas;
+- conectar normas, leis, plataformas e recursos de tecnologia assistiva;
 - orientar implementação, testes, documentação e release;
 - registrar evidências, limitações, exceções e decisões;
 - preservar descobertas de projetos reais;
@@ -29,7 +29,7 @@ Não é uma certificação própria, um substituto para normas oficiais nem uma 
 - [Normas](standards/README.md): WCAG, EN 301 549, WAI-ARIA, APG e referências correlatas.
 - [Leis](laws/README.md): obrigações legais e contextos regulatórios.
 - [Plataformas](platforms/README.md): requisitos e comportamentos por ambiente.
-- [Tecnologias assistivas](assistive-technologies/README.md): leitores de tela, Braille, controle por voz, acesso por acionadores e outras tecnologias.
+- [Recursos de tecnologia assistiva](assistive-technologies/README.md): leitores de tela, Braille, controle por voz, acesso por acionadores e outros recursos.
 - [Padrões](patterns/README.md): comportamento acessível de fluxos, componentes e interações.
 - [Receitas](recipes/README.md): soluções executáveis e testáveis.
 - [Testes](testing/README.md): validação manual, automatizada, regressiva e de release.
@@ -40,7 +40,7 @@ Não é uma certificação própria, um substituto para normas oficiais nem uma 
 
 ## Relação com os demais sistemas
 
-O Brand System assegura identidade perceptível e coerente. O Design System define experiências e componentes. O Engineering System estabelece arquitetura, qualidade e entrega. O Accessibility Engineering System atravessa todos eles, especificando condições para uso real por pessoas com diferentes necessidades, tecnologias e contextos.
+O Brand System assegura identidade perceptível e coerente. O Design System define experiências e componentes. O Engineering System estabelece arquitetura, qualidade e entrega. O Accessibility Engineering System atravessa todos eles, especificando condições para uso real por pessoas com diferentes necessidades, recursos e contextos.
 
 ## Regra de promoção do conhecimento
 
