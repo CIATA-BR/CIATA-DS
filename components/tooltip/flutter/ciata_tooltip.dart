@@ -8,7 +8,9 @@ class CiataTooltip extends StatelessWidget {
     required this.child,
     this.excludeFromSemantics = false,
   }) : message = message.trim() {
-    assert(this.message.isNotEmpty, 'message não pode ser vazio');
+    if (this.message.isEmpty) {
+      throw ArgumentError.value(message, 'message', 'não pode ser vazio');
+    }
   }
 
   final String message;
