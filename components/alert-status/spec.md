@@ -103,11 +103,11 @@ Cada implementação deve verificar:
 - alto contraste;
 - tema claro/escuro;
 - text scaling/zoom;
-- tecnologias assistivas relevantes.
+- recursos de tecnologia assistiva relevantes.
 
 ## Validação manual
 
-Antes de ser considerada estável, cada implementação deve possuir evidência real de teste com tecnologias assistivas relevantes.
+Antes de ser considerada estável, cada implementação deve possuir evidência real de teste com recursos de tecnologia assistiva relevantes.
 
 ## Critérios de aceite
 
