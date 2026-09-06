@@ -58,10 +58,10 @@ Consumir tokens canônicos de superfície, texto, borda, foco, sobreposição, e
 - usar modal para toda mensagem de sucesso.
 
 ## Matriz mínima
-Verificar título/nome, descrição, foco inicial, contenção, Escape/voltar, retorno de foco, ordem de tabulação, ações, conteúdo externo inerte, zoom/text scaling, alto contraste e tecnologias assistivas.
+Verificar título/nome, descrição, foco inicial, contenção, Escape/voltar, retorno de foco, ordem de tabulação, ações, conteúdo externo inerte, zoom/text scaling, alto contraste e recursos de tecnologia assistiva.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recurso de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.
