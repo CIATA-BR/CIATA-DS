@@ -15,11 +15,12 @@ fun CiataTooltip(
     text: String,
     content: @Composable () -> Unit,
 ) {
-    require(text.isNotBlank()) { "text não pode ser vazio." }
+    val normalizedText = text.trim()
+    require(normalizedText.isNotEmpty()) { "text não pode ser vazio." }
 
     TooltipBox(
         positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
-        tooltip = { PlainTooltip { Text(text) } },
+        tooltip = { PlainTooltip { Text(normalizedText) } },
         state = rememberTooltipState(),
     ) {
         content()
