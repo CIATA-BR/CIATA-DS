@@ -6,7 +6,7 @@ Definir a evidência mínima necessária para validar cada implementação exper
 
 ## Evidência por execução
 
-Registrar plataforma, versão, tecnologia assistiva, navegador/dispositivo, cenário executado, resultado esperado/observado, falhas e limitações.
+Registrar plataforma, versão, recurso de tecnologia assistiva, navegador/dispositivo, cenário executado, resultado esperado/observado, falhas e limitações.
 
 ## Cenários comuns
 
@@ -64,6 +64,6 @@ Uma implementação só pode passar de `experimental` para `stable` quando:
 1. todos os cenários aplicáveis tiverem evidência registrada;
 2. não houver falha crítica aberta de nome, papel, destino, foco, acionamento ou compreensão;
 3. divergências da especificação estiverem corrigidas ou justificadas;
-4. validação manual com tecnologia assistiva relevante tiver ocorrido de fato.
+4. validação manual com recurso de tecnologia assistiva relevante tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste e não promove automaticamente nenhuma plataforma para estável.
