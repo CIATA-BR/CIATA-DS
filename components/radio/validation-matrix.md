@@ -9,7 +9,7 @@ Definir a evidência mínima necessária para validar cada implementação exper
 Registrar:
 
 - plataforma, versão do sistema e framework;
-- tecnologia assistiva e versão;
+- recurso de tecnologia assistiva e versão;
 - dispositivo ou navegador relevante;
 - cenário executado;
 - resultado esperado e observado;
@@ -22,7 +22,7 @@ Registrar:
 | RAD-01 | Grupo | O nome do grupo é perceptível e programaticamente determinável quando a plataforma oferecer essa semântica. |
 | RAD-02 | Nome e papel | Cada opção anuncia rótulo e papel/controle equivalente sem duplicar palavras de papel no nome. |
 | RAD-03 | Não selecionado | Estado não selecionado é programaticamente identificável. |
-| RAD-04 | Selecionado | Ao escolher uma opção, o estado selecionado é percebido pela tecnologia assistiva. |
+| RAD-04 | Selecionado | Ao escolher uma opção, o estado selecionado é percebido pelo recurso de tecnologia assistiva. |
 | RAD-05 | Exclusividade | Selecionar uma opção remove a seleção anterior no mesmo grupo. |
 | RAD-06 | Foco | A seleção não causa perda arbitrária de foco. |
 | RAD-07 | Teclado | Em Web/desktop, Tab, setas e Espaço seguem o comportamento nativo aplicável. |
@@ -135,6 +135,6 @@ Uma implementação só pode passar de `experimental` para `stable` quando:
 1. todos os cenários aplicáveis desta matriz tiverem evidência registrada;
 2. não houver falha crítica aberta de nome, papel, grupo, estado, foco, acionamento ou compreensão;
 3. comportamento divergente da especificação canônica estiver corrigido ou explicitamente justificado;
-4. a validação manual com tecnologia assistiva relevante tiver ocorrido de fato.
+4. a validação manual com recurso de tecnologia assistiva relevante tiver ocorrido de fato.
 
 A conclusão desta documentação não constitui evidência de teste e não promove automaticamente nenhuma plataforma para estável.
