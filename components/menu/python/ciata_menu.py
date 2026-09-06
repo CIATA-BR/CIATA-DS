@@ -20,14 +20,21 @@ class CiataMenuButton(wx.Button):
         if not items:
             raise ValueError("items não pode ser vazio.")
 
+        normalized_items: list[tuple[str, Callable[[], None], bool]] = []
+        for item_label, callback, disabled in items:
+            item_label = item_label.strip()
+            if not item_label:
+                raise ValueError("rótulos de itens não podem ser vazios.")
+            normalized_items.append((item_label, callback, bool(disabled)))
+
         super().__init__(parent, label=label)
-        self._items = items
+        self._items = normalized_items
         self.Bind(wx.EVT_BUTTON, self._open_menu)
 
     def _open_menu(self, _event: wx.CommandEvent) -> None:
         menu = wx.Menu()
         for label, callback, disabled in self._items:
-            item = menu.Append(wx.ID_ANY, label.strip())
+            item = menu.Append(wx.ID_ANY, label)
             item.Enable(not disabled)
             if not disabled:
                 self.Bind(wx.EVT_MENU, lambda _event, cb=callback: cb(), item)
