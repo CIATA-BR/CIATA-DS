@@ -26,7 +26,7 @@ Preferir o elemento nativo de link da plataforma e preservar nome acessível, pa
 
 O texto deve descrever o destino ou propósito fora do contexto imediato sempre que possível. Evitar textos vagos como `clique aqui`, `saiba mais` repetido ou URLs cruas quando houver nome mais útil.
 
-Não acrescentar a palavra `link` ao nome acessível quando a tecnologia assistiva já anuncia o papel.
+Não acrescentar a palavra `link` ao nome acessível quando o recurso de tecnologia assistiva já anuncia o papel.
 
 ## Link versus Button
 
@@ -49,7 +49,7 @@ Preservar comportamento nativo:
 - `Enter` ativa o link;
 - foco visível não pode ser removido;
 - ordem de foco deve seguir a leitura e navegação lógica;
-- não criar atalhos ou interceptações que quebrem comandos de tecnologia assistiva.
+- não criar atalhos ou interceptações que quebrem comandos de recursos de tecnologia assistiva.
 
 ## Touch e área de interação
 
@@ -115,11 +115,11 @@ Cada implementação deve verificar:
 - tema claro/escuro;
 - forced colors/alto contraste;
 - zoom/text scaling;
-- tecnologias assistivas relevantes.
+- recursos de tecnologia assistiva relevantes.
 
 ## Validação manual
 
-Antes de ser considerada estável, cada implementação deve possuir evidência real de teste com tecnologias assistivas relevantes.
+Antes de ser considerada estável, cada implementação deve possuir evidência real de teste com recursos de tecnologia assistiva relevantes.
 
 ## Critérios de aceite para a especificação
 
