@@ -55,14 +55,14 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom, text scaling e red
 - estado indicado apenas por seta girada;
 - controles do painel recolhido continuam recebendo Tab;
 - foco enviado automaticamente para o primeiro campo do painel a cada expansão;
-- cabeçalho recebe nome `Detalhes, botão` quando a tecnologia assistiva já anuncia o papel;
+- cabeçalho recebe nome `Detalhes, botão` quando o recurso de tecnologia assistiva já anuncia o papel;
 - recolher item enquanto um descendente possui foco sem recuperação previsível.
 
 ## Matriz mínima
-Verificar nome, botão nativo, estado expandido, relação cabeçalho-painel, foco, teclado, conteúdo oculto, múltiplos itens, disabled, alvo, tema, alto contraste, zoom/text scaling, reduced motion e tecnologias assistivas.
+Verificar nome, botão nativo, estado expandido, relação cabeçalho-painel, foco, teclado, conteúdo oculto, múltiplos itens, disabled, alvo, tema, alto contraste, zoom/text scaling, reduced motion e recursos de tecnologia assistiva.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recurso de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.
