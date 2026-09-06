@@ -39,7 +39,7 @@ Card informativo deve ser um agrupamento estrutural, não um botão falso. Card 
 Quando houver favoritar, menu, excluir ou outras ações independentes dentro do card, usar controles separados e remover a ação global do contêiner. Evitar card clicável contendo links ou botões descendentes.
 
 ## Imagens e conteúdo
-Imagem decorativa deve ser ignorada pela tecnologia assistiva. Imagem informativa precisa de alternativa adequada, sem repetir título já disponível. O mascote Nexo nunca pode ser a única indicação de ação, estado ou resultado.
+Imagem decorativa deve ser ignorada pelo recurso de tecnologia assistiva. Imagem informativa precisa de alternativa adequada, sem repetir título já disponível. O mascote Nexo nunca pode ser a única indicação de ação, estado ou resultado.
 
 ## Área alvo
 Para card acionável, a área de ativação pode abranger a superfície inteira quando houver uma única ação. Controles internos seguem 44 × 44 unidades lógicas quando aplicável; Android pode manter 48 dp e iOS mínimo de 44 × 44 pt.
@@ -64,10 +64,10 @@ Consumir tokens canônicos já publicados para superfície, texto, borda e foco.
 - nome acessível concatenando todo o conteúdo irrelevante do card.
 
 ## Matriz mínima
-Verificar papel, nome, foco, ativação, ausência de controles aninhados, ações internas, alvo, estados, imagens, teclado/touch, tema, forced colors, zoom/text scaling e tecnologias assistivas.
+Verificar papel, nome, foco, ativação, ausência de controles aninhados, ações internas, alvo, estados, imagens, teclado/touch, tema, forced colors, zoom/text scaling e recursos de tecnologia assistiva.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recurso de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.
