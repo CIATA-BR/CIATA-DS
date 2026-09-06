@@ -9,7 +9,7 @@ Definir a evidência mínima necessária para validar cada implementação exper
 Registrar:
 
 - plataforma, versão do sistema e framework;
-- tecnologia assistiva e versão;
+- recurso de tecnologia assistiva e versão;
 - dispositivo ou navegador relevante;
 - cenário executado;
 - resultado esperado e observado;
@@ -21,7 +21,7 @@ Registrar:
 | --- | --- | --- |
 | CHK-01 | Nome e papel | Leitor de tela anuncia rótulo e papel/controle equivalente sem duplicar palavras de papel no nome. |
 | CHK-02 | Desmarcado | Estado inicial desmarcado é programaticamente identificável. |
-| CHK-03 | Marcado | Acionamento altera para marcado e a tecnologia assistiva percebe a mudança. |
+| CHK-03 | Marcado | Acionamento altera para marcado e o recurso de tecnologia assistiva percebe a mudança. |
 | CHK-04 | Alternância | Novo acionamento retorna ao estado desmarcado sem perda arbitrária de foco. |
 | CHK-05 | Teclado | Em Web/desktop, foco e ativação seguem o comportamento nativo, incluindo Espaço quando aplicável. |
 | CHK-06 | Touch | Em mobile, gesto simples ativa o controle e a área interativa é adequada. |
@@ -125,6 +125,6 @@ Uma implementação só pode passar de `experimental` para `stable` quando:
 1. todos os cenários aplicáveis desta matriz tiverem evidência registrada;
 2. não houver falha crítica aberta de nome, papel, estado, foco, acionamento ou compreensão;
 3. comportamento divergente da especificação canônica estiver corrigido ou explicitamente justificado;
-4. a validação manual com tecnologia assistiva relevante tiver ocorrido de fato.
+4. a validação manual com recurso de tecnologia assistiva relevante tiver ocorrido de fato.
 
 A conclusão desta documentação não constitui evidência de teste e não promove automaticamente nenhuma plataforma para estável.
