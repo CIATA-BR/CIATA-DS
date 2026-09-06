@@ -19,6 +19,8 @@ fun CiataSearch(
     placeholder: String? = null,
 ) {
     val normalizedLabel = label.trim()
+    val normalizedPlaceholder = placeholder?.trim()?.takeIf { it.isNotEmpty() }
+
     require(normalizedLabel.isNotEmpty()) { "label não pode ser vazio." }
 
     OutlinedTextField(
@@ -28,7 +30,7 @@ fun CiataSearch(
         readOnly = readOnly,
         singleLine = true,
         label = { Text(normalizedLabel) },
-        placeholder = placeholder?.let { { Text(it) } },
+        placeholder = normalizedPlaceholder?.let { { Text(it) } },
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
         keyboardActions = KeyboardActions(
             onSearch = {
