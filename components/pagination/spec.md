@@ -24,7 +24,7 @@ Permitir navegação previsível entre conjuntos paginados sem depender apenas d
 - `disabled` — somente para ações indisponíveis, preservando semântica adequada.
 
 ## Semântica
-Na Web, envolver o conjunto em uma região de navegação com nome, como `aria-label="Paginação"`, e usar links para navegação real. A página atual deve expor `aria-current="page"`. Não acrescentar a palavra “link” ou “botão” ao nome acessível quando a tecnologia assistiva já anuncia o papel.
+Na Web, envolver o conjunto em uma região de navegação com nome, como `aria-label="Paginação"`, e usar links para navegação real. A página atual deve expor `aria-current="page"`. Não acrescentar a palavra “link” ou “botão” ao nome acessível quando o recurso de tecnologia assistiva já anuncia o papel.
 
 ## Foco e atualização
 - O controle acionado mantém comportamento nativo de foco até a navegação ocorrer.
@@ -59,10 +59,10 @@ Respeitar claro, escuro, sistema, forced colors, zoom e text scaling. O componen
 - nomes como `Página 2, link` quando o leitor já anuncia o papel.
 
 ## Matriz mínima
-Verificar região/nome, página atual, anterior/próxima, links ou botões nativos, disabled, foco, atualização de conteúdo, compactação, reticências, teclado/touch, alvo, tema, forced colors, zoom/text scaling e tecnologias assistivas.
+Verificar região/nome, página atual, anterior/próxima, links ou botões nativos, disabled, foco, atualização de conteúdo, compactação, reticências, teclado/touch, alvo, tema, forced colors, zoom/text scaling e recursos de tecnologia assistiva.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recurso de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.
