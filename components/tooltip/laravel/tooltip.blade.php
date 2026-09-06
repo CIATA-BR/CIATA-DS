@@ -4,6 +4,19 @@
     'describe' => false,
 ])
 
+@php
+    $id = trim((string) $id);
+    $text = trim((string) $text);
+    $describe = (bool) $describe;
+
+    if ($id === '') {
+        throw new InvalidArgumentException('id não pode ser vazio.');
+    }
+    if ($text === '') {
+        throw new InvalidArgumentException('text não pode ser vazio.');
+    }
+@endphp
+
 <span
     class="ciata-tooltip"
     data-ciata-tooltip
