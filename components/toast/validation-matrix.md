@@ -4,7 +4,7 @@
 Definir evidência mínima para validar Toast sem confundir feedback transitório com alertas críticos ou conteúdo persistente.
 
 ## Evidência por execução
-Registrar plataforma, versão, tecnologia assistiva, navegador/dispositivo, cenário, resultado esperado/observado, falhas e limitações.
+Registrar plataforma, versão, recurso de tecnologia assistiva, navegador/dispositivo, cenário, resultado esperado/observado, falhas e limitações.
 
 ## Cenários comuns
 | ID | Cenário | Critério de aceite |
@@ -40,6 +40,6 @@ Executar com VoiceOver. Verificar mensagem, ação opcional, ordem de leitura, f
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar live region, mensagem, ação opcional, ausência de duplicação semântica, text scaling e comportamento real de exibição/remoção.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de anúncio/foco/temporização/ação, e validação manual com tecnologia assistiva relevante tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de anúncio/foco/temporização/ação, e validação manual com recurso de tecnologia assistiva relevante tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.
