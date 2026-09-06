@@ -16,6 +16,9 @@ class CiataAutocomplete extends StatelessWidget {
     if (this.options.any((option) => option.isEmpty)) {
       throw ArgumentError.value(options, 'options', 'não pode conter rótulos vazios');
     }
+    if (this.options.toSet().length != this.options.length) {
+      throw ArgumentError.value(options, 'options', 'não pode conter rótulos duplicados');
+    }
   }
 
   final String label;
