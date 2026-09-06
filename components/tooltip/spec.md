@@ -36,7 +36,7 @@ Não presumir hover. Em plataformas móveis, preferir mecanismos nativos de ajud
 
 ## Conteúdo
 - Ser curto, específico e não redundante.
-- Não repetir palavra de papel como `botão`, `link` ou `campo` se a tecnologia assistiva já anuncia o papel.
+- Não repetir palavra de papel como `botão`, `link` ou `campo` se o recurso de tecnologia assistiva já anuncia o papel.
 - Não conter ações interativas; se houver links/botões, usar popover/dialog ou outro componente adequado.
 
 ## Tema, contraste e reflow
@@ -58,10 +58,10 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom, text scaling e red
 - texto `Excluir, botão` usado como nome quando o papel já é anunciado.
 
 ## Matriz mínima
-Verificar nome próprio do acionador, associação descritiva, hover, foco, Escape, persistência durante leitura, touch/mobile, conteúdo não interativo, tema, alto contraste, zoom/text scaling, reduced motion e tecnologias assistivas.
+Verificar nome próprio do acionador, associação descritiva, hover, foco, Escape, persistência durante leitura, touch/mobile, conteúdo não interativo, tema, alto contraste, zoom/text scaling, reduced motion e recursos de tecnologia assistiva.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recurso de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.
