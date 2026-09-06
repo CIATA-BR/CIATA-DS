@@ -6,7 +6,7 @@ Definir evidência mínima para validar Alert/Status sem promover implementaçõ
 
 ## Evidência por execução
 
-Registrar plataforma, versão, tecnologia assistiva, navegador/dispositivo, cenário, resultado esperado/observado, falhas e limitações.
+Registrar plataforma, versão, recurso de tecnologia assistiva, navegador/dispositivo, cenário, resultado esperado/observado, falhas e limitações.
 
 ## Cenários comuns
 
@@ -40,7 +40,7 @@ Verificar especificamente:
 
 ## Python / wxPython
 
-Executar no Windows com leitor de tela suportado. Verificar conteúdo persistente, leitura por navegação, ausência de mudança de foco e integração do callback `on_announce` com a estratégia real do aplicativo. O callback isolado não constitui evidência de anúncio por tecnologia assistiva.
+Executar no Windows com leitor de tela suportado. Verificar conteúdo persistente, leitura por navegação, ausência de mudança de foco e integração do callback `on_announce` com a estratégia real do aplicativo. O callback isolado não constitui evidência de anúncio por recurso de tecnologia assistiva.
 
 ## Android / Jetpack Compose
 
@@ -66,6 +66,6 @@ Uma implementação só pode passar de `experimental` para `stable` quando:
 2. não houver falha crítica aberta de anúncio, foco, conteúdo ou compreensão;
 3. prioridade agressiva não estiver sendo usada para mensagens rotineiras;
 4. divergências da especificação estiverem corrigidas ou justificadas;
-5. validação manual com tecnologia assistiva relevante tiver ocorrido de fato.
+5. validação manual com recurso de tecnologia assistiva relevante tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste e não promove automaticamente nenhuma plataforma para estável.
