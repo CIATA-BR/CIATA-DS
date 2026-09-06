@@ -12,20 +12,26 @@ fun CiataToast(
     actionLabel: String? = null,
     onAction: (() -> Unit)? = null,
 ) {
-    require(message.isNotBlank()) { "message não pode ser vazio." }
-    require((actionLabel == null) == (onAction == null)) {
+    val normalizedMessage = message.trim()
+    val normalizedActionLabel = actionLabel?.trim()
+
+    require(normalizedMessage.isNotEmpty()) { "message não pode ser vazio." }
+    require((normalizedActionLabel == null) == (onAction == null)) {
         "actionLabel e onAction devem ser fornecidos juntos."
+    }
+    require(normalizedActionLabel == null || normalizedActionLabel.isNotEmpty()) {
+        "actionLabel não pode ser vazio."
     }
 
     Snackbar(
         action = {
-            if (actionLabel != null && onAction != null) {
+            if (normalizedActionLabel != null && onAction != null) {
                 TextButton(onClick = onAction) {
-                    Text(actionLabel)
+                    Text(normalizedActionLabel)
                 }
             }
         },
     ) {
-        Text(message)
+        Text(normalizedMessage)
     }
 }
