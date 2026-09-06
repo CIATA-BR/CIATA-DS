@@ -16,12 +16,14 @@ fun CiataAccordion(
     onToggle: (Int) -> Unit,
     content: @Composable (Int) -> Unit,
 ) {
-    require(labels.isNotEmpty()) { "labels não pode ser vazio." }
-    require(labels.all { it.isNotBlank() }) { "rótulos não podem ser vazios." }
-    require(expanded.all { it in labels.indices }) { "expanded contém índice inválido." }
+    val normalizedLabels = labels.map(String::trim)
+
+    require(normalizedLabels.isNotEmpty()) { "labels não pode ser vazio." }
+    require(normalizedLabels.all { it.isNotEmpty() }) { "rótulos não podem ser vazios." }
+    require(expanded.all { it in normalizedLabels.indices }) { "expanded contém índice inválido." }
 
     Column {
-        labels.forEachIndexed { index, label ->
+        normalizedLabels.forEachIndexed { index, label ->
             val isExpanded = index in expanded
             TextButton(
                 onClick = { onToggle(index) },

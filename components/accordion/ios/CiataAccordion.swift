@@ -11,10 +11,12 @@ public struct CiataAccordion<Content: View>: View {
         expanded: Binding<Set<Int>>,
         @ViewBuilder content: @escaping (Int) -> Content
     ) {
-        precondition(!labels.isEmpty, "labels não pode ser vazio")
-        precondition(labels.allSatisfy { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }, "rótulos não podem ser vazios")
-        precondition(expanded.wrappedValue.allSatisfy { labels.indices.contains($0) }, "expanded contém índice inválido")
-        self.labels = labels
+        let normalizedLabels = labels.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+
+        precondition(!normalizedLabels.isEmpty, "labels não pode ser vazio")
+        precondition(normalizedLabels.allSatisfy { !$0.isEmpty }, "rótulos não podem ser vazios")
+        precondition(expanded.wrappedValue.allSatisfy { normalizedLabels.indices.contains($0) }, "expanded contém índice inválido")
+        self.labels = normalizedLabels
         self._expanded = expanded
         self.content = content
     }

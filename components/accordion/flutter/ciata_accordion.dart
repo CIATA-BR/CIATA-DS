@@ -2,15 +2,24 @@ import 'package:flutter/material.dart';
 
 /// Implementação experimental do CMP-0014 Accordion para Flutter.
 class CiataAccordion extends StatelessWidget {
-  const CiataAccordion({
+  CiataAccordion({
     super.key,
-    required this.labels,
-    required this.expanded,
+    required List<String> labels,
+    required Set<int> expanded,
     required this.onToggle,
     required this.panelBuilder,
-  })  : assert(labels.length > 0, 'labels não pode ser vazio'),
-        assert(expanded.every((index) => index >= 0 && index < labels.length),
-            'expanded contém índice inválido');
+  })  : labels = List.unmodifiable(labels.map((label) => label.trim())),
+        expanded = Set.unmodifiable(expanded) {
+    if (this.labels.isEmpty) {
+      throw ArgumentError('labels não pode ser vazio');
+    }
+    if (this.labels.any((label) => label.isEmpty)) {
+      throw ArgumentError('rótulos não podem ser vazios');
+    }
+    if (this.expanded.any((index) => index < 0 || index >= this.labels.length)) {
+      throw ArgumentError('expanded contém índice inválido');
+    }
+  }
 
   final List<String> labels;
   final Set<int> expanded;
