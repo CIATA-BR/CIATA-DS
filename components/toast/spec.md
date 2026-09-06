@@ -62,10 +62,10 @@ Respeitar claro, escuro, sistema, forced/high contrast, text scaling e redução
 - animação obrigatória ignorando redução de movimento.
 
 ## Matriz mínima
-Verificar anúncio, urgência, foco, temporização, persistência, ação opcional, fechamento, fila de mensagens, alto contraste, redução de movimento, text scaling e tecnologias assistivas.
+Verificar anúncio, urgência, foco, temporização, persistência, ação opcional, fechamento, fila de mensagens, alto contraste, redução de movimento, text scaling e recursos de tecnologia assistiva.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recurso de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.
