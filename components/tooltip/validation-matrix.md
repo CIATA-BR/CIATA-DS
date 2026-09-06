@@ -4,7 +4,7 @@
 Definir evidência mínima para validar Tooltip sem permitir que ajuda complementar substitua nome, instrução, erro ou conteúdo essencial.
 
 ## Evidência por execução
-Registrar plataforma, versão, tecnologia assistiva, navegador/dispositivo, cenário, resultado esperado/observado, falhas e limitações.
+Registrar plataforma, versão, recurso de tecnologia assistiva, navegador/dispositivo, cenário, resultado esperado/observado, falhas e limitações.
 
 ## Cenários comuns
 | ID | Cenário | Critério de aceite |
@@ -39,6 +39,6 @@ Executar com VoiceOver. Verificar `accessibilityHint`, ausência de simulação 
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `Tooltip`, nome do acionador, comportamento por foco/long press conforme plataforma, text scaling e ausência de semântica duplicada.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/foco/acesso equivalente/conteúdo essencial e validação manual com tecnologia assistiva relevante tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/foco/acesso equivalente/conteúdo essencial e validação manual com recurso de tecnologia assistiva relevante tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.
