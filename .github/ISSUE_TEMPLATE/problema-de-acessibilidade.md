@@ -20,9 +20,9 @@ Informe estado de autenticação, permissões, dados de teste ou etapa anterior 
 
 Descreva o problema com clareza.
 
-## Tecnologia assistiva ou método de interação
+## Recurso de tecnologia assistiva ou método de interação
 
-Informe tecnologia e versão quando possível. Exemplos: NVDA, JAWS, TalkBack, VoiceOver, teclado, linha Braille, ampliação, controle por voz ou Switch Access.
+Informe o recurso e a versão quando possível. Exemplos: NVDA, JAWS, TalkBack, VoiceOver, teclado, linha Braille, ampliação, controle por voz ou Switch Access.
 
 Se utilizar linha Braille e isso influenciar o resultado, informe modelo, conexão, tabela e leitor de tela.
 
@@ -78,7 +78,7 @@ Preencher após uma tentativa de correção.
 
 - Build, versão ou commit testado:
 - Data do reteste:
-- Ambiente e tecnologia assistiva:
+- Ambiente e recurso de tecnologia assistiva:
 - Resultado:
   - [ ] Corrigido
   - [ ] Parcialmente corrigido
