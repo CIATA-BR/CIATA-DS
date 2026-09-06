@@ -10,16 +10,27 @@ import wx
 class CiataBottomSheetDialog(wx.Dialog):
     """Mapeia o comportamento modal do Bottom Sheet para diálogo nativo desktop."""
 
-    def __init__(self, parent: wx.Window, title: str, build_content: Callable[[wx.Window], None]) -> None:
+    def __init__(
+        self,
+        parent: wx.Window,
+        title: str,
+        build_content: Callable[[wx.Window], None],
+        *,
+        close_label: str = "Fechar",
+    ) -> None:
         title = title.strip()
+        close_label = close_label.strip()
         if not title:
             raise ValueError("title não pode ser vazio.")
+        if not close_label:
+            raise ValueError("close_label não pode ser vazio.")
 
         super().__init__(parent, title=title, style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER)
         container = wx.Panel(self)
         build_content(container)
 
-        close_button = wx.Button(self, wx.ID_CLOSE, label="Fechar")
+        close_button = wx.Button(self, wx.ID_CLOSE, label=close_label)
+        close_button.SetName(close_label)
         close_button.Bind(wx.EVT_BUTTON, lambda _event: self.EndModal(wx.ID_CLOSE))
 
         sizer = wx.BoxSizer(wx.VERTICAL)
