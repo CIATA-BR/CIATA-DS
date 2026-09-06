@@ -4,7 +4,7 @@
 Definir evidência mínima para validar implementações experimentais de Modal/Dialog sem presumir equivalência entre plataformas.
 
 ## Evidência por execução
-Registrar plataforma, versão, tecnologia assistiva, navegador/dispositivo, cenário, resultado esperado/observado, falhas e limitações.
+Registrar plataforma, versão, recurso de tecnologia assistiva, navegador/dispositivo, cenário, resultado esperado/observado, falhas e limitações.
 
 ## Cenários comuns
 | ID | Cenário | Critério de aceite |
@@ -39,6 +39,6 @@ Executar com VoiceOver. Verificar `alert` nativo, leitura de título/mensagem, o
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `AlertDialog`, título, mensagem, ações, barreira modal, Back/dismiss conforme plataforma, retorno de foco e text scaling.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de foco/nome/fechamento, e a validação manual com tecnologia assistiva relevante tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de foco/nome/fechamento, e a validação manual com recurso de tecnologia assistiva relevante tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.
