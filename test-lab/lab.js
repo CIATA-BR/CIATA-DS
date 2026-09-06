@@ -1,11 +1,35 @@
 const components=[
 ['button','CMP-0001','Button'],['text-field','CMP-0002','TextField'],['checkbox','CMP-0003','Checkbox'],['radio','CMP-0004','Radio'],['select-combobox','CMP-0005','Select/Combobox'],['link','CMP-0006','Link'],['alert-status','CMP-0007','Alert/Status'],['modal-dialog','CMP-0008','Modal/Dialog'],['loading-progress','CMP-0009','Loading/Progress'],['card-interativo','CMP-0010','Card interativo'],['pagination','CMP-0011','Pagination'],['toast','CMP-0012','Toast'],['tabs','CMP-0013','Tabs'],['accordion','CMP-0014','Accordion'],['menu','CMP-0015','Menu'],['breadcrumb','CMP-0016','Breadcrumb'],['tooltip','CMP-0017','Tooltip'],['bottom-sheet','CMP-0018','Bottom Sheet'],['date-picker','CMP-0019','Date Picker'],['file-upload','CMP-0020','File Upload'],['search','CMP-0021','Search'],['autocomplete','CMP-0022','Autocomplete']];
 
+const sourceFiles={
+ button:'components/button/web/button.css',
+ 'text-field':'components/text-field/web/text-field.css',
+ checkbox:'components/checkbox/web/checkbox.css',
+ radio:'components/radio/web/radio.css',
+ 'select-combobox':'components/select-combobox/web/select.css',
+ link:'components/link/web/link.css',
+ 'alert-status':'components/alert-status/web/alert-status.css',
+ 'modal-dialog':'components/modal-dialog/web/dialog.css',
+ 'loading-progress':'components/loading-progress/web/loading-progress.css',
+ 'card-interativo':'components/interactive-card/web/interactive-card.css',
+ pagination:'components/pagination/web/pagination.css',
+ toast:'components/toast/web/toast.css',
+ tabs:'components/tabs/web/tabs.css',
+ accordion:'components/accordion/web/accordion.css',
+ menu:'components/menu/web/menu.css',
+ breadcrumb:'components/breadcrumb/web/breadcrumb.css',
+ tooltip:'components/tooltip/web/tooltip.css',
+ 'bottom-sheet':'components/bottom-sheet/web/bottom-sheet.css',
+ 'date-picker':'components/date-picker/web/date-picker.css',
+ 'file-upload':'components/file-upload/web/file-upload.css',
+ search:'components/search/web/search.css',
+ autocomplete:'components/autocomplete/web/autocomplete.css'
+};
+
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const current=()=>document.querySelector('[data-component]')?.dataset.component;
 const meta=slug=>components.find(c=>c[0]===slug);
 const repositoryComponent=slug=>({'card-interativo':'interactive-card'}[slug]||slug);
-const primaryWebSource=slug=>({'select-combobox':'select.css'}[slug]||`${repositoryComponent(slug)}.css`);
 const githubFileUrl=path=>`https://github.com/CIATA-BR/CIATA-DS/blob/main/${path}`;
 
 function demoMarkup(slug){
@@ -49,5 +73,5 @@ function wire(slug){
 }
 
 function renderIndex(){const list=document.querySelector('#component-list');if(!list)return;list.innerHTML=components.map(([slug,id,name])=>`<li><a href="./${slug}/"><strong>${id}</strong><br>${esc(name)}</a></li>`).join('')}
-function renderComponent(){const slug=current();if(!slug)return;const m=meta(slug);if(!m)return;const repoComponent=repositoryComponent(slug);const sourcePath=`components/${repoComponent}/web/${primaryWebSource(slug)}`;document.title=`${m[1]} — ${m[2]} — CIATA Accessibility Test Lab`;document.querySelector('#component-title').textContent=`${m[1]} — ${m[2]}`;document.querySelector('#demo').innerHTML=demoMarkup(slug);document.querySelector('#spec-link').href=githubFileUrl(`components/${repoComponent}/spec.md`);document.querySelector('#matrix-link').href=githubFileUrl(`components/${repoComponent}/validation-matrix.md`);const sourceLink=document.querySelector('#source-link');sourceLink.href=githubFileUrl(sourcePath);sourceLink.textContent=`Código do componente — ${sourcePath}`;wire(slug)}
+function renderComponent(){const slug=current();if(!slug)return;const m=meta(slug);if(!m)return;const repoComponent=repositoryComponent(slug);const sourcePath=sourceFiles[slug];document.title=`${m[1]} — ${m[2]} — CIATA Accessibility Test Lab`;document.querySelector('#component-title').textContent=`${m[1]} — ${m[2]}`;document.querySelector('#demo').innerHTML=demoMarkup(slug);document.querySelector('#spec-link').href=githubFileUrl(`components/${repoComponent}/spec.md`);document.querySelector('#matrix-link').href=githubFileUrl(`components/${repoComponent}/validation-matrix.md`);const sourceLink=document.querySelector('#source-link');sourceLink.href=githubFileUrl(sourcePath);sourceLink.textContent=`Código do componente — ${sourcePath}`;wire(slug)}
 renderIndex();renderComponent();
