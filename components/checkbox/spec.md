@@ -52,7 +52,7 @@ Exemplos adequados:
 
 Evitar rótulos vagos como `Sim`, `Opção 1` ou instruções que dependam apenas da posição visual.
 
-Não acrescentar palavras como `caixa de seleção` ao nome acessível quando a tecnologia assistiva já anuncia o papel.
+Não acrescentar palavras como `caixa de seleção` ao nome acessível quando o recurso de tecnologia assistiva já anuncia o papel.
 
 ## Semântica
 
@@ -119,7 +119,7 @@ Quando marcado:
 - o estado deve ser exposto pela API de acessibilidade;
 - a indicação visual deve permanecer perceptível sem depender apenas de cor;
 - a mudança deve ocorrer sem mover o foco arbitrariamente;
-- a tecnologia assistiva deve anunciar o novo estado pelo comportamento nativo da plataforma.
+- o recurso de tecnologia assistiva deve anunciar o novo estado pelo comportamento nativo da plataforma.
 
 ## Indeterminate / Mixed
 
@@ -225,11 +225,11 @@ Cada implementação deve verificar, quando aplicável:
 - tema claro e escuro;
 - zoom/escalabilidade de texto;
 - alto contraste ou configuração equivalente;
-- compatibilidade com tecnologias assistivas relevantes.
+- compatibilidade com recursos de tecnologia assistiva relevantes.
 
 ## Validação manual
 
-Antes de ser considerado estável, o componente deve ser validado com tecnologias assistivas relevantes para cada plataforma suportada. A evidência deve registrar ao menos plataforma, versão, tecnologia assistiva, cenário testado, resultado e limitações encontradas.
+Antes de ser considerado estável, o componente deve ser validado com recursos de tecnologia assistiva relevantes para cada plataforma suportada. A evidência deve registrar ao menos plataforma, versão, recurso de tecnologia assistiva, cenário testado, resultado e limitações encontradas.
 
 ## Critérios de aceite para a especificação
 
