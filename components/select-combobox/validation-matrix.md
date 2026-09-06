@@ -9,7 +9,7 @@ Definir a evidência mínima para validar implementações experimentais do Sele
 Registrar:
 
 - plataforma, sistema e framework;
-- tecnologia assistiva e versão;
+- recurso de tecnologia assistiva e versão;
 - dispositivo ou navegador;
 - cenário executado;
 - resultado esperado e observado;
@@ -78,6 +78,6 @@ Uma implementação só pode passar de `experimental` para `stable` quando:
 1. todos os cenários aplicáveis tiverem evidência registrada;
 2. não houver falha crítica aberta de nome, papel, valor, foco, acionamento ou compreensão;
 3. divergências da especificação estiverem corrigidas ou justificadas;
-4. validação manual com tecnologia assistiva relevante tiver ocorrido de fato.
+4. validação manual com recurso de tecnologia assistiva relevante tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste. As implementações atuais cobrem prioritariamente Select nativo/equivalente; um Combobox pesquisável customizado exige ciclo de implementação e validação próprio quando for necessário.
