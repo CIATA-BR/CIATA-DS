@@ -2,15 +2,23 @@ import 'package:flutter/material.dart';
 
 /// Implementação experimental do CMP-0013 Tabs para Flutter.
 class CiataTabs extends StatefulWidget {
-  const CiataTabs({
+  CiataTabs({
     super.key,
-    required this.labels,
+    required List<String> labels,
     required this.selectedIndex,
     required this.onSelectionChange,
     required this.panelBuilder,
-  })  : assert(labels.length > 0, 'labels não pode ser vazio'),
-        assert(selectedIndex >= 0 && selectedIndex < labels.length,
-            'selectedIndex fora do intervalo válido');
+  }) : labels = List.unmodifiable(labels.map((label) => label.trim())) {
+    if (this.labels.isEmpty) {
+      throw ArgumentError('labels não pode ser vazio');
+    }
+    if (this.labels.any((label) => label.isEmpty)) {
+      throw ArgumentError('rótulos de abas não podem ser vazios');
+    }
+    if (selectedIndex < 0 || selectedIndex >= this.labels.length) {
+      throw RangeError.index(selectedIndex, this.labels, 'selectedIndex');
+    }
+  }
 
   final List<String> labels;
   final int selectedIndex;
