@@ -66,10 +66,10 @@ Ações seguem alvo interno de 44 × 44 unidades lógicas quando aplicável; And
 - título visual existe, mas não há nome programático equivalente quando exigido.
 
 ## Matriz mínima
-Verificar abertura, modal/não modal, nome, foco inicial, contenção, Escape/Back, fechamento explícito, retorno de foco, fundo inerte, drag equivalente, snap points, rolagem, teclado, alvo, tema, contraste, escala, safe area, reduced motion e tecnologias assistivas.
+Verificar abertura, modal/não modal, nome, foco inicial, contenção, Escape/Back, fechamento explícito, retorno de foco, fundo inerte, drag equivalente, snap points, rolagem, teclado, alvo, tema, contraste, escala, safe area, reduced motion e recursos de tecnologia assistiva.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recurso de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.
