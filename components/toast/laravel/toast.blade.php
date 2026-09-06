@@ -4,6 +4,20 @@
     'dismissible' => false,
 ])
 
+@php
+    $message = trim((string) $message);
+    $variant = trim((string) $variant);
+    $dismissible = (bool) $dismissible;
+    $allowedVariants = ['neutral', 'success', 'warning', 'error'];
+
+    if ($message === '') {
+        throw new InvalidArgumentException('message não pode ser vazio.');
+    }
+    if (! in_array($variant, $allowedVariants, true)) {
+        throw new InvalidArgumentException('variant deve ser neutral, success, warning ou error.');
+    }
+@endphp
+
 <div
     class="ciata-toast ciata-toast--{{ $variant }}"
     role="status"
