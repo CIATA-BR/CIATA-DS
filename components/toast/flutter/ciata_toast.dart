@@ -2,14 +2,29 @@ import 'package:flutter/material.dart';
 
 /// Implementação experimental do CMP-0012 Toast para Flutter.
 class CiataToast extends StatelessWidget {
-  const CiataToast({
+  CiataToast({
     super.key,
-    required this.message,
-    this.actionLabel,
+    required String message,
+    String? actionLabel,
     this.onAction,
-  })  : assert(message != '', 'message não pode ser vazio'),
-        assert((actionLabel == null) == (onAction == null),
-            'actionLabel e onAction devem ser fornecidos juntos');
+  })  : message = message.trim(),
+        actionLabel = actionLabel?.trim() {
+    if (this.message.isEmpty) {
+      throw ArgumentError.value(message, 'message', 'não pode ser vazio');
+    }
+    if ((this.actionLabel == null) != (onAction == null)) {
+      throw ArgumentError(
+        'actionLabel e onAction devem ser fornecidos juntos',
+      );
+    }
+    if (this.actionLabel != null && this.actionLabel!.isEmpty) {
+      throw ArgumentError.value(
+        actionLabel,
+        'actionLabel',
+        'não pode ser vazio',
+      );
+    }
+  }
 
   final String message;
   final String? actionLabel;

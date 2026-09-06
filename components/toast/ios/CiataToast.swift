@@ -11,10 +11,15 @@ public struct CiataToast: View {
         actionLabel: String? = nil,
         action: (() -> Void)? = nil
     ) {
-        precondition(!message.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty, "message não pode ser vazio")
-        precondition((actionLabel == nil) == (action == nil), "actionLabel e action devem ser fornecidos juntos")
-        self.message = message
-        self.actionLabel = actionLabel
+        let normalizedMessage = message.trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalizedActionLabel = actionLabel?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        precondition(!normalizedMessage.isEmpty, "message não pode ser vazio")
+        precondition((normalizedActionLabel == nil) == (action == nil), "actionLabel e action devem ser fornecidos juntos")
+        precondition(normalizedActionLabel == nil || !normalizedActionLabel!.isEmpty, "actionLabel não pode ser vazio")
+
+        self.message = normalizedMessage
+        self.actionLabel = normalizedActionLabel
         self.action = action
     }
 
