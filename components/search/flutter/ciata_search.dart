@@ -9,8 +9,9 @@ class CiataSearch extends StatelessWidget {
     required this.onSubmitted,
     this.enabled = true,
     this.readOnly = false,
-    this.hintText,
-  }) : label = label.trim() {
+    String? hintText,
+  })  : label = label.trim(),
+        hintText = hintText?.trim().isEmpty == true ? null : hintText?.trim() {
     if (this.label.isEmpty) {
       throw ArgumentError.value(label, 'label', 'não pode ser vazio');
     }
