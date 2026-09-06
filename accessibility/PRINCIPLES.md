@@ -22,7 +22,7 @@ Automação encontra classes importantes de falhas, mas não determina sozinha s
 
 ## 6. Evidência antes de opinião
 
-Recomendações devem indicar origem, contexto, versão, tecnologia assistiva, procedimento de teste e resultado observado sempre que aplicável.
+Recomendações devem indicar origem, contexto, versão, recurso de tecnologia assistiva, procedimento de teste e resultado observado sempre que aplicável.
 
 ## 7. Nada sobre pessoas sem pessoas
 
