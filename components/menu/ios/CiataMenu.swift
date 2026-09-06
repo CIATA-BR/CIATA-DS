@@ -6,12 +6,16 @@ public struct CiataMenu: View {
     private let items: [(String, () -> Void)]
 
     public init(label: String, items: [(String, () -> Void)]) {
-        let trimmed = label.trimmingCharacters(in: .whitespacesAndNewlines)
-        precondition(!trimmed.isEmpty, "label não pode ser vazio")
-        precondition(!items.isEmpty, "items não pode ser vazio")
-        precondition(items.allSatisfy { !$0.0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }, "rótulos não podem ser vazios")
-        self.label = trimmed
-        self.items = items
+        let normalizedLabel = label.trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalizedItems = items.map { item in
+            (item.0.trimmingCharacters(in: .whitespacesAndNewlines), item.1)
+        }
+
+        precondition(!normalizedLabel.isEmpty, "label não pode ser vazio")
+        precondition(!normalizedItems.isEmpty, "items não pode ser vazio")
+        precondition(normalizedItems.allSatisfy { !$0.0.isEmpty }, "rótulos não podem ser vazios")
+        self.label = normalizedLabel
+        self.items = normalizedItems
     }
 
     public var body: some View {

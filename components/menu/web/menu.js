@@ -1,9 +1,16 @@
 export function initCiataMenu(root) {
-  const trigger = root.querySelector('.ciata-menu__trigger');
-  const popup = root.querySelector('[role="menu"]');
+  if (!root?.matches?.('[data-ciata-menu]')) return;
+
+  const trigger = Array.from(root.querySelectorAll('.ciata-menu__trigger')).find(
+    (candidate) => candidate.closest('[data-ciata-menu]') === root,
+  );
+  const popup = Array.from(root.querySelectorAll('[role="menu"]')).find(
+    (candidate) => candidate.closest('[data-ciata-menu]') === root,
+  );
   if (!trigger || !popup) return;
 
-  const items = () => Array.from(popup.querySelectorAll('[role="menuitem"]')).filter((item) => !item.disabled);
+  const items = () => Array.from(popup.querySelectorAll('[role="menuitem"]'))
+    .filter((item) => item.closest('[data-ciata-menu]') === root && !item.disabled);
 
   const close = (restoreFocus = true) => {
     popup.hidden = true;
@@ -21,7 +28,7 @@ export function initCiataMenu(root) {
 
   popup.addEventListener('click', (event) => {
     const item = event.target.closest('[role="menuitem"]');
-    if (!item || item.disabled) return;
+    if (!item || item.closest('[data-ciata-menu]') !== root || item.disabled) return;
     close();
   });
 

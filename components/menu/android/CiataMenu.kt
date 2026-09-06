@@ -14,18 +14,21 @@ fun CiataMenu(
     onExpandedChange: (Boolean) -> Unit,
     items: List<Pair<String, () -> Unit>>,
 ) {
-    require(triggerLabel.isNotBlank()) { "triggerLabel não pode ser vazio." }
-    require(items.isNotEmpty()) { "items não pode ser vazio." }
-    require(items.all { it.first.isNotBlank() }) { "rótulos de itens não podem ser vazios." }
+    val normalizedTriggerLabel = triggerLabel.trim()
+    val normalizedItems = items.map { (label, action) -> label.trim() to action }
+
+    require(normalizedTriggerLabel.isNotEmpty()) { "triggerLabel não pode ser vazio." }
+    require(normalizedItems.isNotEmpty()) { "items não pode ser vazio." }
+    require(normalizedItems.all { it.first.isNotEmpty() }) { "rótulos de itens não podem ser vazios." }
 
     TextButton(onClick = { onExpandedChange(!expanded) }) {
-        Text(triggerLabel)
+        Text(normalizedTriggerLabel)
     }
     DropdownMenu(
         expanded = expanded,
         onDismissRequest = { onExpandedChange(false) },
     ) {
-        items.forEach { (label, action) ->
+        normalizedItems.forEach { (label, action) ->
             DropdownMenuItem(
                 text = { Text(label) },
                 onClick = {
