@@ -1,7 +1,7 @@
 export function initCiataBottomSheet(root) {
-  const trigger = root.querySelector('.ciata-bottom-sheet__trigger');
-  const dialog = root.querySelector('.ciata-bottom-sheet__dialog');
-  const closeButton = root.querySelector('.ciata-bottom-sheet__close');
+  const trigger = root.querySelector(':scope > .ciata-bottom-sheet__trigger');
+  const dialog = root.querySelector(':scope > .ciata-bottom-sheet__dialog');
+  const closeButton = dialog?.querySelector('.ciata-bottom-sheet__close');
   const title = dialog?.querySelector('[tabindex="-1"]');
   if (!trigger || !dialog || !closeButton) return;
 
