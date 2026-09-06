@@ -6,7 +6,7 @@ Em validação.
 
 Esta matriz registra a evidência necessária para promover as implementações do `CMP-0001 — Button / Botão` de experimental para estável.
 
-A presença do componente no repositório não é, por si só, evidência de conformidade. Cada plataforma deve ser validada em aplicação real ou harness equivalente, com tecnologias assistivas e configurações relevantes.
+A presença do componente no repositório não é, por si só, evidência de conformidade. Cada plataforma deve ser validada em aplicação real ou harness equivalente, com recursos de tecnologia assistiva e configurações relevantes.
 
 ## Critérios comuns
 
@@ -27,7 +27,7 @@ Para cada plataforma, verificar ao menos:
 - temas claro e escuro;
 - alto contraste/forced colors quando disponível;
 - teclado externo quando suportado;
-- ausência de anúncio duplicado por tecnologia assistiva;
+- ausência de anúncio duplicado por recurso de tecnologia assistiva;
 - ausência de perda arbitrária de foco após acionamento;
 - comportamento adequado com leitor de tela ativo e inativo.
 
@@ -38,7 +38,7 @@ Registrar:
 - plataforma e versão;
 - framework/runtime e versão;
 - dispositivo ou ambiente;
-- tecnologia assistiva e versão;
+- recurso de tecnologia assistiva e versão;
 - variante e estado testados;
 - método de acionamento;
 - resultado esperado;
