@@ -31,7 +31,7 @@ Na Web, usar `nav` com nome acessível como `Breadcrumb` ou equivalente contextu
 - Ativar um nível anterior navega por comportamento nativo do link/controle da plataforma.
 
 ## Separadores e truncamento
-Separadores devem ser ignorados por tecnologias assistivas. Em interfaces estreitas, truncamento visual não pode remover o nome acessível completo. Estratégias com reticências devem preservar acesso aos níveis ocultos sem criar um menu inacessível.
+Separadores devem ser ignorados por recursos de tecnologia assistiva. Em interfaces estreitas, truncamento visual não pode remover o nome acessível completo. Estratégias com reticências devem preservar acesso aos níveis ocultos sem criar um menu inacessível.
 
 ## Tamanho alvo
 Links interativos seguem alvo interno de 44 × 44 unidades lógicas quando aplicável; Android pode manter 48 dp e iOS mínimo de 44 × 44 pt.
@@ -43,7 +43,7 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom e text scaling. Bre
 - `Início > Produtos > Cadeiras`, com os dois primeiros itens como links e `Cadeiras` marcado como atual;
 - separadores visuais não anunciados pelo leitor de tela;
 - item atual não focável quando não há ação;
-- nomes completos preservados para tecnologia assistiva mesmo com truncamento visual.
+- nomes completos preservados para o recurso de tecnologia assistiva mesmo com truncamento visual.
 
 ## Exemplos não conformes
 - usar Breadcrumb como indicador de etapa `1 de 4`;
@@ -54,10 +54,10 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom e text scaling. Bre
 - estado atual indicado somente por cor.
 
 ## Matriz mínima
-Verificar região, nome, lista/hierarquia, links nativos, item atual, separadores, ordem, teclado, alvo, truncamento, tema, alto contraste, zoom/text scaling e tecnologias assistivas.
+Verificar região, nome, lista/hierarquia, links nativos, item atual, separadores, ordem, teclado, alvo, truncamento, tema, alto contraste, zoom/text scaling e recursos de tecnologia assistiva.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recurso de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.
