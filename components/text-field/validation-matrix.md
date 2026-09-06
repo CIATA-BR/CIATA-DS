@@ -12,7 +12,7 @@ Registrar, no mínimo:
 
 - plataforma e versão;
 - framework/runtime e versão relevante;
-- tecnologia assistiva e versão, quando aplicável;
+- recurso de tecnologia assistiva e versão, quando aplicável;
 - navegador e versão, no Web;
 - cenário executado;
 - resultado esperado;
@@ -34,7 +34,7 @@ Registrar, no mínimo:
 ### Ajuda e erro
 
 - ajuda é perceptível e associada ao campo;
-- erro atual é perceptível visualmente e por tecnologia assistiva;
+- erro atual é perceptível visualmente e por recurso de tecnologia assistiva;
 - o estado de erro não depende apenas de cor;
 - atualização de erro não move foco arbitrariamente;
 - validação durante digitação não produz sequência invasiva de anúncios a cada caractere;
@@ -223,7 +223,7 @@ Uma implementação pode ser promovida para `stable` quando:
 
 1. todos os cenários comuns aplicáveis forem aprovados;
 2. todos os cenários específicos da plataforma forem aprovados;
-3. houver evidência manual com as tecnologias assistivas obrigatórias da plataforma;
+3. houver evidência manual com os recursos de tecnologia assistiva obrigatórios da plataforma;
 4. não houver defeito aberto de severidade alta no componente;
 5. defeitos médios ou baixos remanescentes estiverem documentados com impacto e plano de correção;
 6. contraste e escalabilidade tiverem evidência verificável;
@@ -231,4 +231,4 @@ Uma implementação pode ser promovida para `stable` quando:
 8. o README da plataforma registrar a evidência ou apontar para seu local canônico;
 9. limitações conhecidas estiverem documentadas sem transformar comportamento não testado em promessa de suporte.
 
-Automação pode complementar regressão estrutural e semântica, mas não substitui testes manuais com tecnologia assistiva.
+Automação pode complementar regressão estrutural e semântica, mas não substitui testes manuais com recursos de tecnologia assistiva.
