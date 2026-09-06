@@ -55,7 +55,7 @@ Quando a necessidade puder ser atendida por um seletor nativo, ele deve ser pref
 
 Quando houver pesquisa:
 
-- o campo de edição deve permanecer operável por teclado e tecnologia assistiva;
+- o campo de edição deve permanecer operável por teclado e recurso de tecnologia assistiva;
 - o estado expandido deve ser programaticamente determinável;
 - a lista associada deve ser identificável;
 - a opção ativa deve ser comunicada sem mover o foco arbitrariamente para cada item;
@@ -154,11 +154,11 @@ Cada implementação deve verificar, quando aplicável:
 - tema claro/escuro;
 - alto contraste;
 - zoom/text scaling;
-- tecnologias assistivas relevantes.
+- recursos de tecnologia assistiva relevantes.
 
 ## Validação manual
 
-Antes de ser considerada estável, cada implementação deve possuir evidência real de teste com tecnologias assistivas relevantes, registrando plataforma, versão, tecnologia assistiva, cenário, resultado e limitações.
+Antes de ser considerada estável, cada implementação deve possuir evidência real de teste com recursos de tecnologia assistiva relevantes, registrando plataforma, versão, recurso de tecnologia assistiva, cenário, resultado e limitações.
 
 ## Critérios de aceite para a especificação
 
