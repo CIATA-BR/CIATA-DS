@@ -13,14 +13,20 @@
     $id = trim((string) $id);
     $label = trim((string) $label);
     $name = trim((string) $name);
+    $value = (string) $value;
     $browserAutocomplete = trim((string) $browserAutocomplete);
-    $options = collect($options)->map(fn ($option) => trim((string) $option))->all();
+    $disabled = (bool) $disabled;
+    $readonly = (bool) $readonly;
+    $options = collect($options)->map(fn ($option) => trim((string) $option))->values();
 
     if ($id === '' || $label === '' || $name === '' || $browserAutocomplete === '') {
         throw new InvalidArgumentException('id, label, name e browserAutocomplete não podem ser vazios.');
     }
-    if (collect($options)->contains(fn ($option) => $option === '')) {
+    if ($options->contains(fn ($option) => $option === '')) {
         throw new InvalidArgumentException('options não pode conter rótulos vazios.');
+    }
+    if ($options->duplicates()->isNotEmpty()) {
+        throw new InvalidArgumentException('options não pode conter rótulos duplicados.');
     }
 @endphp
 
