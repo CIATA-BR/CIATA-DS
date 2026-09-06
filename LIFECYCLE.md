@@ -63,7 +63,7 @@ Decisões com consequências duradouras devem gerar ADR.
 
 Validar cedo aquilo que possui maior incerteza.
 
-Protótipos devem considerar conteúdo realista, navegação, estados, erros, teclado, foco, leitores de tela, ampliação e outras tecnologias assistivas aplicáveis.
+Protótipos devem considerar conteúdo realista, navegação, estados, erros, teclado, foco, leitores de tela, ampliação e outros recursos de tecnologia assistiva aplicáveis.
 
 Um protótipo visual sem comportamento acessível não comprova viabilidade da experiência.
 
@@ -101,7 +101,7 @@ Combinar, conforme aplicável:
 - inspeção técnica;
 - teste funcional manual;
 - teste por teclado;
-- teste com tecnologias assistivas;
+- teste com recursos de tecnologia assistiva;
 - validação de conteúdo;
 - verificação de desempenho;
 - verificação de segurança;
