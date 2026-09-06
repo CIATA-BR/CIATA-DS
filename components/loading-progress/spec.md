@@ -27,7 +27,7 @@ Comunicar atividade em andamento e, quando possível, o avanço de uma tarefa. U
 ## Semântica
 - Em modo determinado, expor valor atual de forma programática.
 - Em modo indeterminado, anunciar apenas que a operação está em andamento, sem inventar percentual.
-- O nome acessível deve identificar o processo, não repetir palavras de papel que a tecnologia assistiva já anuncia.
+- O nome acessível deve identificar o processo, não repetir palavras de papel que o recurso de tecnologia assistiva já anuncia.
 - Não usar `aria-live` ou anúncios equivalentes a cada pequena mudança de valor.
 
 ## Foco e interação
@@ -36,7 +36,7 @@ Comunicar atividade em andamento e, quando possível, o avanço de uma tarefa. U
 - Se o controle acionador ficar temporariamente indisponível, preservar contexto e informar o motivo quando necessário.
 
 ## Frequência de atualização
-Para progresso determinado, a interface visual pode atualizar com maior frequência, mas anúncios por tecnologia assistiva devem ser moderados. Preferir marcos significativos ou alterações suficientemente espaçadas em vez de anunciar cada ponto percentual.
+Para progresso determinado, a interface visual pode atualizar com maior frequência, mas anúncios por recursos de tecnologia assistiva devem ser moderados. Preferir marcos significativos ou alterações suficientemente espaçadas em vez de anunciar cada ponto percentual.
 
 ## Conteúdo
 Exemplos úteis:
@@ -67,10 +67,10 @@ Cor e animação não podem ser a única forma de transmitir avanço. Respeitar 
 - loading eterno sem estado de erro ou recuperação.
 
 ## Matriz mínima
-Verificar nome, modo determinado/indeterminado, valor atual, ausência de foco indevido, frequência de anúncios, conclusão/falha, cancelamento quando aplicável, redução de movimento, zoom/text scaling, alto contraste e tecnologias assistivas.
+Verificar nome, modo determinado/indeterminado, valor atual, ausência de foco indevido, frequência de anúncios, conclusão/falha, cancelamento quando aplicável, redução de movimento, zoom/text scaling, alto contraste e recursos de tecnologia assistiva.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recurso de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.
