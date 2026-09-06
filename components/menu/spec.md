@@ -60,13 +60,13 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom, text scaling e red
 - Escape fecha mas foco se perde no `body`;
 - item disabled continua ativável;
 - submenu inacessível por teclado ou touch;
-- nomes como `Excluir, item de menu` quando a tecnologia assistiva já anuncia o papel.
+- nomes como `Excluir, item de menu` quando o recurso de tecnologia assistiva já anuncia o papel.
 
 ## Matriz mínima
-Verificar acionador, estado aberto, menu/item, link versus ação, foco inicial, setas, Home/End, Escape, fechamento, retorno de foco, disabled, checked, submenu, clique/toque externo, alvo, contraste, zoom/text scaling e tecnologias assistivas.
+Verificar acionador, estado aberto, menu/item, link versus ação, foco inicial, setas, Home/End, Escape, fechamento, retorno de foco, disabled, checked, submenu, clique/toque externo, alvo, contraste, zoom/text scaling e recursos de tecnologia assistiva.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recurso de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.
