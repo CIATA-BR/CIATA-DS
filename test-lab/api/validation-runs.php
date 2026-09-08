@@ -91,15 +91,17 @@ try {
     $criterionLookup = $pdo->prepare('SELECT id FROM validation_criteria WHERE component_id = ? AND criterion_key = ? LIMIT 1');
     $resultStmt = $pdo->prepare('INSERT INTO validation_results (validation_run_id, validation_criterion_id, criterion_key_snapshot, criterion_name_snapshot, criterion_group_snapshot, acceptance_criteria_snapshot, status, expected_result, observed_result, severity, issue_url, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
+    $counts = ['pass' => 0, 'fail' => 0, 'blocked' => 0, 'not-applicable' => 0];
     foreach ($payload['results'] as $result) {
         foreach (['criterion_id', 'criterion_name', 'acceptance_criteria', 'status', 'observed'] as $field) {
             if (!isset($result[$field]) || $result[$field] === '') {
                 throw new RuntimeException("Resultado incompleto: {$field}.");
             }
         }
-        if (!in_array($result['status'], ['pass', 'fail', 'blocked', 'not-applicable'], true)) {
+        if (!array_key_exists($result['status'], $counts)) {
             throw new RuntimeException('Status de critério inválido.');
         }
+        $counts[$result['status']]++;
         $criterionLookup->execute([$componentId, $result['criterion_id']]);
         $criterionId = $criterionLookup->fetchColumn() ?: null;
         $resultStmt->execute([
@@ -118,8 +120,27 @@ try {
         ]);
     }
 
+    $platformStatus = $counts['fail'] > 0 ? 'has_failures' : ($counts['blocked'] > 0 ? 'blocked' : 'validated');
+    $statusStmt = $pdo->prepare('INSERT INTO component_platform_status (component_id, platform_id, component_version_id, status, total_required, total_pass, total_fail, total_blocked, total_not_applicable, calculated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()) ON DUPLICATE KEY UPDATE component_version_id = VALUES(component_version_id), status = VALUES(status), total_required = VALUES(total_required), total_pass = VALUES(total_pass), total_fail = VALUES(total_fail), total_blocked = VALUES(total_blocked), total_not_applicable = VALUES(total_not_applicable), calculated_at = NOW()');
+    $statusStmt->execute([
+        $componentId,
+        $platformId,
+        $versionId,
+        $platformStatus,
+        count($payload['results']),
+        $counts['pass'],
+        $counts['fail'],
+        $counts['blocked'],
+        $counts['not-applicable'],
+    ]);
+
     $pdo->commit();
-    ciata_json(['status' => 'ok', 'validation_run_id' => $runId, 'overall_status' => $overall], 201);
+    ciata_json([
+        'status' => 'ok',
+        'validation_run_id' => $runId,
+        'overall_status' => $overall,
+        'platform_status' => $platformStatus,
+    ], 201);
 } catch (Throwable $error) {
     if (isset($pdo) && $pdo instanceof PDO && $pdo->inTransaction()) {
         $pdo->rollBack();
