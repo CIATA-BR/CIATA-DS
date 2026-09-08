@@ -17,43 +17,40 @@ jobs:
         with:
           ref: docs/normaliza-terminologia-matrizes
           fetch-depth: 0
-      - name: Corrigir concordância da forma normalizada
+      - name: Estabilizar concordância da forma normalizada
         shell: python
         run: |
           from pathlib import Path
+          import re
 
           extensoes = {'.md', '.html', '.js', '.css', '.json', '.yml', '.yaml', '.txt', '.php', '.py', '.kt', '.swift', '.dart', '.xml', '.svg'}
-          ajustes = [
+          literais = [
               ('pela recursos de tecnologia assistiva', 'pelos recursos de tecnologia assistiva'),
               ('da recursos de tecnologia assistiva', 'dos recursos de tecnologia assistiva'),
               ('na recursos de tecnologia assistiva', 'nos recursos de tecnologia assistiva'),
               ('à recursos de tecnologia assistiva', 'aos recursos de tecnologia assistiva'),
               ('a recursos de tecnologia assistiva', 'os recursos de tecnologia assistiva'),
               ('uma recursos de tecnologia assistiva', 'recursos de tecnologia assistiva'),
-              ('recursos de tecnologia assistiva relevante', 'recursos de tecnologia assistiva relevantes'),
-              ('recursos de tecnologia assistiva usada', 'recursos de tecnologia assistiva usados'),
-              ('recursos de tecnologia assistiva utilizada', 'recursos de tecnologia assistiva utilizados'),
-              ('recursos de tecnologia assistiva principal', 'recursos de tecnologia assistiva principais'),
               ('Pela Recursos de Tecnologia Assistiva', 'Pelos Recursos de Tecnologia Assistiva'),
               ('Da Recursos de Tecnologia Assistiva', 'Dos Recursos de Tecnologia Assistiva'),
               ('Na Recursos de Tecnologia Assistiva', 'Nos Recursos de Tecnologia Assistiva'),
               ('À Recursos de Tecnologia Assistiva', 'Aos Recursos de Tecnologia Assistiva'),
               ('A Recursos de Tecnologia Assistiva', 'Os Recursos de Tecnologia Assistiva'),
               ('Uma Recursos de Tecnologia Assistiva', 'Recursos de Tecnologia Assistiva'),
-              ('Recursos de Tecnologia Assistiva relevante', 'Recursos de Tecnologia Assistiva relevantes'),
-              ('os recursos de tecnologia assistiva percebe', 'os recursos de tecnologia assistiva percebem'),
-              ('os recursos de tecnologia assistiva recebe', 'os recursos de tecnologia assistiva recebem'),
-              ('os recursos de tecnologia assistiva anuncia', 'os recursos de tecnologia assistiva anunciam'),
-              ('os recursos de tecnologia assistiva não sabe', 'os recursos de tecnologia assistiva não sabem'),
-              ('os recursos de tecnologia assistiva não identifica', 'os recursos de tecnologia assistiva não identificam'),
-              ('os recursos de tecnologia assistiva pode', 'os recursos de tecnologia assistiva podem'),
-              ('os recursos de tecnologia assistiva muda', 'os recursos de tecnologia assistiva mudam'),
-              ('Os Recursos de Tecnologia Assistiva percebe', 'Os Recursos de Tecnologia Assistiva percebem'),
-              ('Os Recursos de Tecnologia Assistiva recebe', 'Os Recursos de Tecnologia Assistiva recebem'),
-              ('Os Recursos de Tecnologia Assistiva anuncia', 'Os Recursos de Tecnologia Assistiva anunciam'),
-              ('Os Recursos de Tecnologia Assistiva não sabe', 'Os Recursos de Tecnologia Assistiva não sabem'),
-              ('Os Recursos de Tecnologia Assistiva não identifica', 'Os Recursos de Tecnologia Assistiva não identificam'),
-              ('Os Recursos de Tecnologia Assistiva pode', 'Os Recursos de Tecnologia Assistiva podem'),
+          ]
+          regexes = [
+              (r'(recursos de tecnologia assistiva) relevantess+\b', r'\1 relevantes'),
+              (r'(recursos de tecnologia assistiva) relevante\b', r'\1 relevantes'),
+              (r'(recursos de tecnologia assistiva) usada\b', r'\1 usados'),
+              (r'(recursos de tecnologia assistiva) utilizada\b', r'\1 utilizados'),
+              (r'(recursos de tecnologia assistiva) principal\b', r'\1 principais'),
+              (r'(os recursos de tecnologia assistiva) percebe\b', r'\1 percebem'),
+              (r'(os recursos de tecnologia assistiva) recebe\b', r'\1 recebem'),
+              (r'(os recursos de tecnologia assistiva) anuncia\b', r'\1 anunciam'),
+              (r'(os recursos de tecnologia assistiva) não sabe\b', r'\1 não sabem'),
+              (r'(os recursos de tecnologia assistiva) não identifica\b', r'\1 não identificam'),
+              (r'(os recursos de tecnologia assistiva) pode\b', r'\1 podem'),
+              (r'(os recursos de tecnologia assistiva) muda\b', r'\1 mudam'),
           ]
           alterados = []
 
@@ -67,13 +64,15 @@ jobs:
               except UnicodeDecodeError:
                   continue
               novo = texto
-              for origem, destino in ajustes:
+              for origem, destino in literais:
                   novo = novo.replace(origem, destino)
+              for padrao, destino in regexes:
+                  novo = re.sub(padrao, destino, novo, flags=re.IGNORECASE)
               if novo != texto:
                   path.write_text(novo, encoding='utf-8')
                   alterados.append(path.as_posix())
 
-          print(f'{len(alterados)} arquivos com concordância ajustada')
+          print(f'{len(alterados)} arquivos estabilizados')
           for item in alterados:
               print(item)
       - name: Commitar ajustes
@@ -87,7 +86,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m 'docs: ajusta concordancia verbal da terminologia'
+          git commit -m 'docs: estabiliza concordancia da terminologia'
           git fetch origin docs/normaliza-terminologia-matrizes
           git rebase origin/docs/normaliza-terminologia-matrizes
           git push origin HEAD:docs/normaliza-terminologia-matrizes
