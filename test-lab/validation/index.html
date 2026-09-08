@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Formulário de validação — CIATA Design System</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="./validation.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <header class="site-header">
+    <p><a id="back-link" href="../">← Voltar ao Test Lab</a></p>
+    <h1 id="page-title">Formulário de validação</h1>
+    <p id="matrix-origin" class="muted"></p>
+  </header>
+
+  <main id="main">
+    <div id="load-status" class="status" role="status">Carregando matriz de validação…</div>
+
+    <form id="validation-form" hidden novalidate>
+      <section class="panel" aria-labelledby="execution-title">
+        <h2 id="execution-title">Dados da execução</h2>
+        <div class="form-grid">
+          <div>
+            <label for="analyst">Analista</label>
+            <input id="analyst" name="analyst" type="text" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="platform">Plataforma</label>
+            <select id="platform" name="platform" required>
+              <option value="">Selecione</option>
+              <option value="web">Web</option>
+              <option value="laravel">Laravel/PHP</option>
+              <option value="python">Python/wxPython</option>
+              <option value="android">Android/Jetpack Compose</option>
+              <option value="ios">iOS/SwiftUI</option>
+              <option value="flutter">Flutter</option>
+              <option value="other">Outra</option>
+            </select>
+          </div>
+          <div>
+            <label for="platform-version">Versão do sistema/plataforma</label>
+            <input id="platform-version" name="platform_version" type="text" required>
+          </div>
+          <div>
+            <label for="framework">Framework/runtime e versão</label>
+            <input id="framework" name="framework_runtime" type="text">
+          </div>
+          <div>
+            <label for="assistive-resource">Recursos de tecnologia assistiva</label>
+            <input id="assistive-resource" name="assistive_resource" type="text" required aria-describedby="assistive-resource-help">
+            <p id="assistive-resource-help" class="muted">Ex.: JAWS, NVDA, VoiceOver, TalkBack, Switch Control.</p>
+          </div>
+          <div>
+            <label for="assistive-version">Versão dos recursos de tecnologia assistiva</label>
+            <input id="assistive-version" name="assistive_resource_version" type="text">
+          </div>
+          <div>
+            <label for="browser-app">Navegador ou aplicativo</label>
+            <input id="browser-app" name="browser_app" type="text">
+          </div>
+          <div>
+            <label for="device">Dispositivo ou ambiente</label>
+            <input id="device" name="device_environment" type="text" required>
+          </div>
+          <div>
+            <label for="commit-sha">Commit/versão validada</label>
+            <input id="commit-sha" name="commit_sha" type="text" spellcheck="false">
+          </div>
+          <div>
+            <label for="product-harness">Produto ou harness</label>
+            <input id="product-harness" name="product_harness" type="text">
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="criteria-title">
+        <h2 id="criteria-title">Critérios da matriz</h2>
+        <p id="criteria-help">Os critérios abaixo são extraídos automaticamente da matriz Markdown canônica do componente.</p>
+        <div id="criteria"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="run-notes-title">
+        <h2 id="run-notes-title">Observações da execução</h2>
+        <label for="run-notes">Observações gerais, limitações ou contexto adicional</label>
+        <textarea id="run-notes" name="run_notes" rows="6"></textarea>
+      </section>
+
+      <div class="actions">
+        <button type="submit">Validar e gerar registro</button>
+        <button type="button" id="save-draft">Salvar rascunho neste navegador</button>
+        <button type="button" id="clear-draft">Limpar rascunho</button>
+      </div>
+    </form>
+
+    <section id="result-panel" class="panel" aria-labelledby="result-title" hidden>
+      <h2 id="result-title">Registro estruturado</h2>
+      <p>Enquanto a API do CIATA-DS ainda não estiver conectada, este JSON representa exatamente o payload que será persistido na base.</p>
+      <pre id="result" tabindex="0"></pre>
+    </section>
+  </main>
+
+  <script src="./validation.js"></script>
+</body>
+</html>
