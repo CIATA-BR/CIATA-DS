@@ -83,8 +83,9 @@ export function registerPlaywrightTools(server) {
         const { chromium } = await import("playwright");
         const { default: AxeBuilder } = await import("@axe-core/playwright");
         const browser = await chromium.launch({ headless: true });
+        const context = await browser.newContext();
         try {
-          const page = await browser.newPage();
+          const page = await context.newPage();
           await page.goto(safeUrl, { waitUntil: "domcontentloaded", timeout: 30000 });
 
           let builder = new AxeBuilder({ page }).withTags(axeTags);
@@ -124,6 +125,7 @@ export function registerPlaywrightTools(server) {
 
           return { content: [{ type: "text", text: lines.join("\n") }] };
         } finally {
+          await context.close();
           await browser.close();
         }
       } catch (err) {
@@ -151,13 +153,15 @@ export function registerPlaywrightTools(server) {
       try {
         const { chromium } = await import("playwright");
         const browser = await chromium.launch({ headless: true });
+        const context = await browser.newContext();
         try {
-          const page = await browser.newPage();
+          const page = await context.newPage();
           await page.goto(safeUrl, { waitUntil: "domcontentloaded", timeout: 30000 });
-          const locator = root ? page.locator(root) : page;
+          const locator = root ? page.locator(root) : page.locator("body");
           const snapshot = await locator.ariaSnapshot();
           return { content: [{ type: "text", text: `Accessibility Tree: ${safeUrl}\n\n${snapshot}` }] };
         } finally {
+          await context.close();
           await browser.close();
         }
       } catch (err) {
@@ -220,7 +224,7 @@ export function registerPlaywrightTools(server) {
           for (let i = 0; i < focusOrder.length; i++) {
             const f = focusOrder[i];
             const vis = f.outline === "none" ? " [NO VISIBLE FOCUS]" : "";
-            lines.push(`${i + 1}. <${f.tag}${f.role ? ` role="${f.role}"` : ""}> "${f.label}"${vis}`);
+            lines.push(`${i + 1}. <${f.tag}${f.role ? ` role=\"${f.role}\"` : ""}> \"${f.label}\"${vis}`);
           }
           return { content: [{ type: "text", text: lines.join("\n") }] };
         } finally {
@@ -302,7 +306,7 @@ export function registerPlaywrightTools(server) {
 
           const lines = [`Contrast scan: ${safeUrl}`, `Failures: ${elements.length}`, ""];
           for (const e of elements) {
-            lines.push(`[FAIL] <${e.tag}> "${e.text}" — ${e.ratio}:1 (need ${e.required}:1${e.isLarge ? ", large text" : ""})`);
+            lines.push(`[FAIL] <${e.tag}> \"${e.text}\" — ${e.ratio}:1 (need ${e.required}:1${e.isLarge ? ", large text" : ""})`);
             lines.push(`  Color: ${e.fgColor} on ${e.bgColor}`);
             lines.push(`  Selector: ${e.selector}`);
             lines.push("");
