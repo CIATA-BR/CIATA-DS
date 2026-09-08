@@ -23,7 +23,6 @@ jobs:
           from pathlib import Path
 
           extensoes = {'.md', '.html', '.js', '.css', '.json', '.yml', '.yaml', '.txt', '.php', '.py', '.kt', '.swift', '.dart', '.xml', '.svg'}
-          oficial = 'Centro de Inclusão Através da Tecnologia Assistiva'
           ajustes = [
               ('pela recursos de tecnologia assistiva', 'pelos recursos de tecnologia assistiva'),
               ('da recursos de tecnologia assistiva', 'dos recursos de tecnologia assistiva'),
@@ -42,21 +41,30 @@ jobs:
               ('A Recursos de Tecnologia Assistiva', 'Os Recursos de Tecnologia Assistiva'),
               ('Uma Recursos de Tecnologia Assistiva', 'Recursos de Tecnologia Assistiva'),
               ('Recursos de Tecnologia Assistiva relevante', 'Recursos de Tecnologia Assistiva relevantes'),
+              ('os recursos de tecnologia assistiva percebe', 'os recursos de tecnologia assistiva percebem'),
+              ('os recursos de tecnologia assistiva recebe', 'os recursos de tecnologia assistiva recebem'),
+              ('os recursos de tecnologia assistiva anuncia', 'os recursos de tecnologia assistiva anunciam'),
+              ('os recursos de tecnologia assistiva não sabe', 'os recursos de tecnologia assistiva não sabem'),
+              ('os recursos de tecnologia assistiva não identifica', 'os recursos de tecnologia assistiva não identificam'),
+              ('os recursos de tecnologia assistiva pode', 'os recursos de tecnologia assistiva podem'),
+              ('os recursos de tecnologia assistiva muda', 'os recursos de tecnologia assistiva mudam'),
+              ('Os Recursos de Tecnologia Assistiva percebe', 'Os Recursos de Tecnologia Assistiva percebem'),
+              ('Os Recursos de Tecnologia Assistiva recebe', 'Os Recursos de Tecnologia Assistiva recebem'),
+              ('Os Recursos de Tecnologia Assistiva anuncia', 'Os Recursos de Tecnologia Assistiva anunciam'),
+              ('Os Recursos de Tecnologia Assistiva não sabe', 'Os Recursos de Tecnologia Assistiva não sabem'),
+              ('Os Recursos de Tecnologia Assistiva não identifica', 'Os Recursos de Tecnologia Assistiva não identificam'),
+              ('Os Recursos de Tecnologia Assistiva pode', 'Os Recursos de Tecnologia Assistiva podem'),
           ]
           alterados = []
 
           for path in Path('.').rglob('*'):
               if not path.is_file() or '.git' in path.parts:
                   continue
-              if path.suffix.lower() not in extensoes:
-                  continue
-              if path.as_posix().startswith('.github/workflows/'):
+              if path.suffix.lower() not in extensoes or path.as_posix().startswith('.github/workflows/'):
                   continue
               try:
                   texto = path.read_text(encoding='utf-8')
               except UnicodeDecodeError:
-                  continue
-              if oficial in texto and all(origem not in texto for origem, _ in ajustes):
                   continue
               novo = texto
               for origem, destino in ajustes:
@@ -79,7 +87,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m 'docs: corrige concordancia da terminologia'
+          git commit -m 'docs: ajusta concordancia verbal da terminologia'
           git fetch origin docs/normaliza-terminologia-matrizes
           git rebase origin/docs/normaliza-terminologia-matrizes
           git push origin HEAD:docs/normaliza-terminologia-matrizes
