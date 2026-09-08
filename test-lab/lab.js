@@ -30,7 +30,7 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 const current=()=>document.querySelector('[data-component]')?.dataset.component;
 const meta=slug=>components.find(c=>c[0]===slug);
 const repositoryComponent=slug=>({'card-interativo':'interactive-card'}[slug]||slug);
-const githubFileUrl=path=>`https://github.com/CIATA-BR/CIATA-DS/blob/main/${path}`;
+const localFileUrl=path=>`/${path}`;
 
 function demoMarkup(slug){
  switch(slug){
@@ -73,5 +73,5 @@ function wire(slug){
 }
 
 function renderIndex(){const list=document.querySelector('#component-list');if(!list)return;list.innerHTML=components.map(([slug,id,name])=>`<li><a href="./${slug}/"><strong>${id}</strong><br>${esc(name)}</a></li>`).join('')}
-function renderComponent(){const slug=current();if(!slug)return;const m=meta(slug);if(!m)return;const repoComponent=repositoryComponent(slug);const sourcePath=sourceFiles[slug];document.title=`${m[1]} — ${m[2]} — CIATA Accessibility Test Lab`;document.querySelector('#component-title').textContent=`${m[1]} — ${m[2]}`;document.querySelector('#demo').innerHTML=demoMarkup(slug);document.querySelector('#spec-link').href=githubFileUrl(`components/${repoComponent}/spec.md`);document.querySelector('#matrix-link').href=githubFileUrl(`components/${repoComponent}/validation-matrix.md`);const sourceLink=document.querySelector('#source-link');sourceLink.href=githubFileUrl(sourcePath);sourceLink.textContent=`Código do componente — ${sourcePath}`;wire(slug)}
+function renderComponent(){const slug=current();if(!slug)return;const m=meta(slug);if(!m)return;const repoComponent=repositoryComponent(slug);const sourcePath=sourceFiles[slug];document.title=`${m[1]} — ${m[2]} — CIATA Accessibility Test Lab`;document.querySelector('#component-title').textContent=`${m[1]} — ${m[2]}`;document.querySelector('#demo').innerHTML=demoMarkup(slug);document.querySelector('#spec-link').href=localFileUrl(`components/${repoComponent}/spec.md`);document.querySelector('#matrix-link').href=localFileUrl(`components/${repoComponent}/validation-matrix.md`);const sourceLink=document.querySelector('#source-link');sourceLink.href=localFileUrl(sourcePath);sourceLink.textContent=`Código do componente — ${sourcePath}`;wire(slug)}
 renderIndex();renderComponent();
