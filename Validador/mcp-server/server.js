@@ -1,27 +1,34 @@
 #!/usr/bin/env node
 /**
- * CIATA-DS — servidor HTTP do motor de validação de acessibilidade.
+ * A11y Agent Team — HTTP MCP Server Entry Point
  *
- * O servidor MCP permanece compatível com clientes MCP existentes e fica,
- * por padrão, restrito ao loopback. A integração com MariaDB usa somente
- * variáveis de ambiente do processo; credenciais nunca são servidas ao cliente.
+ * Starts the MCP server over Streamable HTTP transport (with SSE fallback).
+ * Compatible with any MCP client that supports HTTP transport.
+ *
+ * Usage:
+ *   node server.js                    # Starts on port 3100
+ *   PORT=8080 node server.js          # Custom port
+ *   A11Y_MCP_STATELESS=1 node server.js  # Stateless mode (no sessions)
+ *
+ * Environment variables:
+ *   PORT              - HTTP port (default: 3100)
+ *   A11Y_MCP_STATELESS - Set to "1" for stateless mode (default: stateful)
+ *   A11Y_MCP_HOST     - Bind address (default: 127.0.0.1)
  */
 
 import express from "express";
 import { randomUUID } from "node:crypto";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import { createServer } from "./server-core.js";
-import { checkDatabase, databaseConfigured } from "./database.js";
 
 const PORT = parseInt(process.env.PORT || "3100", 10);
 const HOST = process.env.A11Y_MCP_HOST || "127.0.0.1";
 const STATELESS = process.env.A11Y_MCP_STATELESS === "1";
 
 const app = express();
-app.use(express.json({ limit: "1mb" }));
+app.use(express.json());
 
-// Nega chamadas cross-origin diretas. O acesso Web deve passar pelo mesmo
-// host do CIATA-DS (Apache/reverse proxy) e por autenticação antes de escrita.
+// Deny cross-origin requests (CWE-942)
 app.use((_req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "null");
   res.setHeader("Access-Control-Allow-Methods", "POST, GET, DELETE");
@@ -29,10 +36,11 @@ app.use((_req, res, next) => {
 });
 
 if (STATELESS) {
+  // ---- Stateless mode: new server per request ----
   app.post("/mcp", async (req, res) => {
     const server = createServer();
     const transport = new StreamableHTTPServerTransport({
-      sessionIdGenerator: undefined,
+      sessionIdGenerator: undefined, // stateless
     });
     res.on("close", () => { transport.close(); server.close(); });
     await server.connect(transport);
@@ -40,17 +48,19 @@ if (STATELESS) {
   });
 
   app.get("/mcp", (_req, res) => {
-    res.status(405).json({ error: "SSE indisponível no modo stateless. Use POST." });
+    res.status(405).json({ error: "SSE not available in stateless mode. Use POST." });
   });
 
   app.delete("/mcp", (_req, res) => {
-    res.status(405).json({ error: "Encerramento de sessão indisponível no modo stateless." });
+    res.status(405).json({ error: "Session termination not available in stateless mode." });
   });
 } else {
+  // ---- Stateful mode: sessions with SSE support ----
   const MAX_SESSIONS = 100;
-  const SESSION_TTL_MS = 30 * 60 * 1000;
+  const SESSION_TTL_MS = 30 * 60 * 1000; // 30 minutes
   const sessions = new Map();
 
+  // Periodic sweep: remove expired sessions
   setInterval(() => {
     const now = Date.now();
     for (const [id, session] of sessions) {
@@ -65,17 +75,19 @@ if (STATELESS) {
   app.post("/mcp", async (req, res) => {
     const sessionId = req.headers["mcp-session-id"];
     if (sessionId && sessions.has(sessionId)) {
+      // Existing session
       const session = sessions.get(sessionId);
       session.lastActivity = Date.now();
       await session.transport.handleRequest(req, res, req.body);
       return;
     }
     if (sessionId && !sessions.has(sessionId)) {
-      res.status(404).json({ error: "Sessão não encontrada. Inicie uma nova sessão sem o cabeçalho mcp-session-id." });
+      res.status(404).json({ error: "Session not found. Start a new session without mcp-session-id header." });
       return;
     }
+    // New session
     if (sessions.size >= MAX_SESSIONS) {
-      res.status(503).json({ error: "Limite de sessões ativas atingido. Tente novamente mais tarde." });
+      res.status(503).json({ error: "Too many active sessions. Try again later." });
       return;
     }
     const server = createServer();
@@ -96,7 +108,7 @@ if (STATELESS) {
   app.get("/mcp", async (req, res) => {
     const sessionId = req.headers["mcp-session-id"];
     if (!sessionId || !sessions.has(sessionId)) {
-      res.status(400).json({ error: "ID de sessão ausente ou inválido para SSE." });
+      res.status(400).json({ error: "Invalid or missing session ID for SSE." });
       return;
     }
     const { transport } = sessions.get(sessionId);
@@ -106,7 +118,7 @@ if (STATELESS) {
   app.delete("/mcp", async (req, res) => {
     const sessionId = req.headers["mcp-session-id"];
     if (!sessionId || !sessions.has(sessionId)) {
-      res.status(404).json({ error: "Sessão não encontrada." });
+      res.status(404).json({ error: "Session not found." });
       return;
     }
     const { transport, server } = sessions.get(sessionId);
@@ -117,44 +129,17 @@ if (STATELESS) {
   });
 }
 
+// ---- Health check ----
 app.get("/health", (_req, res) => {
-  res.json({
-    status: "ok",
-    name: "CIATA-DS Validador",
-    mcp: "ok",
-    database: databaseConfigured() ? "configurada" : "não configurada",
-    mode: STATELESS ? "stateless" : "stateful",
-  });
-});
-
-// Endpoint somente de diagnóstico. Não retorna senha, host nem outros segredos.
-app.get("/health/database", async (_req, res) => {
-  if (!databaseConfigured()) {
-    res.status(503).json({ status: "erro", database: "não configurada" });
-    return;
-  }
-
-  try {
-    const info = await checkDatabase();
-    res.json({
-      status: "ok",
-      database: info.database_name,
-      user: info.database_user,
-      version: info.database_version,
-    });
-  } catch (error) {
-    console.error("Falha ao verificar a base CIATA-DS:", error.message);
-    res.status(503).json({ status: "erro", database: "indisponível" });
-  }
+  res.json({ status: "ok", name: "a11y-agent-team", version: "4.6.0", mode: STATELESS ? "stateless" : "stateful" });
 });
 
 if (HOST !== "127.0.0.1" && HOST !== "localhost" && HOST !== "::1") {
-  console.warn("AVISO: servidor fora do loopback e sem autenticação própria. Restrinja o acesso por proxy/firewall.");
+  console.warn("WARNING: Server bound to non-loopback address. No authentication is configured.");
 }
 
 app.listen(PORT, HOST, () => {
-  console.log(`CIATA-DS Validador ativo em http://${HOST}:${PORT}/mcp`);
-  console.log(`Modo: ${STATELESS ? "stateless" : "stateful (sessões + SSE)"}`);
-  console.log(`Saúde: http://${HOST}:${PORT}/health`);
-  console.log(`Banco: http://${HOST}:${PORT}/health/database`);
+  console.log(`A11y Agent Team MCP server listening on http://${HOST}:${PORT}/mcp`);
+  console.log(`Mode: ${STATELESS ? "stateless" : "stateful (sessions + SSE)"}`);
+  console.log(`Health check: http://${HOST}:${PORT}/health`);
 });
