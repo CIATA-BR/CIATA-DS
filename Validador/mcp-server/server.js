@@ -122,7 +122,7 @@ if (STATELESS) {
       return;
     }
     const { transport, server } = sessions.get(sessionId);
-    await transport.handleRequest(req, res);
+    await transport.handleRequest(req, res, req.body);
     transport.close();
     await server.close();
     sessions.delete(sessionId);
