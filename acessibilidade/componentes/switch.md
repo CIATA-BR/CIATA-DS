@@ -48,7 +48,7 @@ Em Android e iOS, o mesmo comportamento deve ser obtido preferencialmente com o 
 <div class="switch desligado">Receber notificações por e-mail</div>
 ```
 
-**Por que falha:** aparência visual de switch não cria função nem estado acessível. A recursos de tecnologia assistiva pode anunciar apenas texto estático e a pessoa não consegue saber se a configuração está ligada ou desligada, nem como alterá-la.
+**Por que falha:** aparência visual de switch não cria função nem estado acessível. Os recursos de tecnologia assistiva podem anunciar apenas texto estático e a pessoa não consegue saber se a configuração está ligada ou desligada, nem como alterá-la.
 
 Outro erro recorrente é usar no nome `Receber notificações desligado` e também expor estado `desligado`.
 
