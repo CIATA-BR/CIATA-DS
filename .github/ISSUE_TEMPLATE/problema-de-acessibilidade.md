@@ -20,7 +20,7 @@ Informe estado de autenticação, permissões, dados de teste ou etapa anterior 
 
 Descreva o problema com clareza.
 
-## recursos de tecnologia assistiva ou método de interação
+## Recursos de tecnologia assistiva ou método de interação
 
 Informe tecnologia e versão quando possível. Exemplos: NVDA, JAWS, TalkBack, VoiceOver, teclado, linha Braille, ampliação, controle por voz ou Switch Access.
 
