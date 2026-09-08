@@ -1,0 +1,27 @@
+name: Terminologia inclusiva
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validar-terminologia:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validar terminologia de recursos de TA
+        shell: bash
+        run: |
+          set -euo pipefail
+          termo="tecnologia"" assistiva"
+          permitido="recursos de ""tecnologia assistiva"
+          ocorrencias="$(git grep -n -I -i "$termo" -- . || true)"
+          invalidas="$(printf '%s\n' "$ocorrencias" | grep -vi "$permitido" || true)"
+          if [ -n "$invalidas" ]; then
+            printf '%s\n' "$invalidas"
+            echo
+            echo 'Use sempre a forma padronizada com o prefixo recursos de.'
+            exit 1
+          fi
+          echo 'Terminologia validada.'
