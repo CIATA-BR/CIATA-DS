@@ -19,6 +19,24 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const stripMd=s=>String(s??'').replace(/`([^`]+)`/g,'$1').replace(/\*\*([^*]+)\*\*/g,'$1').replace(/\[([^\]]+)\]\([^\)]+\)/g,'$1').trim();
 const normalizeTerminology=s=>String(s??'').replace(/(?<!recursos de )tecnologia assistiva/gi,'recursos de tecnologia assistiva');
 
+const friendlyTerms=[
+  [/\bprimary\b/gi,'ação principal (primary)'],
+  [/\bsecondary\b/gi,'ação alternativa (secondary)'],
+  [/\bdanger\b/gi,'ação destrutiva ou de alto impacto (danger)'],
+  [/\bghost\b/gi,'ação discreta, de menor destaque (ghost)'],
+  [/\bdisabled\b/gi,'indisponível/desabilitado (disabled)'],
+  [/\bloading\b/gi,'carregando ou processando (loading)'],
+  [/\bhover\b/gi,'ponteiro sobre o controle (hover)'],
+  [/\bpressed\b/gi,'pressionado/acionado (pressed)'],
+  [/\bactive\b/gi,'ativo ou em acionamento (active)'],
+  [/\biconOnly\b/gi,'botão somente com ícone (iconOnly)']
+];
+function friendlyText(value){
+  let text=String(value??'');
+  for(const [pattern,replacement] of friendlyTerms)text=text.replace(pattern,replacement);
+  return text;
+}
+
 function parseMatrix(md){
   const lines=normalizeTerminology(md).split(/\r?\n/);
   const title=stripMd((lines.find(l=>l.startsWith('# '))||'# Matriz de validação').slice(2));
@@ -56,13 +74,15 @@ function renderCriteria(model){
   if(!model.criteria.length){criteriaEl.innerHTML='<p>Nenhum cenário estruturável foi encontrado na matriz.</p>';return;}
   const groups=new Map();
   model.criteria.forEach(c=>{if(!groups.has(c.group))groups.set(c.group,[]);groups.get(c.group).push(c)});
-  criteriaEl.innerHTML=[...groups.entries()].map(([group,items])=>`<section class="platform-group"><h3>${esc(group)}</h3>${items.map((c,index)=>criterionHtml(c,index)).join('')}</section>`).join('');
+  criteriaEl.innerHTML=[...groups.entries()].map(([group,items])=>`<section class="platform-group"><h3>${esc(friendlyText(group))}</h3>${items.map((c,index)=>criterionHtml(c,index)).join('')}</section>`).join('');
 }
 
 function criterionHtml(c,index){
   const key=`criterion-${index}`;
-  const context=`${c.id} — ${c.name}`;
-  return `<fieldset class="criterion" data-criterion-id="${esc(c.id)}" data-criterion-name="${esc(c.name)}" data-criterion-acceptance="${esc(c.acceptance)}" data-group="${esc(c.group)}"><legend><strong>${esc(context)}</strong></legend><p class="acceptance"><strong>Critério de aceitação:</strong> ${esc(c.acceptance)}</p><div class="criterion-grid"><label for="${key}-status">Situação</label><select id="${key}-status" data-field="status" required aria-label="${esc(context)} — situação"><option value="">Selecione</option><option value="pass">Passou</option><option value="fail">Falhou</option><option value="blocked">Bloqueado</option><option value="not-applicable">Não aplicável</option></select><label for="${key}-observed">O que foi observado</label><textarea id="${key}-observed" data-field="observed" rows="3" required aria-label="${esc(context)} — o que foi observado"></textarea></div><details><summary>Detalhes adicionais deste critério</summary><div class="criterion-grid"><label for="${key}-severity">Severidade, se houver falha</label><select id="${key}-severity" data-field="severity"><option value="">Não se aplica</option><option value="low">Baixa</option><option value="medium">Média</option><option value="high">Alta</option><option value="critical">Crítica</option></select><label for="${key}-issue">Issue ou PR relacionada</label><input id="${key}-issue" data-field="issue" type="url"><label for="${key}-notes">Observações ou evidências adicionais</label><textarea id="${key}-notes" data-field="notes" rows="3"></textarea></div></details></fieldset>`;
+  const friendlyName=friendlyText(c.name);
+  const friendlyAcceptance=friendlyText(c.acceptance);
+  const context=`${c.id} — ${friendlyName}`;
+  return `<fieldset class="criterion" data-criterion-id="${esc(c.id)}" data-criterion-name="${esc(c.name)}" data-criterion-acceptance="${esc(c.acceptance)}" data-group="${esc(c.group)}"><legend><strong>${esc(context)}</strong></legend><p class="acceptance"><strong>O que deve acontecer:</strong> ${esc(friendlyAcceptance)}</p><div class="criterion-grid"><label for="${key}-status">Situação</label><select id="${key}-status" data-field="status" required aria-label="${esc(context)} — situação"><option value="">Selecione</option><option value="pass">Passou</option><option value="fail">Falhou</option><option value="blocked">Não foi possível testar</option><option value="not-applicable">Não se aplica</option></select><label for="${key}-observed">O que aconteceu no teste</label><textarea id="${key}-observed" data-field="observed" rows="3" required aria-label="${esc(context)} — o que aconteceu no teste" placeholder="Descreva com suas palavras o que aconteceu ao usar este item."></textarea></div><details><summary>Detalhes adicionais deste critério</summary><div class="criterion-grid"><label for="${key}-severity">Impacto do problema, se houver falha</label><select id="${key}-severity" data-field="severity"><option value="">Não se aplica</option><option value="low">Baixo</option><option value="medium">Médio</option><option value="high">Alto</option><option value="critical">Crítico</option></select><label for="${key}-issue">Issue ou PR relacionada</label><input id="${key}-issue" data-field="issue" type="url"><label for="${key}-notes">Observações ou evidências adicionais</label><textarea id="${key}-notes" data-field="notes" rows="3"></textarea></div></details></fieldset>`;
 }
 
 function serialize(){
@@ -137,4 +157,4 @@ form.addEventListener('submit',async e=>{
 document.querySelector('#save-draft').addEventListener('click',saveDraft);
 document.querySelector('#clear-draft').addEventListener('click',()=>{localStorage.removeItem(storageKey);form.reset();statusEl.hidden=false;statusEl.textContent='Rascunho removido.';});
 
-fetch(matrixUrl).then(r=>{if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.text();}).then(md=>{const model=parseMatrix(md);titleEl.textContent=`${model.title} — formulário`;originEl.innerHTML=`Fonte canônica: <a href="${matrixUrl}">${esc(matrixUrl)}</a>`;renderCriteria(model);form.hidden=false;statusEl.hidden=true;restoreDraft();loadComponentStatus();}).catch(err=>{statusEl.textContent=`Não foi possível carregar a matriz: ${err.message}`;statusEl.setAttribute('role','alert');});
+fetch(matrixUrl).then(r=>{if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.text();}).then(md=>{const model=parseMatrix(md);titleEl.textContent=`${friendlyText(model.title)} — formulário`;originEl.innerHTML=`Fonte canônica: <a href="${matrixUrl}">${esc(matrixUrl)}</a>`;renderCriteria(model);form.hidden=false;statusEl.hidden=true;restoreDraft();loadComponentStatus();}).catch(err=>{statusEl.textContent=`Não foi possível carregar a matriz: ${err.message}`;statusEl.setAttribute('role','alert');});
