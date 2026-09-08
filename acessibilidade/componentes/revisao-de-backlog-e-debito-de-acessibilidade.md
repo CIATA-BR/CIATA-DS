@@ -8,7 +8,7 @@ Evitar que achados conhecidos se tornem permanentes por falta de revisão, dono 
 
 - todo débito possui origem, impacto, responsável e próximo passo;
 - backlog de acessibilidade deve ser revisado em cadência definida;
-- itens antigos precisam ser reavaliados quando produto, plataforma ou tecnologia assistiva mudam;
+- itens antigos precisam ser reavaliados quando produto, plataforma ou recursos de tecnologia assistiva mudam;
 - recorrência do mesmo problema deve gerar ação sistêmica no Design System, documentação, lint, teste ou processo;
 - débito não pode ser usado como destino indefinido para barreira alta.
 

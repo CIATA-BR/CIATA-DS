@@ -1,4 +1,4 @@
-# Tecnologia Assistiva
+# Recursos de Tecnologia Assistiva
 
 Imagens de dispositivos, softwares e soluções assistivas.
 

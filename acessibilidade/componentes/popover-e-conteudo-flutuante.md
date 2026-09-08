@@ -14,7 +14,7 @@ Popover apresenta conteúdo contextual adicional acionado por um controle e pode
 - conteúdo essencial não depende apenas de hover;
 - não usar tooltip para conteúdo interativo;
 - não usar dialog quando não há necessidade de modalização ou mudança de contexto;
-- clicar/tocar fora pode fechar o popover, mas não deve ser o único mecanismo disponível para teclado e tecnologia assistiva.
+- clicar/tocar fora pode fechar o popover, mas não deve ser o único mecanismo disponível para teclado e recursos de tecnologia assistiva.
 
 ## Exemplo conforme
 

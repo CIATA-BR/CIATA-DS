@@ -59,7 +59,7 @@ Registrar, para cada cenário obrigatório:
 - componente e plataforma;
 - versão do sistema/framework;
 - navegador ou dispositivo quando aplicável;
-- tecnologia assistiva e versão;
+- recursos de tecnologia assistiva e versão;
 - cenário executado;
 - resultado esperado e observado;
 - `pass`, `fail`, `blocked` ou `not-applicable`;

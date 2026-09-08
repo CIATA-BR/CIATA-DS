@@ -47,7 +47,7 @@ Expor trait de link quando o comportamento for navegação. Se um elemento visua
 
 Outro erro recorrente é apresentar visual e semanticamente um link para executar uma ação local como `Salvar`, sem navegação real.
 
-**Por que falha:** a tecnologia assistiva anuncia função de link, mas o comportamento esperado é de botão. A semântica e a expectativa de interação não correspondem à ação executada.
+**Por que falha:** a recursos de tecnologia assistiva anuncia função de link, mas o comportamento esperado é de botão. A semântica e a expectativa de interação não correspondem à ação executada.
 
 ## Critérios de teste
 

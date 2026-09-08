@@ -73,7 +73,7 @@ Controles interativos seguem alvo interno de 44 × 44 unidades lógicas quando a
 Verificar nome, valor, locale/formato, entrada textual, abertura/fechamento, foco, teclado, limites, datas indisponíveis, valor inicial, intervalos longos, data civil/timezone, required/disabled/readonly, erros, alvo, contraste, escala e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

@@ -17,14 +17,14 @@ Classificar como **Alto** quando a barreira impede a pessoa usuária de concluir
 Exemplos:
 
 - componente essencial não recebe foco por teclado ou leitor de tela;
-- botão ou ação obrigatória não é acionável com tecnologia assistiva;
+- botão ou ação obrigatória não é acionável com recursos de tecnologia assistiva;
 - conteúdo essencial apresentado apenas de forma gráfica e sem alternativa equivalente;
 - operação disponível somente por gesto complexo, arrastar ou outra interação sem alternativa acessível;
 - foco fica preso ou é perdido de forma que a jornada não pode continuar;
 - modal, bottom sheet ou diálogo bloqueia a interface sem oferecer navegação ou fechamento acessível;
-- erro de formulário essencial não é identificável ou não pode ser corrigido com tecnologia assistiva;
+- erro de formulário essencial não é identificável ou não pode ser corrigido com recursos de tecnologia assistiva;
 - autenticação, pagamento, cadastro, envio ou outra etapa crítica fica impossível de concluir;
-- informação necessária para decisão ou segurança não é percebida por pessoas que usam determinada tecnologia assistiva.
+- informação necessária para decisão ou segurança não é percebida por pessoas que usam determinada recursos de tecnologia assistiva.
 
 ### Regra prática
 
@@ -80,7 +80,7 @@ Todo bug deve registrar, quando aplicável:
 
 - plataforma e versão;
 - navegador ou aplicativo e versão;
-- tecnologia assistiva e versão;
+- recursos de tecnologia assistiva e versão;
 - dispositivo ou tipo de entrada;
 - passos para reprodução;
 - resultado atual;
@@ -98,7 +98,7 @@ Também não se deve reduzir a severidade apenas porque existe workaround. O wor
 
 ## Casos com múltiplas deficiências ou tecnologias
 
-Quando o mesmo defeito apresenta impactos diferentes conforme a tecnologia assistiva, deve-se registrar o pior impacto reproduzível relevante e detalhar as diferenças no campo de evidências.
+Quando o mesmo defeito apresenta impactos diferentes conforme a recursos de tecnologia assistiva, deve-se registrar o pior impacto reproduzível relevante e detalhar as diferenças no campo de evidências.
 
 Exemplo: um componente pode ser apenas inconveniente com teclado, mas completamente inoperável com leitor de tela. Nesse caso, a severidade deve considerar a barreira impeditiva.
 

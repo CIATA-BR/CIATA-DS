@@ -62,7 +62,7 @@ Interfaces devem preservar dados, etapa, contexto e foco lógico durante rotaç�
 
 Cada revisão deve informar:
 
-- tecnologia assistiva e versão;
+- recursos de tecnologia assistiva e versão;
 - sistema operacional e versão;
 - navegador ou aplicativo;
 - dispositivo, teclado ou linha Braille quando aplicável;

@@ -30,7 +30,7 @@ Um ícone de lixeira sem nome abre uma confirmação genérica **Tem certeza?** 
 
 ### Por que falha
 
-O controle não identifica a ação, a confirmação não explica consequência nem objeto afetado e o resultado pode não ser percebido por tecnologia assistiva.
+O controle não identifica a ação, a confirmação não explica consequência nem objeto afetado e o resultado pode não ser percebido por recursos de tecnologia assistiva.
 
 ## Testes mínimos
 

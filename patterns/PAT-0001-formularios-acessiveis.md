@@ -48,7 +48,7 @@ Não transformar ações simples em formulários desnecessários. Para uma únic
 3. Instruções aparecem antes do campo quando necessárias.
 4. Campos obrigatórios são informados em texto, não apenas por cor ou símbolo.
 5. A ordem de foco acompanha a ordem lógica do conteúdo.
-6. Erros são associados ao campo, resumidos no início e anunciados por tecnologia assistiva.
+6. Erros são associados ao campo, resumidos no início e anunciados por recursos de tecnologia assistiva.
 7. O valor informado é preservado após falha de validação, salvo quando isso criar risco de segurança.
 8. O botão principal descreve a ação, como “Criar conta” ou “Salvar alterações”.
 9. Operações críticas oferecem revisão ou confirmação antes da conclusão.

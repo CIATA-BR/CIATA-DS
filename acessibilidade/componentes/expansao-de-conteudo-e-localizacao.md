@@ -11,7 +11,7 @@ Garantir que tradução e adaptação regional não quebrem leitura, foco, reflo
 - não truncar texto essencial apenas para preservar layout;
 - preservar nomes acessíveis completos mesmo quando a interface visual precisar resumir conteúdo;
 - validar quebra de linha, zoom, aumento de fonte e reflow após tradução;
-- revisar conteúdo localizado com tecnologia assistiva, não apenas por inspeção visual;
+- revisar conteúdo localizado com recursos de tecnologia assistiva, não apenas por inspeção visual;
 - evitar concatenar fragmentos de frases que produzam gramática incorreta em outros idiomas.
 
 ## Exemplo conforme

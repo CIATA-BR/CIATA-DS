@@ -9,7 +9,7 @@ Ações não devem depender exclusivamente de gestos complexos, trajetórias esp
 - oferecer alternativa por toque simples, botão ou controle equivalente para arrastar, pinçar, desenhar trajetórias ou sacudir o dispositivo;
 - não exigir precisão motora desnecessária;
 - preservar a mesma consequência e autonomia na alternativa acessível;
-- não esconder a alternativa apenas de pessoas que usam tecnologia assistiva;
+- não esconder a alternativa apenas de pessoas que usam recursos de tecnologia assistiva;
 - gestos essenciais devem ser documentados e testados com leitores de tela e mecanismos alternativos de entrada;
 - evitar conflitos com gestos reservados por tecnologias assistivas.
 

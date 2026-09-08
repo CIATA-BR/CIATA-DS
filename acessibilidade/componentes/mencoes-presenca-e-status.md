@@ -11,7 +11,7 @@ Menções, presença e estados de disponibilidade devem ser identificáveis sem 
 - mudanças de presença não devem ser anunciadas continuamente por leitor de tela salvo quando forem essenciais;
 - avatares decorativos não devem duplicar o nome da pessoa na árvore de acessibilidade;
 - indicadores de status devem preservar nome, estado e relação com a pessoa ou canal correspondente;
-- sugestões de menção devem funcionar por teclado, toque e tecnologia assistiva sem mover foco de modo inesperado;
+- sugestões de menção devem funcionar por teclado, toque e recursos de tecnologia assistiva sem mover foco de modo inesperado;
 - nomes iguais devem possuir contexto adicional quando necessário para desambiguação;
 - indicadores efêmeros, como “digitando”, devem ser discretos e não bloquear conteúdo principal.
 
@@ -29,7 +29,7 @@ Usuários online aparecem somente com um círculo verde ao lado do avatar e a li
 
 ## Por que falha
 
-O estado não é percebido por quem não enxerga a cor e a ação de mencionar fica indisponível para quem usa teclado ou tecnologia assistiva.
+O estado não é percebido por quem não enxerga a cor e a ação de mencionar fica indisponível para quem usa teclado ou recursos de tecnologia assistiva.
 
 ## Critérios mínimos de teste
 

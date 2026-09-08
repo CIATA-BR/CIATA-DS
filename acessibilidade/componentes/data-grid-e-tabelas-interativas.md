@@ -10,7 +10,7 @@ Garantir que grandes conjuntos de dados continuem navegáveis, compreensíveis e
 - edição de célula deve anunciar modo de edição, validação e resultado;
 - seleção de linha ou célula deve ser semanticamente perceptível;
 - virtualização não pode destruir contexto, posição lógica ou foco;
-- atalhos customizados devem ser documentados e não conflitar com tecnologia assistiva;
+- atalhos customizados devem ser documentados e não conflitar com recursos de tecnologia assistiva;
 - sempre que possível, oferecer alternativa mais simples para tarefas que não exigem navegação matricial avançada.
 
 ## Exemplo conforme
@@ -23,7 +23,7 @@ A pessoa entende em que linha e coluna está, quais ações existem e o efeito d
 Uma grade visual feita com `div` usa setas do teclado, mas não expõe cabeçalhos, posição, seleção nem modo de edição.
 
 ## Por que falha
-A interação existe visualmente, porém a estrutura e os estados não chegam à tecnologia assistiva.
+A interação existe visualmente, porém a estrutura e os estados não chegam à recursos de tecnologia assistiva.
 
 ## Critérios mínimos de teste
 - navegar por linhas e colunas com leitor de tela;

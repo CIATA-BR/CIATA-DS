@@ -32,7 +32,7 @@ A jornada depende de gesto específico e de feedback visual; teclado, leitor de 
 
 ## Critérios de teste
 
-- seleção funciona por teclado e tecnologia assistiva;
+- seleção funciona por teclado e recursos de tecnologia assistiva;
 - requisitos são conhecidos antes do envio;
 - nome, tamanho e estado do arquivo são perceptíveis;
 - progresso e erros são comunicados;

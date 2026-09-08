@@ -9,7 +9,7 @@ Garantir que conflitos entre versões locais, remotas ou concorrentes sejam comp
 - informar claramente quando o conteúdo mudou em outro dispositivo, sessão ou aba;
 - não sobrescrever silenciosamente alterações da pessoa usuária;
 - apresentar opções de resolução com nomes e consequências claras;
-- quando houver comparação, oferecer estrutura textual e semântica compreensível por tecnologia assistiva;
+- quando houver comparação, oferecer estrutura textual e semântica compreensível por recursos de tecnologia assistiva;
 - preservar uma cópia recuperável antes de operações destrutivas de resolução;
 - manter foco previsível durante atualização de estado;
 - comunicar quando a sincronização terminar ou continuar pendente.

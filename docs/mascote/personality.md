@@ -33,7 +33,7 @@ Ele acolhe.
 
 Ele incentiva o aprendizado.
 
-Ele representa o compromisso do CIATA com a tecnologia assistiva e a inclusão.
+Ele representa o compromisso do CIATA com a recursos de tecnologia assistiva e a inclusão.
 
 ---
 

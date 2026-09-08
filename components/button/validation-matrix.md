@@ -27,7 +27,7 @@ Para cada plataforma, verificar ao menos:
 - temas claro e escuro;
 - alto contraste/forced colors quando disponível;
 - teclado externo quando suportado;
-- ausência de anúncio duplicado por tecnologia assistiva;
+- ausência de anúncio duplicado por recursos de tecnologia assistiva;
 - ausência de perda arbitrária de foco após acionamento;
 - comportamento adequado com leitor de tela ativo e inativo.
 
@@ -38,7 +38,7 @@ Registrar:
 - plataforma e versão;
 - framework/runtime e versão;
 - dispositivo ou ambiente;
-- tecnologia assistiva e versão;
+- recursos de tecnologia assistiva e versão;
 - variante e estado testados;
 - método de acionamento;
 - resultado esperado;

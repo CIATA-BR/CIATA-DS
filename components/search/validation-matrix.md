@@ -4,7 +4,7 @@
 Definir evidência mínima para validar busca sem depender de informação visual isolada, movimentos arbitrários de foco ou anúncios excessivos.
 
 ## Evidência por execução
-Registrar plataforma, versão, tecnologia assistiva, navegador/dispositivo, cenário, resultado esperado/observado, falhas e limitações.
+Registrar plataforma, versão, recursos de tecnologia assistiva, navegador/dispositivo, cenário, resultado esperado/observado, falhas e limitações.
 
 ## Cenários comuns
 | ID | Cenário | Critério de aceite |
@@ -54,6 +54,6 @@ Executar com VoiceOver. Verificar `TextField`, nome, `submitLabel(.search)`, env
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `TextField`, `TextInputAction.search`, nome, enabled/readOnly, validação do label em build de release, text scaling e ausência de semântica duplicada.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `estável` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/foco/envio/feedback/privacidade/segurança e validação manual com tecnologia assistiva relevante tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `estável` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/foco/envio/feedback/privacidade/segurança e validação manual com recursos de tecnologia assistiva relevante tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.

@@ -97,7 +97,7 @@ Ações interativas seguem alvo interno de 44 × 44 unidades lógicas quando apl
 Verificar nome, landmark, envio, limpar, teclado, foco, loading, erro, estado vazio, contagem de resultados, busca incremental, anúncios, termo vazio, respostas assíncronas antigas, privacidade, Unicode/RTL, interação com autofill, alvo, contraste, escala e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

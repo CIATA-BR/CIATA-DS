@@ -12,7 +12,7 @@ Os arquivos `components/*/validation-matrix.md` continuam sendo a fonte canônic
 2. o navegador carrega `/components/<slug>/validation-matrix.md`;
 3. tabelas com colunas `ID`, `Cenário` e `Critério de aceite` viram critérios estruturados;
 4. checklists Markdown viram cenários com identificadores `AUTO-*`;
-5. o analista registra ambiente, recursos de tecnologia assistiva, resultado observado e status;
+5. o analista registra ambiente, recursos de recursos de tecnologia assistiva, resultado observado e status;
 6. o formulário gera um payload JSON compatível com a futura API;
 7. a API persistirá a execução nas tabelas deste schema.
 
@@ -23,7 +23,7 @@ Os arquivos `components/*/validation-matrix.md` continuam sendo a fonte canônic
 - `components`: catálogo canônico de componentes;
 - `component_versions`: commit/versão efetivamente validada;
 - `platforms`: Web, Laravel, Python, Android, iOS e Flutter;
-- `assistive_resources`: catálogo de recursos de tecnologia assistiva;
+- `assistive_resources`: catálogo de recursos de recursos de tecnologia assistiva;
 - `validation_criteria`: critérios extraídos das matrizes;
 - `analysts`: analistas responsáveis pelas execuções;
 - `validation_runs`: uma execução completa de validação;

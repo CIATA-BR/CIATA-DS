@@ -1,7 +1,7 @@
 # mascot-braille-display.png
 
 - **ID:** `mascot-braille-display`
-- **Categoria:** Braille e tecnologia assistiva
+- **Categoria:** Braille e recursos de tecnologia assistiva
 - **Status:** `review`
 - **Finalidade:** tecnologia, informática e linhas Braille.
 - **Texto alternativo provisório:** Mascote CIATA lendo uma linha Braille eletrônica conectada a um notebook.

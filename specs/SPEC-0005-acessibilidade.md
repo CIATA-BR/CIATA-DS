@@ -47,7 +47,7 @@ Automação é complementar. Entregas aplicáveis exigem avaliação manual com 
 A aprovação deve registrar:
 
 - escopo e versão testados;
-- tecnologia assistiva e ambiente utilizados;
+- recursos de tecnologia assistiva e ambiente utilizados;
 - dispositivo, teclado e linha Braille quando aplicáveis;
 - jornadas e mudanças de contexto executadas;
 - pessoa responsável;

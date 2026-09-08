@@ -29,7 +29,7 @@ O bug é fechado com o comentário "corrigido no código" sem versão de teste n
 
 ## Por que falha
 
-A mudança pode não ter chegado à build, pode não resolver o comportamento real ou pode introduzir regressão em outra tecnologia assistiva.
+A mudança pode não ter chegado à build, pode não resolver o comportamento real ou pode introduzir regressão em outra recursos de tecnologia assistiva.
 
 ## Critérios de teste
 

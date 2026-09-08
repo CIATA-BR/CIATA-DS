@@ -10,7 +10,7 @@ Seletores de data e hora devem permitir entrada e escolha com contexto suficient
 - digitação direta permanece disponível quando apropriada;
 - abertura do seletor é anunciável e não apaga o valor atual;
 - calendário expõe mês, ano, dia, estado selecionado e indisponibilidade;
-- navegação entre períodos é operável por teclado e tecnologia assistiva;
+- navegação entre períodos é operável por teclado e recursos de tecnologia assistiva;
 - datas bloqueadas ou limites são comunicados antes ou durante a escolha;
 - horário expõe valor e incrementos de forma previsível;
 - fechamento retorna foco ao campo ou acionador correspondente.

@@ -15,7 +15,7 @@ Esta categoria define como a acessibilidade participa da decisão de release e c
 - exceção temporária precisa de dono, prazo e plano de correção;
 - alteração de código não encerra bug sem reteste funcional;
 - rastreabilidade deve ligar achado, evidência, correção, build e resultado do reteste;
-- conformidade é contínua e pode mudar com plataforma, navegador, tecnologia assistiva ou dependência;
+- conformidade é contínua e pode mudar com plataforma, navegador, recursos de tecnologia assistiva ou dependência;
 - severidade continua baseada no impacto para a pessoa usuária.
 
 ## Relações

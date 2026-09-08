@@ -14,7 +14,7 @@ Aponta famílias regulatórias ou técnicas que também devem ser consideradas, 
 
 ## Teste mínimo
 
-Combinação mínima de verificação manual, tecnologia assistiva, medição ou inspeção necessária para avaliar o comportamento.
+Combinação mínima de verificação manual, recursos de tecnologia assistiva, medição ou inspeção necessária para avaliar o comportamento.
 
 ## Evidência esperada
 

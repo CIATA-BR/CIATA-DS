@@ -11,7 +11,7 @@ Toda ação de arrastar e soltar deve possuir alternativa simples, operável e e
 - item selecionado, posição atual e resultado da movimentação devem ser perceptíveis;
 - foco deve permanecer no item movido ou em contexto logicamente equivalente;
 - mudanças de ordem devem ser comunicadas de forma concisa;
-- operação por teclado e tecnologia assistiva deve produzir o mesmo resultado funcional.
+- operação por teclado e recursos de tecnologia assistiva deve produzir o mesmo resultado funcional.
 
 ## Exemplo conforme
 
@@ -35,4 +35,4 @@ A ação exige gesto preciso e percepção espacial contínua, podendo impedir c
 - posição atual e destino são compreensíveis;
 - foco permanece previsível após mover;
 - resultado é anunciado sem excesso;
-- teclado, toque e tecnologia assistiva produzem resultado equivalente.
+- teclado, toque e recursos de tecnologia assistiva produzem resultado equivalente.

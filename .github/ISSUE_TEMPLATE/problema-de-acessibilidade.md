@@ -78,7 +78,7 @@ Preencher após uma tentativa de correção.
 
 - Build, versão ou commit testado:
 - Data do reteste:
-- Ambiente e tecnologia assistiva:
+- Ambiente e recursos de tecnologia assistiva:
 - Resultado:
   - [ ] Corrigido
   - [ ] Parcialmente corrigido

@@ -7,7 +7,7 @@ A adoção do CIATA Design System deve reduzir variação de implementação sem
 ## Regras
 
 - novos integrantes devem encontrar rapidamente princípios, componentes, receitas, critérios de aceite e processo de auditoria;
-- exemplos de uso devem explicar comportamento esperado com teclado, toque e tecnologia assistiva quando aplicável;
+- exemplos de uso devem explicar comportamento esperado com teclado, toque e recursos de tecnologia assistiva quando aplicável;
 - a documentação deve indicar quando usar componente nativo e quando um padrão customizado é justificável;
 - padrões obrigatórios, recomendações e exemplos ilustrativos devem ser claramente distinguidos;
 - jornadas críticas devem apontar para os contratos relacionados, evitando depender de conhecimento tácito;

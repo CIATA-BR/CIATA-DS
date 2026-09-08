@@ -11,7 +11,7 @@ Mensagens de estado devem explicar o que aconteceu, o impacto para a tarefa e a 
 - mensagens devem ficar associadas ao campo, etapa ou ação correspondente quando houver relação direta;
 - evitar códigos internos, stack traces ou mensagens genéricas como `Erro inesperado` quando existir orientação mais útil;
 - não culpar a pessoa pelo erro nem usar linguagem punitiva;
-- mensagens críticas devem ser perceptíveis por tecnologia assistiva sem mover foco desnecessariamente;
+- mensagens críticas devem ser perceptíveis por recursos de tecnologia assistiva sem mover foco desnecessariamente;
 - a mensagem não deve desaparecer antes que possa ser revisada;
 - quando a ação não puder ser concluída, preservar os dados já informados sempre que possível.
 

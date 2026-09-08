@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-O Mascote CIATA poderá ser representado em diferentes contextos relacionados à acessibilidade e à tecnologia assistiva.
+O Mascote CIATA poderá ser representado em diferentes contextos relacionados à acessibilidade e à recursos de tecnologia assistiva.
 
 Essas representações ampliam a comunicação institucional sem alterar sua identidade.
 

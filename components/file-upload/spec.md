@@ -11,7 +11,7 @@ Permitir seleção e envio de arquivos com nome claro, restrições compreensív
 - Arrastar e soltar pode ser oferecido como conveniência, nunca como único meio de seleção.
 - Rótulo, tipos aceitos, quantidade máxima e limite de tamanho devem estar disponíveis antes da seleção quando forem relevantes.
 - Arquivos rejeitados precisam de motivo específico e acionável.
-- Nome, tamanho e estado de cada arquivo selecionado devem ser perceptíveis por tecnologia assistiva.
+- Nome, tamanho e estado de cada arquivo selecionado devem ser perceptíveis por recursos de tecnologia assistiva.
 - Remover/substituir arquivo deve ser uma ação explícita e não depender de gesto complexo.
 - Não iniciar upload irreversível apenas pela seleção quando o fluxo exigir revisão/confirmação.
 - Seleção de arquivo e envio são etapas distintas: o componente não deve tratar sucesso do seletor como sucesso do upload.
@@ -97,7 +97,7 @@ Ações interativas seguem alvo interno de 44 × 44 unidades lógicas quando apl
 Verificar nome, restrições, seletor nativo, seleção única/múltipla, lista, remover/substituir, drag equivalente, teclado, foco, tipos/tamanho/quantidade, progresso, erro, sucesso, cancelamento, segurança server-side, limites de runtime, alvo, contraste, escala e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

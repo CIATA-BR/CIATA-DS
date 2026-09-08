@@ -43,7 +43,7 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom e text scaling. Bre
 - `Início > Produtos > Cadeiras`, com os dois primeiros itens como links e `Cadeiras` marcado como atual;
 - separadores visuais não anunciados pelo leitor de tela;
 - item atual não focável quando não há ação;
-- nomes completos preservados para tecnologia assistiva mesmo com truncamento visual.
+- nomes completos preservados para recursos de tecnologia assistiva mesmo com truncamento visual.
 
 ## Exemplos não conformes
 - usar Breadcrumb como indicador de etapa `1 de 4`;
@@ -57,7 +57,7 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom e text scaling. Bre
 Verificar região, nome, lista/hierarquia, links nativos, item atual, separadores, ordem, teclado, alvo, truncamento, tema, alto contraste, zoom/text scaling e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevante.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

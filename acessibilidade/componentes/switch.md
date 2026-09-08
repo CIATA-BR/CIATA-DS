@@ -8,7 +8,7 @@ Switch representa um estado binário ligado/desligado que normalmente produz efe
 
 - expor nome, função e estado ligado/desligado;
 - o rótulo deve descrever a configuração controlada, não repetir o estado;
-- mudança de estado deve ser perceptível visualmente e por tecnologia assistiva;
+- mudança de estado deve ser perceptível visualmente e por recursos de tecnologia assistiva;
 - não depender apenas de cor ou posição do indicador;
 - preservar convenções nativas de ativação;
 - se a mudança tiver efeito destrutivo ou de alto risco, considerar confirmação separada em vez de switch simples;
@@ -48,7 +48,7 @@ Em Android e iOS, o mesmo comportamento deve ser obtido preferencialmente com o 
 <div class="switch desligado">Receber notificações por e-mail</div>
 ```
 
-**Por que falha:** aparência visual de switch não cria função nem estado acessível. A tecnologia assistiva pode anunciar apenas texto estático e a pessoa não consegue saber se a configuração está ligada ou desligada, nem como alterá-la.
+**Por que falha:** aparência visual de switch não cria função nem estado acessível. A recursos de tecnologia assistiva pode anunciar apenas texto estático e a pessoa não consegue saber se a configuração está ligada ou desligada, nem como alterá-la.
 
 Outro erro recorrente é usar no nome `Receber notificações desligado` e também expor estado `desligado`.
 

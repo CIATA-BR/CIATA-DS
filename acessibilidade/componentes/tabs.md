@@ -36,7 +36,7 @@ Três textos clicáveis visualmente estilizados como abas, mas todos expostos co
 
 ### Por que falha
 
-A tecnologia assistiva não identifica o padrão de tabs nem informa qual seção está ativa. A pessoa pode não perceber que o conteúdo foi trocado ou como navegar entre seções equivalentes.
+A recursos de tecnologia assistiva não identifica o padrão de tabs nem informa qual seção está ativa. A pessoa pode não perceber que o conteúdo foi trocado ou como navegar entre seções equivalentes.
 
 ## Critérios de teste
 

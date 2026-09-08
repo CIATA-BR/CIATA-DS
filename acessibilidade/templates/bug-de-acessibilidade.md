@@ -11,7 +11,7 @@ Descreva em uma frase a barreira observada e a jornada afetada.
 - Versão/build:
 - Navegador, quando aplicável:
 - Tecnologia assistiva:
-- Versão da tecnologia assistiva:
+- Versão da recursos de tecnologia assistiva:
 
 ## Passos para reproduzir
 

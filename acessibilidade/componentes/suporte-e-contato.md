@@ -26,7 +26,7 @@ Garantir que a pessoa consiga pedir ajuda por um canal acessível quando a jorna
 
 ### Comportamento esperado
 
-Cada canal comunica claramente a ação. A pessoa pode escolher o mecanismo compatível com sua necessidade e tecnologia assistiva.
+Cada canal comunica claramente a ação. A pessoa pode escolher o mecanismo compatível com sua necessidade e recursos de tecnologia assistiva.
 
 ## Exemplo não conforme
 
@@ -36,7 +36,7 @@ Cada canal comunica claramente a ação. A pessoa pode escolher o mecanismo comp
 
 ### Por que falha
 
-O canal existe apenas como elemento visual sem nome, sem função e possivelmente sem acesso por teclado ou tecnologia assistiva.
+O canal existe apenas como elemento visual sem nome, sem função e possivelmente sem acesso por teclado ou recursos de tecnologia assistiva.
 
 ## Validação mínima
 

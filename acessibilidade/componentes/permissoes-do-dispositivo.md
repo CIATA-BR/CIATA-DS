@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Solicitações de câmera, microfone, localização, fotos, arquivos, notificações, Bluetooth ou recursos semelhantes devem ser compreensíveis, previsíveis e operáveis com tecnologia assistiva.
+Solicitações de câmera, microfone, localização, fotos, arquivos, notificações, Bluetooth ou recursos semelhantes devem ser compreensíveis, previsíveis e operáveis com recursos de tecnologia assistiva.
 
 ## Regras
 

@@ -13,7 +13,7 @@ const storageKey=`ciata-ds-validation-draft:${component}`;
 
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const stripMd=s=>String(s??'').replace(/`([^`]+)`/g,'$1').replace(/\*\*([^*]+)\*\*/g,'$1').replace(/\[([^\]]+)\]\([^\)]+\)/g,'$1').trim();
-const normalizeTerminology=s=>String(s??'').replace(/(?<!recursos de )tecnologia assistiva/gi,'recursos de tecnologia assistiva');
+const normalizeTerminology=s=>String(s??'').replace(/(?<!recursos de )recursos de tecnologia assistiva/gi,'recursos de recursos de tecnologia assistiva');
 
 function parseMatrix(md){
   const lines=normalizeTerminology(md).split(/\r?\n/);

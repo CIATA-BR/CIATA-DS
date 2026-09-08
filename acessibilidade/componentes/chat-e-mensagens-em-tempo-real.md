@@ -29,7 +29,7 @@ Cada nova mensagem recebe foco automaticamente e é lida integralmente, deslocan
 
 ## Por que falha
 
-A atualização dinâmica interfere na tarefa em andamento, causa perda de contexto e pode tornar conversas movimentadas praticamente inutilizáveis com tecnologia assistiva.
+A atualização dinâmica interfere na tarefa em andamento, causa perda de contexto e pode tornar conversas movimentadas praticamente inutilizáveis com recursos de tecnologia assistiva.
 
 ## Critérios mínimos de teste
 

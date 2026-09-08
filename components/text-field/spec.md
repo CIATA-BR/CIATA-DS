@@ -153,7 +153,7 @@ Mover o foco diretamente para o primeiro campo inválido pode ser adequado em fl
 
 ## Máscaras
 
-Máscaras de CPF, telefone, CEP, datas e similares devem melhorar a compreensão sem prejudicar edição, colagem, ditado, seleção de texto ou leitura por tecnologia assistiva.
+Máscaras de CPF, telefone, CEP, datas e similares devem melhorar a compreensão sem prejudicar edição, colagem, ditado, seleção de texto ou leitura por recursos de tecnologia assistiva.
 
 Regras:
 
@@ -225,7 +225,7 @@ O indicador de foco deve:
 - permanecer identificável em temas claro e escuro;
 - não ser removido por razões estéticas.
 
-O foco não deve saltar automaticamente entre campos durante digitação, inclusive em máscaras ou códigos segmentados, salvo padrão especializado validado com tecnologia assistiva.
+O foco não deve saltar automaticamente entre campos durante digitação, inclusive em máscaras ou códigos segmentados, salvo padrão especializado validado com recursos de tecnologia assistiva.
 
 ## Teclado
 
@@ -390,7 +390,7 @@ Cada implementação deve verificar, quando aplicável:
 
 ## Validação manual
 
-Antes de ser considerado estável, o componente deve ser validado com tecnologias assistivas relevantes para cada plataforma suportada. A evidência deve registrar plataforma, versão, tecnologia assistiva, cenário, resultado e limitações.
+Antes de ser considerado estável, o componente deve ser validado com tecnologias assistivas relevantes para cada plataforma suportada. A evidência deve registrar plataforma, versão, recursos de tecnologia assistiva, cenário, resultado e limitações.
 
 Casos com máscara, senha, erro dinâmico, readonly e autocomplete exigem validação manual específica; testes automatizados isolados não são suficientes.
 

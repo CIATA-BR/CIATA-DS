@@ -17,7 +17,7 @@
 - Plataforma:
 - Navegador, quando aplicável:
 - Tecnologia assistiva:
-- Versão da tecnologia assistiva:
+- Versão da recursos de tecnologia assistiva:
 
 ## Resultado
 

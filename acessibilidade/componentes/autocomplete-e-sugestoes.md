@@ -11,7 +11,7 @@ Autocomplete deve permitir entrada livre e seleção de sugestões sem substitui
 - abertura e fechamento da lista são perceptíveis;
 - foco visual e foco de acessibilidade permanecem previsíveis;
 - digitação não pode ser interrompida por anúncios excessivos;
-- seleção por teclado, toque e tecnologia assistiva deve produzir o mesmo resultado;
+- seleção por teclado, toque e recursos de tecnologia assistiva deve produzir o mesmo resultado;
 - quantidade de resultados pode ser anunciada de forma concisa quando útil;
 - ausência de resultados deve ser comunicada sem mover o foco indevidamente.
 

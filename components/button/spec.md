@@ -199,7 +199,7 @@ Cada implementação deve verificar, quando aplicável:
 
 ## Validação manual
 
-Antes de ser considerado estável, o componente deve ser validado com tecnologias assistivas relevantes para cada plataforma suportada. A evidência deve registrar ao menos plataforma, versão, tecnologia assistiva, cenário testado, resultado e limitações encontradas.
+Antes de ser considerado estável, o componente deve ser validado com tecnologias assistivas relevantes para cada plataforma suportada. A evidência deve registrar ao menos plataforma, versão, recursos de tecnologia assistiva, cenário testado, resultado e limitações encontradas.
 
 ## Critérios de aceite para a especificação
 

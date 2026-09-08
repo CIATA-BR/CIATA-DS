@@ -10,7 +10,7 @@ Busca e filtros permitem localizar e reduzir conjuntos de conteúdo sem perder c
 - botão de busca deve possuir nome de ação compreensível;
 - filtros precisam expor nome, função, estado e relação com o conjunto afetado;
 - quantidade de resultados ou alteração relevante deve ser comunicada sem roubar foco;
-- filtros aplicados devem permanecer identificáveis e removíveis por teclado e tecnologia assistiva;
+- filtros aplicados devem permanecer identificáveis e removíveis por teclado e recursos de tecnologia assistiva;
 - não atualizar resultados a cada tecla quando isso interromper edição ou navegação sem necessidade;
 - quando houver atualização automática, preservar foco e posição lógica;
 - botão `Limpar filtros` deve indicar claramente o efeito e não apagar a consulta de busca se isso não fizer parte do contrato.

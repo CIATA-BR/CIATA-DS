@@ -26,4 +26,4 @@ Registrar versão/build do app, versão do Android, dispositivo/emulador, versã
 - [Componentes canônicos](../componentes/README.md)
 - [Gestos complexos e movimento do dispositivo](../componentes/gestos-complexos-e-movimento-do-dispositivo.md)
 - [Orientação e layout adaptável](../componentes/orientacao-e-layout-adaptavel.md)
-- [Testes manuais e tecnologia assistiva](../componentes/testes-manuais-e-tecnologia-assistiva.md)
+- [Testes manuais e recursos de tecnologia assistiva](../componentes/testes-manuais-e-tecnologia-assistiva.md)

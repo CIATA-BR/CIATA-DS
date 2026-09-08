@@ -19,7 +19,7 @@ Antes de aprovar a entrega, QA deve confirmar que:
 
 ## Evidência mínima
 
-Registrar plataforma, versão/build, tecnologia assistiva quando aplicável, passos reproduzíveis, resultado observado e status do reteste.
+Registrar plataforma, versão/build, recursos de tecnologia assistiva quando aplicável, passos reproduzíveis, resultado observado e status do reteste.
 
 ## Referências
 

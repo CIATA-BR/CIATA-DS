@@ -32,7 +32,7 @@ Responsável por padrões reutilizáveis do ecossistema.
 1. **Brand System:** identidade visual, sonora e documental;
 2. **Design System:** interação, conteúdo, componentes e experiência;
 3. **Engineering System:** arquitetura, qualidade, segurança, entrega e operação;
-4. **Accessibility System:** requisitos, padrões, testes e conhecimento por plataforma e tecnologia assistiva;
+4. **Accessibility System:** requisitos, padrões, testes e conhecimento por plataforma e recursos de tecnologia assistiva;
 5. **Knowledge System:** decisões, pesquisas, receitas, casos, lições aprendidas e anti-padrões.
 
 ### Repositórios de produtos

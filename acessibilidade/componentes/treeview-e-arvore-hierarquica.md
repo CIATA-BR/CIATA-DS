@@ -9,7 +9,7 @@ Treeview representa uma hierarquia interativa com níveis, expansão e recolhime
 - expor nível hierárquico, estado expandido/recolhido e seleção quando aplicáveis;
 - distinguir foco de seleção;
 - preservar ordem lógica da hierarquia independentemente da indentação visual;
-- permitir expandir e recolher por teclado e tecnologia assistiva;
+- permitir expandir e recolher por teclado e recursos de tecnologia assistiva;
 - quando o padrão Web de árvore for adotado, respeitar navegação por setas de forma consistente;
 - não usar `role="tree"` em listas estáticas apenas para obter anúncio diferente;
 - itens carregados dinamicamente devem preservar posição e contexto;
@@ -38,7 +38,7 @@ A pessoa não sabe onde está na hierarquia, quais nós possuem filhos, o que es
 - níveis são percebidos corretamente;
 - expandido/recolhido é anunciado;
 - foco e seleção não são confundidos;
-- teclado e tecnologia assistiva conseguem percorrer a estrutura;
+- teclado e recursos de tecnologia assistiva conseguem percorrer a estrutura;
 - carregamento dinâmico não perde contexto;
 - semântica de árvore só é usada quando o comportamento corresponde ao padrão.
 
