@@ -17,43 +17,36 @@ jobs:
         with:
           ref: docs/normaliza-terminologia-matrizes
           fetch-depth: 0
-      - name: Normalizar conteúdo textual
+      - name: Corrigir concordância da forma normalizada
         shell: python
         run: |
           from pathlib import Path
 
-          raiz = Path('.')
-          ignorar = {'.git'}
           extensoes = {'.md', '.html', '.js', '.css', '.json', '.yml', '.yaml', '.txt', '.php', '.py', '.kt', '.swift', '.dart', '.xml', '.svg'}
           oficial = 'Centro de Inclusão Através da Tecnologia Assistiva'
-          antigo = 'tecnologia assistiva'
-          novo = 'recursos de tecnologia assistiva'
-          antigo_cap = 'Tecnologia Assistiva'
-          novo_cap = 'Recursos de Tecnologia Assistiva'
           ajustes = [
               ('pela recursos de tecnologia assistiva', 'pelos recursos de tecnologia assistiva'),
-              ('Pela Recursos de Tecnologia Assistiva', 'Pelos Recursos de Tecnologia Assistiva'),
               ('da recursos de tecnologia assistiva', 'dos recursos de tecnologia assistiva'),
-              ('Da Recursos de Tecnologia Assistiva', 'Dos Recursos de Tecnologia Assistiva'),
               ('na recursos de tecnologia assistiva', 'nos recursos de tecnologia assistiva'),
-              ('Na Recursos de Tecnologia Assistiva', 'Nos Recursos de Tecnologia Assistiva'),
               ('à recursos de tecnologia assistiva', 'aos recursos de tecnologia assistiva'),
-              ('À Recursos de Tecnologia Assistiva', 'Aos Recursos de Tecnologia Assistiva'),
               ('a recursos de tecnologia assistiva', 'os recursos de tecnologia assistiva'),
-              ('A recursos de tecnologia assistiva', 'Os recursos de tecnologia assistiva'),
               ('uma recursos de tecnologia assistiva', 'recursos de tecnologia assistiva'),
-              ('Uma Recursos de Tecnologia Assistiva', 'Recursos de Tecnologia Assistiva'),
               ('recursos de tecnologia assistiva relevante', 'recursos de tecnologia assistiva relevantes'),
-              ('Recursos de Tecnologia Assistiva relevante', 'Recursos de Tecnologia Assistiva relevantes'),
               ('recursos de tecnologia assistiva usada', 'recursos de tecnologia assistiva usados'),
               ('recursos de tecnologia assistiva utilizada', 'recursos de tecnologia assistiva utilizados'),
               ('recursos de tecnologia assistiva principal', 'recursos de tecnologia assistiva principais'),
-              ('recursos de tecnologia assistiva em questão', 'recursos de tecnologia assistiva em questão'),
+              ('Pela Recursos de Tecnologia Assistiva', 'Pelos Recursos de Tecnologia Assistiva'),
+              ('Da Recursos de Tecnologia Assistiva', 'Dos Recursos de Tecnologia Assistiva'),
+              ('Na Recursos de Tecnologia Assistiva', 'Nos Recursos de Tecnologia Assistiva'),
+              ('À Recursos de Tecnologia Assistiva', 'Aos Recursos de Tecnologia Assistiva'),
+              ('A Recursos de Tecnologia Assistiva', 'Os Recursos de Tecnologia Assistiva'),
+              ('Uma Recursos de Tecnologia Assistiva', 'Recursos de Tecnologia Assistiva'),
+              ('Recursos de Tecnologia Assistiva relevante', 'Recursos de Tecnologia Assistiva relevantes'),
           ]
           alterados = []
 
-          for path in raiz.rglob('*'):
-              if not path.is_file() or any(part in ignorar for part in path.parts):
+          for path in Path('.').rglob('*'):
+              if not path.is_file() or '.git' in path.parts:
                   continue
               if path.suffix.lower() not in extensoes:
                   continue
@@ -63,31 +56,24 @@ jobs:
                   texto = path.read_text(encoding='utf-8')
               except UnicodeDecodeError:
                   continue
-              linhas = []
-              mudou = False
-              for linha in texto.splitlines(keepends=True):
-                  if oficial in linha:
-                      linhas.append(linha)
-                      continue
-                  nova = linha.replace(antigo_cap, novo_cap).replace(antigo, novo)
-                  for origem, destino in ajustes:
-                      nova = nova.replace(origem, destino)
-                  if nova != linha:
-                      mudou = True
-                  linhas.append(nova)
-              if mudou:
-                  path.write_text(''.join(linhas), encoding='utf-8')
+              if oficial in texto and all(origem not in texto for origem, _ in ajustes):
+                  continue
+              novo = texto
+              for origem, destino in ajustes:
+                  novo = novo.replace(origem, destino)
+              if novo != texto:
+                  path.write_text(novo, encoding='utf-8')
                   alterados.append(path.as_posix())
 
-          print(f'{len(alterados)} arquivos alterados')
+          print(f'{len(alterados)} arquivos com concordância ajustada')
           for item in alterados:
               print(item)
-      - name: Commitar normalização
+      - name: Commitar ajustes
         shell: bash
         run: |
           set -euo pipefail
           if git diff --quiet; then
-            echo 'Nenhuma alteração necessária.'
+            echo 'Nenhum ajuste adicional necessário.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
