@@ -60,7 +60,7 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom, text scaling e red
 - Escape fecha mas foco se perde no `body`;
 - item disabled continua ativável;
 - submenu inacessível por teclado ou touch;
-- nomes como `Excluir, item de menu` quando os recursos de tecnologia assistiva já anuncia o papel.
+- nomes como `Excluir, item de menu` quando os recursos de tecnologia assistiva já anunciam o papel.
 
 ## Matriz mínima
 Verificar acionador, estado aberto, menu/item, link versus ação, foco inicial, setas, Home/End, Escape, fechamento, retorno de foco, disabled, checked, submenu, clique/toque externo, alvo, contraste, zoom/text scaling e tecnologias assistivas.

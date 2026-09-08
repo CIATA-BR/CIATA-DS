@@ -2,7 +2,7 @@
 
 ## Contrato
 
-Mudanças no Design System devem ser rastreáveis, revisáveis e compatíveis com o contrato de acessibilidade existente. Alterações visuais ou técnicas não podem degradar semântica, foco, operação, conteúdo ou suporte os recursos de tecnologia assistiva sem avaliação explícita.
+Mudanças no Design System devem ser rastreáveis, revisáveis e compatíveis com o contrato de acessibilidade existente. Alterações visuais ou técnicas não podem degradar semântica, foco, operação, conteúdo ou suporte a recursos de tecnologia assistiva sem avaliação explícita.
 
 ## Regras
 

@@ -62,7 +62,7 @@ Cada opção deve possuir rótulo claro e específico, por exemplo:
 
 Evitar nomes vagos como `Opção 1`, `Primeiro` ou rótulos que dependam somente da posição visual.
 
-Não acrescentar palavras como `botão de opção` ao nome acessível quando os recursos de tecnologia assistiva já anuncia o papel.
+Não acrescentar palavras como `botão de opção` ao nome acessível quando os recursos de tecnologia assistiva já anunciam o papel.
 
 ## Seleção
 

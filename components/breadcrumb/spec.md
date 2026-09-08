@@ -43,7 +43,7 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom e text scaling. Bre
 - `Início > Produtos > Cadeiras`, com os dois primeiros itens como links e `Cadeiras` marcado como atual;
 - separadores visuais não anunciados pelo leitor de tela;
 - item atual não focável quando não há ação;
-- nomes completos preservados paros recursos de tecnologia assistiva mesmo com truncamento visual.
+- nomes completos preservados para os recursos de tecnologia assistiva mesmo com truncamento visual.
 
 ## Exemplos não conformes
 - usar Breadcrumb como indicador de etapa `1 de 4`;

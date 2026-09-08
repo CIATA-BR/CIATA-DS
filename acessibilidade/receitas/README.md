@@ -9,7 +9,7 @@ As receitas não substituem o texto normativo da [WCAG 2.2 canônica](../wcag-2.
 1. identifique o comportamento funcional desejado;
 2. aplique a receita comum;
 3. implemente a adaptação da plataforma;
-4. valide com recursos de tecnologia assistiva real;
+4. valide com recursos de tecnologia assistiva reais;
 5. registre qualquer exceção ou limitação no fluxo de auditoria.
 
 ## Receitas

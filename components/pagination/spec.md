@@ -24,7 +24,7 @@ Permitir navegação previsível entre conjuntos paginados sem depender apenas d
 - `disabled` — somente para ações indisponíveis, preservando semântica adequada.
 
 ## Semântica
-Na Web, envolver o conjunto em uma região de navegação com nome, como `aria-label="Paginação"`, e usar links para navegação real. A página atual deve expor `aria-current="page"`. Não acrescentar a palavra “link” ou “botão” ao nome acessível quando os recursos de tecnologia assistiva já anuncia o papel.
+Na Web, envolver o conjunto em uma região de navegação com nome, como `aria-label="Paginação"`, e usar links para navegação real. A página atual deve expor `aria-current="page"`. Não acrescentar a palavra “link” ou “botão” ao nome acessível quando os recursos de tecnologia assistiva já anunciam o papel.
 
 ## Foco e atualização
 - O controle acionado mantém comportamento nativo de foco até a navegação ocorrer.

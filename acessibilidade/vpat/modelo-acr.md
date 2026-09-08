@@ -48,7 +48,7 @@ Ferramentas automatizadas devem ser registradas como apoio e nunca como única e
 
 Preencha uma linha por combinação materialmente relevante.
 
-| Plataforma | Sistema operacional | Navegador/app | Tecnologia assistiva | Versão | Dispositivo/entrada | Observações |
+| Plataforma | Sistema operacional | Navegador/app | recursos de tecnologia assistiva | Versão | Dispositivo/entrada | Observações |
 | --- | --- | --- | --- | --- | --- | --- |
 | Ex.: Web | Windows | Edge | JAWS | versão avaliada | teclado | fluxo principal |
 | Ex.: Web | Windows | Firefox | NVDA | versão avaliada | teclado | cobertura complementar |

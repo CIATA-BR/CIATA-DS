@@ -32,7 +32,7 @@ Este documento define critérios de aceite compartilhados pelos componentes can�
 - aumento de texto, zoom ou configuração de fonte não remove conteúdo essencial;
 - alvo de interação permanece utilizável.
 
-## Tecnologia assistiva
+## recursos de tecnologia assistiva
 
 Validar, conforme a plataforma:
 

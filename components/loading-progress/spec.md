@@ -27,7 +27,7 @@ Comunicar atividade em andamento e, quando possível, o avanço de uma tarefa. U
 ## Semântica
 - Em modo determinado, expor valor atual de forma programática.
 - Em modo indeterminado, anunciar apenas que a operação está em andamento, sem inventar percentual.
-- O nome acessível deve identificar o processo, não repetir palavras de papel que os recursos de tecnologia assistiva já anuncia.
+- O nome acessível deve identificar o processo, não repetir palavras de papel que os recursos de tecnologia assistiva já anunciam.
 - Não usar `aria-live` ou anúncios equivalentes a cada pequena mudança de valor.
 
 ## Foco e interação

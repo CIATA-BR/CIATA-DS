@@ -55,7 +55,7 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom, text scaling e red
 - estado indicado apenas por seta girada;
 - controles do painel recolhido continuam recebendo Tab;
 - foco enviado automaticamente para o primeiro campo do painel a cada expansão;
-- cabeçalho recebe nome `Detalhes, botão` quando os recursos de tecnologia assistiva já anuncia o papel;
+- cabeçalho recebe nome `Detalhes, botão` quando os recursos de tecnologia assistiva já anunciam o papel;
 - recolher item enquanto um descendente possui foco sem recuperação previsível.
 
 ## Matriz mínima

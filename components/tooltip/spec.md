@@ -36,7 +36,7 @@ Não presumir hover. Em plataformas móveis, preferir mecanismos nativos de ajud
 
 ## Conteúdo
 - Ser curto, específico e não redundante.
-- Não repetir palavra de papel como `botão`, `link` ou `campo` se os recursos de tecnologia assistiva já anuncia o papel.
+- Não repetir palavra de papel como `botão`, `link` ou `campo` se os recursos de tecnologia assistiva já anunciam o papel.
 - Não conter ações interativas; se houver links/botões, usar popover/dialog ou outro componente adequado.
 
 ## Tema, contraste e reflow
