@@ -56,3 +56,43 @@ function ciata_db(): PDO
 
     return $pdo;
 }
+
+function ciata_session_start(): void
+{
+    if (session_status() === PHP_SESSION_ACTIVE) {
+        return;
+    }
+    ini_set('session.use_strict_mode', '1');
+    ini_set('session.cookie_httponly', '1');
+    ini_set('session.cookie_samesite', 'Lax');
+    if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
+        ini_set('session.cookie_secure', '1');
+    }
+    session_name('CIATA_DS_VALIDATOR');
+    session_start();
+}
+
+function ciata_current_user(): ?array
+{
+    ciata_session_start();
+    if (empty($_SESSION['validator_user_id'])) {
+        return null;
+    }
+
+    $stmt = ciata_db()->prepare('SELECT id, username, display_name, email, role FROM validator_users WHERE id = ? AND active = 1 LIMIT 1');
+    $stmt->execute([(int) $_SESSION['validator_user_id']]);
+    $user = $stmt->fetch();
+    return $user ?: null;
+}
+
+function ciata_require_user(array $roles = []): array
+{
+    $user = ciata_current_user();
+    if (!$user) {
+        ciata_json(['status' => 'erro', 'mensagem' => 'Autenticação necessária.'], 401);
+    }
+    if ($roles && !in_array($user['role'], $roles, true)) {
+        ciata_json(['status' => 'erro', 'mensagem' => 'Permissão insuficiente.'], 403);
+    }
+    return $user;
+}
