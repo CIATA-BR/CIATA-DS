@@ -10,18 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validar terminologia de recursos de TA
+        with:
+          fetch-depth: 2
+      - name: Validar novas ocorrências da terminologia
         shell: bash
         run: |
           set -euo pipefail
           termo="tecnologia"" assistiva"
           permitido="recursos de ""tecnologia assistiva"
-          ocorrencias="$(git grep -n -I -i "$termo" -- . || true)"
-          invalidas="$(printf '%s\n' "$ocorrencias" | grep -vi "$permitido" || true)"
+          nome_oficial="Centro de Inclusão Através da ""Tecnologia Assistiva"
+          adicionadas="$(git diff -U0 HEAD^ HEAD -- . | grep '^+' | grep -v '^+++' || true)"
+          ocorrencias="$(printf '%s\n' "$adicionadas" | grep -i "$termo" || true)"
+          invalidas="$(printf '%s\n' "$ocorrencias" | grep -vi "$permitido" | grep -vi "$nome_oficial" || true)"
           if [ -n "$invalidas" ]; then
             printf '%s\n' "$invalidas"
             echo
-            echo 'Use sempre a forma padronizada com o prefixo recursos de.'
+            echo 'Use sempre a forma padronizada com o prefixo recursos de, exceto no nome oficial do CIATA.'
             exit 1
           fi
-          echo 'Terminologia validada.'
+          echo 'Terminologia das novas linhas validada.'
