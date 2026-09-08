@@ -30,6 +30,26 @@ jobs:
           novo = 'recursos de tecnologia assistiva'
           antigo_cap = 'Tecnologia Assistiva'
           novo_cap = 'Recursos de Tecnologia Assistiva'
+          ajustes = [
+              ('pela recursos de tecnologia assistiva', 'pelos recursos de tecnologia assistiva'),
+              ('Pela Recursos de Tecnologia Assistiva', 'Pelos Recursos de Tecnologia Assistiva'),
+              ('da recursos de tecnologia assistiva', 'dos recursos de tecnologia assistiva'),
+              ('Da Recursos de Tecnologia Assistiva', 'Dos Recursos de Tecnologia Assistiva'),
+              ('na recursos de tecnologia assistiva', 'nos recursos de tecnologia assistiva'),
+              ('Na Recursos de Tecnologia Assistiva', 'Nos Recursos de Tecnologia Assistiva'),
+              ('à recursos de tecnologia assistiva', 'aos recursos de tecnologia assistiva'),
+              ('À Recursos de Tecnologia Assistiva', 'Aos Recursos de Tecnologia Assistiva'),
+              ('a recursos de tecnologia assistiva', 'os recursos de tecnologia assistiva'),
+              ('A recursos de tecnologia assistiva', 'Os recursos de tecnologia assistiva'),
+              ('uma recursos de tecnologia assistiva', 'recursos de tecnologia assistiva'),
+              ('Uma Recursos de Tecnologia Assistiva', 'Recursos de Tecnologia Assistiva'),
+              ('recursos de tecnologia assistiva relevante', 'recursos de tecnologia assistiva relevantes'),
+              ('Recursos de Tecnologia Assistiva relevante', 'Recursos de Tecnologia Assistiva relevantes'),
+              ('recursos de tecnologia assistiva usada', 'recursos de tecnologia assistiva usados'),
+              ('recursos de tecnologia assistiva utilizada', 'recursos de tecnologia assistiva utilizados'),
+              ('recursos de tecnologia assistiva principal', 'recursos de tecnologia assistiva principais'),
+              ('recursos de tecnologia assistiva em questão', 'recursos de tecnologia assistiva em questão'),
+          ]
           alterados = []
 
           for path in raiz.rglob('*'):
@@ -50,6 +70,8 @@ jobs:
                       linhas.append(linha)
                       continue
                   nova = linha.replace(antigo_cap, novo_cap).replace(antigo, novo)
+                  for origem, destino in ajustes:
+                      nova = nova.replace(origem, destino)
                   if nova != linha:
                       mudou = True
                   linhas.append(nova)
@@ -71,7 +93,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m 'docs: normaliza recursos de tecnologia assistiva'
+          git commit -m 'docs: corrige concordancia da terminologia'
           git fetch origin docs/normaliza-terminologia-matrizes
           git rebase origin/docs/normaliza-terminologia-matrizes
           git push origin HEAD:docs/normaliza-terminologia-matrizes
