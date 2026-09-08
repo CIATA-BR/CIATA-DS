@@ -10,7 +10,7 @@
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
   <header class="site-header">
-    <p><a id="back-link" href="../">← Voltar ao Test Lab</a></p>
+    <p><a id="back-link" href="../">← Voltar ao Test Lab</a> · <a href="/logout.php">Sair</a></p>
     <p><strong>CIATA Design System</strong></p>
     <h1 id="page-title">Validador de conformidade</h1>
     <p>Registro estruturado de evidências para validação de componentes e plataformas.</p>
@@ -28,7 +28,7 @@
     <form id="validation-form" hidden novalidate>
       <section class="panel" aria-labelledby="execution-title">
         <h2 id="execution-title">Dados da execução</h2>
-        <p class="muted">O registro definitivo usa a identidade autenticada pelo servidor como responsável pela execução.</p>
+        <p class="muted">O registro definitivo usa a conta autenticada no Validador como responsável pela execução.</p>
         <div class="form-grid">
           <div>
             <label for="analyst">Nome do analista</label>
@@ -112,6 +112,7 @@
     </section>
   </main>
 
+  <script src="./auth-guard.js"></script>
   <script src="./validation.js"></script>
 </body>
 </html>
