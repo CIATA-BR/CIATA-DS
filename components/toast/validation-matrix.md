@@ -40,6 +40,6 @@ Executar com VoiceOver. Verificar mensagem, ação opcional, ordem de leitura, f
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar live region, mensagem, ação opcional, ausência de duplicação semântica, text scaling e comportamento real de exibição/remoção.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de anúncio/foco/temporização/ação, e validação manual com recursos de tecnologia assistiva relevantess tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de anúncio/foco/temporização/ação, e validação manual com recursos de tecnologia assistiva relevantesss tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.

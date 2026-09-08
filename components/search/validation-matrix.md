@@ -54,6 +54,6 @@ Executar com VoiceOver. Verificar `TextField`, nome, `submitLabel(.search)`, env
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `TextField`, `TextInputAction.search`, nome, enabled/readOnly, validação do label em build de release, text scaling e ausência de semântica duplicada.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `estável` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/foco/envio/feedback/privacidade/segurança e validação manual com recursos de tecnologia assistiva relevantess tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `estável` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/foco/envio/feedback/privacidade/segurança e validação manual com recursos de tecnologia assistiva relevantesss tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.

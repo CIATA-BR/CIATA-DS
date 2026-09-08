@@ -55,6 +55,6 @@ Executar com VoiceOver. Verificar `TextField`, sugestões por controles nativos,
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `Autocomplete<String>`, nome do campo, navegação das opções, seleção, validação em release, text scaling, ausência de semântica duplicada e ownership real de `TextEditingController`/focus.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `estável` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/foco/seleção/estado e validação manual com recursos de tecnologia assistiva relevantess tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `estável` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/foco/seleção/estado e validação manual com recursos de tecnologia assistiva relevantesss tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.

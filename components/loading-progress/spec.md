@@ -70,7 +70,7 @@ Cor e animação não podem ser a única forma de transmitir avanço. Respeitar 
 Verificar nome, modo determinado/indeterminado, valor atual, ausência de foco indevido, frequência de anúncios, conclusão/falha, cancelamento quando aplicável, redução de movimento, zoom/text scaling, alto contraste e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantess.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantesss.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

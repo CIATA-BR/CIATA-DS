@@ -41,6 +41,6 @@ Executar com VoiceOver. Verificar `Menu`/`Button`, nomes, ordem, ativação, fec
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `PopupMenuButton`/`PopupMenuItem`, nome do acionador, foco, ordem, text scaling e ausência de semântica duplicada.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/papel/foco/ativação/fechamento e validação manual com recursos de tecnologia assistiva relevantess tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/papel/foco/ativação/fechamento e validação manual com recursos de tecnologia assistiva relevantesss tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.
