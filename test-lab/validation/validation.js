@@ -9,6 +9,10 @@ const titleEl=document.querySelector('#page-title');
 const originEl=document.querySelector('#matrix-origin');
 const resultPanel=document.querySelector('#result-panel');
 const resultEl=document.querySelector('#result');
+const persistStatusEl=document.querySelector('#persist-status');
+const componentStatusPanel=document.querySelector('#component-status-panel');
+const componentStatusEl=document.querySelector('#component-status');
+const submitButton=document.querySelector('#submit-validation');
 const storageKey=`ciata-ds-validation-draft:${component}`;
 
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -43,7 +47,6 @@ function parseMatrix(md){
     if(check){
       const name=stripMd(check[1]);
       criteria.push({id:`AUTO-${String(generated++).padStart(3,'0')}`,name,acceptance:name,group:subsection?`${section} — ${subsection}`:section,source:'checklist'});
-      continue;
     }
   }
   return {title,criteria};
@@ -79,8 +82,58 @@ function restoreDraft(){
   try{const d=JSON.parse(raw);['analyst','platform','platform_version','framework_runtime','assistive_resource','assistive_resource_version','browser_app','device_environment','commit_sha','product_harness','run_notes'].forEach(k=>{const el=form.elements[k];if(el)el.value=d[k]||''});const byId=new Map((d.results||[]).map(r=>[r.criterion_id,r]));document.querySelectorAll('.criterion').forEach(fs=>{const r=byId.get(fs.dataset.criterionId);if(!r)return;for(const [field,val] of Object.entries({status:r.status,expected:r.expected,observed:r.observed,severity:r.severity,issue:r.issue_url,notes:r.notes})){const el=fs.querySelector(`[data-field=${field}]`);if(el)el.value=val||'';}});statusEl.hidden=false;statusEl.textContent='Rascunho restaurado.';}catch{}
 }
 
-form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const payload=serialize();const invalid=payload.results.find(r=>!r.status||!r.observed);if(invalid){document.querySelector(`[data-criterion-id="${CSS.escape(invalid.criterion_id)}"] [data-field=status]`)?.focus();return;}resultEl.textContent=JSON.stringify(payload,null,2);resultPanel.hidden=false;resultPanel.scrollIntoView({block:'start'});resultEl.focus();});
+function statusLabel(value){return ({not_started:'Não iniciado',in_validation:'Em validação',has_failures:'Com falhas',blocked:'Bloqueado',validated:'Validado',stable:'Estável'})[value]||'Não iniciado';}
+
+async function loadComponentStatus(){
+  try{
+    const response=await fetch(`/api/status.php?component=${encodeURIComponent(component)}`,{headers:{Accept:'application/json'}});
+    if(!response.ok)return;
+    const data=await response.json();
+    componentStatusEl.innerHTML=`<ul>${data.platforms.map(item=>`<li><strong>${esc(item.platform_name)}</strong>: ${esc(statusLabel(item.status))}; passou ${Number(item.total_pass||0)}, falhou ${Number(item.total_fail||0)}, bloqueado ${Number(item.total_blocked||0)}, não aplicável ${Number(item.total_not_applicable||0)}.</li>`).join('')}</ul>`;
+    componentStatusPanel.hidden=false;
+  }catch{}
+}
+
+async function persistValidation(payload){
+  submitButton.disabled=true;
+  persistStatusEl.textContent='Registrando validação…';
+  try{
+    const response=await fetch('/api/validation-runs.php',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      credentials:'same-origin',
+      body:JSON.stringify(payload)
+    });
+    let data={};
+    try{data=await response.json();}catch{}
+    if(response.status===401)throw new Error('Autenticação do servidor necessária para registrar a validação.');
+    if(!response.ok)throw new Error(data.mensagem||`Falha HTTP ${response.status}.`);
+    localStorage.removeItem(storageKey);
+    persistStatusEl.textContent=`Validação registrada com sucesso. Execução ${data.validation_run_id}. Status da plataforma: ${statusLabel(data.platform_status)}.`;
+    await loadComponentStatus();
+  }catch(error){
+    persistStatusEl.textContent=`Não foi possível registrar: ${error.message}`;
+    persistStatusEl.setAttribute('role','alert');
+  }finally{
+    submitButton.disabled=false;
+  }
+}
+
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!form.reportValidity())return;
+  const payload=serialize();
+  const invalid=payload.results.find(r=>!r.status||!r.observed);
+  if(invalid){document.querySelector(`[data-criterion-id="${CSS.escape(invalid.criterion_id)}"] [data-field=status]`)?.focus();return;}
+  resultEl.textContent=JSON.stringify(payload,null,2);
+  resultPanel.hidden=false;
+  persistStatusEl.removeAttribute('role');
+  await persistValidation(payload);
+  resultPanel.scrollIntoView({block:'start'});
+  persistStatusEl.focus?.();
+});
+
 document.querySelector('#save-draft').addEventListener('click',saveDraft);
 document.querySelector('#clear-draft').addEventListener('click',()=>{localStorage.removeItem(storageKey);form.reset();statusEl.hidden=false;statusEl.textContent='Rascunho removido.';});
 
-fetch(matrixUrl).then(r=>{if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.text();}).then(md=>{const model=parseMatrix(md);titleEl.textContent=`${model.title} — formulário`;originEl.innerHTML=`Fonte canônica: <a href="${matrixUrl}">${esc(matrixUrl)}</a>`;renderCriteria(model);form.hidden=false;statusEl.hidden=true;restoreDraft();}).catch(err=>{statusEl.textContent=`Não foi possível carregar a matriz: ${err.message}`;statusEl.setAttribute('role','alert');});
+fetch(matrixUrl).then(r=>{if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.text();}).then(md=>{const model=parseMatrix(md);titleEl.textContent=`${model.title} — formulário`;originEl.innerHTML=`Fonte canônica: <a href="${matrixUrl}">${esc(matrixUrl)}</a>`;renderCriteria(model);form.hidden=false;statusEl.hidden=true;restoreDraft();loadComponentStatus();}).catch(err=>{statusEl.textContent=`Não foi possível carregar a matriz: ${err.message}`;statusEl.setAttribute('role','alert');});
