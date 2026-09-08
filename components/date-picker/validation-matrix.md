@@ -48,6 +48,6 @@ Executar com VoiceOver. Verificar `DatePicker`, nome, valor, intervalo, valor in
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `showDatePicker`, help text, datas inicial/mínima/máxima, validação em runtime, navegação, text scaling e ausência de semântica duplicada.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `estável` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/valor/foco/teclado/validação e validação manual com recursos de tecnologia assistiva relevantesss tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `estável` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/valor/foco/teclado/validação e validação manual com recursos de tecnologia assistiva relevantes tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.

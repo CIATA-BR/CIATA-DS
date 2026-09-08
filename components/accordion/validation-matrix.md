@@ -41,6 +41,6 @@ Executar com VoiceOver. Verificar `DisclosureGroup`, expansão/recolhimento, ord
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `ExpansionTile`, estado, conteúdo expandido/recolhido, text scaling, foco e ausência de semântica duplicada.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/estado/foco/ativação/conteúdo oculto, e validação manual com recursos de tecnologia assistiva relevantesss tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/estado/foco/ativação/conteúdo oculto, e validação manual com recursos de tecnologia assistiva relevantes tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.

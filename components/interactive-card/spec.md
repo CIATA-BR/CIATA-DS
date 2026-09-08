@@ -67,7 +67,7 @@ Consumir tokens canônicos já publicados para superfície, texto, borda e foco.
 Verificar papel, nome, foco, ativação, ausência de controles aninhados, ações internas, alvo, estados, imagens, teclado/touch, tema, forced colors, zoom/text scaling e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantesss.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantes.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

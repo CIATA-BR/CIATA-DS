@@ -62,7 +62,7 @@ Respeitar claro, escuro, sistema, forced colors, zoom e text scaling. O componen
 Verificar região/nome, página atual, anterior/próxima, links ou botões nativos, disabled, foco, atualização de conteúdo, compactação, reticências, teclado/touch, alvo, tema, forced colors, zoom/text scaling e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantesss.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantes.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

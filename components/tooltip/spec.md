@@ -61,7 +61,7 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom, text scaling e red
 Verificar nome próprio do acionador, associação descritiva, hover, foco, Escape, persistência durante leitura, touch/mobile, conteúdo não interativo, tema, alto contraste, zoom/text scaling, reduced motion e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantesss.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantes.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

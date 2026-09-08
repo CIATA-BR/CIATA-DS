@@ -62,7 +62,7 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom, text scaling e red
 Verificar nome, botão nativo, estado expandido, relação cabeçalho-painel, foco, teclado, conteúdo oculto, múltiplos itens, disabled, alvo, tema, alto contraste, zoom/text scaling, reduced motion e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantesss.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantes.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

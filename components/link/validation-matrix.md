@@ -64,6 +64,6 @@ Uma implementação só pode passar de `experimental` para `stable` quando:
 1. todos os cenários aplicáveis tiverem evidência registrada;
 2. não houver falha crítica aberta de nome, papel, destino, foco, acionamento ou compreensão;
 3. divergências da especificação estiverem corrigidas ou justificadas;
-4. validação manual com recursos de tecnologia assistiva relevantesss tiver ocorrido de fato.
+4. validação manual com recursos de tecnologia assistiva relevantes tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste e não promove automaticamente nenhuma plataforma para estável.

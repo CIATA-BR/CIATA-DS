@@ -40,6 +40,6 @@ Executar com VoiceOver. Verificar página atual anunciada, disabled nos limites,
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `Semantics(selected: true)`, disabled, Wrap/reflow, text scaling, alvo e ausência de semântica duplicada.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de papel/nome/página atual/foco/ativação, e validação manual com recursos de tecnologia assistiva relevantesss tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de papel/nome/página atual/foco/ativação, e validação manual com recursos de tecnologia assistiva relevantes tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.
