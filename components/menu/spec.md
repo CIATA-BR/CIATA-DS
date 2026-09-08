@@ -66,7 +66,7 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom, text scaling e red
 Verificar acionador, estado aberto, menu/item, link versus ação, foco inicial, setas, Home/End, Escape, fechamento, retorno de foco, disabled, checked, submenu, clique/toque externo, alvo, contraste, zoom/text scaling e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantes.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantess.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

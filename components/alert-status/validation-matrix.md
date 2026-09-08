@@ -66,6 +66,6 @@ Uma implementação só pode passar de `experimental` para `stable` quando:
 2. não houver falha crítica aberta de anúncio, foco, conteúdo ou compreensão;
 3. prioridade agressiva não estiver sendo usada para mensagens rotineiras;
 4. divergências da especificação estiverem corrigidas ou justificadas;
-5. validação manual com recursos de tecnologia assistiva relevantes tiver ocorrido de fato.
+5. validação manual com recursos de tecnologia assistiva relevantess tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste e não promove automaticamente nenhuma plataforma para estável.

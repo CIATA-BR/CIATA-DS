@@ -57,7 +57,7 @@ Respeitar claro, escuro, sistema, forced/high contrast, zoom e text scaling. Bre
 Verificar região, nome, lista/hierarquia, links nativos, item atual, separadores, ordem, teclado, alvo, truncamento, tema, alto contraste, zoom/text scaling e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantes.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantess.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

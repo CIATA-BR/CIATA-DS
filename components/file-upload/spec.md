@@ -97,7 +97,7 @@ Ações interativas seguem alvo interno de 44 × 44 unidades lógicas quando apl
 Verificar nome, restrições, seletor nativo, seleção única/múltipla, lista, remover/substituir, drag equivalente, teclado, foco, tipos/tamanho/quantidade, progresso, erro, sucesso, cancelamento, segurança server-side, limites de runtime, alvo, contraste, escala e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantes.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantess.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

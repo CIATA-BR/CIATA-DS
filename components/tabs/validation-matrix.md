@@ -40,6 +40,6 @@ Executar com VoiceOver. Verificar `Picker` segmentado, seleção, ordem de leitu
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `TabBar`, seleção controlada, atualização externa de índice, text scaling, foco e ausência de semântica duplicada.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de papel/nome/seleção/foco/ativação, e validação manual com recursos de tecnologia assistiva relevantes tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de papel/nome/seleção/foco/ativação, e validação manual com recursos de tecnologia assistiva relevantess tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.
