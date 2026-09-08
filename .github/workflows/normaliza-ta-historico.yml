@@ -1,0 +1,75 @@
+name: Normalizar terminologia histórica
+
+on:
+  push:
+    branches:
+      - docs/normaliza-terminologia-matrizes
+
+permissions:
+  contents: write
+
+jobs:
+  normalizar:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: docs/normaliza-terminologia-matrizes
+          fetch-depth: 0
+      - name: Normalizar conteúdo textual
+        shell: python
+        run: |
+          from pathlib import Path
+
+          raiz = Path('.')
+          ignorar = {'.git'}
+          extensoes = {'.md', '.html', '.js', '.css', '.json', '.yml', '.yaml', '.txt', '.php', '.py', '.kt', '.swift', '.dart', '.xml', '.svg'}
+          oficial = 'Centro de Inclusão Através da Tecnologia Assistiva'
+          antigo = 'tecnologia assistiva'
+          novo = 'recursos de tecnologia assistiva'
+          antigo_cap = 'Tecnologia Assistiva'
+          novo_cap = 'Recursos de Tecnologia Assistiva'
+          alterados = []
+
+          for path in raiz.rglob('*'):
+              if not path.is_file() or any(part in ignorar for part in path.parts):
+                  continue
+              if path.suffix.lower() not in extensoes:
+                  continue
+              if path.as_posix() == '.github/workflows/normaliza-ta-historico.yml':
+                  continue
+              try:
+                  texto = path.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              linhas = []
+              mudou = False
+              for linha in texto.splitlines(keepends=True):
+                  if oficial in linha:
+                      linhas.append(linha)
+                      continue
+                  nova = linha.replace(antigo_cap, novo_cap).replace(antigo, novo)
+                  if nova != linha:
+                      mudou = True
+                  linhas.append(nova)
+              if mudou:
+                  path.write_text(''.join(linhas), encoding='utf-8')
+                  alterados.append(path.as_posix())
+
+          print(f'{len(alterados)} arquivos alterados')
+          for item in alterados:
+              print(item)
+      - name: Commitar normalização
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet; then
+            echo 'Nenhuma alteração necessária.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'docs: normaliza recursos de tecnologia assistiva'
+          git push origin HEAD:docs/normaliza-terminologia-matrizes
