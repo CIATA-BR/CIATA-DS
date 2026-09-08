@@ -15,7 +15,7 @@ Use este checklist quando a mudança puder alterar comportamento, conteúdo, sem
 
 - [ ] Testes automatizados relevantes passaram.
 - [ ] Realizei teste manual proporcional ao risco.
-- [ ] Usei a recursos de tecnologia assistiva principal da plataforma quando a mudança afeta interação ou semântica.
+- [ ] Usei os recursos de tecnologia assistiva principais da plataforma quando a mudança afeta interação ou semântica.
 - [ ] Registrei evidência suficiente para revisão quando necessário.
 
 ## Regressão

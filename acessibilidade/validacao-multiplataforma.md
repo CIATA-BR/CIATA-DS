@@ -19,7 +19,7 @@ A avaliação deve seguir a estrutura do WCAG-EM 2.0:
 2. identificar visualizações comuns, funções essenciais e tecnologias utilizadas;
 3. selecionar amostra representativa de telas, estados e conteúdos;
 4. executar processos completos, inclusive erros, interrupções e retomadas;
-5. registrar resultados, limitações e combinações de recursos de tecnologia assistiva utilizadas.
+5. registrar resultados, limitações e combinações de recursos de tecnologia assistiva utilizadoss.
 
 Uma tela isolada aprovada não comprova que a jornada está acessível. Cadastro, autenticação, busca, upload, pagamento, conversa, gravação e conversão devem ser testados do início ao resultado final quando fizerem parte do escopo.
 

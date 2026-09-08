@@ -37,7 +37,7 @@ Verificar se um formulário pode ser compreendido, preenchido, corrigido e envia
 
 - [ ] Cada erro identifica o campo, o problema e a forma de correção.
 - [ ] A mensagem está programaticamente associada ao campo.
-- [ ] O estado inválido é exposto à recursos de tecnologia assistiva.
+- [ ] O estado inválido é exposto aos recursos de tecnologia assistiva.
 - [ ] Há resumo de erros quando múltiplos problemas exigem visão geral.
 - [ ] Dados válidos permanecem preenchidos após falha.
 - [ ] A validação no servidor repete as regras críticas.

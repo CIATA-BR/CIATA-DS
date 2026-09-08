@@ -24,7 +24,7 @@ Garantir que interfaces em idiomas da direita para a esquerda preservem estrutur
 
 ## Comportamento esperado
 
-Leitura visual, ordem programática e navegação por foco continuam coerentes para o idioma e para recursos de tecnologia assistiva.
+Leitura visual, ordem programática e navegação por foco continuam coerentes para o idioma e paros recursos de tecnologia assistiva.
 
 ## Exemplo não conforme
 

@@ -10,7 +10,7 @@ Botão representa uma ação. Deve expor nome acessível, função de botão e e
 - o nome deve indicar a ação resultante, por exemplo `Salvar`, `Enviar mensagem` ou `Continuar para pagamento`;
 - não repetir a palavra "botão" dentro do nome acessível quando a plataforma já anuncia a função;
 - botões apenas com ícone precisam de nome acessível equivalente à ação;
-- estado desabilitado deve estar disponível à recursos de tecnologia assistiva e visualmente distinguível sem depender apenas de cor;
+- estado desabilitado deve estar disponível aos recursos de tecnologia assistiva e visualmente distinguível sem depender apenas de cor;
 - estado de carregamento não deve remover silenciosamente o contexto do controle;
 - botões de alternância devem expor estado pressionado/selecionado apropriado;
 - a ativação não deve depender exclusivamente de gesto complexo.

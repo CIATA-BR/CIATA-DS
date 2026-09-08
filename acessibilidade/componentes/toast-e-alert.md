@@ -24,7 +24,7 @@ Usar mecanismos nativos de anúncio/feedback quando necessários, respeitando as
 
 ## Exemplo conforme
 
-Após salvar uma alteração, aparece visualmente `Alterações salvas` e a recursos de tecnologia assistiva recebe anúncio equivalente, sem mudança de foco. O foco permanece no controle ou contexto da tarefa.
+Após salvar uma alteração, aparece visualmente `Alterações salvas` e os recursos de tecnologia assistiva recebe anúncio equivalente, sem mudança de foco. O foco permanece no controle ou contexto da tarefa.
 
 ### Comportamento esperado
 

@@ -52,7 +52,7 @@ Exemplos adequados:
 
 Evitar rótulos vagos como `Sim`, `Opção 1` ou instruções que dependam apenas da posição visual.
 
-Não acrescentar palavras como `caixa de seleção` ao nome acessível quando a recursos de tecnologia assistiva já anuncia o papel.
+Não acrescentar palavras como `caixa de seleção` ao nome acessível quando os recursos de tecnologia assistiva já anuncia o papel.
 
 ## Semântica
 
@@ -119,7 +119,7 @@ Quando marcado:
 - o estado deve ser exposto pela API de acessibilidade;
 - a indicação visual deve permanecer perceptível sem depender apenas de cor;
 - a mudança deve ocorrer sem mover o foco arbitrariamente;
-- a recursos de tecnologia assistiva deve anunciar o novo estado pelo comportamento nativo da plataforma.
+- os recursos de tecnologia assistiva deve anunciar o novo estado pelo comportamento nativo da plataforma.
 
 ## Indeterminate / Mixed
 

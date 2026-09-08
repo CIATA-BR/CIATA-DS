@@ -26,7 +26,7 @@ Preferir o elemento nativo de link da plataforma e preservar nome acessível, pa
 
 O texto deve descrever o destino ou propósito fora do contexto imediato sempre que possível. Evitar textos vagos como `clique aqui`, `saiba mais` repetido ou URLs cruas quando houver nome mais útil.
 
-Não acrescentar a palavra `link` ao nome acessível quando a recursos de tecnologia assistiva já anuncia o papel.
+Não acrescentar a palavra `link` ao nome acessível quando os recursos de tecnologia assistiva já anuncia o papel.
 
 ## Link versus Button
 

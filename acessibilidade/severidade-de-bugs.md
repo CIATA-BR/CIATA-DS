@@ -24,7 +24,7 @@ Exemplos:
 - modal, bottom sheet ou diálogo bloqueia a interface sem oferecer navegação ou fechamento acessível;
 - erro de formulário essencial não é identificável ou não pode ser corrigido com recursos de tecnologia assistiva;
 - autenticação, pagamento, cadastro, envio ou outra etapa crítica fica impossível de concluir;
-- informação necessária para decisão ou segurança não é percebida por pessoas que usam determinada recursos de tecnologia assistiva.
+- informação necessária para decisão ou segurança não é percebida por pessoas que usam determinados recursos de tecnologia assistiva.
 
 ### Regra prática
 
@@ -98,7 +98,7 @@ Também não se deve reduzir a severidade apenas porque existe workaround. O wor
 
 ## Casos com múltiplas deficiências ou tecnologias
 
-Quando o mesmo defeito apresenta impactos diferentes conforme a recursos de tecnologia assistiva, deve-se registrar o pior impacto reproduzível relevante e detalhar as diferenças no campo de evidências.
+Quando o mesmo defeito apresenta impactos diferentes conforme os recursos de tecnologia assistiva, deve-se registrar o pior impacto reproduzível relevante e detalhar as diferenças no campo de evidências.
 
 Exemplo: um componente pode ser apenas inconveniente com teclado, mas completamente inoperável com leitor de tela. Nesse caso, a severidade deve considerar a barreira impeditiva.
 

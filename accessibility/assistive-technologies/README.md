@@ -4,4 +4,4 @@ Esta área documenta modelos de interação, configurações, interoperabilidade
 
 Conteúdos futuros incluirão TalkBack, VoiceOver, NVDA, JAWS, Narrator, Orca, Braille, controle por voz, acesso por acionadores e ampliação.
 
-Cada registro deve informar ambiente, versão, procedimento de reprodução, comportamento esperado, comportamento observado e impacto sobre as pessoas. Uma diferença de comportamento não deve ser tratada automaticamente como defeito da aplicação ou da recursos de tecnologia assistiva sem investigação.
+Cada registro deve informar ambiente, versão, procedimento de reprodução, comportamento esperado, comportamento observado e impacto sobre as pessoas. Uma diferença de comportamento não deve ser tratada automaticamente como defeito da aplicação ou dos recursos de tecnologia assistiva sem investigação.

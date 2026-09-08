@@ -27,7 +27,7 @@ Comunicar atividade em andamento e, quando possível, o avanço de uma tarefa. U
 ## Semântica
 - Em modo determinado, expor valor atual de forma programática.
 - Em modo indeterminado, anunciar apenas que a operação está em andamento, sem inventar percentual.
-- O nome acessível deve identificar o processo, não repetir palavras de papel que a recursos de tecnologia assistiva já anuncia.
+- O nome acessível deve identificar o processo, não repetir palavras de papel que os recursos de tecnologia assistiva já anuncia.
 - Não usar `aria-live` ou anúncios equivalentes a cada pequena mudança de valor.
 
 ## Foco e interação
@@ -70,7 +70,7 @@ Cor e animação não podem ser a única forma de transmitir avanço. Respeitar 
 Verificar nome, modo determinado/indeterminado, valor atual, ausência de foco indevido, frequência de anúncios, conclusão/falha, cancelamento quando aplicável, redução de movimento, zoom/text scaling, alto contraste e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantes.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

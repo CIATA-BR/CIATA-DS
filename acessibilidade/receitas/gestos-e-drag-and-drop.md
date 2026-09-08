@@ -18,7 +18,7 @@ Nenhuma ação essencial deve depender exclusivamente de gesto complexo, caminho
 
 - operações drag-and-drop devem ter alternativa por botões, menus ou teclado;
 - componentes customizados devem definir interação por teclado coerente com o padrão adotado;
-- não capture eventos de ponteiro de forma que impeça recursos de tecnologia assistiva ou teclado;
+- não capture eventos de ponteiro de forma que impeços recursos de tecnologia assistiva ou teclado;
 - mudanças de posição devem ser anunciadas de forma suficiente sem excesso de fala.
 
 ## Android

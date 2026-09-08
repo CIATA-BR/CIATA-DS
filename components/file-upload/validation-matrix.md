@@ -50,6 +50,6 @@ Executar com VoiceOver. Verificar `fileImporter`, tipos permitidos, seleção si
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar nome/estado do botão, validação de rótulo em build de release e a integração concreta do host com o seletor de documentos nativo. A implementação do DS não deve ser considerada completa sem evidência dessa integração.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `estável` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/seleção/foco/restrições/feedback/segurança e validação manual com recursos de tecnologia assistiva relevante tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `estável` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/seleção/foco/restrições/feedback/segurança e validação manual com recursos de tecnologia assistiva relevantes tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.

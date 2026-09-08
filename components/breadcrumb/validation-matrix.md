@@ -39,6 +39,6 @@ Executar com VoiceOver. Verificar `Button` nos níveis navegáveis, item atual e
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `TextButton`, item atual estático, `Wrap`/reflow, text scaling, ordem e ausência de semântica duplicada.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/hierarquia/foco/ativação/item atual e validação manual com recursos de tecnologia assistiva relevante tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/hierarquia/foco/ativação/item atual e validação manual com recursos de tecnologia assistiva relevantes tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.

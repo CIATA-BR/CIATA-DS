@@ -69,7 +69,7 @@ Ações seguem alvo interno de 44 × 44 unidades lógicas quando aplicável; And
 Verificar abertura, modal/não modal, nome, foco inicial, contenção, Escape/Back, fechamento explícito, retorno de foco, fundo inerte, drag equivalente, snap points, rolagem, teclado, alvo, tema, contraste, escala, safe area, reduced motion e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantes.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

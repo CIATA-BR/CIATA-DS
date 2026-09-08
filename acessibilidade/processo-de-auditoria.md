@@ -189,7 +189,7 @@ Uma auditoria só pode ser encerrada quando:
 - limitações e itens não aplicáveis estiverem registrados;
 - o resultado final tiver sido revisado por pessoa competente.
 
-Sempre que possível, a revisão deve incluir participação de pessoa com deficiência ou especialista com experiência prática na recursos de tecnologia assistiva em questão.
+Sempre que possível, a revisão deve incluir participação de pessoa com deficiência ou especialista com experiência prática nos recursos de tecnologia assistiva em questão.
 
 ## 10. Saídas da auditoria
 

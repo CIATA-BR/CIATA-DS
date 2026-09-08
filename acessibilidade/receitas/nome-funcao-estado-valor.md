@@ -50,7 +50,7 @@ Um card que executa pagamento não deve ser anunciado apenas como “Março”. 
 
 - nome ausente ou genérico;
 - label desconectada do controle;
-- estado visual não exposto à recursos de tecnologia assistiva;
+- estado visual não exposto aos recursos de tecnologia assistiva;
 - nome acessível diferente do texto visível sem necessidade;
 - papel duplicado no nome;
 - componentes customizados sem ação equivalente;

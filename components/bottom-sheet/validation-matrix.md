@@ -44,6 +44,6 @@ Executar com VoiceOver. Verificar `sheet`, ordem de leitura, título, ação Fec
 Executar em Android + TalkBack e iOS + VoiceOver. Verificar `showModalBottomSheet`, `SafeArea`, título semântico, rolagem, fechamento explícito, text scaling, foco e ausência de semântica duplicada.
 
 ## Promoção de status
-Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/modalidade/foco/fechamento/retorno de foco/acesso ao conteúdo e validação manual com recursos de tecnologia assistiva relevante tiver ocorrido de fato.
+Uma implementação só pode passar de `experimental` para `stable` quando todos os cenários aplicáveis tiverem evidência registrada, não houver falha crítica de nome/modalidade/foco/fechamento/retorno de foco/acesso ao conteúdo e validação manual com recursos de tecnologia assistiva relevantes tiver ocorrido de fato.
 
 A existência desta matriz não constitui evidência de teste.

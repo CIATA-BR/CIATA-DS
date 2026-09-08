@@ -23,7 +23,7 @@ A pessoa entende em que linha e coluna está, quais ações existem e o efeito d
 Uma grade visual feita com `div` usa setas do teclado, mas não expõe cabeçalhos, posição, seleção nem modo de edição.
 
 ## Por que falha
-A interação existe visualmente, porém a estrutura e os estados não chegam à recursos de tecnologia assistiva.
+A interação existe visualmente, porém a estrutura e os estados não chegam aos recursos de tecnologia assistiva.
 
 ## Critérios mínimos de teste
 - navegar por linhas e colunas com leitor de tela;
