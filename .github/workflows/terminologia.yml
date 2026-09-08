@@ -19,7 +19,7 @@ jobs:
           termo="tecnologia"" assistiva"
           permitido="recursos de ""tecnologia assistiva"
           nome_oficial="Centro de Inclusão Através da ""Tecnologia Assistiva"
-          adicionadas="$(git diff -U0 HEAD^ HEAD -- . | grep '^+' | grep -v '^+++' || true)"
+          adicionadas="$(git diff -U0 HEAD^ HEAD -- . ':(exclude).github/workflows/terminologia.yml' | grep '^+' | grep -v '^+++' || true)"
           ocorrencias="$(printf '%s\n' "$adicionadas" | grep -i "$termo" || true)"
           invalidas="$(printf '%s\n' "$ocorrencias" | grep -vi "$permitido" | grep -vi "$nome_oficial" || true)"
           if [ -n "$invalidas" ]; then
