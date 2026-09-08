@@ -8,6 +8,20 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     ciata_json(['status' => 'erro', 'mensagem' => 'Método não permitido.'], 405);
 }
 
+$contentType = strtolower((string) ($_SERVER['CONTENT_TYPE'] ?? ''));
+if (!str_starts_with($contentType, 'application/json')) {
+    ciata_json(['status' => 'erro', 'mensagem' => 'Content-Type deve ser application/json.'], 415);
+}
+
+$origin = trim((string) ($_SERVER['HTTP_ORIGIN'] ?? ''));
+if ($origin !== '') {
+    $originHost = strtolower((string) (parse_url($origin, PHP_URL_HOST) ?? ''));
+    $requestHost = strtolower(preg_replace('/:\d+$/', '', (string) ($_SERVER['HTTP_HOST'] ?? '')) ?? '');
+    if ($originHost === '' || $requestHost === '' || !hash_equals($requestHost, $originHost)) {
+        ciata_json(['status' => 'erro', 'mensagem' => 'Origem da requisição não autorizada.'], 403);
+    }
+}
+
 $user = ciata_require_user(['admin', 'analyst']);
 $payload = json_decode((string) file_get_contents('php://input'), true);
 if (!is_array($payload)) {
@@ -79,13 +93,21 @@ if ($script === false || !is_file($script)) {
     ciata_json(['status' => 'erro', 'mensagem' => 'Ponte MCP não encontrada.', 'scan_id' => $scanId], 500);
 }
 
+if (!is_file($node) || !is_executable($node) || !is_file('/usr/bin/timeout')) {
+    $db->prepare("UPDATE automated_scan_runs SET status='error', completed_at=NOW() WHERE id=?")->execute([$scanId]);
+    ciata_json(['status' => 'erro', 'mensagem' => 'Runtime do Validador indisponível no servidor.', 'scan_id' => $scanId], 500);
+}
+
 $command = ['/usr/bin/timeout', $timeout . 's', $node, $script, $url];
 $descriptors = [
     0 => ['pipe', 'r'],
     1 => ['pipe', 'w'],
     2 => ['pipe', 'w'],
 ];
-$processEnv = $_ENV;
+$processEnv = getenv();
+if (!is_array($processEnv)) {
+    $processEnv = [];
+}
 $processEnv['CIATA_MCP_URL'] = (string) ($env['MCP_URL'] ?? 'http://127.0.0.1:3100/mcp');
 
 $process = proc_open($command, $descriptors, $pipes, dirname($script), $processEnv);
