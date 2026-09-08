@@ -1,7 +1,7 @@
 {
   "name": "@a11y-agent-team/mcp-server",
   "version": "5.4.0",
-  "description": "Server-based MCP server for the A11y Agent Team. Provides accessibility scanning tools over HTTP (Streamable HTTP transport with SSE fallback). Works with Claude Desktop, VS Code Copilot, and any MCP-compatible client.",
+  "description": "Servidor MCP do motor de validação de acessibilidade integrado ao CIATA Design System.",
   "type": "module",
   "license": "MIT",
   "repository": {
@@ -33,6 +33,7 @@
   "files": [
     "server.js",
     "server-core.js",
+    "database.js",
     "stdio.js",
     "tools/",
     "README.md",
@@ -48,6 +49,7 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",
     "express": "^5.1.0",
+    "mysql2": "^3.14.5",
     "playwright-core": "^1.58.2",
     "zod": "^3.25.0"
   },
