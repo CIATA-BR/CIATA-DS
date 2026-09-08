@@ -10,7 +10,7 @@ O objetivo é permitir que outra pessoa consiga compreender, reproduzir, corrigi
 - O registro precisa ser reproduzível.
 - O ambiente de teste deve ser identificável.
 - O impacto funcional deve ser descrito antes da referência normativa.
-- Automação pode apoiar a evidência, mas não substitui a demonstração funcional quando o problema depende de interação humana ou tecnologia assistiva.
+- Automação pode apoiar a evidência, mas não substitui a demonstração funcional quando o problema depende de interação humana ou recursos de tecnologia assistiva.
 - Dados pessoais, credenciais, tokens, informações médicas ou outros dados sensíveis não devem ser incluídos nas evidências.
 
 ## Campos mínimos por defeito
@@ -25,7 +25,7 @@ Cada defeito deve registrar, sempre que aplicável:
    - sistema operacional e versão;
    - navegador ou aplicativo e versão;
    - dispositivo ou categoria de dispositivo, quando relevante.
-4. **Tecnologia assistiva ou método de interação**
+4. **Recursos de tecnologia assistiva ou método de interação**
    - nome e versão do leitor de tela, ampliador, controle por voz, Switch Access ou outro recurso;
    - teclado físico, toque, gesto, mouse ou outro método utilizado;
    - para linha Braille, registrar modelo, conexão, tabela Braille e leitor de tela quando isso influenciar o resultado.
@@ -97,7 +97,7 @@ O registro de reteste deve conter:
 
 - versão/build/commit testado;
 - data do reteste;
-- ambiente e tecnologia assistiva utilizados;
+- ambiente e recursos de tecnologia assistiva utilizados;
 - resultado: **Corrigido**, **Parcialmente corrigido**, **Não corrigido** ou **Não reproduzido**;
 - breve descrição do comportamento observado após a correção;
 - indicação de regressões encontradas, se houver.
@@ -116,7 +116,7 @@ O comportamento problemático permanece reproduzível.
 
 ### Não reproduzido
 
-O problema não foi observado no ambiente de reteste. Isso não equivale automaticamente a “corrigido”; diferenças de ambiente, dados ou tecnologia assistiva devem ser investigadas quando houver dúvida.
+O problema não foi observado no ambiente de reteste. Isso não equivale automaticamente a “corrigido”; diferenças de ambiente, dados ou recursos de tecnologia assistiva devem ser investigadas quando houver dúvida.
 
 ## Evidência de reteste recomendada
 

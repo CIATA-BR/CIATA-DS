@@ -19,7 +19,7 @@ A avaliação deve seguir a estrutura do WCAG-EM 2.0:
 2. identificar visualizações comuns, funções essenciais e tecnologias utilizadas;
 3. selecionar amostra representativa de telas, estados e conteúdos;
 4. executar processos completos, inclusive erros, interrupções e retomadas;
-5. registrar resultados, limitações e combinações de tecnologia assistiva utilizadas.
+5. registrar resultados, limitações e combinações de recursos de tecnologia assistiva utilizados.
 
 Uma tela isolada aprovada não comprova que a jornada está acessível. Cadastro, autenticação, busca, upload, pagamento, conversa, gravação e conversão devem ser testados do início ao resultado final quando fizerem parte do escopo.
 
@@ -34,7 +34,7 @@ Antes da execução, registrar as combinações que sustentam a avaliação. Exe
 - Braille: leitor de tela, modelo da linha, tipo de conexão e tabela Braille;
 - tecnologias adicionais, como Jieshuo, Switch Access, Voice Access e ampliação, conforme público e risco.
 
-Uma combinação adicional não substitui o leitor de tela principal da plataforma. Versões de sistema, navegador, aplicativo e tecnologia assistiva devem constar nas evidências.
+Uma combinação adicional não substitui o leitor de tela principal da plataforma. Versões de sistema, navegador, aplicativo e recursos de tecnologia assistiva devem constar nas evidências.
 
 ## 2. Redimensionamento, orientação e persistência de foco
 
@@ -68,7 +68,7 @@ Estado de interface deve usar os mecanismos de persistência recomendados pelo f
 
 ## 3. Entrada de texto e eventos de acessibilidade
 
-Controles nativos são preferíveis porque preservam integração com teclado, método de entrada e tecnologia assistiva.
+Controles nativos são preferíveis porque preservam integração com teclado, método de entrada e recursos de tecnologia assistiva.
 
 No Android 17, campos `TextView` padrão informam automaticamente tipos mais específicos de alteração de texto. Implementações com `InputConnection` próprio devem avaliar as APIs `TextAttribute` e `AccessibilityEvent.setTextChangeTypes()` ao emitir `TYPE_VIEW_TEXT_CHANGED`.
 

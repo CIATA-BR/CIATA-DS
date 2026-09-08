@@ -82,7 +82,7 @@ Para cada classificação que não seja trivialmente `Not Applicable`, mantenha 
 - fluxo e passo exato;
 - componente ou tela;
 - resultado observado;
-- tecnologia assistiva;
+- recursos de tecnologia assistiva;
 - navegador ou app;
 - sistema operacional;
 - versão;
@@ -218,6 +218,6 @@ Reavalie quando ocorrer mudança material, como:
 - correção de exceções documentadas;
 - introdução de nova plataforma;
 - mudança normativa aplicável;
-- alteração importante em tecnologia assistiva ou plataforma que afete o comportamento declarado.
+- alteração importante em recursos de tecnologia assistiva ou plataforma que afete o comportamento declarado.
 
 O ACR deve permanecer um retrato verificável de uma versão específica, não uma declaração permanente de acessibilidade do produto.

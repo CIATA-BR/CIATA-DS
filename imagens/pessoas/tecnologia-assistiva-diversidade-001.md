@@ -1,4 +1,4 @@
-# Tecnologia assistiva e diversidade 001
+# Recursos de tecnologia assistiva e diversidade 001
 
 ## Arquivo visual esperado
 

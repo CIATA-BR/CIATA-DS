@@ -164,7 +164,7 @@ Cada implementação deve possuir uma matriz comum de casos de teste. Quando apl
 - tema claro e escuro;
 - retorno de foco quando aplicável.
 
-Além da automação, a aprovação de componentes interativos exige validação humana em combinações relevantes de navegador, sistema operacional e tecnologia assistiva.
+Além da automação, a aprovação de componentes interativos exige validação humana em combinações relevantes de navegador, sistema operacional e recursos de tecnologia assistiva.
 
 ## Primeiro componente piloto
 

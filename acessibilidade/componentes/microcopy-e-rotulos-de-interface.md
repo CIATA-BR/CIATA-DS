@@ -37,4 +37,4 @@ Quando controles são lidos fora do contexto visual, nomes genéricos podem se t
 - controles equivalentes possuem nomes consistentes;
 - ações distintas não compartilham nomes vagos sem contexto suficiente;
 - a interface não depende de orientação espacial para explicar ações;
-- o texto não duplica desnecessariamente a função anunciada pela tecnologia assistiva.
+- o texto não duplica desnecessariamente a função anunciada pelos recursos de tecnologia assistiva.

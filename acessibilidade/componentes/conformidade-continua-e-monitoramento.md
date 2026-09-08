@@ -7,7 +7,7 @@ Acessibilidade não termina no release. Mudanças de produto, dependências, nav
 ## Regras
 
 - monitorar mudanças relevantes em padrões e plataformas que possam afetar componentes do Design System;
-- revisar componentes quando houver alteração material em semântica, foco, teclado, gestos, conteúdo dinâmico ou suporte de tecnologia assistiva;
+- revisar componentes quando houver alteração material em semântica, foco, teclado, gestos, conteúdo dinâmico ou suporte de recursos de tecnologia assistiva;
 - priorizar regressões observadas em produção e mudanças de alto impacto;
 - manter uma matriz de plataformas e tecnologias assistivas representativas do uso real;
 - transformar mudanças relevantes em issue, atualização documental ou reteste, conforme o impacto;

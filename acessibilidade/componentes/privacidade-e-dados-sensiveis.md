@@ -29,7 +29,7 @@ O sistema mostra apenas **•••.•••.•••-••** para o próprio
 
 ### Por que falha
 
-Impede revisão independente e pode provocar exposição involuntária de informação sensível por tecnologia assistiva.
+Impede revisão independente e pode provocar exposição involuntária de informação sensível por recursos de tecnologia assistiva.
 
 ## Testes mínimos
 

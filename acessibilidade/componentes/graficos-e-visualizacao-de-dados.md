@@ -26,7 +26,7 @@ A informação depende de percepção visual e de cor, impedindo acesso ao dado 
 
 ## Critérios mínimos de teste
 - validar leitura do resumo e da tabela equivalente;
-- confirmar operação de filtros por teclado e tecnologia assistiva;
+- confirmar operação de filtros por teclado e recursos de tecnologia assistiva;
 - verificar que cor não é o único diferenciador;
 - testar atualização dinâmica, zoom e aumento de texto.
 

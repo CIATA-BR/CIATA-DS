@@ -21,7 +21,7 @@ O gate deve apontar, quando aplicável:
 - versão ou build avaliada;
 - ambiente e plataforma;
 - jornada ou componente testado;
-- tecnologia assistiva usada;
+- recursos de tecnologia assistiva usados;
 - achados abertos e severidade;
 - bugs corrigidos e retestados;
 - exceções temporárias ainda vigentes;

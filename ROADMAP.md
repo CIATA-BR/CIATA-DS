@@ -51,7 +51,7 @@ O roadmap apresenta direção, não promessa rígida de prazo. A prioridade pode
 ## v0.6.0 — Accessibility System
 
 - base canônica WCAG 2.2 A e AA em JSON, XLSX e documentação acessível;
-- matriz por plataforma e tecnologia assistiva;
+- matriz por plataforma e recursos de tecnologia assistiva;
 - padrões para Web, Android, iOS, Windows e documentos;
 - guias para TalkBack, VoiceOver, NVDA, JAWS, Narrador, Orca e Braille;
 - checklists por etapa do ciclo de vida;

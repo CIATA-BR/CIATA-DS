@@ -74,14 +74,14 @@ O controle possui somente um ícone ou texto genérico.
 - campo afetado;
 - passos de reprodução;
 - resultado esperado e observado;
-- tecnologia assistiva, navegador e sistema;
+- recursos de tecnologia assistiva, navegador e sistema;
 - gravação ou captura quando útil;
 - impacto sobre conclusão da tarefa;
 - gravidade e recomendação.
 
 ## Critério de resolução
 
-A falha está resolvida quando a tarefa pode ser concluída com teclado e tecnologia assistiva, os rótulos e erros são compreensíveis, o foco permanece previsível e nenhum dado válido é perdido sem justificativa.
+A falha está resolvida quando a tarefa pode ser concluída com teclado e recursos de tecnologia assistiva, os rótulos e erros são compreensíveis, o foco permanece previsível e nenhum dado válido é perdido sem justificativa.
 
 ## Relações
 

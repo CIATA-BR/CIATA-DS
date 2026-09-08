@@ -35,7 +35,7 @@ Preferir componentes nativos ou equivalentes do toolkit. O leitor de tela deve r
 
 ### Comportamento esperado
 
-Ao focar o controle, a pessoa recebe informação equivalente a `Estado, São Paulo, caixa de combinação` e consegue abrir, percorrer opções e selecionar usando teclado ou tecnologia assistiva.
+Ao focar o controle, a pessoa recebe informação equivalente a `Estado, São Paulo, caixa de combinação` e consegue abrir, percorrer opções e selecionar usando teclado ou recursos de tecnologia assistiva.
 
 ## Exemplo não conforme
 
@@ -43,7 +43,7 @@ Uma `div` visual contendo o texto `São Paulo` abre outra `div` com opções cli
 
 ### Por que falha
 
-O componente pode parecer um select visualmente, mas a tecnologia assistiva não identifica sua função, seu valor ou a relação com as opções. A seleção pode ficar impossível sem mouse/toque.
+O componente pode parecer um select visualmente, mas os recursos de tecnologia assistiva não identificam sua função, seu valor ou a relação com as opções. A seleção pode ficar impossível sem mouse/toque.
 
 ## Critérios de teste
 

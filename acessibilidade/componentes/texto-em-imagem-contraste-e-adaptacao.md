@@ -25,7 +25,7 @@ Toda a instrução de cadastro, incluindo prazo e contato, está embutida em uma
 
 ## Por que falha
 
-A informação pode não acompanhar zoom, personalização de fonte, alto contraste, tradução ou tecnologia assistiva.
+A informação pode não acompanhar zoom, personalização de fonte, alto contraste, tradução ou recursos de tecnologia assistiva.
 
 ## Critérios de teste
 

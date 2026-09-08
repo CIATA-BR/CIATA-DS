@@ -7,7 +7,7 @@ Conteúdo acessível deve fazer parte do processo de design, desenvolvimento e r
 ## Regras
 
 - revisar microcopy, instruções, erros, confirmações e textos de controles como parte dos critérios de aceite;
-- validar conteúdo em contexto e também quando lido isoladamente por tecnologia assistiva;
+- validar conteúdo em contexto e também quando lido isoladamente por recursos de tecnologia assistiva;
 - manter fonte canônica para termos recorrentes, ações, estados e mensagens críticas;
 - registrar exceções quando produto ou requisito legal exigir terminologia específica;
 - alterações de texto que mudem propósito de controle devem ser retestadas com acessibilidade;

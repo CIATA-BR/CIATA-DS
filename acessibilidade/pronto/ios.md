@@ -26,4 +26,4 @@ Registrar versão/build do app, versão do iOS, dispositivo/simulador, configura
 - [Componentes canônicos](../componentes/README.md)
 - [Foco e contexto](../receitas/foco-e-contexto.md)
 - [Tamanho de texto, zoom e densidade](../componentes/tamanho-de-texto-zoom-e-densidade.md)
-- [Testes manuais e tecnologia assistiva](../componentes/testes-manuais-e-tecnologia-assistiva.md)
+- [Testes manuais e recursos de tecnologia assistiva](../componentes/testes-manuais-e-tecnologia-assistiva.md)

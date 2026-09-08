@@ -99,7 +99,7 @@ Registrar:
 
 - página e etapa do fluxo;
 - navegador, sistema e versão;
-- leitor de tela ou tecnologia assistiva;
+- leitor de tela ou recursos de tecnologia assistiva;
 - sequência exata de teclas e ações;
 - resultado esperado e observado;
 - mensagem recebida;

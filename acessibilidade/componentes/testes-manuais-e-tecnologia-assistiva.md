@@ -1,4 +1,4 @@
-# Testes manuais e tecnologia assistiva
+# Testes manuais e recursos de tecnologia assistiva
 
 ## Contrato
 
@@ -48,7 +48,7 @@ A equipe confirma apenas que o modal possui `role="dialog"` e `aria-modal="true"
 
 ## Por que falha
 
-Sem teste de interação real, é possível validar a semântica isolada e ainda entregar uma jornada impraticável para quem usa tecnologia assistiva.
+Sem teste de interação real, é possível validar a semântica isolada e ainda entregar uma jornada impraticável para quem usa recursos de tecnologia assistiva.
 
 ## Critérios de teste
 

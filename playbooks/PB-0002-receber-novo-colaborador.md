@@ -15,7 +15,7 @@ Integrar uma nova pessoa com autonomia progressiva, acessibilidade e privilégio
 2. Apresentar missão, projetos, papéis, canais e responsáveis do CIATA.
 3. Solicitar apenas os acessos necessários à função, sem compartilhar senhas.
 4. Orientar leitura do README, governança, contribuição, segurança, acessibilidade, SPECs e ADRs relevantes.
-5. Validar o acesso com teclado, leitor de tela, linha Braille ou outra tecnologia assistiva usada pela pessoa.
+5. Validar o acesso com teclado, leitor de tela, linha Braille ou outros recursos de tecnologia assistiva usados pela pessoa.
 6. Explicar fluxo de Issue, branch, commit, Pull Request, revisão e aprovação.
 7. Atribuir uma primeira tarefa pequena, documentada e sem dependências ocultas.
 8. Designar uma pessoa de referência para dúvidas iniciais.

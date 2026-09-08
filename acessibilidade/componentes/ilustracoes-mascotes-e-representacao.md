@@ -33,4 +33,4 @@ A representação se torna estereotipada e reduz uma população diversa a um co
 - não há estereótipos ou associações depreciativas;
 - personagem e identidade permanecem consistentes entre peças;
 - composição continua clara em tamanhos e recortes previstos;
-- tecnologia assistiva é representada de forma funcional e contextual quando necessária.
+- recursos de tecnologia assistiva são representados de forma funcional e contextual quando necessários.

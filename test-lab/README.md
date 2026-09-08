@@ -10,9 +10,9 @@ Fornecer URLs estáveis e reproduzíveis para testes com teclado, leitores de te
 
 1. Abra a página do componente.
 2. Execute o fluxo somente com teclado ou gestos nativos.
-3. Repita com a tecnologia assistiva relevante.
+3. Repita com os recursos de tecnologia assistiva relevantes.
 4. Consulte `components/<componente>/spec.md` e `validation-matrix.md`.
-5. Registre: componente, plataforma, tecnologia assistiva e versão, navegador/app e versão, sistema operacional, cenário, resultado, observações e passos para reproduzir.
+5. Registre: componente, plataforma, recursos de tecnologia assistiva e versão, navegador/app e versão, sistema operacional, cenário, resultado, observações e passos para reproduzir.
 
 ## Critério de status
 

@@ -35,7 +35,7 @@ Um título visual recebe clique para mostrar/ocultar conteúdo, mas permanece ex
 
 ### Por que falha
 
-A tecnologia assistiva não sabe que o elemento é acionável, não informa se há conteúdo oculto e pode deixar a pessoa sem referência sobre o que mudou.
+Os recursos de tecnologia assistiva não sabem que o elemento é acionável, não informam se há conteúdo oculto e podem deixar a pessoa sem referência sobre o que mudou.
 
 ## Critérios de teste
 

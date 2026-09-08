@@ -19,7 +19,7 @@ Respeitar `prefers-reduced-motion` e reduzir ou remover efeitos não essenciais.
 
 ## Android e iOS
 
-Considerar configurações do sistema relacionadas a redução de movimento/animações e evitar efeitos que dificultem acompanhamento com tecnologia assistiva.
+Considerar configurações do sistema relacionadas a redução de movimento/animações e evitar efeitos que dificultem acompanhamento com recursos de tecnologia assistiva.
 
 ## Exemplo conforme
 

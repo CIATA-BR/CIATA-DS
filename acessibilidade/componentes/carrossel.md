@@ -19,7 +19,7 @@ Carrossel apresenta uma sequência de conteúdos sem exigir acompanhamento visua
 
 ## Exemplo conforme
 
-`Destaques, região. Slide 2 de 5. Curso de tecnologia assistiva.`
+`Destaques, região. Slide 2 de 5. Curso de recursos de tecnologia assistiva.`
 
 Controles: `Destaque anterior, botão`, `Próximo destaque, botão` e `Pausar rotação, botão` quando houver avanço automático.
 
@@ -37,7 +37,7 @@ A pessoa perde contexto, pode ter a leitura interrompida e não possui mecanismo
 
 ## Critérios de teste
 
-- anterior/próximo são operáveis por teclado e tecnologia assistiva;
+- anterior/próximo são operáveis por teclado e recursos de tecnologia assistiva;
 - slide atual e posição são compreensíveis;
 - mudança de slide não rouba foco;
 - rotação automática pode ser interrompida;

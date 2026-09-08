@@ -11,7 +11,7 @@ Garantir que interfaces em idiomas da direita para a esquerda preservem estrutur
 - não reorganizar DOM ou árvore de acessibilidade apenas para reproduzir aparência visual;
 - testar componentes com conteúdo bidirecional, números, códigos, URLs e campos mistos;
 - ícones direcionais devem acompanhar o significado, não apenas ser espelhados automaticamente;
-- navegação por teclado e tecnologia assistiva deve seguir ordem lógica previsível.
+- navegação por teclado e recursos de tecnologia assistiva deve seguir ordem lógica previsível.
 
 ## Exemplo conforme
 
@@ -24,7 +24,7 @@ Garantir que interfaces em idiomas da direita para a esquerda preservem estrutur
 
 ## Comportamento esperado
 
-Leitura visual, ordem programática e navegação por foco continuam coerentes para o idioma e para tecnologia assistiva.
+Leitura visual, ordem programática e navegação por foco continuam coerentes para o idioma e para os recursos de tecnologia assistiva.
 
 ## Exemplo não conforme
 

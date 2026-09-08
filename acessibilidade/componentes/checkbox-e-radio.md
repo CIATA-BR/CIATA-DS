@@ -58,7 +58,7 @@ Usar controles e traits coerentes com seleção. Quando o padrão visual não ti
 <span>Quero receber comunicações da CIATA</span>
 ```
 
-**Por que falha:** aparência de checkbox não cria semântica. O elemento pode não receber foco, não comunicar estado e não ser operável por teclado ou tecnologia assistiva.
+**Por que falha:** aparência de checkbox não cria semântica. O elemento pode não receber foco, não comunicar estado e não ser operável por teclado ou recursos de tecnologia assistiva.
 
 Em radio, outro erro é apresentar opções visuais sem agrupamento ou permitir que duas opções mutuamente exclusivas permaneçam selecionadas ao mesmo tempo.
 

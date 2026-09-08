@@ -65,7 +65,7 @@ Respeitar claro, escuro, sistema, forced/high contrast, text scaling e redução
 Verificar anúncio, urgência, foco, temporização, persistência, ação opcional, fechamento, fila de mensagens, alto contraste, redução de movimento, text scaling e tecnologias assistivas.
 
 ## Validação manual
-Nenhuma implementação passa para estável sem evidência real com tecnologia assistiva relevante.
+Nenhuma implementação passa para estável sem evidência real com recursos de tecnologia assistiva relevantes.
 
 ## Implementações planejadas
 Web, Laravel/PHP, Python desktop, Android/Compose, iOS/SwiftUI e Flutter.

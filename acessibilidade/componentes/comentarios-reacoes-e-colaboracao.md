@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Comentários, reações e alterações colaborativas devem manter autoria, contexto, estado e relação com o conteúdo correspondente de forma compreensível por tecnologia assistiva.
+Comentários, reações e alterações colaborativas devem manter autoria, contexto, estado e relação com o conteúdo correspondente de forma compreensível por recursos de tecnologia assistiva.
 
 ## Regras
 

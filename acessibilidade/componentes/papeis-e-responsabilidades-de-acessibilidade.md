@@ -28,7 +28,7 @@ Distribuir responsabilidade por acessibilidade ao longo do ciclo de produto, evi
 
 ### Conteúdo
 
-- garante rótulos, instruções, mensagens e linguagem compatíveis com compreensão e tecnologia assistiva;
+- garante rótulos, instruções, mensagens e linguagem compatíveis com compreensão e recursos de tecnologia assistiva;
 - participa do reteste quando mudança editorial afeta comportamento ou nome acessível.
 
 ### Engenharia
@@ -40,7 +40,7 @@ Distribuir responsabilidade por acessibilidade ao longo do ciclo de produto, evi
 ### QA
 
 - valida critérios de aceite e regressão;
-- registra ambiente, tecnologia assistiva, build e evidência reproduzível;
+- registra ambiente, recursos de tecnologia assistiva, build e evidência reproduzível;
 - não encerra bug sem confirmar comportamento corrigido.
 
 ### Acessibilidade

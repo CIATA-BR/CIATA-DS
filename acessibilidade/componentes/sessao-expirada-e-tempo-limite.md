@@ -21,7 +21,7 @@ Uma sessão com 2 minutos restantes exibe e anuncia uma única mensagem: “Sua 
 
 ### Comportamento esperado
 
-A pessoa recebe informação suficiente para decidir o que fazer, pode estender a sessão por teclado ou tecnologia assistiva e continua do ponto onde estava.
+A pessoa recebe informação suficiente para decidir o que fazer, pode estender a sessão por teclado ou recursos de tecnologia assistiva e continua do ponto onde estava.
 
 ## Exemplo não conforme
 

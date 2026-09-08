@@ -11,7 +11,7 @@ Campo de texto deve permitir entrada, edição e revisão de conteúdo com rótu
 - instruções de formato devem ser disponibilizadas antes ou junto do campo;
 - obrigatório, inválido, somente leitura e desabilitado devem ser expostos semanticamente;
 - erros devem identificar o problema e como corrigir;
-- máscara não pode impedir edição, seleção, colagem ou uso de tecnologia assistiva;
+- máscara não pode impedir edição, seleção, colagem ou uso de recursos de tecnologia assistiva;
 - não bloquear colagem, preenchimento automático ou gerenciadores de senha sem necessidade legítima e alternativa acessível;
 - alterações automáticas não devem apagar dados ou mover foco inesperadamente.
 

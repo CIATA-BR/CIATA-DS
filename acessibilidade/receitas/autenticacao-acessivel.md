@@ -11,7 +11,7 @@ Autenticação deve permitir que pessoas com deficiência entrem, recuperem aces
 - ofereça alternativa acessível para CAPTCHA ou mecanismos equivalentes;
 - não exija memorizar ou transcrever informação apresentada em etapa anterior sem alternativa;
 - mensagens de erro devem informar o que precisa ser corrigido sem expor credenciais;
-- códigos de uso único devem poder ser recebidos, lidos e inseridos com tecnologia assistiva;
+- códigos de uso único devem poder ser recebidos, lidos e inseridos com recursos de tecnologia assistiva;
 - não encerre sessões ou fluxos sem aviso e possibilidade de extensão quando aplicável;
 - preserve foco e dados não sensíveis quando houver erro recuperável.
 

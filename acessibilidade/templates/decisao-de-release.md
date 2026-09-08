@@ -37,4 +37,4 @@ Qualquer exceção temporária deve registrar responsável, prazo, plano de corr
 
 ## Pós-release
 
-Registre monitoramento necessário, sinais de regressão e gatilhos para nova validação após mudanças de plataforma, navegador, tecnologia assistiva ou dependências.
+Registre monitoramento necessário, sinais de regressão e gatilhos para nova validação após mudanças de plataforma, navegador, recursos de tecnologia assistiva ou dependências.

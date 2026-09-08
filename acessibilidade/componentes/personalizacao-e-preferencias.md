@@ -20,6 +20,6 @@ A configuração escolhida pela pessoa deve:
 - não reduzir contraste, alvo de interação ou legibilidade abaixo do aceitável;
 - ter escopo e persistência compreensíveis;
 - poder ser restaurada de forma acessível;
-- ser testada com tecnologia assistiva, e não apenas por inspeção visual.
+- ser testada com recursos de tecnologia assistiva, e não apenas por inspeção visual.
 
 Esses padrões complementam [Animação e redução de movimento](animacao-e-reducao-de-movimento.md), [Zoom, reflow e texto](../receitas/zoom-reflow-e-texto.md) e os [critérios de aceite dos componentes](criterios-de-aceite.md).

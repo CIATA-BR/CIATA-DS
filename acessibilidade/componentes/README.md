@@ -18,7 +18,7 @@ Todo componente interativo deve:
 - possuir foco perceptível e previsível;
 - manter alvo de interação adequado;
 - comunicar desabilitação, seleção, expansão, erro e carregamento quando aplicáveis;
-- preservar equivalência entre interação visual, teclado, toque e tecnologia assistiva;
+- preservar equivalência entre interação visual, teclado, toque e recursos de tecnologia assistiva;
 - preferir componente nativo quando ele atende ao comportamento desejado;
 - evitar semântica customizada quando a semântica nativa equivalente já existe.
 
@@ -117,7 +117,7 @@ Esses padrões cobrem controles que combinam edição, seleção, ajuste de valo
 - [Recuperação de senha](recuperacao-de-senha.md)
 - [Confirmação destrutiva e prevenção de erro](confirmacao-destrutiva-e-prevencao-de-erro.md)
 
-Esses padrões tratam jornadas em que barreiras de acessibilidade podem impedir acesso à conta, causar perda de dados ou provocar ações irreversíveis. Segurança e acessibilidade devem ser projetadas em conjunto: mecanismos de proteção não devem depender desnecessariamente de memória, transcrição visual, precisão motora ou interação incompatível com tecnologia assistiva.
+Esses padrões tratam jornadas em que barreiras de acessibilidade podem impedir acesso à conta, causar perda de dados ou provocar ações irreversíveis. Segurança e acessibilidade devem ser projetadas em conjunto: mecanismos de proteção não devem depender desnecessariamente de memória, transcrição visual, precisão motora ou interação incompatível com recursos de tecnologia assistiva.
 
 ## Privacidade, consentimento e permissões
 
@@ -144,7 +144,7 @@ Esses padrões garantem que a pessoa consiga compreender a interface, pedir ajud
 - [Preservação de dados e rascunhos](preservacao-de-dados-e-rascunhos.md)
 - [Conflitos de estado e sincronização](conflitos-de-estado-e-sincronizacao.md)
 
-Esses padrões tratam interrupções técnicas e estados concorrentes sem transformar falhas de rede, sincronização ou persistência em perda de contexto, trabalho ou autonomia para pessoas que usam tecnologia assistiva.
+Esses padrões tratam interrupções técnicas e estados concorrentes sem transformar falhas de rede, sincronização ou persistência em perda de contexto, trabalho ou autonomia para pessoas que usam recursos de tecnologia assistiva.
 
 ## Internacionalização, localização e conteúdo adaptável
 
@@ -153,7 +153,7 @@ Esses padrões tratam interrupções técnicas e estados concorrentes sem transf
 - [RTL, direção e ordem de leitura](rtl-direcao-e-ordem-de-leitura.md)
 - [Expansão de conteúdo e localização](expansao-de-conteudo-e-localizacao.md)
 
-Esses padrões garantem que tradução, formatos regionais e direção de escrita não alterem indevidamente semântica, ordem de leitura, foco, pronúncia ou operabilidade. Localização deve ser validada também com tecnologia assistiva e não apenas por inspeção visual.
+Esses padrões garantem que tradução, formatos regionais e direção de escrita não alterem indevidamente semântica, ordem de leitura, foco, pronúncia ou operabilidade. Localização deve ser validada também com recursos de tecnologia assistiva e não apenas por inspeção visual.
 
 ## Dados complexos e visualizações
 

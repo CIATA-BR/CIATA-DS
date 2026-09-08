@@ -34,7 +34,7 @@ Fornecer uma fonte única para documentação, implementação, auditoria e test
 - Não tratar o resumo CIATA como substituto do texto normativo.
 - Não editar somente o XLSX.
 - Preservar código, versão de origem, nível e estado de cada critério.
-- Registrar plataforma, tecnologia assistiva, jornada e evidência em avaliações.
+- Registrar plataforma, recursos de tecnologia assistiva, jornada e evidência em avaliações.
 - Manter o 4.1.1 como histórico enquanto houver contratos ou relatórios baseados em WCAG 2.0 ou 2.1.
 
 ## Conteúdo textual

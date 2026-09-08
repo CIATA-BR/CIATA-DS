@@ -44,7 +44,7 @@ A equipe executa uma ferramenta automática, recebe zero violações e registra 
 
 ## Por que falha
 
-Ferramentas automatizadas cobrem apenas parte das barreiras possíveis. Uma interface pode passar na suíte e ainda ter foco imprevisível, rótulos ambíguos, mensagens inaudíveis ou gestos impossíveis de executar com tecnologia assistiva.
+Ferramentas automatizadas cobrem apenas parte das barreiras possíveis. Uma interface pode passar na suíte e ainda ter foco imprevisível, rótulos ambíguos, mensagens inaudíveis ou gestos impossíveis de executar com recursos de tecnologia assistiva.
 
 ## Critérios de teste
 

@@ -1,6 +1,6 @@
 # Uso de imagens
 
-As imagens do CIATA devem comunicar autonomia, participação, diversidade e uso contemporâneo de tecnologia assistiva. A representação das pessoas deve ser digna, natural e contextualizada.
+As imagens do CIATA devem comunicar autonomia, participação, diversidade e uso contemporâneo de recursos de tecnologia assistiva. A representação das pessoas deve ser digna, natural e contextualizada.
 
 ## Princípios
 

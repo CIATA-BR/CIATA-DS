@@ -10,7 +10,7 @@ Acompanhar evolução da acessibilidade com indicadores que reflitam qualidade r
 - aumento de achados pode significar auditoria melhor, não produto pior;
 - tendência, reincidência, tempo de resolução e cobertura de jornadas críticas são mais úteis do que um número único;
 - indicadores devem orientar decisão, não incentivar redução artificial de severidade ou fechamento sem reteste;
-- dados quantitativos devem ser complementados por evidência qualitativa e testes com tecnologia assistiva.
+- dados quantitativos devem ser complementados por evidência qualitativa e testes com recursos de tecnologia assistiva.
 
 ## Indicadores recomendados
 

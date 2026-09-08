@@ -29,7 +29,7 @@ Liste as tarefas que a pessoa precisa concluir e os estados que precisam ser exe
 
 ## Evidências esperadas
 
-Defina antes do teste quais registros são necessários: passos reproduzíveis, resultado observado, tecnologia assistiva, build e evidência adicional quando útil.
+Defina antes do teste quais registros são necessários: passos reproduzíveis, resultado observado, recursos de tecnologia assistiva, build e evidência adicional quando útil.
 
 ## Saída
 

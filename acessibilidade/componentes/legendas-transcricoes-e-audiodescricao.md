@@ -36,4 +36,4 @@ A alternativa existe formalmente, mas não oferece equivalência real e pode com
 - falantes são identificados quando necessário;
 - transcrição preserva informação essencial;
 - audiodescrição cobre informação visual indispensável quando aplicável;
-- alternativas são localizáveis e operáveis por tecnologia assistiva.
+- alternativas são localizáveis e operáveis por recursos de tecnologia assistiva.

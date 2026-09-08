@@ -99,7 +99,7 @@ Conteúdos técnicos versionáveis devem informar, quando aplicável:
 
 - data da última verificação;
 - plataforma e versão;
-- tecnologia assistiva e versão;
+- recursos de tecnologia assistiva e versão;
 - navegador, framework ou dispositivo;
 - procedimento de reprodução;
 - resultado esperado e observado;
