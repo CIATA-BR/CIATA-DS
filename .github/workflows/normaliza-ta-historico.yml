@@ -37,7 +37,7 @@ jobs:
                   continue
               if path.suffix.lower() not in extensoes:
                   continue
-              if path.as_posix() == '.github/workflows/normaliza-ta-historico.yml':
+              if path.as_posix().startswith('.github/workflows/'):
                   continue
               try:
                   texto = path.read_text(encoding='utf-8')
