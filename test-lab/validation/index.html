@@ -28,15 +28,17 @@
     <form id="validation-form" hidden novalidate>
       <section class="panel" aria-labelledby="execution-title">
         <h2 id="execution-title">Dados da execução</h2>
+        <p>Preencha estes dados com o ambiente que está sendo testado nesta execução. Os exemplos abaixo mostram o tipo de informação esperado em cada campo.</p>
         <p class="muted">O registro definitivo usa a conta autenticada no Validador como responsável pela execução.</p>
         <div class="form-grid">
           <div>
             <label for="analyst">Nome do analista</label>
-            <input id="analyst" name="analyst" type="text" autocomplete="name" required>
+            <input id="analyst" name="analyst" type="text" autocomplete="name" required aria-describedby="analyst-help">
+            <p id="analyst-help" class="muted">Nome que aparecerá no registro da execução. Ex.: Maria Silva.</p>
           </div>
           <div>
-            <label for="platform">Plataforma</label>
-            <select id="platform" name="platform" required>
+            <label for="platform">Plataforma testada</label>
+            <select id="platform" name="platform" required aria-describedby="platform-help">
               <option value="">Selecione</option>
               <option value="web">Web</option>
               <option value="laravel">Laravel/PHP</option>
@@ -46,46 +48,54 @@
               <option value="flutter">Flutter</option>
               <option value="other">Outra</option>
             </select>
+            <p id="platform-help" class="muted">Escolha onde o componente está sendo executado. Ex.: Web, Android ou iOS.</p>
           </div>
           <div>
-            <label for="platform-version">Versão do sistema/plataforma</label>
-            <input id="platform-version" name="platform_version" type="text" required>
+            <label for="platform-version">Produto, sistema ou versão testada</label>
+            <input id="platform-version" name="platform_version" type="text" required aria-describedby="platform-version-help" placeholder="Ex.: Biblioteca CIATA v1.0">
+            <p id="platform-version-help" class="muted">Informe qual produto, sistema ou versão está sob teste. Ex.: Biblioteca CIATA v1.0, Emprega CIATA v2.3 ou Android 16.</p>
           </div>
           <div>
-            <label for="framework">Framework/runtime e versão</label>
-            <input id="framework" name="framework_runtime" type="text">
+            <label for="framework">Tecnologia, framework ou runtime da implementação</label>
+            <input id="framework" name="framework_runtime" type="text" aria-describedby="framework-help" placeholder="Ex.: Laravel 13.x">
+            <p id="framework-help" class="muted">Tecnologia usada para implementar o componente nesta execução. Ex.: Laravel 13.x, React 19, Jetpack Compose ou SwiftUI.</p>
           </div>
           <div>
-            <label for="assistive-resource">Recursos de tecnologia assistiva</label>
-            <input id="assistive-resource" name="assistive_resource" type="text" required aria-describedby="assistive-resource-help">
-            <p id="assistive-resource-help" class="muted">Ex.: JAWS, NVDA, VoiceOver, TalkBack, Switch Control.</p>
+            <label for="assistive-resource">Recurso de tecnologia assistiva usado no teste</label>
+            <input id="assistive-resource" name="assistive_resource" type="text" required aria-describedby="assistive-resource-help" placeholder="Ex.: NVDA">
+            <p id="assistive-resource-help" class="muted">Ex.: JAWS, NVDA, VoiceOver, TalkBack, Switch Control ou Switch Access.</p>
           </div>
           <div>
-            <label for="assistive-version">Versão dos recursos de tecnologia assistiva</label>
-            <input id="assistive-version" name="assistive_resource_version" type="text">
+            <label for="assistive-version">Versão do recurso de tecnologia assistiva</label>
+            <input id="assistive-version" name="assistive_resource_version" type="text" aria-describedby="assistive-version-help" placeholder="Ex.: NVDA 2026.1">
+            <p id="assistive-version-help" class="muted">Informe a versão quando conhecida.</p>
           </div>
           <div>
-            <label for="browser-app">Navegador ou aplicativo</label>
-            <input id="browser-app" name="browser_app" type="text">
+            <label for="browser-app">Navegador ou aplicativo usado no teste</label>
+            <input id="browser-app" name="browser_app" type="text" aria-describedby="browser-app-help" placeholder="Ex.: Chrome 152">
+            <p id="browser-app-help" class="muted">Ex.: Chrome 152, Firefox 145, aplicativo Android ou aplicativo iOS.</p>
           </div>
           <div>
-            <label for="device">Dispositivo ou ambiente</label>
-            <input id="device" name="device_environment" type="text" required>
+            <label for="device">Dispositivo ou ambiente de teste</label>
+            <input id="device" name="device_environment" type="text" required aria-describedby="device-help" placeholder="Ex.: Windows 11, notebook Dell">
+            <p id="device-help" class="muted">Ex.: Windows 11 em notebook Dell, iPhone 15 Pro Max ou Pixel 10.</p>
           </div>
           <div>
-            <label for="commit-sha">Commit/versão validada</label>
-            <input id="commit-sha" name="commit_sha" type="text" spellcheck="false">
+            <label for="commit-sha">Commit ou versão do componente validado</label>
+            <input id="commit-sha" name="commit_sha" type="text" spellcheck="false" aria-describedby="commit-sha-help">
+            <p id="commit-sha-help" class="muted">Use o SHA do commit quando a validação estiver vinculada a uma versão específica do código.</p>
           </div>
           <div>
-            <label for="product-harness">Produto ou ambiente de teste</label>
-            <input id="product-harness" name="product_harness" type="text">
+            <label for="product-harness">Página, fluxo ou ambiente usado para executar o teste</label>
+            <input id="product-harness" name="product_harness" type="text" aria-describedby="product-harness-help" placeholder="Ex.: Cadastro de usuário da Biblioteca">
+            <p id="product-harness-help" class="muted">Informe onde o componente foi exercitado. Ex.: tela de login, formulário de cadastro ou página do Test Lab.</p>
           </div>
         </div>
       </section>
 
       <section class="panel" aria-labelledby="criteria-title">
         <h2 id="criteria-title">Critérios da matriz</h2>
-        <p id="criteria-help">Os critérios abaixo são extraídos automaticamente da matriz Markdown canônica do componente.</p>
+        <p id="criteria-help">Cada bloco abaixo corresponde a um critério da matriz. O resultado esperado já vem da própria matriz; o analista informa somente a situação observada e, quando necessário, detalhes da falha.</p>
         <div id="criteria"></div>
       </section>
 
