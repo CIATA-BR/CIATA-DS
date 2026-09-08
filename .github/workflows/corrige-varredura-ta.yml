@@ -25,29 +25,28 @@ jobs:
 
           exts={'.md','.html','.js','.css','.json','.yml','.yaml','.txt','.php','.py','.kt','.swift','.dart','.xml','.svg'}
           official='Centro de Inclusão Através da Tecnologia Assistiva'
+          duplicate=re.compile(r'(?:recursos de\s+){2,}tecnologia assistiva',re.I)
 
           literal=[
-            ('recursos de recursos de tecnologia assistiva','recursos de tecnologia assistiva'),
-            ('Recursos de recursos de tecnologia assistiva','Recursos de tecnologia assistiva'),
-            ('recursos de Recursos de Tecnologia Assistiva','recursos de tecnologia assistiva'),
             ('suporte os recursos de tecnologia assistiva','suporte a recursos de tecnologia assistiva'),
             ('paros recursos de tecnologia assistiva','para os recursos de tecnologia assistiva'),
             ('quem usos recursos de tecnologia assistiva','quem usa recursos de tecnologia assistiva'),
             ('impeços recursos de tecnologia assistiva','impeça recursos de tecnologia assistiva'),
             ('utilizadoss','utilizados'),
-            ('relevantess','relevantes'),
             ('relevantesss','relevantes'),
+            ('relevantess','relevantes'),
           ]
 
           regex=[
-            (r'\bTecnologia assistiva\b', 'Recursos de tecnologia assistiva'),
-            (r'\bos recursos de tecnologia assistiva já anuncia\b', 'os recursos de tecnologia assistiva já anunciam'),
-            (r'\bos recursos de tecnologia assistiva deve anunciar\b', 'os recursos de tecnologia assistiva devem anunciar'),
-            (r'\bos recursos de tecnologia assistiva é representada\b', 'os recursos de tecnologia assistiva são representados'),
-            (r'\brecursos de tecnologia assistiva real\b', 'recursos de tecnologia assistiva reais'),
-            (r'\brecursos de tecnologia assistiva usada\b', 'recursos de tecnologia assistiva usados'),
-            (r'\brecursos de tecnologia assistiva utilizada\b', 'recursos de tecnologia assistiva utilizados'),
-            (r'\brecursos de tecnologia assistiva principal\b', 'recursos de tecnologia assistiva principais'),
+            (r'\bTecnologia assistiva\b','Recursos de tecnologia assistiva'),
+            (r'\bos recursos de tecnologia assistiva já anuncia\b','os recursos de tecnologia assistiva já anunciam'),
+            (r'\bos recursos de tecnologia assistiva deve anunciar\b','os recursos de tecnologia assistiva devem anunciar'),
+            (r'\bos recursos de tecnologia assistiva deve\b','os recursos de tecnologia assistiva devem'),
+            (r'\brecursos de tecnologia assistiva é representada\b','recursos de tecnologia assistiva são representados'),
+            (r'\brecursos de tecnologia assistiva real\b','recursos de tecnologia assistiva reais'),
+            (r'\brecursos de tecnologia assistiva usada\b','recursos de tecnologia assistiva usados'),
+            (r'\brecursos de tecnologia assistiva utilizada\b','recursos de tecnologia assistiva utilizados'),
+            (r'\brecursos de tecnologia assistiva principal\b','recursos de tecnologia assistiva principais'),
           ]
 
           changed=[]
@@ -58,14 +57,19 @@ jobs:
               text=p.read_text(encoding='utf-8')
             except UnicodeDecodeError:
               continue
-            new=text
+            new=duplicate.sub('recursos de tecnologia assistiva',text)
             for a,b in literal:
-              while a in new:
-                new=new.replace(a,b)
+              new=new.replace(a,b)
             for pat,repl in regex:
-              new=re.sub(pat,repl,new)
-            # O nome oficial é intocável; restaura caso uma linha externa o tenha alterado.
-            new=new.replace('Centro de Inclusão Através da Recursos de tecnologia assistiva', official)
+              new=re.sub(pat,repl,new,flags=re.I)
+            new=new.replace('Centro de Inclusão Através da Recursos de tecnologia assistiva',official)
+            if p.as_posix()=='test-lab/validation/validation.js':
+              new=re.sub(
+                r"const normalizeTerminology=.*?;",
+                "const normalizeTerminology=s=>String(s??'').replace(/(?<!recursos de )tecnologia assistiva/gi,'recursos de tecnologia assistiva');",
+                new,
+                count=1,
+              )
             if new!=text:
               p.write_text(new,encoding='utf-8')
               changed.append(p.as_posix())
@@ -83,17 +87,18 @@ jobs:
             r'paros recursos de tecnologia assistiva',
             r'quem usos recursos de tecnologia assistiva',
             r'impeços recursos de tecnologia assistiva',
-            r'utilizadoss', r'relevantess',
+            r'utilizadoss',r'relevantess',
             r'os recursos de tecnologia assistiva já anuncia\b',
-            r'os recursos de tecnologia assistiva deve anunciar\b',
+            r'os recursos de tecnologia assistiva deve(?: anunciar)?\b',
             r'recursos de tecnologia assistiva é representada\b',
+            r"replace\(/\(\?<!recursos de \)recursos de tecnologia assistiva",
           ]
           hits=[]
           for p in Path('.').rglob('*'):
             if not p.is_file() or '.git' in p.parts or p.as_posix().startswith('.github/workflows/'):
               continue
             try: text=p.read_text(encoding='utf-8')
-            except (UnicodeDecodeError, OSError): continue
+            except (UnicodeDecodeError,OSError): continue
             for pat in bad:
               if re.search(pat,text,re.I): hits.append(f'{p}: {pat}')
           if hits:
