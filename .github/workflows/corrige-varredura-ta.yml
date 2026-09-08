@@ -26,6 +26,7 @@ jobs:
           exts={'.md','.html','.js','.css','.json','.yml','.yaml','.txt','.php','.py','.kt','.swift','.dart','.xml','.svg'}
           official='Centro de Inclusão Através da Tecnologia Assistiva'
           duplicate=re.compile(r'(?:recursos de\s+){2,}tecnologia assistiva',re.I)
+          generic=re.compile(r'(?<!recursos de )tecnologia assistiva',re.I)
 
           literal=[
             ('suporte os recursos de tecnologia assistiva','suporte a recursos de tecnologia assistiva'),
@@ -38,7 +39,6 @@ jobs:
           ]
 
           regex=[
-            (r'\bTecnologia assistiva\b','Recursos de tecnologia assistiva'),
             (r'\bos recursos de tecnologia assistiva já anuncia\b','os recursos de tecnologia assistiva já anunciam'),
             (r'\bos recursos de tecnologia assistiva deve anunciar\b','os recursos de tecnologia assistiva devem anunciar'),
             (r'\bos recursos de tecnologia assistiva deve\b','os recursos de tecnologia assistiva devem'),
@@ -58,11 +58,12 @@ jobs:
             except UnicodeDecodeError:
               continue
             new=duplicate.sub('recursos de tecnologia assistiva',text)
+            new=generic.sub('recursos de tecnologia assistiva',new)
             for a,b in literal:
               new=new.replace(a,b)
             for pat,repl in regex:
               new=re.sub(pat,repl,new,flags=re.I)
-            new=new.replace('Centro de Inclusão Através da Recursos de tecnologia assistiva',official)
+            new=new.replace('Centro de Inclusão Através da recursos de tecnologia assistiva',official)
             if p.as_posix()=='test-lab/validation/validation.js':
               new=re.sub(
                 r"const normalizeTerminology=.*?;",
