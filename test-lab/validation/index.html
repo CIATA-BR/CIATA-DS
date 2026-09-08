@@ -20,12 +20,18 @@
   <main id="main">
     <div id="load-status" class="status" role="status">Carregando matriz de validação…</div>
 
+    <section id="component-status-panel" class="panel" aria-labelledby="component-status-title" hidden>
+      <h2 id="component-status-title">Status registrado</h2>
+      <div id="component-status" role="status"></div>
+    </section>
+
     <form id="validation-form" hidden novalidate>
       <section class="panel" aria-labelledby="execution-title">
         <h2 id="execution-title">Dados da execução</h2>
+        <p class="muted">O registro definitivo usa a identidade autenticada pelo servidor como responsável pela execução.</p>
         <div class="form-grid">
           <div>
-            <label for="analyst">Analista</label>
+            <label for="analyst">Nome do analista</label>
             <input id="analyst" name="analyst" type="text" autocomplete="name" required>
           </div>
           <div>
@@ -90,16 +96,19 @@
       </section>
 
       <div class="actions">
-        <button type="submit">Validar e gerar registro</button>
+        <button type="submit" id="submit-validation">Registrar validação</button>
         <button type="button" id="save-draft">Salvar rascunho neste navegador</button>
         <button type="button" id="clear-draft">Limpar rascunho</button>
       </div>
     </form>
 
     <section id="result-panel" class="panel" aria-labelledby="result-title" hidden>
-      <h2 id="result-title">Registro estruturado</h2>
-      <p>Este JSON representa o contrato de dados que será persistido pela API CIATA-DS.</p>
-      <pre id="result" tabindex="0"></pre>
+      <h2 id="result-title">Resultado do registro</h2>
+      <p id="persist-status" role="status"></p>
+      <details>
+        <summary>Ver JSON enviado</summary>
+        <pre id="result" tabindex="0"></pre>
+      </details>
     </section>
   </main>
 
