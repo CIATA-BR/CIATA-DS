@@ -41,8 +41,19 @@ function textFrom(result) {
 function classify(text) {
   const value = text.toLowerCase();
   if (!text) return 'unknown';
-  if (value.includes('not installed') || value.includes('failed:') || value.includes('não instalado')) return 'error';
-  if (value.includes('[fail]') || value.includes('violations:') && !value.includes('violations: 0') || value.includes('keyboard trap detected')) return 'issues';
+  if (
+    value.includes('not installed') ||
+    value.includes('failed:') ||
+    value.includes('failed to ') ||
+    value.includes('não instalado')
+  ) return 'error';
+
+  const axeHasViolations = /violations:\s*[1-9]\d*/i.test(text);
+  const contrastFailures = /failures:\s*[1-9]\d*/i.test(text) || value.includes('[fail]');
+  const keyboardIssue = value.includes('keyboard trap detected') || value.includes('[no visible focus]');
+  const viewportIssue = value.includes('horizontal scroll detected');
+
+  if (axeHasViolations || contrastFailures || keyboardIssue || viewportIssue) return 'issues';
   return 'ok';
 }
 
