@@ -13,10 +13,10 @@ const storageKey=`ciata-ds-validation-draft:${component}`;
 
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const stripMd=s=>String(s??'').replace(/`([^`]+)`/g,'$1').replace(/\*\*([^*]+)\*\*/g,'$1').replace(/\[([^\]]+)\]\([^\)]+\)/g,'$1').trim();
-const slug=s=>stripMd(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const normalizeTerminology=s=>String(s??'').replace(/(?<!recursos de )tecnologia assistiva/gi,'recursos de tecnologia assistiva');
 
 function parseMatrix(md){
-  const lines=md.split(/\r?\n/);
+  const lines=normalizeTerminology(md).split(/\r?\n/);
   const title=stripMd((lines.find(l=>l.startsWith('# '))||'# Matriz de validação').slice(2));
   const criteria=[];
   let section='Geral';
