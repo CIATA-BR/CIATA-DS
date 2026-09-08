@@ -1,0 +1,22 @@
+name: Terminologia inclusiva
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validar-terminologia:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Impedir forma antiga de tecnologia assistiva
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git grep -n -I -i -P '(?<!recursos de )tecnologia assistiva' -- .; then
+            echo
+            echo 'Use sempre: recursos de tecnologia assistiva.'
+            exit 1
+          fi
+          echo 'Terminologia validada.'
