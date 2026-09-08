@@ -25,7 +25,7 @@ Cada defeito deve registrar, sempre que aplicável:
    - sistema operacional e versão;
    - navegador ou aplicativo e versão;
    - dispositivo ou categoria de dispositivo, quando relevante.
-4. **recursos de tecnologia assistiva ou método de interação**
+4. **Recursos de tecnologia assistiva ou método de interação**
    - nome e versão do leitor de tela, ampliador, controle por voz, Switch Access ou outro recurso;
    - teclado físico, toque, gesto, mouse ou outro método utilizado;
    - para linha Braille, registrar modelo, conexão, tabela Braille e leitor de tela quando isso influenciar o resultado.
