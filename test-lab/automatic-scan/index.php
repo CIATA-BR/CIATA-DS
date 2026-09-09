@@ -77,7 +77,7 @@ form.addEventListener('submit',async e=>{
   status.setAttribute('role','status');
   status.textContent='Executando axe-core, árvore de acessibilidade, teclado, contraste e reflow. Isto pode levar alguns segundos.';
   try{
-    const component=form.component.value.trim();
+    const component=form.component.value.trim().toLocaleLowerCase('pt-BR');
     const response=await fetch('/api/automatic-scan.php',{
       method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({url:form.url.value.trim(),component_slug:component,commit_sha:form.commit.value.trim()})
