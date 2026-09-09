@@ -1,5 +1,5 @@
 const params=new URLSearchParams(location.search);
-const component=params.get('component')||'button';
+const component=(params.get('component')||'button').trim().toLocaleLowerCase('pt-BR');
 const repoComponent=component==='card-interativo'?'interactive-card':component;
 const matrixUrl=`/components/${repoComponent}/validation-matrix.md`;
 const statusEl=document.querySelector('#load-status');
