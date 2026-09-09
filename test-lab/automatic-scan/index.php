@@ -64,7 +64,7 @@ const section=document.querySelector('#results');
 const status=document.querySelector('#scan-status');
 const manualNext=document.querySelector('#manual-next');
 const engines=document.querySelector('#engine-results');
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const names={axe:'axe-core',accessibility_tree:'Árvore de acessibilidade',keyboard:'Navegação por teclado',contrast:'Contraste',viewport:'Reflow e viewport'};
 form.addEventListener('submit',async e=>{
   e.preventDefault();
