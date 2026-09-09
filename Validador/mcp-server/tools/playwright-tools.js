@@ -296,9 +296,19 @@ export function registerPlaywrightTools(server) {
               return color;
             }
 
+            function isInactive(el) {
+              let node = el;
+              while (node && node instanceof Element) {
+                if (node.matches(":disabled") || node.getAttribute("aria-disabled") === "true") return true;
+                node = node.parentElement;
+              }
+              return false;
+            }
+
             const results = [];
             const textEls = document.querySelectorAll("p, span, a, button, label, li, td, th, h1, h2, h3, h4, h5, h6, input, textarea, select");
             for (const el of Array.from(textEls).slice(0, 100)) {
+              if (isInactive(el)) continue;
               const style = getComputedStyle(el);
               const fg = parseColor(style.color);
               const bg = effectiveBackground(el);
