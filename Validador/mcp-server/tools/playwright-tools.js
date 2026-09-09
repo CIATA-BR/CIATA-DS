@@ -30,6 +30,12 @@ async function isPlaywrightAvailable() {
 const NOT_INSTALLED_MSG =
   "Playwright is not installed. Install with:\n  npm install -D playwright @axe-core/playwright && npx playwright install chromium";
 
+const CHROMIUM_ARGS = ["--force-color-profile=srgb"];
+
+async function launchChromium(chromium) {
+  return chromium.launch({ headless: true, args: CHROMIUM_ARGS });
+}
+
 /**
  * Validate a URL. Only allows http: and https: schemes.
  * Does not restrict private/internal IPs -- the server should be
@@ -49,7 +55,6 @@ function validateUrl(urlString) {
 }
 
 export function registerPlaywrightTools(server) {
-  // ---- Tool: run_axe_scan ----
   server.registerTool(
     "run_axe_scan",
     {
@@ -58,18 +63,9 @@ export function registerPlaywrightTools(server) {
         "Run an axe-core accessibility scan against a live URL using Playwright. Returns all WCAG 2.x AA violations with element selectors and remediation guidance. Requires Playwright and @axe-core/playwright.",
       inputSchema: z.object({
         url: z.string().describe("URL to scan (http or https)"),
-        tags: z
-          .array(z.string())
-          .optional()
-          .describe('axe-core tags to filter by (default: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])'),
-        include: z
-          .array(z.string())
-          .optional()
-          .describe("CSS selectors to include in scan"),
-        exclude: z
-          .array(z.string())
-          .optional()
-          .describe("CSS selectors to exclude from scan"),
+        tags: z.array(z.string()).optional().describe('axe-core tags to filter by (default: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])'),
+        include: z.array(z.string()).optional().describe("CSS selectors to include in scan"),
+        exclude: z.array(z.string()).optional().describe("CSS selectors to exclude from scan"),
       }),
     },
     async ({ url, tags, include, exclude }) => {
@@ -82,7 +78,7 @@ export function registerPlaywrightTools(server) {
       try {
         const { chromium } = await import("playwright");
         const { default: AxeBuilder } = await import("@axe-core/playwright");
-        const browser = await chromium.launch({ headless: true });
+        const browser = await launchChromium(chromium);
         const context = await browser.newContext();
         try {
           const page = await context.newPage();
@@ -97,7 +93,10 @@ export function registerPlaywrightTools(server) {
 
           if (violations.length === 0) {
             return {
-              content: [{ type: "text", text: `axe-core scan complete: ${safeUrl}\n\nNo WCAG AA violations found.\nPasses: ${(results.passes || []).length} | Incomplete: ${(results.incomplete || []).length}` }],
+              content: [{
+                type: "text",
+                text: `axe-core scan complete: ${safeUrl}\n\nNo WCAG AA violations found.\nPasses: ${(results.passes || []).length} | Incomplete: ${(results.incomplete || []).length}`,
+              }],
             };
           }
 
@@ -134,7 +133,6 @@ export function registerPlaywrightTools(server) {
     }
   );
 
-  // ---- Tool: run_playwright_a11y_tree ----
   server.registerTool(
     "run_playwright_a11y_tree",
     {
@@ -152,7 +150,7 @@ export function registerPlaywrightTools(server) {
       const safeUrl = validateUrl(url);
       try {
         const { chromium } = await import("playwright");
-        const browser = await chromium.launch({ headless: true });
+        const browser = await launchChromium(chromium);
         const context = await browser.newContext();
         try {
           const page = await context.newPage();
@@ -170,7 +168,6 @@ export function registerPlaywrightTools(server) {
     }
   );
 
-  // ---- Tool: run_playwright_keyboard_scan ----
   server.registerTool(
     "run_playwright_keyboard_scan",
     {
@@ -189,7 +186,7 @@ export function registerPlaywrightTools(server) {
       const limit = Math.min(maxTabs || 50, 200);
       try {
         const { chromium } = await import("playwright");
-        const browser = await chromium.launch({ headless: true });
+        const browser = await launchChromium(chromium);
         try {
           const page = await browser.newPage();
           await page.goto(safeUrl, { waitUntil: "domcontentloaded", timeout: 30000 });
@@ -207,7 +204,7 @@ export function registerPlaywrightTools(server) {
               const label = el.getAttribute("aria-label") || el.textContent?.trim().slice(0, 50) || "";
               const id = el.id || "";
               const outline = getComputedStyle(el).outlineStyle;
-              return { tag, role, label, id, outline, selector: el.tagName + (el.id ? `#${el.id}` : "") };
+              return { tag, role, label, id, outline };
             });
             if (!info) continue;
             const key = `${info.tag}#${info.id}|${info.label}`;
@@ -236,7 +233,6 @@ export function registerPlaywrightTools(server) {
     }
   );
 
-  // ---- Tool: run_playwright_contrast_scan ----
   server.registerTool(
     "run_playwright_contrast_scan",
     {
@@ -253,7 +249,7 @@ export function registerPlaywrightTools(server) {
       const safeUrl = validateUrl(url);
       try {
         const { chromium } = await import("playwright");
-        const browser = await chromium.launch({ headless: true });
+        const browser = await launchChromium(chromium);
         try {
           const page = await browser.newPage();
           await page.goto(safeUrl, { waitUntil: "domcontentloaded", timeout: 30000 });
@@ -261,23 +257,54 @@ export function registerPlaywrightTools(server) {
           const elements = await page.evaluate(() => {
             function getLuminance(r, g, b) {
               const srgb = [r, g, b].map(c => {
-                c = c / 255;
+                c /= 255;
                 return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
               });
               return 0.2126 * srgb[0] + 0.7152 * srgb[1] + 0.0722 * srgb[2];
             }
+
             function parseColor(str) {
-              const m = str.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-              return m ? [+m[1], +m[2], +m[3]] : null;
+              const m = str.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?/);
+              if (!m) return null;
+              return [+m[1], +m[2], +m[3], m[4] === undefined ? 1 : +m[4]];
             }
+
+            function composite(fg, bg) {
+              const alpha = fg[3];
+              const outAlpha = alpha + bg[3] * (1 - alpha);
+              if (outAlpha === 0) return [255, 255, 255, 1];
+              return [
+                Math.round((fg[0] * alpha + bg[0] * bg[3] * (1 - alpha)) / outAlpha),
+                Math.round((fg[1] * alpha + bg[1] * bg[3] * (1 - alpha)) / outAlpha),
+                Math.round((fg[2] * alpha + bg[2] * bg[3] * (1 - alpha)) / outAlpha),
+                outAlpha,
+              ];
+            }
+
+            function effectiveBackground(el) {
+              const layers = [];
+              let node = el;
+              while (node && node instanceof Element) {
+                const parsed = parseColor(getComputedStyle(node).backgroundColor);
+                if (parsed && parsed[3] > 0) layers.push(parsed);
+                node = node.parentElement;
+              }
+              let color = [255, 255, 255, 1];
+              for (let i = layers.length - 1; i >= 0; i--) {
+                color = composite(layers[i], color);
+              }
+              return color;
+            }
+
             const results = [];
             const textEls = document.querySelectorAll("p, span, a, button, label, li, td, th, h1, h2, h3, h4, h5, h6, input, textarea, select");
             for (const el of Array.from(textEls).slice(0, 100)) {
               const style = getComputedStyle(el);
               const fg = parseColor(style.color);
-              const bg = parseColor(style.backgroundColor);
+              const bg = effectiveBackground(el);
               if (!fg || !bg) continue;
-              const l1 = getLuminance(...fg);
+              const resolvedFg = fg[3] < 1 ? composite(fg, bg) : fg;
+              const l1 = getLuminance(...resolvedFg);
               const l2 = getLuminance(...bg);
               const ratio = (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
               const fontSize = parseFloat(style.fontSize);
@@ -289,11 +316,11 @@ export function registerPlaywrightTools(server) {
                   tag: el.tagName.toLowerCase(),
                   text: (el.textContent || "").trim().slice(0, 40),
                   fgColor: style.color,
-                  bgColor: style.backgroundColor,
+                  bgColor: `rgb(${bg[0]}, ${bg[1]}, ${bg[2]})`,
                   ratio: Math.round(ratio * 100) / 100,
                   required,
                   isLarge,
-                  selector: el.tagName + (el.id ? `#${el.id}` : "") + (el.className ? `.${el.className.split(" ")[0]}` : ""),
+                  selector: el.tagName + (el.id ? `#${el.id}` : "") + (el.className ? `.${String(el.className).split(" ")[0]}` : ""),
                 });
               }
             }
@@ -321,7 +348,6 @@ export function registerPlaywrightTools(server) {
     }
   );
 
-  // ---- Tool: run_playwright_viewport_scan ----
   server.registerTool(
     "run_playwright_viewport_scan",
     {
@@ -338,7 +364,7 @@ export function registerPlaywrightTools(server) {
       const safeUrl = validateUrl(url);
       try {
         const { chromium } = await import("playwright");
-        const browser = await chromium.launch({ headless: true });
+        const browser = await launchChromium(chromium);
         try {
           const widths = [320, 768, 1024, 1280];
           const results = [];
