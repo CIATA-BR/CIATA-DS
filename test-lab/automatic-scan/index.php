@@ -53,6 +53,7 @@ if (!in_array($user['role'], ['admin', 'analyst'], true)) {
     <section id="results" hidden aria-labelledby="results-title">
       <h2 id="results-title">Resultado da varredura</h2>
       <p id="scan-status" role="status" tabindex="-1"></p>
+      <p id="manual-next" hidden></p>
       <div id="engine-results"></div>
     </section>
   </main>
@@ -61,26 +62,37 @@ const form=document.querySelector('#scan-form');
 const button=document.querySelector('#run');
 const section=document.querySelector('#results');
 const status=document.querySelector('#scan-status');
+const manualNext=document.querySelector('#manual-next');
 const engines=document.querySelector('#engine-results');
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));
 const names={axe:'axe-core',accessibility_tree:'Árvore de acessibilidade',keyboard:'Navegação por teclado',contrast:'Contraste',viewport:'Reflow e viewport'};
 form.addEventListener('submit',async e=>{
   e.preventDefault();
   button.disabled=true;
   section.hidden=false;
+  manualNext.hidden=true;
+  manualNext.textContent='';
   engines.innerHTML='';
   status.removeAttribute('role');
   status.setAttribute('role','status');
   status.textContent='Executando axe-core, árvore de acessibilidade, teclado, contraste e reflow. Isto pode levar alguns segundos.';
   try{
+    const component=form.component.value.trim();
     const response=await fetch('/api/automatic-scan.php',{
       method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({url:form.url.value.trim(),component_slug:form.component.value.trim(),commit_sha:form.commit.value.trim()})
+      body:JSON.stringify({url:form.url.value.trim(),component_slug:component,commit_sha:form.commit.value.trim()})
     });
     const data=await response.json();
     if(!response.ok) throw new Error(data.mensagem||`Falha HTTP ${response.status}`);
     const label=data.status==='ok'?'nenhum problema detectado pelos motores executados':data.status==='issues'?'foram detectados pontos que exigem revisão':'a execução encontrou erros';
     status.textContent=`Varredura ${data.scan_id} concluída: ${label}.`;
+    if(component){
+      const link=document.createElement('a');
+      link.href=`/validation/?component=${encodeURIComponent(component)}`;
+      link.textContent='Continuar para a validação manual deste componente';
+      manualNext.append('A varredura automática não aprova critérios por conta própria. ',link,'.');
+      manualNext.hidden=false;
+    }
     engines.innerHTML=(data.engines||[]).map(item=>`<section class="panel"><h3>${esc(names[item.engine]||item.engine)}</h3><p><strong>Situação:</strong> ${esc(item.status)}</p><details><summary>Ver evidência automática</summary><pre>${esc(item.output||'Sem saída textual.')}</pre></details></section>`).join('');
   }catch(error){
     status.setAttribute('role','alert');
