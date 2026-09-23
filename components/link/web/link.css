@@ -1,9 +1,13 @@
 .ciata-link {
-  color: var(--ciata-acao-primaria-texto, currentColor);
+  color: var(--ciata-link, currentColor);
   text-decoration: underline;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.16em;
   border-radius: 0.125rem;
+}
+
+.ciata-link:visited {
+  color: var(--ciata-link-visitado, currentColor);
 }
 
 .ciata-link:hover {

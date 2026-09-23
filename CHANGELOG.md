@@ -21,6 +21,14 @@ O formato segue os princípios de Keep a Changelog e versionamento semântico qu
 
 ### Alterado
 
+- Token `--ciata-borda-controle` (`--ciata-cor-cinza-500`, #758493) aplicado às bordas de campo de texto, select, autocomplete, data, busca e envio de arquivo, atingindo 3:1 de contraste não textual (WCAG 1.4.11).
+
+### Corrigido
+
+- Componentes Web passam a usar `--ciata-fundo-superficie`; `--ciata-superficie` não existia em `tokens/cores.css` e deixava o fundo transparente.
+- Link usa `--ciata-link` e `--ciata-link-visitado` em vez de `--ciata-acao-primaria-texto`, que deixava o texto branco sobre superfícies claras.
+- Preenchimento da barra de progresso usa `--ciata-acao-primaria-fundo`, visível sobre a trilha clara.
+
 - Política, especificação, checklist e playbook de acessibilidade alinhados ao WCAG-EM 2.0.
 - Matriz de testes ampliada para rotação, redimensionamento, tela dividida, teclado físico e retomada de estado.
 - Política, especificação e checklist alinhados ao alvo padrão WCAG 2.2 A e AA.
