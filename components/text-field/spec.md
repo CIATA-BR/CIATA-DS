@@ -98,9 +98,11 @@ Instruções complementares devem ser associadas programaticamente ao campo quan
 
 Exemplos:
 
-- `A senha deve ter pelo menos 12 caracteres.`;
+- `A senha deve ter pelo menos 12 caracteres.` — exemplo ilustrativo de regra de produto; o Design System não define um tamanho mínimo universal de senha;
 - `Informe apenas números.`;
 - `Você poderá alterar este dado depois.`.
+
+Requisitos de senha como tamanho mínimo, presença de letras, números ou caracteres especiais pertencem à política de segurança do produto. O componente deve apresentar esses requisitos com clareza, mas não deve inventar nem substituir a regra definida pelo produto ou backend.
 
 Evitar repetir no help text exatamente o mesmo conteúdo do label.
 
