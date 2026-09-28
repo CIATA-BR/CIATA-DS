@@ -5,7 +5,7 @@
   border: 2px solid var(--ciata-borda);
   border-radius: 0.75rem;
   padding: 1.25rem;
-  background: var(--ciata-superficie);
+  background: var(--ciata-fundo-superficie);
   color: var(--ciata-texto-primario);
 }
 

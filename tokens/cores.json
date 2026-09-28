@@ -20,6 +20,7 @@
       "secondaryActionBackground": { "$value": "#FFFFFF", "$type": "color" },
       "secondaryActionText": { "$value": "#16365E", "$type": "color" },
       "border": { "$value": "#C8D0D8", "$type": "color" },
+      "controlBorder": { "$value": "#758493", "$type": "color" },
       "focus": { "$value": "#FFD000", "$type": "color" },
       "focusContrast": { "$value": "#111820", "$type": "color" },
       "successBackground": { "$value": "#E7F5EC", "$type": "color" },

@@ -20,9 +20,9 @@
   inline-size: 100%;
   min-block-size: 2.75rem;
   padding: 0.625rem 0.75rem;
-  border: 2px solid var(--ciata-borda);
+  border: 2px solid var(--ciata-borda-controle);
   border-radius: 0.625rem;
-  background: var(--ciata-superficie);
+  background: var(--ciata-fundo-superficie);
   color: var(--ciata-texto-primario);
   font: inherit;
   line-height: 1.5;
@@ -67,7 +67,7 @@ textarea.ciata-field__control {
 }
 
 .ciata-field__control[readonly] {
-  background: var(--ciata-superficie);
+  background: var(--ciata-fundo-superficie);
   color: var(--ciata-texto-primario);
   cursor: text;
 }
