@@ -20,7 +20,7 @@ Arquitetura, qualidade, segurança, privacidade, documentação, internacionaliz
 
 ### Accessibility Engineering System
 
-Princípios, normas, plataformas, tecnologias assistivas, padrões, receitas, testes, evidências e conhecimento aplicado para construir experiências digitais inclusivas desde a arquitetura.
+Princípios, normas, plataformas, recursos de tecnologia assistiva, padrões, receitas, testes, evidências e conhecimento aplicado para construir experiências digitais inclusivas desde a arquitetura.
 
 ### Knowledge System
 
@@ -115,7 +115,7 @@ Projetos de desenvolvimento seguem as convenções técnicas de cada plataforma 
 
 ## Acessibilidade
 
-Todo ativo, componente, padrão ou documento deve considerar estrutura semântica, contraste, legibilidade, descrição textual, tecnologias assistivas, navegação por teclado, foco previsível, compatibilidade com Braille e ausência de dependência exclusiva de características sensoriais.
+Todo ativo, componente, padrão ou documento deve considerar estrutura semântica, contraste, legibilidade, descrição textual, recursos de tecnologia assistiva, navegação por teclado, foco previsível, compatibilidade com Braille e ausência de dependência exclusiva de características sensoriais.
 
 Verificações automáticas apoiam o processo. A publicação exige validação humana proporcional ao impacto.
 
@@ -132,3 +132,11 @@ Consulte o arquivo `LICENSE` antes de reutilizar os materiais.
 ---
 
 **Começamos pelas pessoas. Construímos com acessibilidade. Entregamos conhecimento.**
+
+## Terminologia obrigatória: tecnologia assistiva e recursos
+
+- **Tecnologia assistiva**: campo interdisciplinar do conhecimento e da tecnologia que estuda, desenvolve, aplica e avalia soluções para ampliar a funcionalidade, a autonomia, a acessibilidade e a participação das pessoas com deficiência.
+- **Recurso de tecnologia assistiva**: ferramenta, produto, equipamento, dispositivo ou software concreto utilizado para atender necessidades funcionais, como leitores de tela, ampliadores, linhas braille e teclados adaptados.
+- Não empregar **tecnologia assistiva** como sinônimo de **recurso de tecnologia assistiva**. Quando o assunto for uma ferramenta específica, usar **recurso de tecnologia assistiva**.
+- Distinguir também recursos de serviços, estratégias e práticas relacionados ao campo da tecnologia assistiva.
+- Aplicar a distinção em documentação, interfaces, conteúdo editorial, pesquisa, componentes, exemplos e instruções a agentes, em todos os projetos CIATA.
