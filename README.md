@@ -132,3 +132,11 @@ Consulte o arquivo `LICENSE` antes de reutilizar os materiais.
 ---
 
 **Começamos pelas pessoas. Construímos com acessibilidade. Entregamos conhecimento.**
+
+## Terminologia obrigatória: tecnologia assistiva e recursos
+
+- **Tecnologia assistiva**: campo interdisciplinar do conhecimento e da tecnologia que estuda, desenvolve, aplica e avalia soluções para ampliar a funcionalidade, a autonomia, a acessibilidade e a participação das pessoas com deficiência.
+- **Recurso de tecnologia assistiva**: ferramenta, produto, equipamento, dispositivo ou software concreto utilizado para atender necessidades funcionais, como leitores de tela, ampliadores, linhas braille e teclados adaptados.
+- Não empregar **tecnologia assistiva** como sinônimo de **recurso de tecnologia assistiva**. Quando o assunto for uma ferramenta específica, usar **recurso de tecnologia assistiva**.
+- Distinguir também recursos de serviços, estratégias e práticas relacionados ao campo da tecnologia assistiva.
+- Aplicar a distinção em documentação, interfaces, conteúdo editorial, pesquisa, componentes, exemplos e instruções a agentes, em todos os projetos CIATA.
