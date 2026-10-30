@@ -17,15 +17,16 @@ jobs:
         run: |
           set -euo pipefail
           termo="tecnologia"" assistiva"
-          permitido="recursos de ""tecnologia assistiva"
+          permitido="recursos? de ""tecnologia assistiva"
+          contexto_campo="campo|área|conhecimento|terminologia|sinônimos|termos|não empregar"
           nome_oficial="Centro de Inclusão Através da ""Tecnologia Assistiva"
           adicionadas="$(git diff -U0 HEAD^ HEAD -- . ':(exclude).github/workflows/terminologia.yml' | grep '^+' | grep -v '^+++' || true)"
           ocorrencias="$(printf '%s\n' "$adicionadas" | grep -i "$termo" || true)"
-          invalidas="$(printf '%s\n' "$ocorrencias" | grep -vi "$permitido" | grep -vi "$nome_oficial" || true)"
+          invalidas="$(printf '%s\n' "$ocorrencias" | grep -Evi "$permitido" | grep -vi "$nome_oficial" | grep -Evi "$contexto_campo" || true)"
           if [ -n "$invalidas" ]; then
             printf '%s\n' "$invalidas"
             echo
-            echo 'Use sempre a forma padronizada com o prefixo recursos de, exceto no nome oficial do CIATA.'
+            echo 'Diferencie o campo tecnologia assistiva de recursos de tecnologia assistiva (ferramentas concretas).'
             exit 1
           fi
           echo 'Terminologia das novas linhas validada.'
