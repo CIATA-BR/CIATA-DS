@@ -1,0 +1,290 @@
+[
+  {
+    "id": "nexo-tiro-com-arco",
+    "png": "nexo-tiro-com-arco.png",
+    "webp": "nexo-tiro-com-arco.webp",
+    "alt": "Nexo segurando arco recurvo e flecha, com aljava.",
+    "dimensoes": [
+      1254,
+      1254
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "4d690d4fad19542724c3e66440fd2ff0a4d1fff6341f8baa56a068bb237d8a6a",
+    "sha256_webp": "930ed9210ebe1a216b527b668406e56c639079c06004e8c5c1543c4fdd260fda"
+  },
+  {
+    "id": "nexo-tiro-com-arco-deficiencia-visual",
+    "png": "nexo-tiro-com-arco-deficiencia-visual.png",
+    "webp": "nexo-tiro-com-arco-deficiencia-visual.webp",
+    "alt": "Nexo com arco recurvo e suporte tátil independente ao lado do arco.",
+    "dimensoes": [
+      1254,
+      1254
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "83b35e0de54d4d22a30657beba3a566b5546fca69bee8e4cde3ace1f2da20173",
+    "sha256_webp": "b2e74bdf1cd9c8f29086329643b7522e124ac4336d01d9158fc12dfb99a1d909"
+  },
+  {
+    "id": "nexo-goalball",
+    "png": "nexo-goalball.png",
+    "webp": "nexo-goalball.webp",
+    "alt": "Nexo agachado, com proteção ocular, joelheiras e uma bola sonora azul.",
+    "dimensoes": [
+      1254,
+      1254
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "1a01aaae022c2ac9350855efe71b18dc9307ba8b1e2fcbd78c339a1720be6e9e",
+    "sha256_webp": "2d1d949019a043ebacbade7b50adef9c44d7df35e98eb7265012adaf4b08c518"
+  },
+  {
+    "id": "nexo-futebol-de-cegos",
+    "png": "nexo-futebol-de-cegos.png",
+    "webp": "nexo-futebol-de-cegos.webp",
+    "alt": "Nexo com proteção ocular e uniforme esportivo conduzindo uma bola sonora.",
+    "dimensoes": [
+      1254,
+      1254
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "5ac0c0094d2bea41f4bc556cea292a49f4c5e0222a4922149400e18da5859607",
+    "sha256_webp": "1424685d42b66f2dce0386cd74889f755980fef5abc1708b2d7e7a2014372693"
+  },
+  {
+    "id": "nexo-paratletismo",
+    "png": "nexo-paratletismo.png",
+    "webp": "nexo-paratletismo.webp",
+    "alt": "Nexo correndo com uma prótese esportiva em uma perna.",
+    "dimensoes": [
+      1254,
+      1254
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "dac3430574f8beca49b12ed36b78afee118d7472b9ee364fc47407f0e855010f",
+    "sha256_webp": "002a10d7ac1b311926beb8e06c65eb609cf8f5a85b120527989cbf4925a5b788"
+  },
+  {
+    "id": "nexo-paranatacao",
+    "png": "nexo-paranatacao.png",
+    "webp": "nexo-paranatacao.webp",
+    "alt": "Nexo com ausência de parte de um braço, nadando crawl entre respingos.",
+    "dimensoes": [
+      1254,
+      1254
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento. Símbolo estilizado permanece na touca.",
+    "sha256_png": "b81622631e5c1d7cd3c4d9eda319062bb82ea60523d646c4cf2472a267fdcc5d",
+    "sha256_webp": "0d4fdd8c5a849b6faf1534b99f9bcbbf95f3734e413a0443efc4b1361d0f879f"
+  },
+  {
+    "id": "nexo-judo-paralimpico",
+    "png": "nexo-judo-paralimpico.png",
+    "webp": "nexo-judo-paralimpico.webp",
+    "alt": "Nexo descalço, com judogi branco e faixa preta, em postura de combate.",
+    "dimensoes": [
+      1254,
+      1254
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "52f298ecd32ed29102fecd3c785472673fee185f0d76c5dc892adaad928b4916",
+    "sha256_webp": "d57c8ef4f792011d578473b21bd114d978169c8922949f287d023fba2244a57c"
+  },
+  {
+    "id": "nexo-bocha-paralimpica",
+    "png": "nexo-bocha-paralimpica.png",
+    "webp": "nexo-bocha-paralimpica.webp",
+    "alt": "Nexo em cadeira de rodas lançando bola vermelha, perto de bolas azuis e branca.",
+    "dimensoes": [
+      1199,
+      1312
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "88a5fd15f1ee2f663d11fca7121657f282c283053f67c633dabab9f362c6e8b3",
+    "sha256_webp": "4be2e64538c1f53733f99664073808f62846b0420c6ebab20b115a258d8cd23c"
+  },
+  {
+    "id": "nexo-showdown",
+    "png": "nexo-showdown.png",
+    "webp": "nexo-showdown.webp",
+    "alt": "Nexo com raquete de madeira e bola amarela em mesa com laterais altas.",
+    "dimensoes": [
+      1199,
+      1312
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento. Proteção ocular e divisória central da mesa precisam de revisão.",
+    "sha256_png": "03a1bf0d85709d3334a9c404c1633166bcf39cd2bcbe91dc33523114b357392f",
+    "sha256_webp": "a50030419f33c55e272e114a9ef9e3f277c4907ef93a5f94fe7edcaa6458f897"
+  },
+  {
+    "id": "nexo-futebol-de-amputados",
+    "png": "nexo-futebol-de-amputados.png",
+    "webp": "nexo-futebol-de-amputados.webp",
+    "alt": "Nexo com amputação de uma perna, usando duas muletas canadenses junto à bola.",
+    "dimensoes": [
+      1199,
+      1312
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "fce16e188ad274de479fe7b62349815d8c752a7409520bb946d991fca34a4e68",
+    "sha256_webp": "b691f22fea191d94d5903d1a71df0a328e9f56d9a1f66a475bbe55cc5687d05f"
+  },
+  {
+    "id": "nexo-voleibol-sentado",
+    "png": "nexo-voleibol-sentado.png",
+    "webp": "nexo-voleibol-sentado.webp",
+    "alt": "Nexo sentado no chão, com amputação de uma perna, realizando manchete diante de rede baixa.",
+    "dimensoes": [
+      1199,
+      1312
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "41fa5150b774d0f5df24c803ea1155e05f0464babc5bf9c9fec206034137e75f",
+    "sha256_webp": "2111dff2c725c26ebf5274f93d0e7f196e84be8aa7db103873edee806ed59b46"
+  },
+  {
+    "id": "nexo-basquete-em-cadeira-de-rodas",
+    "png": "nexo-basquete-em-cadeira-de-rodas.png",
+    "webp": "nexo-basquete-em-cadeira-de-rodas.webp",
+    "alt": "Nexo em cadeira esportiva com rodas inclinadas, erguendo bola de basquete.",
+    "dimensoes": [
+      1199,
+      1312
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "d016afa76fada218263ea0cf32f2f4e1f4413da0d14fb3fc7499ec9b4016e658",
+    "sha256_webp": "d15bf321092e356628c76178b68e58adb82fd4e4e4a2b25da6ee0c3eff069a58"
+  },
+  {
+    "id": "nexo-rugby-em-cadeira-de-rodas",
+    "png": "nexo-rugby-em-cadeira-de-rodas.png",
+    "webp": "nexo-rugby-em-cadeira-de-rodas.webp",
+    "alt": "Nexo em cadeira reforçada com proteção frontal, segurando bola branca.",
+    "dimensoes": [
+      1199,
+      1312
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "70cf01b4be40252fd651a613a8ed693bf99b744baf89c43695f6fe9174c01951",
+    "sha256_webp": "d9cb2c6acc8bc4b976d3186181294f6e537ae9359484341e66b20d6b2256c5d7"
+  },
+  {
+    "id": "nexo-paraciclismo",
+    "png": "nexo-paraciclismo.png",
+    "webp": "nexo-paraciclismo.webp",
+    "alt": "Nexo com capacete, conduzindo uma handbike de três rodas.",
+    "dimensoes": [
+      1199,
+      1312
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "28138bb4c9e2669576007bba0f37c5c37688a46fe0269a318521790a83a060b9",
+    "sha256_webp": "573502667ebd6edf0e650df77029af5f7bb154b0bdb7dbd3b451266f9ebc494a"
+  },
+  {
+    "id": "nexo-tenis-de-mesa-paralimpico",
+    "png": "nexo-tenis-de-mesa-paralimpico.png",
+    "webp": "nexo-tenis-de-mesa-paralimpico.webp",
+    "alt": "Nexo em cadeira de rodas rebatendo uma bola branca com raquete vermelha.",
+    "dimensoes": [
+      1199,
+      1312
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "4f635f12a3ce65e2ee5d301d1eef4c64664c70454cdc3d62ad45d49643e5e759",
+    "sha256_webp": "0b57734a55bb445190822c12db4c9e140ea6ee9f77fddf8a8a601c65261ab8c6"
+  },
+  {
+    "id": "nexo-surdolimpiadas",
+    "png": "nexo-surdolimpiadas.png",
+    "webp": "nexo-surdolimpiadas.webp",
+    "alt": "Nexo iniciando corrida ao lado de sinal luminoso de largada com luz verde acesa.",
+    "dimensoes": [
+      1199,
+      1312
+    ],
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "status": "revisao_visual",
+    "observacao": "Ilustração institucional; não é referência técnica de equipamento.",
+    "sha256_png": "e662ec32fe50ade284d9b089b45e1debfcd602dcee50632ee6d010d6f11977c1",
+    "sha256_webp": "974df33ba9aececb023f4db242489c4f12acaac7286149e5bdafa37caf1fa01b"
+  }
+]
